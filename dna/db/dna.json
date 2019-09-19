@@ -1,0 +1,1361 @@
+{
+    "package.core.global": {
+        "package": {
+            "meta": {
+                "@dna": "['package.core.global']",
+                "name": "package.core.global",
+                "kind": "package"
+            }
+        },
+        "api": {},
+        "app": {},
+        "web": {
+            "global": {
+                "meta": {
+                    "@dna": "['package.core.global'].web.global",
+                    "@registry": "['package.core.global'].web.Global",
+                    "@theme": ["`['package.core.global'].web.Global.${props.dna.set.defaultSkin}`"],
+                    "name": "global",
+                    "class": "Global",
+                    "kind": "global"
+                },
+                "props": {
+                    "ui": {
+                        "theme": {
+                            "finish": {}
+                        }
+                    },
+                    "set": {
+                        "defaultSkin": "themeBase",
+                        "defaultSkinVariant": "themeVariantDefault"
+                    }
+                }
+            }
+        }
+    },
+    "package.core.cms": {
+        "package": {
+            "meta": {
+                "@dna": "['package.core.cms']",
+                "name": "package.core.cms",
+                "kind": "package"
+            }
+        },
+        "api": {},
+        "app": {},
+        "web": {
+            "documents": {
+                "home": {
+                    "meta": {
+                        "@dna": "['package.core.cms'].web.documents.home",
+                        "@registry": "['package.core.ui'].web.documents.Document",
+                        "@theme": "['package.core.cms'].web.Document",
+                        "name": "home",
+                        "class": "Document",
+                        "kind": "document"
+                    },
+                    "props": {
+                        "data": {},
+                        "ui": {
+                            "theme": {
+                                "model": {
+                                    "variant": "scrollContainer",
+                                    "param": "value"
+                                },
+                                "design": {
+                                    "variant":"asImageSlider"
+                                },
+                                "skin": {
+                                    "variant": "themeVariantDefault",
+                                    "tone": "dimensionVariantDefault",
+                                    "typography": "sans",
+                                    "spacial": "compact",
+                                    "motion": "smooth"
+                                },
+                                "finish": {
+                                    "class": "home",
+                                    "style": {}
+                                }
+                            }
+                        },
+                        "set": {
+                            "viewport": "scroll",
+                            "route": {
+                                "match": "/",
+                                "params": {},
+                                "template": "package.core.cms/web/home",
+                                "authenticated": false
+                            }
+                        }
+                    },
+                    "layouts": {
+                        "documentLayout": {
+                            "meta": {
+                                "@dna": "['package.core.cms'].web.documents.home.layouts.documentLayout",
+                                "@registry": "['package.core.ui'].web.layouts.RenderLayout",
+                                "id": "d0ce233592004ada8edbca237015cc3a",
+                                "name": "documentLayout",
+                                "class": "RenderLayout",
+                                "kind": "layout"
+                            },
+                            "props": {
+                                "ui": {
+                                    "theme": {
+                                        "finish": {
+                                            "style": {
+                                                "display": "flex",
+                                                "flexDirection": "column",
+                                                "width": "100%",
+                                                "minHeight": "fit-content"
+                                            }
+                                        }
+                                    }
+                                },
+                                "set": {
+                                    "renderLayout": "CustomLayout",
+                                    "regions": [
+                                        {
+                                            "name": "page",
+                                            "position": "center",
+                                            "index": 0,
+                                            "actions": {},
+                                            "controls": {}
+                                        }
+                                    ]
+                                }
+                            },
+                            "regions": {
+                                "main": {
+                                    "blocks": {
+                                        "PersonList": {
+                                            "meta": {
+                                                "@dna": "['package.core.identity'].web.documents.home.layouts.BaseLayout.regions.main.blocks.PersonList",
+                                                "@registry": "['package.core.ui'].app.blocks.tables.GridTable",
+                                                "id": "b5a330997d8840ff855219d3fc56ca95",
+                                                "name": "PersonList",
+                                                "class": "PersonList",
+                                                "kind": "block"
+                                            },
+                                            "props": {
+                                                "data": {
+                                                    "selector": "PersonList",
+                                                    "accessor": "db.collections['package.core.identity'].Identity.all",
+                                                    "instanceType": "package.core.identity:Identity"
+                                                },
+                                                "ui": {
+                                                    "theme": {
+                                                        "finish": {
+                                                            "style": {
+                                                                "width": 100,
+                                                                "minHeight": "fit-content"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "set": {
+                                                    "tableId": "CustomerList",
+                                                    "tableName": "Klanten",
+                                                    "tableName_nl_NL": "Klanten",
+                                                    "tableName_fr_FR": "Clients",
+                                                    "tableName_en_GB": "Customers",
+                                                    "columns": [
+                                                        {
+                                                            "name": "Voornaam",
+                                                            "name_nl_NL": "Voornaam",
+                                                            "name_fr_FR": "Prénom",
+                                                            "name_en_GB": "Firstname",
+                                                            "filterComponentName": "SelectIconCell",
+                                                            "filterComponentProps": {
+                                                                "iconType": "img"
+                                                            },
+                                                            "cell": {
+                                                                "meta": {
+                                                                    "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                    "@registry": "['package.core.ui'].app.cells.TextInputCell",
+                                                                    "kind": "cell"
+                                                                },
+                                                                "props": {
+                                                                    "data": {
+                                                                        "accessor": "firstName",
+                                                                        "instanceType": "package.core.identity:Identity",
+                                                                        "validation": "string|1|*|range|style|default"
+                                                                    },
+                                                                    "ui": {
+                                                                        "theme": {
+                                                                            "finish": {
+                                                                                "style": {
+                                                                                    "width": 100,
+                                                                                    "minHeight": "fit-content"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "set": {
+                                                                        "options": {
+                                                                            "operationMode": "basic",
+                                                                            "updateMode": "SKIP_REALISTIC",
+                                                                            "isLocalized": true,
+                                                                            "clickable": true,
+                                                                            "clickAction": ""
+                                                                        },
+                                                                        "dependencies": [
+                                                                            {
+                                                                                "dependentOn": "name",
+                                                                                "dependencyType": "validation",
+                                                                                "dependencyResolver": "reveal",
+                                                                                "dependencyPayload": {}
+                                                                            }
+                                                                        ],
+                                                                        "components": {
+                                                                            "cell": {
+                                                                                "meta": {
+                                                                                    "name": "TextInputCell"
+                                                                                },
+                                                                                "props": {
+                                                                                    "data": {},
+                                                                                    "ui": {},
+                                                                                    "set": {
+                                                                                        "dropdownDefaultOpen": true
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "elements": {
+                                                                                "optionComponent": [
+                                                                                    {
+                                                                                        "meta": {
+                                                                                            "name": "IconElement"
+                                                                                        },
+                                                                                        "props": {
+                                                                                            "data": {
+                                                                                                "accessor": {
+                                                                                                    "selection": "customers.avatar",
+                                                                                                    "label": "customers.label"
+                                                                                                }
+                                                                                            },
+                                                                                            "set": {
+                                                                                                "iconType": "svg"
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ],
+                                                                                "valueComponent": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "Familie Naam",
+                                                            "name_nl_NL": "Naam",
+                                                            "name_fr_FR": "Nom",
+                                                            "name_en_GB": "Last name",
+                                                            "cell": {
+                                                                "meta": {
+                                                                    "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                    "instanceType": "package.core.identity:Identity",
+                                                                    "options": {
+                                                                        "operationMode": "basic",
+                                                                        "updateMode": "SKIP_REALISTIC",
+                                                                        "isLocalized": true,
+                                                                        "clickable": true,
+                                                                        "clickAction": ""
+                                                                    }
+                                                                },
+                                                                "styling": {
+                                                                    "className": "",
+                                                                    "width": 100,
+                                                                    "minHeight": "fit-content"
+                                                                },
+                                                                "components": [
+                                                                    {
+                                                                        "db": {
+                                                                            "dataKey": "lastName",
+                                                                            "type": "package.core.identity:Identity",
+                                                                            "validation": "string|*|range|style|default"
+                                                                        },
+                                                                        "ui": {
+                                                                            "cellComponent": {
+                                                                                "componentName": "TextInputCell",
+                                                                                "componentProps": {}
+                                                                            },
+                                                                            "dependencies": [
+                                                                                {
+                                                                                    "dependentOn": "name",
+                                                                                    "dependencyType": "validation",
+                                                                                    "dependencyResolver": "reveal",
+                                                                                    "dependencyPayload": {}
+                                                                                }
+                                                                            ],
+                                                                            "elementComponent": {
+                                                                                "componentName": "CellElement",
+                                                                                "componentProps": {
+                                                                                    "dropdownDefaultOpen": true
+                                                                                },
+                                                                                "optionComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentKeys": {
+                                                                                            "label": "customers.label"
+                                                                                        },
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ],
+                                                                                "valueComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "Naam",
+                                                            "name_nl_NL": "Email",
+                                                            "name_fr_FR": "Email",
+                                                            "name_en_GB": "Email",
+                                                            "cell": {
+                                                                "meta": {
+                                                                    "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                    "instanceType": "package.core.identity:Identity",
+                                                                    "options": {
+                                                                        "operationMode": "basic",
+                                                                        "updateMode": "SKIP_REALISTIC",
+                                                                        "isLocalized": true,
+                                                                        "clickable": true,
+                                                                        "clickAction": ""
+                                                                    }
+                                                                },
+                                                                "styling": {
+                                                                    "className": "",
+                                                                    "width": 100,
+                                                                    "minHeight": "fit-content"
+                                                                },
+                                                                "components": [
+                                                                    {
+                                                                        "db": {
+                                                                            "dataKey": "name",
+                                                                            "type": "package.core.identity:Identity",
+                                                                            "validation": "string|*|range|style|default"
+                                                                        },
+                                                                        "ui": {
+                                                                            "cellComponent": {
+                                                                                "componentName": "TextInputCell",
+                                                                                "componentProps": {}
+                                                                            },
+                                                                            "dependencies": [
+                                                                                {
+                                                                                    "dependentOn": "name",
+                                                                                    "dependencyType": "validation",
+                                                                                    "dependencyResolver": "reveal",
+                                                                                    "dependencyPayload": {}
+                                                                                }
+                                                                            ],
+                                                                            "elementComponent": {
+                                                                                "componentName": "CellElement",
+                                                                                "componentProps": {
+                                                                                    "dropdownDefaultOpen": true
+                                                                                },
+                                                                                "optionComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentKeys": {
+                                                                                            "label": "customers.label"
+                                                                                        },
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ],
+                                                                                "valueComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "Adres",
+                                                            "name_nl_NL": "Telefoon",
+                                                            "name_fr_FR": "Téléphone",
+                                                            "name_en_GB": "Phone",
+                                                            "cell": {
+                                                                "meta": {
+                                                                    "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                    "instanceType": "package.core.identity:Identity",
+                                                                    "options": {
+                                                                        "operationMode": "basic",
+                                                                        "updateMode": "SKIP_REALISTIC",
+                                                                        "isLocalized": true,
+                                                                        "clickable": true,
+                                                                        "clickAction": ""
+                                                                    }
+                                                                },
+                                                                "styling": {
+                                                                    "className": "",
+                                                                    "width": 100,
+                                                                    "minHeight": "fit-content"
+                                                                },
+                                                                "components": [
+                                                                    {
+                                                                        "db": {
+                                                                            "dataKey": "hasHomeAddressGeoLocation.street",
+                                                                            "type": "package.core.identity:GeoLocation",
+                                                                            "validation": "string|*|*|range|style|default"
+                                                                        },
+                                                                        "ui": {
+                                                                            "cellComponent": {
+                                                                                "componentName": "TextInputCell",
+                                                                                "componentProps": {}
+                                                                            },
+                                                                            "dependencies": [
+                                                                                {
+                                                                                    "dependentOn": "name",
+                                                                                    "dependencyType": "validation",
+                                                                                    "dependencyResolver": "reveal",
+                                                                                    "dependencyPayload": {}
+                                                                                }
+                                                                            ],
+                                                                            "elementComponent": {
+                                                                                "componentName": "CellElement",
+                                                                                "componentProps": {
+                                                                                    "dropdownDefaultOpen": true
+                                                                                },
+                                                                                "optionComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentKeys": {
+                                                                                            "label": "customers.label"
+                                                                                        },
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ],
+                                                                                "valueComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "db": {
+                                                                            "dataKey": "hasHomeAddressGeoLocation.zipCode",
+                                                                            "type": "package.core.identity:GeoLocation",
+                                                                            "validation": "string|*|range|style|default"
+                                                                        },
+                                                                        "ui": {
+                                                                            "cellComponent": {
+                                                                                "componentName": "TextInputCell",
+                                                                                "componentProps": {}
+                                                                            },
+                                                                            "dependencies": [
+                                                                                {
+                                                                                    "dependentOn": "name",
+                                                                                    "dependencyType": "validation",
+                                                                                    "dependencyResolver": "reveal",
+                                                                                    "dependencyPayload": {}
+                                                                                }
+                                                                            ],
+                                                                            "elementComponent": {
+                                                                                "componentName": "CellElement",
+                                                                                "componentProps": {
+                                                                                    "dropdownDefaultOpen": true
+                                                                                },
+                                                                                "optionComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentKeys": {
+                                                                                            "label": "customers.label"
+                                                                                        },
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ],
+                                                                                "valueComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "db": {
+                                                                            "dataKey": "hasHomeAddressGeoLocation.city",
+                                                                            "type": "package.core.identity:GeoLocation",
+                                                                            "validation": "string|*|range|style|default"
+                                                                        },
+                                                                        "ui": {
+                                                                            "cellComponent": {
+                                                                                "componentName": "TextInputCell",
+                                                                                "componentProps": {}
+                                                                            },
+                                                                            "dependencies": [
+                                                                                {
+                                                                                    "dependentOn": "name",
+                                                                                    "dependencyType": "validation",
+                                                                                    "dependencyResolver": "reveal",
+                                                                                    "dependencyPayload": {}
+                                                                                }
+                                                                            ],
+                                                                            "elementComponent": {
+                                                                                "componentName": "CellElement",
+                                                                                "componentProps": {
+                                                                                    "dropdownDefaultOpen": true
+                                                                                },
+                                                                                "optionComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentKeys": {
+                                                                                            "label": "customers.label"
+                                                                                        },
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ],
+                                                                                "valueComponents": [
+                                                                                    {
+                                                                                        "selectionKey": "customers.avatar",
+                                                                                        "componentName": "IconElement",
+                                                                                        "componentProps": {
+                                                                                            "iconType": "svg"
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.name",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    },
+                                                                                    {
+                                                                                        "selectionKey": "customers.email",
+                                                                                        "componentName": "TextElement",
+                                                                                        "componentProps": {},
+                                                                                        "isLocalized": false
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "layouts": {
+                                        "main": {
+                                            "meta": {
+                                                "id": "f3e5fbf5a4304b31a837615817919a69",
+                                                "name": "OneRegionLayout",
+                                                "componentType": "BioComponent",
+                                                "componentClass": "OneRegionLayout",
+                                                "componentLevel": "layout"
+                                            },
+                                            "regions": {
+                                                "main": {
+                                                    "position": "center",
+                                                    "blocks": {
+                                                        "GridTable.PersonList": {
+                                                            "meta": {
+                                                                "id": "1ce016406df24c32ba5a3d5b6084191f",
+                                                                "name": "GridTable.PersonList",
+                                                                "instanceType": "package.core.identity:Identity",
+                                                                "componentClass": "GridTable",
+                                                                "componentLevel": "block"
+                                                            },
+                                                            "config": {
+                                                                "tableId": "CustomerList",
+                                                                "tableName": "Klanten",
+                                                                "tableName_nl_NL": "Klanten",
+                                                                "tableName_fr_FR": "Clients",
+                                                                "tableName_en_GB": "Customers",
+                                                                "columns": [
+                                                                    {
+                                                                        "name": "Voornaam",
+                                                                        "name_nl_NL": "Voornaam",
+                                                                        "name_fr_FR": "Prénom",
+                                                                        "name_en_GB": "Firstname",
+                                                                        "filterComponentName": "SelectIconCell",
+                                                                        "filterComponentProps": {
+                                                                            "iconType": "img"
+                                                                        },
+                                                                        "cell": {
+                                                                            "@dna": "personListGridTable",
+                                                                            "instanceType": "package.core.identity:Identity",
+                                                                            "style": {
+                                                                                "className": "",
+                                                                                "width": 100,
+                                                                                "minHeight": "fit-content"
+                                                                            },
+                                                                            "options": {
+                                                                                "operationMode": "basic",
+                                                                                "updateMode": "SKIP_REALISTIC",
+                                                                                "isLocalized": true,
+                                                                                "clickable": true,
+                                                                                "clickAction": ""
+                                                                            },
+                                                                            "components": [
+                                                                                {
+                                                                                    "db": {
+                                                                                        "dataKey": "firstName",
+                                                                                        "type": "package.core.identity:Identity",
+                                                                                        "validation": "string|1|*|range|style|default"
+                                                                                    },
+                                                                                    "ui": {
+                                                                                        "cellComponent": {
+                                                                                            "componentName": "TextInputCell",
+                                                                                            "componentKeys": {
+                                                                                                "label": "customers.label",
+                                                                                                "iconInitials": "fullName"
+                                                                                            },
+                                                                                            "componentProps": {}
+                                                                                        },
+                                                                                        "dependencies": [
+                                                                                            {
+                                                                                                "dependentOn": "name",
+                                                                                                "dependencyType": "validation",
+                                                                                                "dependencyResolver": "reveal",
+                                                                                                "dependencyPayload": {}
+                                                                                            }
+                                                                                        ],
+                                                                                        "elementComponent": {
+                                                                                            "componentName": "CellElement",
+                                                                                            "componentProps": {
+                                                                                                "dropdownDefaultOpen": true
+                                                                                            },
+                                                                                            "optionComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentKeys": {
+                                                                                                        "label": "customers.label"
+                                                                                                    },
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ],
+                                                                                            "valueComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "Familie Naam",
+                                                                        "name_nl_NL": "Naam",
+                                                                        "name_fr_FR": "Nom",
+                                                                        "name_en_GB": "Last name",
+                                                                        "cell": {
+                                                                            "meta": {
+                                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                                "instanceType": "package.core.identity:Identity",
+                                                                                "options": {
+                                                                                    "operationMode": "basic",
+                                                                                    "updateMode": "SKIP_REALISTIC",
+                                                                                    "isLocalized": true,
+                                                                                    "clickable": true,
+                                                                                    "clickAction": ""
+                                                                                }
+                                                                            },
+                                                                            "styling": {
+                                                                                "className": "",
+                                                                                "width": 100,
+                                                                                "minHeight": "fit-content"
+                                                                            },
+                                                                            "components": [
+                                                                                {
+                                                                                    "db": {
+                                                                                        "dataKey": "lastName",
+                                                                                        "type": "package.core.identity:Identity",
+                                                                                        "validation": "string|*|range|style|default"
+                                                                                    },
+                                                                                    "ui": {
+                                                                                        "cellComponent": {
+                                                                                            "componentName": "TextInputCell",
+                                                                                            "componentProps": {}
+                                                                                        },
+                                                                                        "dependencies": [
+                                                                                            {
+                                                                                                "dependentOn": "name",
+                                                                                                "dependencyType": "validation",
+                                                                                                "dependencyResolver": "reveal",
+                                                                                                "dependencyPayload": {}
+                                                                                            }
+                                                                                        ],
+                                                                                        "elementComponent": {
+                                                                                            "componentName": "CellElement",
+                                                                                            "componentProps": {
+                                                                                                "dropdownDefaultOpen": true
+                                                                                            },
+                                                                                            "optionComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentKeys": {
+                                                                                                        "label": "customers.label"
+                                                                                                    },
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ],
+                                                                                            "valueComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "Naam",
+                                                                        "name_nl_NL": "Email",
+                                                                        "name_fr_FR": "Email",
+                                                                        "name_en_GB": "Email",
+                                                                        "cell": {
+                                                                            "meta": {
+                                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                                "instanceType": "package.core.identity:Identity",
+                                                                                "options": {
+                                                                                    "operationMode": "basic",
+                                                                                    "updateMode": "SKIP_REALISTIC",
+                                                                                    "isLocalized": true,
+                                                                                    "clickable": true,
+                                                                                    "clickAction": ""
+                                                                                }
+                                                                            },
+                                                                            "styling": {
+                                                                                "className": "",
+                                                                                "width": 100,
+                                                                                "minHeight": "fit-content"
+                                                                            },
+                                                                            "components": [
+                                                                                {
+                                                                                    "db": {
+                                                                                        "dataKey": "name",
+                                                                                        "type": "package.core.identity:Identity",
+                                                                                        "validation": "string|*|range|style|default"
+                                                                                    },
+                                                                                    "ui": {
+                                                                                        "cellComponent": {
+                                                                                            "componentName": "TextInputCell",
+                                                                                            "componentProps": {}
+                                                                                        },
+                                                                                        "dependencies": [
+                                                                                            {
+                                                                                                "dependentOn": "name",
+                                                                                                "dependencyType": "validation",
+                                                                                                "dependencyResolver": "reveal",
+                                                                                                "dependencyPayload": {}
+                                                                                            }
+                                                                                        ],
+                                                                                        "elementComponent": {
+                                                                                            "componentName": "CellElement",
+                                                                                            "componentProps": {
+                                                                                                "dropdownDefaultOpen": true
+                                                                                            },
+                                                                                            "optionComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentKeys": {
+                                                                                                        "label": "customers.label"
+                                                                                                    },
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ],
+                                                                                            "valueComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "Adres",
+                                                                        "name_nl_NL": "Telefoon",
+                                                                        "name_fr_FR": "Téléphone",
+                                                                        "name_en_GB": "Phone",
+                                                                        "cell": {
+                                                                            "meta": {
+                                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
+                                                                                "instanceType": "package.core.identity:Identity",
+                                                                                "options": {
+                                                                                    "operationMode": "basic",
+                                                                                    "updateMode": "SKIP_REALISTIC",
+                                                                                    "isLocalized": true,
+                                                                                    "clickable": true,
+                                                                                    "clickAction": ""
+                                                                                }
+                                                                            },
+                                                                            "components": [
+                                                                                {
+                                                                                    "db": {
+                                                                                        "dataKey": "hasHomeAddressGeoLocation.street",
+                                                                                        "type": "package.core.identity:GeoLocation",
+                                                                                        "validation": "string|*|*|range|style|default"
+                                                                                    },
+                                                                                    "ui": {
+                                                                                        "cellComponent": {
+                                                                                            "componentName": "TextInputCell",
+                                                                                            "componentProps": {}
+                                                                                        },
+                                                                                        "dependencies": [
+                                                                                            {
+                                                                                                "dependentOn": "name",
+                                                                                                "dependencyType": "validation",
+                                                                                                "dependencyResolver": "reveal",
+                                                                                                "dependencyPayload": {}
+                                                                                            }
+                                                                                        ],
+                                                                                        "elementComponent": {
+                                                                                            "componentName": "CellElement",
+                                                                                            "componentProps": {
+                                                                                                "dropdownDefaultOpen": true
+                                                                                            },
+                                                                                            "optionComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentKeys": {
+                                                                                                        "label": "customers.label"
+                                                                                                    },
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ],
+                                                                                            "valueComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "db": {
+                                                                                        "dataKey": "hasHomeAddressGeoLocation.zipCode",
+                                                                                        "type": "package.core.identity:GeoLocation",
+                                                                                        "validation": "string|*|range|style|default"
+                                                                                    },
+                                                                                    "ui": {
+                                                                                        "cellComponent": {
+                                                                                            "componentName": "TextInputCell",
+                                                                                            "componentProps": {}
+                                                                                        },
+                                                                                        "dependencies": [
+                                                                                            {
+                                                                                                "dependentOn": "name",
+                                                                                                "dependencyType": "validation",
+                                                                                                "dependencyResolver": "reveal",
+                                                                                                "dependencyPayload": {}
+                                                                                            }
+                                                                                        ],
+                                                                                        "elementComponent": {
+                                                                                            "componentName": "CellElement",
+                                                                                            "componentProps": {
+                                                                                                "dropdownDefaultOpen": true
+                                                                                            },
+                                                                                            "optionComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentKeys": {
+                                                                                                        "label": "customers.label"
+                                                                                                    },
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ],
+                                                                                            "valueComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "db": {
+                                                                                        "dataKey": "hasHomeAddressGeoLocation.city",
+                                                                                        "type": "package.core.identity:GeoLocation",
+                                                                                        "validation": "string|*|range|style|default"
+                                                                                    },
+                                                                                    "ui": {
+                                                                                        "cellComponent": {
+                                                                                            "componentName": "TextInputCell",
+                                                                                            "componentProps": {}
+                                                                                        },
+                                                                                        "dependencies": [
+                                                                                            {
+                                                                                                "dependentOn": "name",
+                                                                                                "dependencyType": "validation",
+                                                                                                "dependencyResolver": "reveal",
+                                                                                                "dependencyPayload": {}
+                                                                                            }
+                                                                                        ],
+                                                                                        "elementComponent": {
+                                                                                            "componentName": "CellElement",
+                                                                                            "componentProps": {
+                                                                                                "dropdownDefaultOpen": true
+                                                                                            },
+                                                                                            "optionComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentKeys": {
+                                                                                                        "label": "customers.label"
+                                                                                                    },
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ],
+                                                                                            "valueComponents": [
+                                                                                                {
+                                                                                                    "selectionKey": "customers.avatar",
+                                                                                                    "componentName": "IconElement",
+                                                                                                    "componentProps": {
+                                                                                                        "iconType": "svg"
+                                                                                                    }
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.name",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                },
+                                                                                                {
+                                                                                                    "selectionKey": "customers.email",
+                                                                                                    "componentName": "TextElement",
+                                                                                                    "componentProps": {},
+                                                                                                    "isLocalized": false
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "layouts": {
+                                                        "main": {
+                                                            "meta": {
+                                                                "id": "2130f5eb630d455d849cb4a2c215f7fc",
+                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.regions.main.layouts.main.regions.main.layouts.main",
+                                                                "name": "OneRegionLayout",
+                                                                "componentClass": "OneRegionLayout",
+                                                                "componentLevel": "layout"
+                                                            },
+                                                            "styling": {},
+                                                            "regions": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "compositions": {
+                                        "home": {
+                                            "meta": {
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main.compositions.home",
+                                                "id": "09aac5b688fa4c4eb970a373c403d180",
+                                                "name": "PersonList",
+                                                "componentClass": "PersonList",
+                                                "componentLevel": "composition"
+                                            },
+                                            "styling": {},
+                                            "componentProps": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "mutations": {
+                        "2019-08-28T06:55:21+00:00" : {
+                            "meta": {
+                                "@registry": "['package.core.ui'].web.documents.Document",
+                                "@theme": "['package.core.cms'].web.Document"
+                            },
+                            "props": {
+                                "ui": {
+                                    "theme": {
+                                        "model": {
+                                            "variant": "scrollContainer",
+                                            "param": "value"
+                                        },
+                                        "design": {
+                                            "variant":"asImageSlider"
+                                        },
+                                        "skin": {
+                                            "variant": "themeVariantDefault",
+                                            "tone": "dimensionVariantDefault",
+                                            "typography": "sans",
+                                            "spacial": "compact",
+                                            "motion": "smooth"
+                                        }
+                                    }
+                                }
+                            },
+                            "layouts": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

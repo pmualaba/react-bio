@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+    "it": true,
+    "document": true
+  },
+  "rules": {
+    "object-curly-spacing": ["warn", "never"],
+    "import/no-extraneous-dependencies": 0,
+    "func-names": "off",
+    "space-before-function-paren": ["error", "never"],
+    "arrow-body-style": ["error", "as-needed"],
+    "max-len": ["warn", 120, 4],
+    "semi": ["error", "never"],
+    "indent": ["error", 4],
+    "comma-dangle": ["error", "never"],
+    "linebreak-style": ["error", "unix"],
+    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 4 ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": 0,
+    "jsx-a11y/img-has-alt": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/prop-types": 0,
+    "no-unused-vars": 0,
+    "global-require": 0
+
+  }
+}

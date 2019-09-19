@@ -1,0 +1,131 @@
+{
+    "name": "nodejs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "build": "./node_modules/next/dist/bin/next build",
+        "next": "NODE_ENV=development ./node_modules/next/dist/bin/next",
+        "dev": "NODE_ENV=development pm2 start pm2.json --env development --no-daemon",
+        "start": "NODE_ENV=production node server.js",
+        "production": "NODE_ENV=production pm2 start pm2.json --env production --no-daemon",
+        "prod": "npm run build && npm run production",
+        "eslint": "eslint packages/",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "cuid": "^2.1.6",
+        "dgraph-js": "^1.2.1",
+        "express": "^4.16.3",
+        "framer-motion": "^1.6.7",
+        "grpc": "^1.21.1",
+        "joi": "^13.5.2",
+        "joi-browser": "^13.4.0",
+        "lodash": "^4.17.10",
+        "lowdb": "^1.0.0",
+        "next": "^9.0.5",
+        "next-redux-wrapper": "^3.0.0",
+        "njwt": "^0.4.0",
+        "polished": "^1.9.3",
+        "prop-types": "^15.6.2",
+        "re-reselect": "^2.1.0",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-redux": "^7.1.1",
+        "react-transition-group": "^2.4.0",
+        "redux": "^4.0.4",
+        "redux-logic": "^2.1.1",
+        "reselect": "^3.0.1",
+        "rxjs": "^6.3.2",
+        "sc-errors": "^2.0.0",
+        "sc-framework-health-check": "^2.0.0",
+        "sc-hot-reboot": "^1.0.0",
+        "scc-broker-client": "^6.1.0",
+        "socketcluster": "^14.3.3",
+        "socketcluster-client": "^14.2.2",
+        "styled-components": "^5.0.0-beta.8",
+        "superagent": "^3.8.3",
+        "universal-cookie": "^2.2.0",
+        "universal-cookie-express": "^2.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/plugin-proposal-class-properties": "^7.4.4",
+        "@babel/preset-react": "^7.0.0",
+        "@sambego/storybook-state": "^1.3.6",
+        "@storybook/addon-actions": "^5.1.8",
+        "@storybook/addon-knobs": "^5.1.8",
+        "@storybook/addon-links": "^5.1.8",
+        "@storybook/addons": "^5.1.8",
+        "@storybook/react": "^5.1.8",
+        "babel-eslint": "^10.0.1",
+        "babel-loader": "^8.0.6",
+        "babel-plugin-styled-components": "^1.10.0",
+        "core-js": "^3.1.4",
+        "eslint": "^5.6.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-react": "^7.11.1",
+        "react-perf-devtool": "^3.1.8",
+        "redux-devtools-extension": "^2.13.8",
+        "storybook-addon-jsx": "^7.1.2",
+        "webpack": "^4.34.0"
+    },
+    "browser": {
+        "body-parser": false,
+        "cors": false,
+        "dgraph-js": false,
+        "express": false,
+        "grpc": false,
+        "joi": false,
+        "njwt": false,
+        "lowdb": false,
+        "universal-cookie-express": false,
+        "sc-framework-health-check": false,
+        "sc-errors": false,
+        "sc-hot-reboot": false,
+        "scc-broker-client": false,
+        "socketcluster": false,
+        "next": false
+    },
+    "babel": {
+        "env": {
+            "development": {
+                "presets": [
+                    "next/babel"
+                ],
+                "plugins": [
+                    [
+                        "babel-plugin-styled-components",
+                        {
+                            "ssr": true,
+                            "displayName": true
+                        }
+                    ]
+                ]
+            },
+            "production": {
+                "presets": [
+                    "next/babel"
+                ],
+                "plugins": [
+                    [
+                        "babel-plugin-styled-components",
+                        {
+                            "ssr": true,
+                            "displayName": false
+                        }
+                    ]
+                ]
+            }
+        }
+    }
+}

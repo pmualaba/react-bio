@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .grid-container {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: (1fr)[5];
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+        }
+        .row {
+            background: blue;
+            display: -ms-grid;
+            display: grid;
+            grid-template: inherit;
+            grid-gap: inherit;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 5;
+            grid-column: 1 / -1;
+        }
+        .row:hover {
+            font-size: 60px;
+        }
+        .row:hover > div {
+            background: red;
+        }
+        .col {
+           background: yellow;
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="grid-container table">
+    <div class="grid-item-0 row">
+        <div class="grid-item-1 col">1</div>
+        <div class="grid-item-1 col">2</div>
+        <div class="grid-item-1 col">3</div>
+        <div class="grid-item-1 col">4</div>
+        <div class="grid-item-1 col">5</div>
+    </div>
+    <div class="grid-item-0 row" onmouseover="console.log('hover')">
+        <div class="grid-item-1 col">6</div>
+        <div class="grid-item-1 col">7</div>
+        <div class="grid-item-1 col">8</div>
+        <div class="grid-item-1 col">9</div>
+        <div class="grid-item-1 col">10</div>
+    </div>
+    <div class="grid-item-0 row">
+        <div class="grid-item-1 col">11</div>
+        <div class="grid-item-1 col">12</div>
+        <div class="grid-item-1 col">13</div>
+        <div class="grid-item-1 col">14</div>
+        <div class="grid-item-1 col">15</div>
+    </div>
+    <div class="grid-item-0 row">
+        <div class="grid-item-1 col">16</div>
+        <div class="grid-item-1 col">17</div>
+        <div class="grid-item-1 col">18</div>
+        <div class="grid-item-1 col">19</div>
+        <div class="grid-item-1 col">20</div>
+    </div>
+    <div class="grid-item-0 row">
+        <div class="grid-item-1 col">21</div>
+        <div class="grid-item-1 col">22</div>
+        <div class="grid-item-1 col">23</div>
+        <div class="grid-item-1 col">24</div>
+        <div class="grid-item-1 col">25</div>
+    </div>
+    <div class="grid-item-0 row">
+        <div class="grid-item-1 col">26</div>
+        <div class="grid-item-1 col">27</div>
+        <div class="grid-item-1 col">28</div>
+        <div class="grid-item-1 col">29</div>
+        <div class="grid-item-1 col">30</div>
+    </div>
+    <div class="grid-item-0 row">
+        <div class="grid-item-1 col">31</div>
+        <div class="grid-item-1 col">32</div>
+        <div class="grid-item-1 col">33</div>
+        <div class="grid-item-1 col">34</div>
+        <div class="grid-item-1 col">25</div>
+    </div>
+</div>
+<script>
+
+</script>
+
+</body>
+</html>

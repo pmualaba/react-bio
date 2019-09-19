@@ -1,0 +1,7 @@
+nodejs/.next
+nodejs/node_modules
+nodejs/static
+nodejs/jest_0
+nodejs/.temp
+nodejs/.git
+nodejs/packages/package.core.db/driver/dgraph.js

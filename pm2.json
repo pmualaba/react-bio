@@ -1,0 +1,27 @@
+{
+    "apps": [
+        {
+            "name": "server",
+            "script": "./server.js",
+            "instances": 1,
+            "exec_mode": "cluster",
+            "env_production": {
+                "NODE_SERVER": "remote"
+            },
+            "env_development": {
+                "NODE_SERVER": "local"
+            },
+            "watch": [
+                "packages/**/api/*",
+                "server.js",
+                "packages/package.core.db/driver/*"
+            ],
+            "ignore_watch": [
+                "node_modules",
+                ".temp",
+                ".next",
+                ".git"
+            ]
+        }
+    ]
+}
