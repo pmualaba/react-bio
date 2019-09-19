@@ -14,15 +14,15 @@ import Global from './global/package.core.global.Global'
 const design = {
     'package.core.global': {
         web: {
-            colors: props => css``,
-            effects: props => css``,
-            typography: props => css``,
+            colors: css``,
+            effects: css``,
+            typography: css``,
             Global: {
-                themeBase: props => css`
+                themeBase: css`
                     position: relative;
                     .PageSection__content {
                         position: relative;
-                        background: var(${`--${props => props.styling.theme}-primary-color`});
+                        
                     }
                 `
             }
@@ -35,74 +35,71 @@ const design = {
             effects,
             shapes,
             documents: {
-                DocumentContainer: props => css``
+                DocumentContainer: css``
             },
             layouts: {
                 PageSection: {
                     variant: {
                         default: Global,
                         blogPost: Global,
-                        homeBenefits: props => css``,
-                        homeBenefitsItem: props => css``,
-                        homeHero: props => css``
+                        homeBenefits: css``,
+                        homeBenefitsItem: css``,
+                        homeHero: css``
                     },
                     context: {
                         taxonomy: {
-                            products: props => css``
+                            products: css``
                         },
                         region: {
-                            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": props => css``
+                            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": css``
                         },
                         regionSize: {
-                            S: props => css``,
-                            M: props => css``,
-                            L: props => css``
+                            S: css``,
+                            M: css``,
+                            L: css``
                         },
                         screenSize: {
-                            S: props => css``,
-                            M: props => css``,
-                            L: props => css``
+                            S: css``,
+                            M: css``,
+                            L: css``
                         }
                     }
                 },
-                BaseLayoutContainer: props => css``,
-                PanelLayout: props => css``
+                BaseLayoutContainer: css``,
+                PanelLayout: css``
             }
         }
     },
     'package.core.cms': {
         web: {
-            colors: props => css``,
-            effects: props => css``,
-            typography: props => css``,
-            PersonList: props => css`
+            colors: css``,
+            effects: css``,
+            typography: css``,
+            PersonList: css`
 
             `,
-            Document: props => {
-                return css`
+            Document: css`
                     .Region {
                         &.header {
-                            background: ${props.theme.skin[props.dna.ui.theme.skin.variant].tone[props.dna.ui.theme.skin.tone].primaryColor}; // IE11
-                            background: var(${`--${props.dna.ui.theme.skin.variant}-tone-${props.dna.ui.theme.skin.tone}-primaryColor`});
-                            transition: background-color 2s;
+                            transition: background-color 3s;
                         }
                     }
                 `
             }
         }
-    }
+
 }
 
 function CSS(props) {
     if (props.meta['@theme']) {
         if (typeof props.meta['@theme'] === 'string') {
             if (get(props.theme.design, props.meta['@theme'][0]) !== '`') {
-                return get(props.theme.design, props.meta['@theme'])(props)
+                return get(props.theme.design, props.meta['@theme'])
             } else {
-                return get(props.theme.design, eval(props.meta['@theme'])(props))
+                return get(props.theme.design, eval(props.meta['@theme']))
             }
         } else {
-            return props.meta['@theme'].map(theme => get(props.theme.design, theme[0] !== '`' ? theme : eval(theme))(props))
+            return props.meta['@theme'].map(theme => get(props.theme.design, theme[0] !== '`' ? theme : eval(theme)))
         }
     }
 }

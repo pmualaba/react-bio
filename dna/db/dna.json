@@ -74,7 +74,9 @@
                                 },
                                 "finish": {
                                     "class": "home",
-                                    "style": {}
+                                    "style": {
+
+                                    }
                                 }
                             }
                         },

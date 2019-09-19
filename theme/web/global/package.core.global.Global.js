@@ -1,7 +1,7 @@
 import {css} from 'styled-components'
 import {breakpoints} from '../css-responsive'
 
-export default props => css`
+export default css`
     .PageSection {
         &.homeBenefits {
             padding: 50px 20px 50px;
@@ -16,7 +16,7 @@ export default props => css`
                     font-size: 14px;
                     font-weight: 300;
                     padding: 10px;
-                    margin: ${props.margin}px 0;
+                    margin: ${props => props.margin}px 0;
                 }
             }
             > .PageSection__content {

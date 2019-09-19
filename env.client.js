@@ -11,26 +11,26 @@ const environment = () => {
         case 'production':
             return {
                 BASE_URL: (typeof window !== 'undefined' && window.location.origin) || 'http://localhost:3000',
-                DOMAIN_URL: 'https://my-react-app.be',
+                DOMAIN_URL: 'https://my-react-bio-app.com',
                 WS_ENABLED
             }
         case 'development':
             if (process.env.NODE_SERVER === 'local') {
                 return {
                     BASE_URL: 'http://localhost:3000',
-                    DOMAIN_URL: 'https://my-react-app.be',
+                    DOMAIN_URL: 'https://my-react-bio-app.com',
                     WS_ENABLED
                 }
             }
             return {
                 BASE_URL: 'http://localhost:3000',
-                DOMAIN_URL: 'https://my-react-app.be',
+                DOMAIN_URL: 'https://my-react-bio-app.com',
                 WS_ENABLED
             }
         default:
             return {
                 BASE_URL: 'http://localhost:3000',
-                DOMAIN_URL: 'https://my-react-app.be',
+                DOMAIN_URL: 'https://my-react-bio-app.com',
                 WS_ENABLED
             }
     }

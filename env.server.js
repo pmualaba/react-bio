@@ -42,7 +42,7 @@ const environment = () => {
     }
 }
 environment.id = '101'
-environment.domainName = 'my-react-app.be'
+environment.domainName = 'my-react-bio-app.com'
 environment.changelog = {}
 environment.schedulers = {
     backup: {
@@ -63,11 +63,11 @@ environment.domains = {
         eid: '101',
         sid: '1999'
     },
-    'http://my-react-app.be': {
+    'http://my-react-bio-app.com': {
         eid: '101',
         sid: '1999'
     },
-    'https://my-react-app.be': {
+    'https://my-react-bio-app.com': {
         eid: '101',
         sid: '1999'
     }

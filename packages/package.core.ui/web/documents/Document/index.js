@@ -18,7 +18,7 @@ import Layer from './Layer'
  * Styled Component
  */
 
-const DocumentStyled = styled('document').attrs(props => ({
+const DocumentStyled = styled('div').attrs(props => ({
     'data-kind': 'document',
     'data-component': `${props.meta.class}`,
     'data-registry': `${props.meta['@registry']}`,

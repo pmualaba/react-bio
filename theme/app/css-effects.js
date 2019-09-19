@@ -11,7 +11,7 @@ const effects = {
     animations: {},
     tools: {
         clearFix: css`
-            &:after {
+            &::after {
                 content: '';
                 display: block;
                 clear: both;
