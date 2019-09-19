@@ -8,3 +8,5 @@ The GitBook is an open white paper explaining the conceptual ideas for applying 
 This repository contains the basic structure, architecture and setup for building React.js applications following the principles explained in the book.
 
 see also https://github.com/genlabss/bioop
+
+Licence: MIT
