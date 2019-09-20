@@ -30,7 +30,7 @@ const DocumentStyled = styled('div').attrs(props => ({
 
     height: ${props => (props.dna.set.viewport === 'viewport' ? '100vh' : '100%')};
     width: ${props => (props.dna.set.viewport === 'viewport' ? '100vw' : '100%')};
-    overflow: ${props => (props.dna.set.viewport === 'viewport' ? 'hidden' : 'scroll')};
+    overflow: ${props => (props.dna.set.viewport === 'viewport' ? 'hidden' : 'auto')};
 `
 DocumentStyled.defaultProps = {}
 
@@ -51,7 +51,7 @@ export default function Document(props) {
 
     console.log('RENDER DOCUMENT')
     return (
-        <DocumentStyled meta={props.meta} dna={props.dna} own={{global: props.global}}>
+        <DocumentStyled meta={props.meta} dna={props.dna} context={{}} own={{global: props.global}}>
             <Layer id="layout">{props.children}</Layer>
             <Layer id="modal" modals={{}} />
             <Layer id="takeover" takeovers={{}} />

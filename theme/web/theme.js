@@ -17,14 +17,28 @@ const design = {
             colors: css``,
             effects: css``,
             typography: css``,
-            Global: {
-                themeBase: css`
-                    position: relative;
-                    .PageSection__content {
-                        position: relative;
-                        
+            global: {
+                Global: {
+                    variants: {
+                        default: css`
+                            position: absolute;
+
+                            .PageSection__content {
+                                position: relative;
+                            }
+                        `
+                    },
+                    context: {
+                        screenSize: {},
+                        regionSize: {},
+                        region: {},
+                        taxonomy: {
+                            product: css`
+                                position: fixed;
+                            `
+                        }
                     }
-                `
+                }
             }
         }
     },
@@ -39,12 +53,12 @@ const design = {
             },
             layouts: {
                 PageSection: {
-                    variant: {
+                    variants: {
                         default: Global,
-                        blogPost: Global,
-                        homeBenefits: css``,
-                        homeBenefitsItem: css``,
-                        homeHero: css``
+                        asBlogPost: Global,
+                        asHomeBenefits: css``,
+                        asHomeBenefitsItem: css``,
+                        asHomeHero: css``
                     },
                     context: {
                         taxonomy: {
@@ -75,32 +89,64 @@ const design = {
             colors: css``,
             effects: css``,
             typography: css``,
-            PersonList: css`
-
-            `,
-            Document: css`
-                    .Region {
-                        &.header {
-                            transition: background-color 3s;
+            PersonList: css``,
+            documents: {
+                Document: {
+                    variants: {
+                        default: css`
+                            .Region {
+                                &.header {
+                                    transition: background-color 3s;
+                                }
+                            }
+                        `,
+                        asBlogPost: Global,
+                        asHomeBenefits: css``,
+                        asHomeBenefitsItem: css``,
+                        asHomeHero: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {
+                            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": css``
+                        },
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
                         }
                     }
-                `
+                }
             }
         }
-
+    }
 }
 
 function CSS(props) {
-    if (props.meta['@theme']) {
-        if (typeof props.meta['@theme'] === 'string') {
-            if (get(props.theme.design, props.meta['@theme'][0]) !== '`') {
-                return get(props.theme.design, props.meta['@theme'])
-            } else {
-                return get(props.theme.design, eval(props.meta['@theme']))
-            }
-        } else {
-            return props.meta['@theme'].map(theme => get(props.theme.design, theme[0] !== '`' ? theme : eval(theme)))
-        }
+    const metaTheme = props.meta['@theme'] || props.meta['@registry']
+    console.log('@THEME', metaTheme)
+
+    const variant = (props.dna.ui.theme.design && props.dna.ui.theme.design.variant) || 'default'
+    const themePrefix = metaTheme.split('].')
+    const themeSuffix = themePrefix[1].split('.')
+    const design = props.theme.design[themePrefix[0].slice(2, -1)][themeSuffix[0]][themeSuffix[1]][themeSuffix[2]]
+
+    if (design && design.variants) {
+
+        return [
+            design.variants[variant],
+            design.context.taxonomy[props.context.taxonomy] || '',
+            design.context.region[props.context.region] || '',
+            design.context.regionSize[props.context.regionSize] || '',
+            design.context.screenSize[props.context.screenSize] || ''
+        ]
     }
 }
 

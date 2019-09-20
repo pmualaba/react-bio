@@ -14,7 +14,7 @@
                 "meta": {
                     "@dna": "['package.core.global'].web.global",
                     "@registry": "['package.core.global'].web.Global",
-                    "@theme": ["`['package.core.global'].web.Global.${props.dna.set.defaultSkin}`"],
+                    "@theme": "['package.core.global'].web.global.Global",
                     "name": "global",
                     "class": "Global",
                     "kind": "global"
@@ -49,7 +49,7 @@
                     "meta": {
                         "@dna": "['package.core.cms'].web.documents.home",
                         "@registry": "['package.core.ui'].web.documents.Document",
-                        "@theme": "['package.core.cms'].web.Document",
+                        "@theme": "['package.core.cms'].web.documents.Document",
                         "name": "home",
                         "class": "Document",
                         "kind": "document"
@@ -63,7 +63,7 @@
                                     "param": "value"
                                 },
                                 "design": {
-                                    "variant":"asImageSlider"
+                                    "variant": "asImageSlider"
                                 },
                                 "skin": {
                                     "variant": "themeVariantDefault",
@@ -1329,7 +1329,7 @@
                         "2019-08-28T06:55:21+00:00" : {
                             "meta": {
                                 "@registry": "['package.core.ui'].web.documents.Document",
-                                "@theme": "['package.core.cms'].web.Document"
+                                "@theme": "['package.core.cms'].web.documents.Document"
                             },
                             "props": {
                                 "ui": {

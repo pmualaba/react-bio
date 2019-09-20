@@ -154,7 +154,7 @@ function Global(props) {
             <CSSglobalStyling />
             <ThemeProvider theme={theme(currentSkinName, props.skins)}>
                 <CSSglobalVariables />
-                <GlobalStyledMotion meta={props.meta} dna={props.dna} own={{...props.global, device: useContext(AppContext).device}} animate={{scale: 0.5}}>
+                <GlobalStyledMotion meta={props.meta} dna={props.dna} context={{}} own={{...props.global, device: useContext(AppContext).device}} animate={{scale: 0.5}}>
                     {props.children}
                 </GlobalStyledMotion>
             </ThemeProvider>
