@@ -31,7 +31,7 @@
         "lodash": "^4.17.10",
         "lowdb": "^1.0.0",
         "next": "^9.0.5",
-        "next-redux-wrapper": "^3.0.0",
+        "next-redux-wrapper": "^4.0.0",
         "njwt": "^0.4.0",
         "polished": "^1.9.3",
         "prop-types": "^15.6.2",

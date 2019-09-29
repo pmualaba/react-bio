@@ -94,7 +94,7 @@ export default withRedux(
                     <AppContext.Provider
                         value={{
                             device: this.device,
-                            usr: (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('usr'))) || {},
+                            user: (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('user'))) || {},
                             app: (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('app'))) || {},
                             web: (typeof window !== 'undefined' && JSON.parse(localStorage.getItem('web'))) || {}
                         }}
@@ -164,7 +164,7 @@ export default withRedux(
  *      ctx.pathname: '/templates/package.core.ui/home',
  *      ctx.query: {
  *          url: '/',
- *           locale: 'nl_NL'
+ *          locale: 'nl_NL'
  *      },
  *      ctx.asPath: '/',
  *      ctx.store: {

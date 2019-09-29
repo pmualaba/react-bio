@@ -21,10 +21,10 @@ import Layer from './Layer'
 const DocumentStyled = styled('div').attrs(props => ({
     'data-kind': 'document',
     'data-component': `${props.meta.class}`,
-    'data-registry': `${props.meta['@registry']}`,
+    'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.finish.style,
-    className: `${props.meta.class} ${props.dna.ui.theme.finish.class ? props.dna.ui.theme.finish.class : ''}`
+    style: props.dna.ui.theme.ornateStyle,
+    className: `${props.meta.class} ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
 }))`
     ${props => props.theme.CSS(props)};
 

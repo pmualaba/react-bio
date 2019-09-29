@@ -1,22 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, {createGlobalStyle} from 'styled-components'
+import styled from 'styled-components'
 import Region from '../Region'
-
-const CustomLayoutStyledContext = createGlobalStyle`
-    body .Region {
-        font-size: 2rem;
-        color: red;
-    }      
-`
 
 const CustomLayoutStyled = styled('div').attrs(props => ({
     'data-kind': 'layout',
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
-    'data-registry': `${props.meta['@registry']}`,
+    'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.finish.style,
-    className: `${props.dna.set.renderLayout} ${props.dna.ui.theme.finish.class ? props.dna.ui.theme.finish.class : ''}`
+    style: props.dna.ui.theme.ornateStyle,
+    className: `${props.dna.set.renderLayout} ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
 }))`
     .Region {
         padding: 100px;
@@ -37,7 +30,6 @@ function CustomLayout(props) {
             <Region meta={props.meta} region="footer">
                 Footer
             </Region>
-            <CustomLayoutStyledContext />
         </CustomLayoutStyled>
     )
 }

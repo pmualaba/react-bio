@@ -27,7 +27,6 @@ const user = {
 }
 
 const globalReducer = (state = user, action) => {
-    console.log('ACTION', action)
 
     switch (action.type) {
         case ActionTypes.SET_AUTHENTICATED_USER:

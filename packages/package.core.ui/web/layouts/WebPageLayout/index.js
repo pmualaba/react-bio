@@ -13,9 +13,9 @@ const WebPageLayoutStyledContext = createGlobalStyle`
 const WebPageLayoutStyled = styled('div').attrs(props => ({
     'data-kind': 'layout',
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
-    'data-registry': `${props.meta['@registry']}`,
+    'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui.theme.finish.class ? props.dna.ui.theme.finish.class : ''}`
+    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
 }))`
     width: 100%;
     height: 100%;
@@ -61,7 +61,7 @@ const WebPageLayoutStyled = styled('div').attrs(props => ({
 `
 
 function WebPageLayout(props) {
-    console.log('WebPageLayout render()', props)
+   // console.log('WebPageLayout render()', props)
     return (
         <WebPageLayoutStyled meta={props.meta} dna={props.dna}>
             <Region meta={props.meta} region="header">

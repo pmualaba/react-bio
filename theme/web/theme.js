@@ -1,5 +1,4 @@
 import {css} from 'styled-components'
-import {get} from 'lodash'
 
 import typography from './css-typography'
 import colors from './css-colors'
@@ -130,7 +129,7 @@ const design = {
 }
 
 function CSS(props) {
-    const metaTheme = props.meta['@theme'] || props.meta['@registry']
+    const metaTheme = props.meta['@theme'] || props.meta['@component']
     console.log('@THEME', metaTheme)
 
     const variant = (props.dna.ui.theme.design && props.dna.ui.theme.design.variant) || 'default'
@@ -139,7 +138,7 @@ function CSS(props) {
     const design = props.theme.design[themePrefix[0].slice(2, -1)][themeSuffix[0]][themeSuffix[1]][themeSuffix[2]]
 
     if (design && design.variants) {
-
+        props.context.taxonomy = 'product'
         return [
             design.variants[variant],
             design.context.taxonomy[props.context.taxonomy] || '',

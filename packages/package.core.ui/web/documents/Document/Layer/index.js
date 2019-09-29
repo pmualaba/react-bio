@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Layer = props => {
-    // console.log('Layer props', props)
     switch (props.id) {
         case 'layout':
             return (
@@ -30,9 +29,7 @@ const Layer = props => {
 
 Layer.propTypes = {
     id: PropTypes.string.isRequired,
-    children: PropTypes.element,
-    notifications: PropTypes.objectOf(PropTypes.any),
-    dom: PropTypes.objectOf(PropTypes.any)
+    children: PropTypes.element
 }
 
 Layer.defaultProps = {}

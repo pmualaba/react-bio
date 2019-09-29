@@ -33,15 +33,15 @@ import CSSglobalVariablesHOC from '../../../../../theme/web/css-global-variables
  * Styled Component
  */
 
-export const GlobalStyledMotion = styled('div').attrs(props => {
+export const GlobalStyled = styled('div').attrs(props => {
     console.log('props.context', props.context)
     return {
         'data-kind': 'global',
         'data-component': `${props.meta.class}`,
-        'data-registry': `${props.meta['@registry']}`,
+        'data-registry': `${props.meta['@component']}`,
         'data-dna': `${props.meta['@dna']}`,
-        style: props.dna.ui.theme.finish.style,
-        className: `${props.meta.class} ${props.dna.ui.theme.finish.class ? props.dna.ui.theme.finish.class : ''}`
+        style: props.dna.ui.theme.ornateStyle,
+        className: `${props.meta.class} ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
     }
 })`
     ${props => props.theme.CSS(props)};
@@ -154,9 +154,9 @@ function Global(props) {
             <CSSglobalStyling />
             <ThemeProvider theme={theme(currentSkinName, props.skins)}>
                 <CSSglobalVariables />
-                <GlobalStyledMotion meta={props.meta} dna={props.dna} context={{}} own={{...props.global, device: useContext(AppContext).device}} animate={{scale: 0.5}}>
+                <GlobalStyled meta={props.meta} as={motion.div} dna={props.dna} context={{}} own={{...props.global, device: useContext(AppContext).device}} animate={{scale: 0.5}}>
                     {props.children}
-                </GlobalStyledMotion>
+                </GlobalStyled>
             </ThemeProvider>
         </GlobalContext.Provider>
     )

@@ -4,7 +4,7 @@ import registry from '../../../../../dna/registry.web'
 import {get} from 'lodash'
 
 const RenderLayout = props => {
-    const LayoutComponent = get(registry, props.meta['@registry'].replace('RenderLayout', props.dna.set.renderLayout))
+    const LayoutComponent = get(registry, props.meta['@component'].replace('RenderLayout', props.dna.set.renderLayout))
     return <LayoutComponent meta={props.meta} dna={props.dna} />
 }
 

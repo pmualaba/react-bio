@@ -1,6 +1,6 @@
 import {createLogic} from 'redux-logic'
 import FSA, * as ActionTypes from './actions'
-import * as dbActionTypes from './../../../../package.core.db/db/actions'
+import * as dbActionTypes from './../../../../package.core.data/db/actions'
 
 const onCellUpdate = createLogic({
     type: ActionTypes.ON_CELL_UPDATE,

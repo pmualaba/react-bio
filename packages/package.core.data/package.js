@@ -1,4 +1,4 @@
-const name = 'package.core.db'
+const name = 'package.core.data'
 const version = '1.0.0'
 const description = 'This package provides core database services.'
 const keywords = []

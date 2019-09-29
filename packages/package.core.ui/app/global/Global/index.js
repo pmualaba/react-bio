@@ -36,9 +36,9 @@ import CSSglobalVariablesHOC from '../../../../../theme/app/css-global-variables
 export const GlobalStyledMotion = styled('div').attrs(props => ({
     'data-kind': 'global',
     'data-component': `${props.meta.class}`,
-    'data-registry': `${props.meta['@registry']}`,
+    'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.meta.class} ${props.dna.ui.theme.finish.class}`
+    className: `${props.meta.class} ${props.dna.ui.theme.ornateClass}`
 }))`
     ${props => props.theme.CSS(props)};
 `

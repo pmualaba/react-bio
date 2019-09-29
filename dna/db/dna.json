@@ -13,7 +13,7 @@
             "global": {
                 "meta": {
                     "@dna": "['package.core.global'].web.global",
-                    "@registry": "['package.core.global'].web.Global",
+                    "@component": "['package.core.global'].web.Global",
                     "@theme": "['package.core.global'].web.global.Global",
                     "name": "global",
                     "class": "Global",
@@ -22,12 +22,77 @@
                 "props": {
                     "ui": {
                         "theme": {
-                            "finish": {}
+                            "ornateStyle": {}
                         }
                     },
                     "set": {
                         "defaultSkin": "themeBase",
                         "defaultSkinVariant": "themeVariantDefault"
+                    }
+                }
+            }
+        },
+        "semantics": {
+            "roles": {
+                "common": {
+                    "navigation": {
+                        "main": "common.navigation.main",
+                        "secondary": "common.navigation.secondary",
+                        "doormat": "common.navigation.doormat"
+                    },
+                    "header": {
+                        "top": "common.header.top",
+                        "secondary": "common.hero.secondary"
+                    },
+                    "hero": {
+                        "primary": "common.hero.primary",
+                        "secondary": "common.hero.secondary",
+                        "slider": "common.hero.slider",
+                        "image": "common.hero.image"
+                    },
+                    "highlight": {
+                        "topTopical": "common.highlight.topTopical"
+                    },
+                    "footer": {
+                        "doormat": "common.footer.doormat",
+                        "bottom": "common.footer.bottom"
+                    },
+                    "legal": {
+                        "gdpr": "common.legal.gdpr"
+                    },
+                    "media": {
+                        "photoGallery": "common.media.photoGallery",
+                        "videoGallery": "common.media.videoGallery",
+                        "mediaGallery": "common.media.mediaGallery",
+                        "masonryGallery": "common.media.masonryGallery"
+                    }
+                },
+                "presentation": {},
+                "decoration": {
+                    "logo": "decoration.logo"
+                },
+                "layout": {},
+                "engagement": {
+                    "stories": {
+                        "slider": "engagement.stories.slider",
+                        "story": "engagement.stories.story"
+                    },
+                    "cta": {
+                        "newsletterSubscription": "engagement.cta.newsletterSubscription"
+                    }
+                },
+                "personalization": {
+                    "recommended": {
+                        "products": "personalization.recommended.products",
+                        "videos": "personalization.recommended.videos",
+                        "content": "personalization.recommended.content"
+                    }
+                },
+                "commercial": {},
+                "interaction": {},
+                "tracking": {
+                    "google": {
+                        "gtm": "tracking.google.gtm"
                     }
                 }
             }
@@ -48,36 +113,41 @@
                 "home": {
                     "meta": {
                         "@dna": "['package.core.cms'].web.documents.home",
-                        "@registry": "['package.core.ui'].web.documents.Document",
+                        "@component": "['package.core.ui'].web.documents.Document",
                         "@theme": "['package.core.cms'].web.documents.Document",
                         "name": "home",
                         "class": "Document",
                         "kind": "document"
                     },
                     "props": {
-                        "data": {},
-                        "ui": {
-                            "theme": {
-                                "model": {
-                                    "variant": "scrollContainer",
-                                    "param": "value"
-                                },
-                                "design": {
-                                    "variant": "asImageSlider"
-                                },
-                                "skin": {
-                                    "variant": "themeVariantDefault",
-                                    "tone": "dimensionVariantDefault",
-                                    "typography": "sans",
-                                    "spacial": "compact",
-                                    "motion": "smooth"
-                                },
-                                "finish": {
-                                    "class": "home",
-                                    "style": {
-
+                        "actions": [
+                            {
+                                "type": "GET_CONTENT_PAGE",
+                                "payload": {
+                                    "params": {
+                                        "url": "ctx.query"
                                     }
+                                },
+                                "error": false,
+                                "meta": {
+                                    "package": "package.core.cms"
                                 }
+                            },
+                            {
+                                "type": "GET_ARTICLES",
+                                "payload": {
+                                    "params": {}
+                                },
+                                "error": false,
+                                "meta": {
+                                    "package": "package.core.cms"
+                                }
+                            }
+                        ],
+                        "data": {
+                            "accessors": {
+                                "body": "actions.GET_CONTENT_PAGE.result",
+                                "stories": "actions.GET_ARTICLES.result"
                             }
                         },
                         "set": {
@@ -88,52 +158,170 @@
                                 "template": "package.core.cms/web/home",
                                 "authenticated": false
                             }
+                        },
+                        "ui": {
+                            "theme": {
+                                "modelVariant": "scrollContainer",
+                                "modelParams": {},
+                                "designVariant": "asScrollContainer",
+                                "skinVariant": "themeVariantDefault",
+                                "skinTone": "dimensionVariantDefault",
+                                "skinTypography": "sans",
+                                "skinSpacial": "compact",
+                                "skinMotion": "smooth",
+                                "ornateClass": "home",
+                                "ornateStyle": {}
+                            }
                         }
                     },
-                    "layouts": {
-                        "documentLayout": {
+                    "layouts": [
+                        {
                             "meta": {
-                                "@dna": "['package.core.cms'].web.documents.home.layouts.documentLayout",
-                                "@registry": "['package.core.ui'].web.layouts.RenderLayout",
-                                "id": "d0ce233592004ada8edbca237015cc3a",
+                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout]",
+                                "@component": "['package.core.ui'].web.layouts.RenderLayout",
                                 "name": "documentLayout",
                                 "class": "RenderLayout",
                                 "kind": "layout"
                             },
                             "props": {
+                                "set": {
+                                    "renderLayout": "WebPageLayout",
+                                    "boxCollapse": false
+                                },
                                 "ui": {
                                     "theme": {
-                                        "finish": {
-                                            "style": {
-                                                "display": "flex",
-                                                "flexDirection": "column",
-                                                "width": "100%",
-                                                "minHeight": "fit-content"
-                                            }
+                                        "ornateStyle": {
+                                            "display": "flex",
+                                            "flexDirection": "column",
+                                            "width": "100%",
+                                            "minHeight": "fit-content"
                                         }
                                     }
-                                },
-                                "set": {
-                                    "renderLayout": "CustomLayout",
-                                    "regions": [
-                                        {
-                                            "name": "page",
-                                            "position": "center",
-                                            "index": 0,
-                                            "actions": {},
-                                            "controls": {}
-                                        }
-                                    ]
                                 }
                             },
-                            "regions": {
-                                "main": {
-                                    "blocks": {
-                                        "PersonList": {
+                            "regions": [
+                                {
+                                    "meta": {
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[1:header]",
+                                        "@component": "['package.core.cms'].web.blocks.WebPageHeader",
+                                        "name": "header",
+                                        "class": "Region",
+                                        "kind": "region"
+                                    },
+                                    "props": {
+                                        "data": {
+                                            "accessors": {
+                                                "site": "document.site"
+                                            }
+                                        },
+                                        "set": {
+                                            "position": "center",
+                                            "actions": {},
+                                            "controls": {},
+                                            "layout": {
+                                                "display": "flex"
+                                            }
+                                        }
+                                    },
+                                    "blocks": [
+                                        {
                                             "meta": {
-                                                "@dna": "['package.core.identity'].web.documents.home.layouts.BaseLayout.regions.main.blocks.PersonList",
-                                                "@registry": "['package.core.ui'].app.blocks.tables.GridTable",
-                                                "id": "b5a330997d8840ff855219d3fc56ca95",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[1:header].blocks[1:WebPageHeader]",
+                                                "@component": "['package.core.cms'].web.blocks.WebPageHeader",
+                                                "name": "WebPageHeader",
+                                                "class": "WebPageHeader",
+                                                "kind": "block"
+                                            },
+                                            "props": {
+                                                "data": {
+                                                },
+                                                "set": {
+                                                },
+                                                "ui": {
+                                                    "theme": {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "meta": {
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[2:body]",
+                                        "@component": "['package.core.cms'].web.layouts.Region",
+                                        "name": "body",
+                                        "class": "Region",
+                                        "kind": "region"
+                                    },
+                                    "props": {
+                                        "data": {
+                                            "accessors": {
+                                                "body": "document.body"
+                                            }
+                                        },
+                                        "set": {
+                                            "position": "center",
+                                            "actions": {},
+                                            "controls": {},
+                                            "layout": {
+                                                "display": "flex"
+                                            }
+                                        }
+                                    },
+                                    "blocks": [
+                                        {
+                                            "meta": {
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[2:body].blocks[1:WebPageHeader]",
+                                                "@component": "['package.core.cms'].web.blocks.WebPageBody",
+                                                "name": "WebPageBody",
+                                                "class": "WebPageBody",
+                                                "kind": "block"
+                                            },
+                                            "props": {
+                                                "data": {
+                                                    "accessors": {
+                                                        "body": "region.body"
+                                                    }
+                                                },
+                                                "set": {
+                                                },
+                                                "ui": {
+                                                    "theme": {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "meta": {
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[3:main]",
+                                        "@component": "['package.core.ui'].web.layouts.Region",
+                                        "name": "main",
+                                        "class": "Region",
+                                        "kind": "region"
+                                    },
+                                    "props": {
+                                        "data": {
+                                            "selectors": "PersonList",
+                                            "accessors": {
+                                                "identities": "document.identities"
+                                            }
+                                        },
+                                        "set": {
+                                            "position": "center",
+                                            "actions": {},
+                                            "controls": {},
+                                            "layout": {
+                                                "display": "flex"
+                                            }
+                                        }
+                                    },
+                                    "blocks": [
+                                        {
+                                            "meta": {
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[3:main].blocks[1:PersonList]",
+                                                "@component": "['package.core.ui'].app.blocks.tables.GridTable",
                                                 "name": "PersonList",
                                                 "class": "PersonList",
                                                 "kind": "block"
@@ -141,17 +329,8 @@
                                             "props": {
                                                 "data": {
                                                     "selector": "PersonList",
-                                                    "accessor": "db.collections['package.core.identity'].Identity.all",
-                                                    "instanceType": "package.core.identity:Identity"
-                                                },
-                                                "ui": {
-                                                    "theme": {
-                                                        "finish": {
-                                                            "style": {
-                                                                "width": 100,
-                                                                "minHeight": "fit-content"
-                                                            }
-                                                        }
+                                                    "accessors": {
+                                                        "rows": "region.identities"
                                                     }
                                                 },
                                                 "set": {
@@ -173,7 +352,7 @@
                                                             "cell": {
                                                                 "meta": {
                                                                     "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
-                                                                    "@registry": "['package.core.ui'].app.cells.TextInputCell",
+                                                                    "@component": "['package.core.ui'].app.cells.TextInputCell",
                                                                     "kind": "cell"
                                                                 },
                                                                 "props": {
@@ -184,11 +363,9 @@
                                                                     },
                                                                     "ui": {
                                                                         "theme": {
-                                                                            "finish": {
-                                                                                "style": {
-                                                                                    "width": 100,
-                                                                                    "minHeight": "fit-content"
-                                                                                }
+                                                                            "ornateStyle": {
+                                                                                "width": 100,
+                                                                                "minHeight": "fit-content"
                                                                             }
                                                                         }
                                                                     },
@@ -229,7 +406,7 @@
                                                                                         },
                                                                                         "props": {
                                                                                             "data": {
-                                                                                                "accessor": {
+                                                                                                "accessors": {
                                                                                                     "selection": "customers.avatar",
                                                                                                     "label": "customers.label"
                                                                                                 }
@@ -296,10 +473,15 @@
                                                                         "clickAction": ""
                                                                     }
                                                                 },
-                                                                "styling": {
-                                                                    "className": "",
-                                                                    "width": 100,
-                                                                    "minHeight": "fit-content"
+                                                                "props": {
+                                                                    "ui": {
+                                                                        "theme": {
+                                                                            "ornateStyle": {
+                                                                                "width": 100,
+                                                                                "minHeight": "fit-content"
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 },
                                                                 "components": [
                                                                     {
@@ -394,10 +576,15 @@
                                                                         "clickAction": ""
                                                                     }
                                                                 },
-                                                                "styling": {
-                                                                    "className": "",
-                                                                    "width": 100,
-                                                                    "minHeight": "fit-content"
+                                                                "props": {
+                                                                    "ui": {
+                                                                        "theme": {
+                                                                            "ornateStyle": {
+                                                                                "width": 100,
+                                                                                "minHeight": "fit-content"
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 },
                                                                 "components": [
                                                                     {
@@ -718,644 +905,68 @@
                                                             }
                                                         }
                                                     ]
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "layouts": {
-                                        "main": {
-                                            "meta": {
-                                                "id": "f3e5fbf5a4304b31a837615817919a69",
-                                                "name": "OneRegionLayout",
-                                                "componentType": "BioComponent",
-                                                "componentClass": "OneRegionLayout",
-                                                "componentLevel": "layout"
-                                            },
-                                            "regions": {
-                                                "main": {
-                                                    "position": "center",
-                                                    "blocks": {
-                                                        "GridTable.PersonList": {
-                                                            "meta": {
-                                                                "id": "1ce016406df24c32ba5a3d5b6084191f",
-                                                                "name": "GridTable.PersonList",
-                                                                "instanceType": "package.core.identity:Identity",
-                                                                "componentClass": "GridTable",
-                                                                "componentLevel": "block"
-                                                            },
-                                                            "config": {
-                                                                "tableId": "CustomerList",
-                                                                "tableName": "Klanten",
-                                                                "tableName_nl_NL": "Klanten",
-                                                                "tableName_fr_FR": "Clients",
-                                                                "tableName_en_GB": "Customers",
-                                                                "columns": [
-                                                                    {
-                                                                        "name": "Voornaam",
-                                                                        "name_nl_NL": "Voornaam",
-                                                                        "name_fr_FR": "Prénom",
-                                                                        "name_en_GB": "Firstname",
-                                                                        "filterComponentName": "SelectIconCell",
-                                                                        "filterComponentProps": {
-                                                                            "iconType": "img"
-                                                                        },
-                                                                        "cell": {
-                                                                            "@dna": "personListGridTable",
-                                                                            "instanceType": "package.core.identity:Identity",
-                                                                            "style": {
-                                                                                "className": "",
-                                                                                "width": 100,
-                                                                                "minHeight": "fit-content"
-                                                                            },
-                                                                            "options": {
-                                                                                "operationMode": "basic",
-                                                                                "updateMode": "SKIP_REALISTIC",
-                                                                                "isLocalized": true,
-                                                                                "clickable": true,
-                                                                                "clickAction": ""
-                                                                            },
-                                                                            "components": [
-                                                                                {
-                                                                                    "db": {
-                                                                                        "dataKey": "firstName",
-                                                                                        "type": "package.core.identity:Identity",
-                                                                                        "validation": "string|1|*|range|style|default"
-                                                                                    },
-                                                                                    "ui": {
-                                                                                        "cellComponent": {
-                                                                                            "componentName": "TextInputCell",
-                                                                                            "componentKeys": {
-                                                                                                "label": "customers.label",
-                                                                                                "iconInitials": "fullName"
-                                                                                            },
-                                                                                            "componentProps": {}
-                                                                                        },
-                                                                                        "dependencies": [
-                                                                                            {
-                                                                                                "dependentOn": "name",
-                                                                                                "dependencyType": "validation",
-                                                                                                "dependencyResolver": "reveal",
-                                                                                                "dependencyPayload": {}
-                                                                                            }
-                                                                                        ],
-                                                                                        "elementComponent": {
-                                                                                            "componentName": "CellElement",
-                                                                                            "componentProps": {
-                                                                                                "dropdownDefaultOpen": true
-                                                                                            },
-                                                                                            "optionComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentKeys": {
-                                                                                                        "label": "customers.label"
-                                                                                                    },
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ],
-                                                                                            "valueComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "Familie Naam",
-                                                                        "name_nl_NL": "Naam",
-                                                                        "name_fr_FR": "Nom",
-                                                                        "name_en_GB": "Last name",
-                                                                        "cell": {
-                                                                            "meta": {
-                                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
-                                                                                "instanceType": "package.core.identity:Identity",
-                                                                                "options": {
-                                                                                    "operationMode": "basic",
-                                                                                    "updateMode": "SKIP_REALISTIC",
-                                                                                    "isLocalized": true,
-                                                                                    "clickable": true,
-                                                                                    "clickAction": ""
-                                                                                }
-                                                                            },
-                                                                            "styling": {
-                                                                                "className": "",
-                                                                                "width": 100,
-                                                                                "minHeight": "fit-content"
-                                                                            },
-                                                                            "components": [
-                                                                                {
-                                                                                    "db": {
-                                                                                        "dataKey": "lastName",
-                                                                                        "type": "package.core.identity:Identity",
-                                                                                        "validation": "string|*|range|style|default"
-                                                                                    },
-                                                                                    "ui": {
-                                                                                        "cellComponent": {
-                                                                                            "componentName": "TextInputCell",
-                                                                                            "componentProps": {}
-                                                                                        },
-                                                                                        "dependencies": [
-                                                                                            {
-                                                                                                "dependentOn": "name",
-                                                                                                "dependencyType": "validation",
-                                                                                                "dependencyResolver": "reveal",
-                                                                                                "dependencyPayload": {}
-                                                                                            }
-                                                                                        ],
-                                                                                        "elementComponent": {
-                                                                                            "componentName": "CellElement",
-                                                                                            "componentProps": {
-                                                                                                "dropdownDefaultOpen": true
-                                                                                            },
-                                                                                            "optionComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentKeys": {
-                                                                                                        "label": "customers.label"
-                                                                                                    },
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ],
-                                                                                            "valueComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "Naam",
-                                                                        "name_nl_NL": "Email",
-                                                                        "name_fr_FR": "Email",
-                                                                        "name_en_GB": "Email",
-                                                                        "cell": {
-                                                                            "meta": {
-                                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
-                                                                                "instanceType": "package.core.identity:Identity",
-                                                                                "options": {
-                                                                                    "operationMode": "basic",
-                                                                                    "updateMode": "SKIP_REALISTIC",
-                                                                                    "isLocalized": true,
-                                                                                    "clickable": true,
-                                                                                    "clickAction": ""
-                                                                                }
-                                                                            },
-                                                                            "styling": {
-                                                                                "className": "",
-                                                                                "width": 100,
-                                                                                "minHeight": "fit-content"
-                                                                            },
-                                                                            "components": [
-                                                                                {
-                                                                                    "db": {
-                                                                                        "dataKey": "name",
-                                                                                        "type": "package.core.identity:Identity",
-                                                                                        "validation": "string|*|range|style|default"
-                                                                                    },
-                                                                                    "ui": {
-                                                                                        "cellComponent": {
-                                                                                            "componentName": "TextInputCell",
-                                                                                            "componentProps": {}
-                                                                                        },
-                                                                                        "dependencies": [
-                                                                                            {
-                                                                                                "dependentOn": "name",
-                                                                                                "dependencyType": "validation",
-                                                                                                "dependencyResolver": "reveal",
-                                                                                                "dependencyPayload": {}
-                                                                                            }
-                                                                                        ],
-                                                                                        "elementComponent": {
-                                                                                            "componentName": "CellElement",
-                                                                                            "componentProps": {
-                                                                                                "dropdownDefaultOpen": true
-                                                                                            },
-                                                                                            "optionComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentKeys": {
-                                                                                                        "label": "customers.label"
-                                                                                                    },
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ],
-                                                                                            "valueComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    },
-                                                                    {
-                                                                        "name": "Adres",
-                                                                        "name_nl_NL": "Telefoon",
-                                                                        "name_fr_FR": "Téléphone",
-                                                                        "name_en_GB": "Phone",
-                                                                        "cell": {
-                                                                            "meta": {
-                                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.blocks.GridTable.PersonList.cell",
-                                                                                "instanceType": "package.core.identity:Identity",
-                                                                                "options": {
-                                                                                    "operationMode": "basic",
-                                                                                    "updateMode": "SKIP_REALISTIC",
-                                                                                    "isLocalized": true,
-                                                                                    "clickable": true,
-                                                                                    "clickAction": ""
-                                                                                }
-                                                                            },
-                                                                            "components": [
-                                                                                {
-                                                                                    "db": {
-                                                                                        "dataKey": "hasHomeAddressGeoLocation.street",
-                                                                                        "type": "package.core.identity:GeoLocation",
-                                                                                        "validation": "string|*|*|range|style|default"
-                                                                                    },
-                                                                                    "ui": {
-                                                                                        "cellComponent": {
-                                                                                            "componentName": "TextInputCell",
-                                                                                            "componentProps": {}
-                                                                                        },
-                                                                                        "dependencies": [
-                                                                                            {
-                                                                                                "dependentOn": "name",
-                                                                                                "dependencyType": "validation",
-                                                                                                "dependencyResolver": "reveal",
-                                                                                                "dependencyPayload": {}
-                                                                                            }
-                                                                                        ],
-                                                                                        "elementComponent": {
-                                                                                            "componentName": "CellElement",
-                                                                                            "componentProps": {
-                                                                                                "dropdownDefaultOpen": true
-                                                                                            },
-                                                                                            "optionComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentKeys": {
-                                                                                                        "label": "customers.label"
-                                                                                                    },
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ],
-                                                                                            "valueComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    }
-                                                                                },
-                                                                                {
-                                                                                    "db": {
-                                                                                        "dataKey": "hasHomeAddressGeoLocation.zipCode",
-                                                                                        "type": "package.core.identity:GeoLocation",
-                                                                                        "validation": "string|*|range|style|default"
-                                                                                    },
-                                                                                    "ui": {
-                                                                                        "cellComponent": {
-                                                                                            "componentName": "TextInputCell",
-                                                                                            "componentProps": {}
-                                                                                        },
-                                                                                        "dependencies": [
-                                                                                            {
-                                                                                                "dependentOn": "name",
-                                                                                                "dependencyType": "validation",
-                                                                                                "dependencyResolver": "reveal",
-                                                                                                "dependencyPayload": {}
-                                                                                            }
-                                                                                        ],
-                                                                                        "elementComponent": {
-                                                                                            "componentName": "CellElement",
-                                                                                            "componentProps": {
-                                                                                                "dropdownDefaultOpen": true
-                                                                                            },
-                                                                                            "optionComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentKeys": {
-                                                                                                        "label": "customers.label"
-                                                                                                    },
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ],
-                                                                                            "valueComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    }
-                                                                                },
-                                                                                {
-                                                                                    "db": {
-                                                                                        "dataKey": "hasHomeAddressGeoLocation.city",
-                                                                                        "type": "package.core.identity:GeoLocation",
-                                                                                        "validation": "string|*|range|style|default"
-                                                                                    },
-                                                                                    "ui": {
-                                                                                        "cellComponent": {
-                                                                                            "componentName": "TextInputCell",
-                                                                                            "componentProps": {}
-                                                                                        },
-                                                                                        "dependencies": [
-                                                                                            {
-                                                                                                "dependentOn": "name",
-                                                                                                "dependencyType": "validation",
-                                                                                                "dependencyResolver": "reveal",
-                                                                                                "dependencyPayload": {}
-                                                                                            }
-                                                                                        ],
-                                                                                        "elementComponent": {
-                                                                                            "componentName": "CellElement",
-                                                                                            "componentProps": {
-                                                                                                "dropdownDefaultOpen": true
-                                                                                            },
-                                                                                            "optionComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentKeys": {
-                                                                                                        "label": "customers.label"
-                                                                                                    },
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ],
-                                                                                            "valueComponents": [
-                                                                                                {
-                                                                                                    "selectionKey": "customers.avatar",
-                                                                                                    "componentName": "IconElement",
-                                                                                                    "componentProps": {
-                                                                                                        "iconType": "svg"
-                                                                                                    }
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.name",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                },
-                                                                                                {
-                                                                                                    "selectionKey": "customers.email",
-                                                                                                    "componentName": "TextElement",
-                                                                                                    "componentProps": {},
-                                                                                                    "isLocalized": false
-                                                                                                }
-                                                                                            ]
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    }
-                                                                ]
-                                                            }
-                                                        }
-                                                    },
-                                                    "layouts": {
-                                                        "main": {
-                                                            "meta": {
-                                                                "id": "2130f5eb630d455d849cb4a2c215f7fc",
-                                                                "@dna": "package.core.identity.documents.home.layouts.BaseLayout.regions.main.layouts.main.regions.main.layouts.main",
-                                                                "name": "OneRegionLayout",
-                                                                "componentClass": "OneRegionLayout",
-                                                                "componentLevel": "layout"
-                                                            },
-                                                            "styling": {},
-                                                            "regions": {}
+                                                },
+                                                "ui": {
+                                                    "theme": {
+                                                        "ornateStyle": {
+                                                            "width": 100,
+                                                            "minHeight": "fit-content"
                                                         }
                                                     }
                                                 }
                                             }
-                                        }
-                                    },
-                                    "compositions": {
-                                        "home": {
+                                        },
+                                        {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main.compositions.home",
-                                                "id": "09aac5b688fa4c4eb970a373c403d180",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[3:main].composition[1:PersonList]",
                                                 "name": "PersonList",
                                                 "componentClass": "PersonList",
                                                 "componentLevel": "composition"
                                             },
-                                            "styling": {},
-                                            "componentProps": {}
+                                            "props": {}
                                         }
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         }
-                    },
+                    ],
                     "mutations": {
-                        "2019-08-28T06:55:21+00:00" : {
-                            "meta": {
-                                "@registry": "['package.core.ui'].web.documents.Document",
-                                "@theme": "['package.core.cms'].web.documents.Document"
-                            },
-                            "props": {
-                                "ui": {
-                                    "theme": {
-                                        "model": {
-                                            "variant": "scrollContainer",
-                                            "param": "value"
-                                        },
-                                        "design": {
-                                            "variant":"asImageSlider"
-                                        },
-                                        "skin": {
-                                            "variant": "themeVariantDefault",
-                                            "tone": "dimensionVariantDefault",
-                                            "typography": "sans",
-                                            "spacial": "compact",
-                                            "motion": "smooth"
+                        "inject": {},
+                        "schedule": {
+                            "2019-08-28T06:55:21+00:00": {
+                                "meta": {
+                                    "@component": "['package.core.ui'].web.documents.Document",
+                                    "@theme": "['package.core.cms'].web.documents.Document",
+                                    "kind": "document"
+                                },
+                                "props": {
+                                    "ui": {
+                                        "theme": {
+                                            "model": {
+                                                "variant": "scrollContainer",
+                                                "param": "value"
+                                            },
+                                            "design": {
+                                                "variant": "asImageSlider"
+                                            },
+                                            "skin": {
+                                                "variant": "themeVariantDefault",
+                                                "tone": "dimensionVariantDefault",
+                                                "typography": "sans",
+                                                "spacial": "compact",
+                                                "motion": "smooth"
+                                            }
                                         }
                                     }
-                                }
-                            },
-                            "layouts": {}
+                                },
+                                "layouts": []
+                            }
                         }
                     }
                 }
             }
+        },
+        "genes": {
         }
     }
 }

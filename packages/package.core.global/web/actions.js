@@ -10,6 +10,7 @@
 export const SET_CURRENT_ROUTE = 'package.core.global/web/Global/SET_CURRENT_ROUTE'
 export const SET_AUTHENTICATED_USER = 'package.core.global/web/Global/SET_AUTHENTICATED_USER'
 export const SET_CURRENT_SKIN = 'package.core.global/web/Global/SET_CURRENT_SKIN'
+export const SET_INITIAL_PROPS = 'package.core.global/web/Global/SET_INITIAL_PROPS'
 
 export const LOAD_LOCAL_STORE = 'package.core.global/web/Global/LOAD_LOCAL_STORE'
 export const PREFETCH_SELECTIONS = 'package.core.global/web/Global/PREFETCH_SELECTIONS'
