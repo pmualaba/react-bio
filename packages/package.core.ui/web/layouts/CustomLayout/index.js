@@ -8,8 +8,8 @@ const CustomLayoutStyled = styled('div').attrs(props => ({
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
     'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.ornateStyle,
-    className: `${props.dna.set.renderLayout} ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
+    style: props.dna.ui.theme.decorateStyle,
+    className: `${props.dna.set.renderLayout} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
 }))`
     .Region {
         padding: 100px;

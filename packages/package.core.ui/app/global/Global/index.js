@@ -38,7 +38,7 @@ export const GlobalStyledMotion = styled('div').attrs(props => ({
     'data-component': `${props.meta.class}`,
     'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.meta.class} ${props.dna.ui.theme.ornateClass}`
+    className: `${props.meta.class} ${props.dna.ui.theme.decorateClass}`
 }))`
     ${props => props.theme.CSS(props)};
 `

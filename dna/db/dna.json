@@ -22,7 +22,7 @@
                 "props": {
                     "ui": {
                         "theme": {
-                            "ornateStyle": {}
+                            "decorateStyle": {}
                         }
                     },
                     "set": {
@@ -128,7 +128,6 @@
                                         "url": "ctx.query"
                                     }
                                 },
-                                "error": false,
                                 "meta": {
                                     "package": "package.core.cms"
                                 }
@@ -169,8 +168,8 @@
                                 "skinTypography": "sans",
                                 "skinSpacial": "compact",
                                 "skinMotion": "smooth",
-                                "ornateClass": "home",
-                                "ornateStyle": {}
+                                "decorateClass": "home",
+                                "decorateStyle": {}
                             }
                         }
                     },
@@ -190,7 +189,7 @@
                                 },
                                 "ui": {
                                     "theme": {
-                                        "ornateStyle": {
+                                        "decorateStyle": {
                                             "display": "flex",
                                             "flexDirection": "column",
                                             "width": "100%",
@@ -363,7 +362,7 @@
                                                                     },
                                                                     "ui": {
                                                                         "theme": {
-                                                                            "ornateStyle": {
+                                                                            "decorateStyle": {
                                                                                 "width": 100,
                                                                                 "minHeight": "fit-content"
                                                                             }
@@ -476,7 +475,7 @@
                                                                 "props": {
                                                                     "ui": {
                                                                         "theme": {
-                                                                            "ornateStyle": {
+                                                                            "decorateStyle": {
                                                                                 "width": 100,
                                                                                 "minHeight": "fit-content"
                                                                             }
@@ -579,7 +578,7 @@
                                                                 "props": {
                                                                     "ui": {
                                                                         "theme": {
-                                                                            "ornateStyle": {
+                                                                            "decorateStyle": {
                                                                                 "width": 100,
                                                                                 "minHeight": "fit-content"
                                                                             }
@@ -908,7 +907,7 @@
                                                 },
                                                 "ui": {
                                                     "theme": {
-                                                        "ornateStyle": {
+                                                        "decorateStyle": {
                                                             "width": 100,
                                                             "minHeight": "fit-content"
                                                         }

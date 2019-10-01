@@ -12,9 +12,13 @@ export default function Page(props) {
     const LayoutComponent = get(registry, props.dna.document.layouts[0].meta['@component'])
 
     return (
-        <GlobalComponent meta={props.dna.global.meta} dna={props.dna.global.props} skins={props.skins}>
-            <DocumentComponent meta={props.dna.document.meta} dna={props.dna.document.props} layouts={props.dna.document.layouts} data={props.data}>
-                <LayoutComponent meta={props.dna.document.layouts[0].meta} dna={props.dna.document.layouts[0].props} regions={props.dna.document.layouts[0].regions} />
+        <GlobalComponent meta={props.dna.global.meta} dna={props.dna.global.props} context={props.context} skins={props.skins}>
+            <DocumentComponent meta={props.dna.document.meta} dna={props.dna.document.props} data={props.data} layouts={props.dna.document.layouts}>
+                <LayoutComponent
+                    meta={props.dna.document.layouts[0].meta}
+                    dna={props.dna.document.layouts[0].props}
+                    regions={props.dna.document.layouts[0].regions}
+                />
             </DocumentComponent>
         </GlobalComponent>
     )
@@ -40,7 +44,7 @@ Page.getInitialProps = async function(ctx) {
 
     console.log('DATA', data)
 
-    // ctx.store.dispatch(FSA(SET_INITIAL_PROPS, false, {db: normalized}))
+    // ctx.store.dispatch(FSA(SET_INITIAL_PROPS, false, {data: normalized}))
 
     return {
         dna: {

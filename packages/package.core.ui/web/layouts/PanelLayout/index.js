@@ -17,7 +17,7 @@ const PanelLayoutStyled = styled('div').attrs(props => ({
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
     'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
+    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
 }))`
     width: 100%;
     height: 100%;

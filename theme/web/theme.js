@@ -33,7 +33,8 @@ const design = {
                         region: {},
                         taxonomy: {
                             product: css`
-                                position: fixed;
+                                position: relative;
+                                display: flex;
                             `
                         }
                     }
@@ -72,7 +73,9 @@ const design = {
                             L: css``
                         },
                         screenSize: {
-                            S: css``,
+                            S: css`
+                              position: relative;
+                            `,
                             M: css``,
                             L: css``
                         }

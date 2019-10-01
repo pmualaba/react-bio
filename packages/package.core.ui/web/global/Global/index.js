@@ -1,8 +1,7 @@
 /**
  *  Dependencies
  */
-
-import React, {createContext, useEffect, useContext} from 'react'
+import React, {createContext, useEffect} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {fromEvent} from 'rxjs'
@@ -17,7 +16,6 @@ import theme from '../../../../../theme/web/theme'
  * Context
  */
 
-import {AppContext} from '../../../../../pages/_app'
 export const GlobalContext = createContext({})
 GlobalContext.displayName = 'GlobalContext'
 
@@ -34,14 +32,13 @@ import CSSglobalVariablesHOC from '../../../../../theme/web/css-global-variables
  */
 
 export const GlobalStyled = styled('div').attrs(props => {
-    console.log('props.context', props.context)
     return {
         'data-kind': 'global',
         'data-component': `${props.meta.class}`,
         'data-registry': `${props.meta['@component']}`,
         'data-dna': `${props.meta['@dna']}`,
-        style: props.dna.ui.theme.ornateStyle,
-        className: `${props.meta.class} ${props.dna.ui.theme.ornateClass ? props.dna.ui.theme.ornateClass : ''}`
+        style: props.dna.ui.theme.decorateStyle,
+        className: `${props.meta.class} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
     }
 })`
     ${props => props.theme.CSS(props)};
@@ -116,45 +113,49 @@ function Global(props) {
         const root = document.querySelector(':root')
         Object.entries(props.skins[payload.skin]).forEach(([themeVariantName, themeVariant]) => {
             themeVariant &&
-                Object.entries(themeVariant).forEach(([dimensionName, dimension]) => {
-                    dimension &&
-                        dimensionName !== 'id' &&
-                        dimensionName !== 'name' &&
-                        dimensionName !== 'inherits' &&
-                        Object.entries(dimension).forEach(([dimensionVariantName, dimensionVariant]) => {
-                            dimensionVariant &&
-                                Object.entries(dimensionVariant).forEach(([variable, value]) => {
-                                    root.style.setProperty(`--${themeVariantName}-${dimensionName}-${dimensionVariantName}-${variable}`, value)
-                                })
-                        })
+            Object.entries(themeVariant).forEach(([dimensionName, dimension]) => {
+                dimension &&
+                dimensionName !== 'id' &&
+                dimensionName !== 'name' &&
+                dimensionName !== 'inherits' &&
+                Object.entries(dimension).forEach(([dimensionVariantName, dimensionVariant]) => {
+                    dimensionVariant &&
+                    Object.entries(dimensionVariant).forEach(([variable, value]) => {
+                        root.style.setProperty(`--${themeVariantName}-${dimensionName}-${dimensionVariantName}-${variable}`, value)
+                    })
                 })
+            })
         })
         props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, payload))
     }
+
+
 
     /**
      * Render
      */
 
-    console.log('useContext(AppContext).web', useContext(AppContext).device.screenSize)
-    const currentSkinName = props.global.currentSkin || useContext(AppContext).web.currentSkin || props.dna.set.defaultSkin
+    const currentSkinName = props.global.currentSkin || props.context.web.currentSkin || props.dna.set.defaultSkin
     const CSSglobalVariables = CSSglobalVariablesHOC(currentSkinName, props.skins)
+
+    const context = {
+        ...props.context,
+        global: {...props.global, currentSkinName},
+        fn: {
+            sendNotification,
+            clearNotification,
+            setSkin
+        }
+    }
 
     console.log('RENDER GLOBAL')
     return (
-        <GlobalContext.Provider
-            value={{
-                global: {...props.global, currentSkinName},
-                sendNotification,
-                clearNotification,
-                setSkin
-            }}
-        >
+        <GlobalContext.Provider value={context}>
             <CSSglobalReset />
             <CSSglobalStyling />
             <ThemeProvider theme={theme(currentSkinName, props.skins)}>
                 <CSSglobalVariables />
-                <GlobalStyled meta={props.meta} as={motion.div} dna={props.dna} context={{}} own={{...props.global, device: useContext(AppContext).device}} animate={{scale: 0.5}}>
+                <GlobalStyled meta={props.meta} as={motion.div} dna={props.dna} device={props.context.device} context={context} own={{...props.global}} animate={{scale: 0.5}}>
                     {props.children}
                 </GlobalStyled>
             </ThemeProvider>
