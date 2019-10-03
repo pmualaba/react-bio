@@ -6,7 +6,7 @@
  *      const env = require('../../env.server')()
  *      env.DB_BASE_URL
  */
-const WS_ENABLED = false
+const WS_ENABLED = true
 const environment = () => {
     switch (process.env.NODE_ENV) {
         case 'production':
@@ -42,7 +42,7 @@ const environment = () => {
     }
 }
 environment.id = '101'
-environment.domainName = 'my-react-bio-app.com'
+environment.domainName = 'my-react-bio-app.org'
 environment.changelog = {}
 environment.schedulers = {
     backup: {
@@ -63,11 +63,11 @@ environment.domains = {
         eid: '101',
         sid: '1999'
     },
-    'http://my-react-bio-app.com': {
+    'http://my-react-bio-app.org': {
         eid: '101',
         sid: '1999'
     },
-    'https://my-react-bio-app.com': {
+    'https://my-react-bio-app.org': {
         eid: '101',
         sid: '1999'
     }

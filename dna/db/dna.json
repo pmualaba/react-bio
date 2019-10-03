@@ -35,6 +35,9 @@
         "semantics": {
             "roles": {
                 "common": {
+                    "page": {
+                        "home": "common.page.home"
+                    },
                     "navigation": {
                         "main": "common.navigation.main",
                         "secondary": "common.navigation.secondary",
@@ -129,17 +132,21 @@
                                     }
                                 },
                                 "meta": {
-                                    "package": "package.core.cms"
+                                    "package": "package.core.cms",
+                                    "endpoint": "/api/package.core.cms/web"
                                 }
                             },
                             {
                                 "type": "GET_ARTICLES",
                                 "payload": {
-                                    "params": {}
+                                    "params": {
+                                        "id": "1"
+                                    }
                                 },
                                 "error": false,
                                 "meta": {
-                                    "package": "package.core.cms"
+                                    "package": "package.core.cms",
+                                    "endpoint": "/api/package.core.cms/web"
                                 }
                             }
                         ],
@@ -176,7 +183,7 @@
                     "layouts": [
                         {
                             "meta": {
-                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout]",
+                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]",
                                 "@component": "['package.core.ui'].web.layouts.RenderLayout",
                                 "name": "documentLayout",
                                 "class": "RenderLayout",
@@ -201,7 +208,7 @@
                             "regions": [
                                 {
                                     "meta": {
-                                        "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[1:header]",
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header]",
                                         "@component": "['package.core.cms'].web.blocks.WebPageHeader",
                                         "name": "header",
                                         "class": "Region",
@@ -225,7 +232,7 @@
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[1:header].blocks[1:WebPageHeader]",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header].blocks[0:WebPageHeader]",
                                                 "@component": "['package.core.cms'].web.blocks.WebPageHeader",
                                                 "name": "WebPageHeader",
                                                 "class": "WebPageHeader",
@@ -246,7 +253,7 @@
                                 },
                                 {
                                     "meta": {
-                                        "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[2:body]",
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body]",
                                         "@component": "['package.core.cms'].web.layouts.Region",
                                         "name": "body",
                                         "class": "Region",
@@ -270,7 +277,7 @@
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[2:body].blocks[1:WebPageHeader]",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body].blocks[0:WebPageHeader]",
                                                 "@component": "['package.core.cms'].web.blocks.WebPageBody",
                                                 "name": "WebPageBody",
                                                 "class": "WebPageBody",
@@ -294,7 +301,7 @@
                                 },
                                 {
                                     "meta": {
-                                        "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[3:main]",
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main]",
                                         "@component": "['package.core.ui'].web.layouts.Region",
                                         "name": "main",
                                         "class": "Region",
@@ -319,7 +326,7 @@
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[3:main].blocks[1:PersonList]",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[0:PersonList]",
                                                 "@component": "['package.core.ui'].app.blocks.tables.GridTable",
                                                 "name": "PersonList",
                                                 "class": "PersonList",
@@ -917,7 +924,7 @@
                                         },
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[1:DocumentLayout].regions[3:main].composition[1:PersonList]",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].composition[0:PersonList]",
                                                 "name": "PersonList",
                                                 "componentClass": "PersonList",
                                                 "componentLevel": "composition"
@@ -930,8 +937,8 @@
                         }
                     ],
                     "mutations": {
-                        "inject": {},
-                        "schedule": {
+                        "static": {},
+                        "scheduled": {
                             "2019-08-28T06:55:21+00:00": {
                                 "meta": {
                                     "@component": "['package.core.ui'].web.documents.Document",

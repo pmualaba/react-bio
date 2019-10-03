@@ -24,8 +24,10 @@ const app = nextjs({dev})
 const handle = app.getRequestHandler()
 const stats = {reqCount: 0}
 
+const apiLogic = require('./dna/router').logic
+
 console.time('CREATING DATABASE SERVICE - server.js...')
-const Database = (env.DB_NAME === 'dgraph' && require('./packages/package.core.db/driver/dgraph')) || {
+const Database = {
     createService() {
         return {
             schema: null,
@@ -105,39 +107,45 @@ app.prepare()
         const server = express()
 
         console.time('LOADING DNA - server.js...')
-        Promise.all([JsonDB(new FileAsync('dna/db/dna.json')), JsonDB(new FileAsync('dna/db/theme.json')), JsonDB(new FileAsync('dna/db/i18n.json'))]).then(responses => {
+        Promise.all([
+            JsonDB(new FileAsync('dna/db/dna.json')),
+            JsonDB(new FileAsync('dna/db/theme.json')),
+            JsonDB(new FileAsync('dna/db/i18n.json')),
+            JsonDB(new FileAsync('dna/db/data.json'))
+        ]).then(responses => {
             db.json.dna = responses[0]
             db.json.theme = responses[1]
             db.json.i18n = responses[2]
+            db.json.data = responses[3]
             console.timeEnd('LOADING DNA - server.js...')
 
             console.log('SETUP NEXT.JS ROUTER - CREATING DNA ROUTES - server.js...')
             Object.values(db.json.dna.getState()).forEach(Package => {
                 Package.app &&
-                    Package.app.documents &&
-                    Object.values(Package.app.documents).forEach(document => {
-                        const route = document.props.set.route
-                        console.log('     route app:', route.match)
-                        router.get(route.match, (req, res) => {
-                            const actualPage = `/templates/${route.template}`
-                            const queryParams = {url: req.path, locale: locale.default, ...route.params}
-                            //app.renderToCache(req, res, actualPage, queryParams, 5)
-                            app.render(req, res, actualPage, queryParams)
-                        })
+                Package.app.documents &&
+                Object.values(Package.app.documents).forEach(document => {
+                    const route = document.props.set.route
+                    console.log('     route app:', route.match)
+                    router.get(route.match, (req, res) => {
+                        const actualPage = `/templates/${route.template}`
+                        const queryParams = {url: req.path, locale: locale[req.params.lang] || locale.default, ...route.params}
+                        //app.renderToCache(req, res, actualPage, queryParams, 5)
+                        app.render(req, res, actualPage, queryParams)
                     })
+                })
                 Package.web &&
-                    Package.web.documents &&
-                    Object.values(Package.web.documents).forEach(document => {
-                        const route = document.props.set.route
-                        console.log('     route web:', route.match)
+                Package.web.documents &&
+                Object.values(Package.web.documents).forEach(document => {
+                    const route = document.props.set.route
+                    console.log('     route web:', route.match)
 
-                        router.get(route.match, (req, res) => {
-                            const actualPage = `/templates/${route.template}`
-                            const queryParams = {url: req.path, locale: locale.default, ...route.params}
-                            //app.renderToCache(req, res, actualPage, queryParams, 5)
-                            app.render(req, res, actualPage, queryParams)
-                        })
+                    router.get(route.match, (req, res) => {
+                        const actualPage = `/templates/${route.template}`
+                        const queryParams = {url: req.path, locale: locale.default, ...route.params}
+                        //app.renderToCache(req, res, actualPage, queryParams, 5)
+                        app.render(req, res, actualPage, queryParams)
                     })
+                })
             })
 
             /**
@@ -147,11 +155,12 @@ app.prepare()
             server.use(bodyParser.json())
             server.use(cookies())
             server.use(cors({origin: '*'}))
-            server.use(express.static('static'))
+            server.use(express.static('db.json'))
 
             server.use((req, res, next) => {
                 req.stats = stats
                 req.db = db
+                req.apiLogic = apiLogic
                 next()
             })
 
@@ -247,7 +256,7 @@ app.prepare()
 
             server.get('*', (req, res) => {
                 if (req.url.includes('/sw')) {
-                    const filePath = join(__dirname, 'static', 'workbox', 'sw.js')
+                    const filePath = join(__dirname, 'db.json', 'workbox', 'sw.js')
                     app.serveStatic(req, res, filePath)
                 } else if (req.url.startsWith('static/workbox/')) {
                     app.serveStatic(req, res, join(__dirname, req.url))

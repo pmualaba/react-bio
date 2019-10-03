@@ -1,0 +1,262 @@
+{
+    "nodes": {
+        "ContentPage": [
+            {
+                "id": "ck0xo8bo5000001l384jsh7lv",
+                "templateId": "ck0xo8bo5000001l384jsh7lv",
+                "type": "ContentPage",
+                "name": "Home Page",
+                "role": "common.page.home",
+                "url": "/",
+                "slug": "/",
+                "isPrimaryClassifiedByTaxonomyTerm": {},
+                "isClassifiedByTaxonomyTerms": [],
+                "isRootNode": true,
+                "isTemplate": true,
+                "sortIndex": 0,
+                "nestIndex": 0,
+                "publishDate": "2019-05-28T15:59:59.123Z",
+                "unPublishDate": "2020-02-28T15:59:59.123Z",
+                "hasParentContentNodes": [],
+                "hasChildContentNodes": [
+                    {
+                        "id": "ck0xo8v41000101l38l28fulk",
+                        "type": "ContentNode",
+                        "name": "Hero Slider",
+                        "role": "common.hero.slider",
+                        "url": "/ContentNode/common.hero.slider/ck0xo8v41000101l38l28fulk",
+                        "slug": "",
+                        "isRootNode": false,
+                        "isTemplate": true,
+                        "sortIndex": 0,
+                        "nestIndex": 1,
+                        "publishDate": "2019-05-28T15:59:59.123Z",
+                        "unPublishDate": "2020-02-28T15:59:59.123Z",
+                        "hasParentContentNodes": [
+                            {
+                                "id": "ck0xo8bo5000001l384jsh7lv"
+                            }
+                        ],
+                        "hasChildContentNodes": [
+                            {
+                                "id": "ck128dyz1000001la46e6bcks",
+                                "type": "ContentNode",
+                                "name": "Hero Slider Section 1",
+                                "role": "common.hero.slider:block.section.1",
+                                "url": "/ContentNode/common.hero.slider:block.section.1/ck128dyz1000001la46e6bcks",
+                                "isRootNode": false,
+                                "isTemplate": true,
+                                "sortIndex": 0,
+                                "nestIndex": 2,
+                                "isExtendByFieldGroups": [
+                                    {
+                                        "id": "ck128ejp7000101la1lh3h7rx",
+                                        "type": "FieldGroup",
+                                        "name": "FieldGroup",
+                                        "role": "common.hero.slider:block.section.1:FieldGroup.1"
+                                    }
+                                ],
+                                "hasChildContentNodes": [
+                                    {
+                                        "id": "ck128eyjs000201la2nd409jp",
+                                        "type": "ContentNode",
+                                        "name": "Hero Slider Section 1.1",
+                                        "role": "common.hero.slider:block.section.1.1",
+                                        "url": "/ContentNode/common.hero.slider:block.section.1.1/ck128eyjs000201la2nd409jp",
+                                        "isRootNode": false,
+                                        "isExtendByFieldGroups": [
+                                            {
+                                                "id": "ck128f8en000301labucubeje",
+                                                "type": "FieldGroup",
+                                                "name": "FieldGroup",
+                                                "role": "common.hero.slider:block.section.1.1:FieldGroup.1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "ck128fmkd000401laewo73ios",
+                                        "type": "ContentNode",
+                                        "name": "Hero Slider Section 1.2",
+                                        "role": "common.hero.slider:block.section.1.2",
+                                        "url": "/ContentNode/common.hero.slider:block.section.1.2/ck128fmkd000401laewo73ios",
+                                        "isRootNode": false,
+                                        "isExtendByFieldGroups": [
+                                            {
+                                                "id": "ck128fyf1000501la9xrg8mht",
+                                                "type": "FieldGroup",
+                                                "name": "FieldGroup",
+                                                "role": "common.hero.slider:block.section.1.2:FieldGroup.1"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "isExtendByFieldGroups": [
+                            {
+                                "id": "ck10cl23n000101ks5xrq6a1t",
+                                "type": "FieldGroup",
+                                "name": "FieldGroup",
+                                "role": "common.hero.slider:block:FieldGroup.1"
+                            }
+                        ],
+                        "rendersWithDna": null,
+                        "rendersWithModifiedDna": null
+                    },
+                    {
+                        "id": "ck0xrf79q000001mm5zlf7s8d",
+                        "name": "Highlight Top Topical",
+                        "role": "common.highlight.topTopical",
+                        "url": "/ContentNode/common.highlight.topTopical/ck0xrf79q000001mm5zlf7s8d",
+                        "isRootNode": false,
+                        "isTemplate": true,
+                        "hasChildContentNodes": [
+                            {
+                                "id": "ck128gdee000601laftyoec9u",
+                                "type": "ContentNode",
+                                "name": "storySection.primary",
+                                "role": "common.highlight.topTopical:block.section.1",
+                                "url": "/ContentNode/common.highlight.topTopical:block.section.1/ck128gdee000601laftyoec9u",
+                                "isRootNode": false
+                            }
+                        ],
+                        "rendersWithDna": null,
+                        "rendersWithModifiedDna": null
+                    }
+                ],
+                "rendersWithDna": {
+                    "id": "ck0xo92xs000201l328mc7ga7",
+                    "type": "DnaNode",
+                    "name": "followPage",
+                    "isRootNode": true,
+                    "isTemplate": true,
+                    "meta": {
+                        "@component": "['package.core.ui'].web.blocks.PageBody",
+                        "@theme": null,
+                        "kind": "block"
+                    },
+                    "props": {
+                        "data": {
+                            "accessors": {
+                                "content": "this"
+                            }
+                        },
+                        "ui": {
+                            "theme": {
+                                "modelVariant": null,
+                                "designVariant": null,
+                                "skinVariant": null,
+                                "skinTone": null,
+                                "skinTypography": null,
+                                "skinSpacial": null,
+                                "skinMotion": null
+                            }
+                        }
+                    },
+                    "blocks": [
+                        {
+                            "id": "ck10ckdpa000001ks5e8ydqjg",
+                            "type": "DnaNode",
+                            "name": "followPage",
+                            "isRootNode": true,
+                            "isTemplate": true,
+                            "meta": {
+                                "@component": "['package.core.ui'].web.blocks.PageBody",
+                                "@theme": null,
+                                "kind": "block"
+                            },
+                            "props": {
+                                "data": {
+                                    "accessors": {
+                                        "content": "this.hasChildContentNodes['storySection.primary']",
+                                        "stories": "initialProps.stories"
+                                    }
+                                },
+                                "ui": {
+                                    "theme": {
+                                        "modelVariant": "scrollContainer",
+                                        "designVariant": "asImageSlider",
+                                        "skinVariant": "themeVariantDefault",
+                                        "skinTone": "dimensionVariantDefault",
+                                        "skinTypography": "sans",
+                                        "skinSpacial": "compact",
+                                        "skinMotion": "smooth"
+                                    }
+                                }
+                            },
+                            "blocks": [],
+                            "mutations": {
+                                "inject": {},
+                                "schedule": {
+                                    "2019-08-28T06:55:21+00:00": {
+                                        "meta": {
+                                            "@component": "['package.core.ui'].web.documents.Document",
+                                            "@theme": "['package.core.cms'].web.documents.Document",
+                                            "kind": "document"
+                                        },
+                                        "props": {
+                                            "ui": {
+                                                "theme": {
+                                                    "model": {
+                                                        "variant": "scrollContainer",
+                                                        "param": "value"
+                                                    },
+                                                    "design": {
+                                                        "variant": "asImageSlider"
+                                                    },
+                                                    "skin": {
+                                                        "variant": "themeVariantDefault",
+                                                        "tone": "dimensionVariantDefault",
+                                                        "typography": "sans",
+                                                        "spacial": "compact",
+                                                        "motion": "smooth"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "layouts": []
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "rendersWithModifiedDna": {
+                    "id": "ck0xseyyp000001l5a04o8wnn",
+                    "modifiedId": "ck0xo92xs000201l328mc7ga7",
+                    "type": "DnaNode",
+                    "name": "Home Page",
+                    "meta": {
+                        "@component": "['package.core.ui'].web.blocks.PageBody",
+                        "@theme": null,
+                        "kind": "block"
+                    },
+                    "props": {},
+                    "blocks": []
+                }
+            }
+        ],
+        "Article": [{
+            "id": "1",
+            "name": "Article One"
+        }]
+
+    },
+    "apis": {
+        "facebook": {
+            "PhotoAlbum": [
+                {
+                    "id": "1",
+                    "name": "Video One"
+                }
+            ],
+            "Photo": [
+                {
+                    "id": "1",
+                    "name": "Show One"
+                }
+            ]
+        }
+    }
+
+}

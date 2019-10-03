@@ -20,21 +20,22 @@ const design = {
                 Global: {
                     variants: {
                         default: css`
-                            position: absolute;
+                           
+                            display: flex;
 
-                            .PageSection__content {
-                                position: relative;
-                            }
                         `
                     },
                     context: {
-                        screenSize: {},
+                        screenSize: {
+                            S: css`
+                              position: relative;
+                        `
+                        },
                         regionSize: {},
                         region: {},
                         taxonomy: {
                             product: css`
-                                position: relative;
-                                display: flex;
+                                position: fixed;
                             `
                         }
                     }
@@ -49,7 +50,29 @@ const design = {
             effects,
             shapes,
             documents: {
-                DocumentContainer: css``
+                DocumentContainer: {
+                    variants: {
+                        default: css``,
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {
+
+                        },
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                }
             },
             layouts: {
                 PageSection: {
@@ -73,16 +96,58 @@ const design = {
                             L: css``
                         },
                         screenSize: {
-                            S: css`
-                              position: relative;
-                            `,
+                            S: css``,
                             M: css``,
                             L: css``
                         }
                     }
                 },
-                BaseLayoutContainer: css``,
-                PanelLayout: css``
+                BaseLayoutContainer: {
+                    variants: {
+                        default: css``,
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {
+
+                        },
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                },
+                PanelLayout: {
+                    variants: {
+                        default: css``,
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {
+
+                        },
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                }
             }
         }
     },
@@ -131,29 +196,32 @@ const design = {
     }
 }
 
+
+
 function CSS(props) {
     const metaTheme = props.meta['@theme'] || props.meta['@component']
-    console.log('@THEME', metaTheme)
 
-    const variant = (props.dna.ui.theme.design && props.dna.ui.theme.design.variant) || 'default'
+    const variant = (props.dna.ui.theme.designVariant) || 'default'
     const themePrefix = metaTheme.split('].')
     const themeSuffix = themePrefix[1].split('.')
-    const design = props.theme.design[themePrefix[0].slice(2, -1)][themeSuffix[0]][themeSuffix[1]][themeSuffix[2]]
+    const design = props.theme.design[themePrefix[0].slice(2, -1)][themeSuffix[0]][themeSuffix[1]][themeSuffix[2]] || {}
 
-    if (design && design.variants) {
-        props.context.taxonomy = 'product'
+    if (design.variants) {
+
+        //props.context.taxonomy = 'product'
+
         return [
-            design.variants[variant],
+            design.context.screenSize[props.context.device.screenSize] || '',
+            design.variants[variant] || '',
             design.context.taxonomy[props.context.taxonomy] || '',
             design.context.region[props.context.region] || '',
             design.context.regionSize[props.context.regionSize] || '',
-            design.context.screenSize[props.context.screenSize] || ''
         ]
     }
 }
 
 export default function(skin, skins) {
-    console.log('skinName', skin)
+    console.log('skin', skin)
     return {
         name: skin,
         skin: skins[skin],

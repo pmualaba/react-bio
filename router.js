@@ -52,12 +52,15 @@ app.prepare()
         })
 
         /** WEB HOME **/
-        /*     router.get('/', (req, res) => {
-            console.log('get/')
-            const actualPage = '/templates/package.core.cms/web/home'
-            const queryParams = {url: req.path, locale: locale.default}
-            app.render(req, res, actualPage, queryParams)
-        }) */
+        /*
+            DNA ROUTE '/'
+            router.get('/', (req, res) => {
+                console.log('get/')
+                const actualPage = '/templates/package.core.cms/web/home'
+                const queryParams = {url: req.path, locale: locale.default}
+                app.render(req, res, actualPage, queryParams)
+            })
+        */
 
         router.get('/:lang(nl|fr|en)', (req, res) => {
             const actualPage = '/templates/package.core.cms/web/home'

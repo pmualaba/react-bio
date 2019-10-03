@@ -50,7 +50,7 @@
         "scc-broker-client": "^6.1.0",
         "socketcluster": "^14.3.3",
         "socketcluster-client": "^14.2.2",
-        "styled-components": "^5.0.0-beta.8",
+        "styled-components": "^5.0.0-beta.9",
         "superagent": "^3.8.3",
         "universal-cookie": "^2.2.0",
         "universal-cookie-express": "^2.2.0"

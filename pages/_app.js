@@ -41,10 +41,10 @@ export default withRedux(
                 isMobile: false,
                 isLandscape: false,
                 formFactor: '',
-                screenSize: null
+                screenSize: ''
             }
 
-            if ( renderCycle === 0 ) {
+            if (renderCycle === 0) {
                 return device
             }
 
@@ -98,14 +98,14 @@ export default withRedux(
                 device: typeof window !== 'undefined' && this.detectScreenSize(this.state.renderCycle),
                 usr: (isBrowser && JSON.parse(localStorage.getItem('usr'))) || {},
                 app: (isBrowser && JSON.parse(localStorage.getItem('app'))) || {},
-                web: (isBrowser && JSON.parse(localStorage.getItem('web'))) || {},
+                web: (isBrowser && JSON.parse(localStorage.getItem('web'))) || {}
             }
 
             return (
                 <Provider store={store}>
                     <Head>
                         <script src="/static/js/modernizr-custom.js" />
-                        <style id="inject"></style>
+                        <style id="inject" />
                     </Head>
                     <Component {...pageProps} context={context} />
                 </Provider>
@@ -113,8 +113,6 @@ export default withRedux(
         }
     }
 )
-
-
 
 /**
  *  Example ctx:

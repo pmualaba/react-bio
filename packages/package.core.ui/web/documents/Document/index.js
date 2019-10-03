@@ -19,6 +19,7 @@ import Layer from './Layer'
 /**
  * Context
  */
+
 import {GlobalContext} from '../../global/Global'
 
 
@@ -47,6 +48,11 @@ DocumentStyled.defaultProps = {}
  */
 
 export default function Document(props) {
+
+    /**
+     * Hooks
+     */
+
     const context = useContext(GlobalContext)
 
     useEffect(() => {

@@ -19,7 +19,7 @@ const Transform = {
         page.hasChildContentNodes = (Array.isArray(page.hasChildContentNodes) && objectify(page.hasChildContentNodes)) || []
         console.timeEnd('TRANSFORM DATA - Transform function...')
         console.log('Transform PAGE')
-        console.dir(page, {depth: null, color: true})
+        //console.dir(page, {depth: null, color: true})
         return page
     }
 }
