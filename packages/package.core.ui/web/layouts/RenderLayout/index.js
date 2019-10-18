@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import PropTypes from 'prop-types'
 import {get} from 'lodash'
-import registry from '../../../../../dna/registry.web'
+import components from '../../../../../dna/rna/registry.components.web'
 import {GlobalContext} from '../../global/Global'
 
 const RenderLayout = props => {
@@ -25,7 +25,7 @@ const RenderLayout = props => {
         )
     )
 
-    const LayoutComponent = get(registry, props.meta['@component'].replace('RenderLayout', props.dna.set.renderLayout))
+    const LayoutComponent = get(components, props.meta['@component'].replace('RenderLayout', props.dna.set.renderLayout))
     console.log('RENDER LAYOUT:', props.dna.set.renderLayout)
     return <LayoutComponent meta={props.meta} dna={props.dna} data={{init: {regions: values}}} context={context} regions={props.regions} />
 }

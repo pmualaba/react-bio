@@ -5,9 +5,10 @@ const Jwt = require('njwt')
 
 const domains = require('./env.server').domains
 const env = require('./env.server')()
-const apiLogic = require('./dna/router.api').logic
+const apiLogic = require('./dna/rna/registry.routes.api').logic
 
 const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config').getConfigSecretSigningKey
+
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
 
 class Worker extends SCWorker {
@@ -123,7 +124,7 @@ class Worker extends SCWorker {
                         }
 
                         console.timeEnd('SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js')
-                        //console.log('SOCKET REQUEST CONTEXT \n', req.socket.request.CTX)
+                        // console.log('SOCKET REQUEST CONTEXT \n', req.socket.request.CTX)
                         next()
                     }
                 })

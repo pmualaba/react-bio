@@ -6,17 +6,21 @@
  *      const env = require('../../env.server')()
  *      env.DB_BASE_URL
  */
-const WS_ENABLED = false
+
+const env = require('./dna/rna/registry.environment')
+
 const environment = () => {
     switch (process.env.NODE_ENV) {
         case 'production':
             return {
-                BASE_URL: (typeof window !== 'undefined' && window.location.origin) || 'http://localhost:3000',
+                BASE_URL:
+                    (typeof window !== 'undefined' && window.location.origin) ||
+                    'http://localhost:3000',
                 DB_NAME: 'json',
                 DB_BASE_URL: '',
                 DB_USER: '',
                 DB_PASSWORD: '',
-                WS_ENABLED
+                WS_ENABLED: env.flags.WEB_SOCKETS_ENABLED
             }
         case 'development':
             if (process.env.NODE_SERVER === 'local') {
@@ -25,7 +29,7 @@ const environment = () => {
                     DB_BASE_URL: '',
                     DB_USER: '',
                     DB_PASSWORD: '',
-                    WS_ENABLED
+                    WS_ENABLED: env.flags.WEB_SOCKETS_ENABLED
                 }
             }
             return {
@@ -33,7 +37,7 @@ const environment = () => {
                 DB_BASE_URL: '',
                 DB_USER: '',
                 DB_PASSWORD: '',
-                WS_ENABLED
+                WS_ENABLED: env.flags.WEB_SOCKETS_ENABLED
             }
         default:
             return {
@@ -42,7 +46,7 @@ const environment = () => {
     }
 }
 environment.eid = '101'
-environment.domainName = 'my-react-bio-app.org'
+environment.domainName = env.domains.default.split('//')[1]
 environment.changelog = {}
 environment.schedulers = {
     backup: {
@@ -58,29 +62,11 @@ environment.connectors = {
 /**
  * Domains
  */
-environment.domains = {
-    'http://localhost:3000': {
-        eid: '101',
-        sid: '1999'
-    },
-    'http://my-react-bio-app.org': {
-        eid: '101',
-        sid: '1999'
-    },
-    'https://my-react-bio-app.org': {
-        eid: '101',
-        sid: '1999'
-    }
-}
+environment.domains = env.domains
 
 /**
  * locale
  */
-environment.locale = {
-    nl: 'nl_NL',
-    fr: 'fr_FR',
-    en: 'en_GB',
-    default: 'nl_NL'
-}
+environment.locale = env.locale
 
 module.exports = environment

@@ -5,16 +5,12 @@
 import React, {useEffect, useContext} from 'react'
 import PropTypes from 'prop-types'
 
-import styled from 'styled-components'
-import theme from '../../../../../theme/web/theme'
-
-
 /**
  * Components
  */
 
 import Layer from './Layer'
-
+import DocumentStyled from './styled'
 
 /**
  * Context
@@ -22,51 +18,26 @@ import Layer from './Layer'
 
 import {GlobalContext} from '../../global/Global'
 
-
-/**
- * Styled Component
- */
-
-const DocumentStyled = styled('div').attrs(props => ({
-    'data-kind': 'document',
-    'data-component': `${props.meta.class}`,
-    'data-registry': `${props.meta['@component']}`,
-    'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.decorateStyle,
-    className: `${props.meta.class} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
-}))`
-    ${props => props.theme.CSS(props)};
-
-    height: ${props => (props.dna.set.viewport === 'viewport' ? '100vh' : '100%')};
-    width: ${props => (props.dna.set.viewport === 'viewport' ? '100vw' : '100%')};
-    overflow: ${props => (props.dna.set.viewport === 'viewport' ? 'hidden' : 'auto')};
-`
-
 /**
  * Component
  */
 
 export default function Document(props) {
-
     /**
      * Hooks
      */
-
     const context = useContext(GlobalContext)
 
-    useEffect(() => {
-
-        return () => {}
-    }, [])
+    useEffect(() => {}, [])
 
     /**
      * Render
      */
 
-    if ( context.renderCycle === 0 ) {
-        return (<></>)
+    if (context.renderCycle === 0) {
+        return <></>
     }
-    console.log('RENDER DOCUMENT')
+    console.log('RENDER DOCUMENT  ')
     return (
         <DocumentStyled meta={props.meta} dna={props.dna} context={context} own={{global: props.global}}>
             <Layer id="layout">{props.children}</Layer>

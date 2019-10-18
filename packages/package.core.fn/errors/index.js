@@ -62,8 +62,7 @@ exports.ERR_JOI = (locale = 'en_GB', err, server = false, service = 'cloud.bewar
         errors[err.details[index].path] = {
             type: err.name,
             alert: LocalizedErrorStrings[`${err.details[index].type}__${locale}`] || err.details[index].message,
-            message:
-            specificErrorStrings[`${err.details[index].type.replace(/\./g, '_')}_${reference}__${locale}`] || 'Something went wrong',
+            message: specificErrorStrings[`${err.details[index].type.replace(/\./g, '_')}_${reference}__${locale}`] || 'Something went wrong',
             text: err.details[index].message,
             label: err.details[index].type,
             server,

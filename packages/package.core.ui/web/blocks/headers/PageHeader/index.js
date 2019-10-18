@@ -1,5 +1,6 @@
 import React from 'react'
 import PageHeaderStyled from './styled'
+import TopNav from '../../navigation/TopNav'
 
 /**
  * Component
@@ -7,11 +8,8 @@ import PageHeaderStyled from './styled'
 
 export default function PageHeader(props) {
     return (
-        <PageHeaderStyled>
-            <h2>PageHeader</h2>
-            <div>User Profile</div>
-            <div>Logo</div>
-            <div>Hamburger Menu</div>
+        <PageHeaderStyled meta={props.meta} dna={props.dna} context={props.context}>
+            <TopNav meta={props.meta} dna={props.dna} context={props.context} />
         </PageHeaderStyled>
     )
 }

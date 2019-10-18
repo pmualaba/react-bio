@@ -15,17 +15,17 @@ const logic = {
                 actions: {
                     GET_CONTENT_PAGE: {response: {}},
                     GET_ARTICLES: {response: []},
+                    GET_FACEBOOK_ALBUMS: {response: []}
                 }
             },
             meta
         )
     },
     GET_INITIAL_PROPS: async (req, res, next, meta) => {
-        console.log('/api/package.core.ui/web/GET_INITIAL_PROPS')
+        console.log('/api/package.core.ui/web/GET_INITIAL_PROPS!')
 
         const actions = req.body.payload.actions
         const promises = actions.map(action => req.apiLogic[action.meta.endpoint.split('/')[2]][action.meta.endpoint][action.type](req, res, next, meta, action))
-
 
         try {
             const responses = await Promise.all(promises)

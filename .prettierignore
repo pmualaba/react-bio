@@ -4,4 +4,3 @@ nodejs/static
 nodejs/jest_0
 nodejs/.temp
 nodejs/.git
-nodejs/packages/package.core.data/driver/dgraph.js

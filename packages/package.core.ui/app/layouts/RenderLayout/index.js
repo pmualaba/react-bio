@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import registry from '../../../../../dna/registry.app'
+import components from '../../../../../dna/rna/registry.components.app'
 import {get} from 'lodash/get'
 
 const RenderLayout = props => {
-    const LayoutComponent = get(registry, props.dna.meta['@layoutComponent'].replace('RenderLayout', props.dna.meta.componentProps.renderLayout))
+    const LayoutComponent = get(components, props.dna.meta['@layoutComponent'].replace('RenderLayout', props.dna.meta.componentProps.renderLayout))
     return <LayoutComponent dna={props.dna} />
 }
 

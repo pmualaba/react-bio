@@ -4,12 +4,19 @@
         "roles": {
             "common": {
                 "page": {
-                    "home": "common.page.home"
+                    "home": "common.page.home",
+                    "link": "common.page.link"
+                },
+                "content": {
+                    "video": "common.content.video",
+                    "text": "common.content.text",
+                    "image": "common.content.image"
                 },
                 "navigation": {
                     "main": "common.navigation.main",
                     "secondary": "common.navigation.secondary",
-                    "doormat": "common.navigation.doormat"
+                    "doormat": "common.navigation.doormat",
+                    "link": "common.navigation.link"
                 },
                 "header": {
                     "top": "common.header.top",
@@ -17,12 +24,16 @@
                 },
                 "hero": {
                     "primary": "common.hero.primary",
+                    "cutout": "common.hero.cutout",
+                    "overlay": "common.hero.overlay",
                     "secondary": "common.hero.secondary",
                     "slider": "common.hero.slider",
-                    "image": "common.hero.image"
+                    "image": "common.hero.image",
+                    "link": "common.hero.link"
                 },
                 "highlight": {
-                    "topTopical": "common.highlight.topTopical"
+                    "topTopical": "common.highlight.topTopical",
+                    "video": "highlight.video"
                 },
                 "footer": {
                     "doormat": "common.footer.doormat",
@@ -38,18 +49,24 @@
                     "masonryGallery": "common.media.masonryGallery"
                 }
             },
+            "widget": {
+                "timer": {
+                    "countdown": "widget.timer.countdown",
+                    "clock": "widget.timer.clock"
+                }
+            },
             "presentation": {},
             "decoration": {
                 "logo": "decoration.logo"
             },
-            "layout": {},
             "engagement": {
                 "stories": {
                     "slider": "engagement.stories.slider",
                     "story": "engagement.stories.story"
                 },
                 "cta": {
-                    "newsletterSubscription": "engagement.cta.newsletterSubscription"
+                    "newsletterSubscription": "engagement.cta.newsletterSubscription",
+                    "button": "engagement.cta.button"
                 }
             },
             "personalization": {
@@ -91,15 +108,19 @@
                 "genes": {
                     "ui": {
                         "theme": {
-                            "decorateStyle": {}
+                            "skinMotion": null
                         }
                     },
                     "set": {
-                        "defaultSkin": "themeBase",
-                        "defaultSkinVariant": "themeVariantDefault"
+                        "defaultSkin": "bio",
+                        "defaultSkinVariant": "default"
                     }
                 }
             }
+        },
+        "genes": {
+            "app": {},
+            "web": {}
         }
     },
     "package.core.cms": {
@@ -132,6 +153,7 @@
                                         "url": "ctx.query"
                                     }
                                 },
+                                "error": false,
                                 "meta": {
                                     "package": "package.core.cms",
                                     "endpoint": "/api/package.core.cms/web"
@@ -140,21 +162,33 @@
                             {
                                 "type": "GET_ARTICLES",
                                 "payload": {
-                                    "params": {
-                                        "id": "1"
-                                    }
+                                    "params": {}
                                 },
                                 "error": false,
                                 "meta": {
                                     "package": "package.core.cms",
                                     "endpoint": "/api/package.core.cms/web"
                                 }
+                            },
+                            {
+                                "type": "GET_FACEBOOK_ALBUMS",
+                                "payload": {
+                                    "params": {
+                                        "id": "1"
+                                    }
+                                },
+                                "error": false,
+                                "meta": {
+                                    "package": "package.apis.facebook",
+                                    "endpoint": "/api/package.apis.facebook/web"
+                                }
                             }
                         ],
                         "data": {
                             "accessors": {
                                 "body": "actions.GET_CONTENT_PAGE.response",
-                                "articles": "actions.GET_ARTICLES.response"
+                                "stories": "actions.GET_ARTICLES.response",
+                                "videos": "actions.GET_FACEBOOK_ALBUMS.response"
                             }
                         },
                         "set": {
@@ -194,7 +228,7 @@
                             "genes": {
                                 "set": {
                                     "renderLayout": "WebPageLayout",
-                                    "boxCollapse": false
+                                    "collapse": false
                                 },
                                 "ui": {
                                     "theme": {
@@ -218,8 +252,7 @@
                                     "genes": {
                                         "data": {
                                             "accessors": {
-                                                "site": "document.site",
-                                                "articles": "document.articles"
+                                                "stories": "document.stories"
                                             }
                                         },
                                         "set": {
@@ -237,16 +270,16 @@
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header].blocks[0:WebPageHeader]",
-                                                "@component": "['package.core.ui'].web.blocks.WebPageHeader",
-                                                "name": "WebPageHeader",
-                                                "class": "WebPageHeader",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header].blocks[0:PageHeader]",
+                                                "@component": "['package.core.ui'].web.blocks.PageHeader",
+                                                "name": "PageHeader",
+                                                "class": "PageHeader",
                                                 "kind": "block"
                                             },
                                             "genes": {
                                                 "data": {
                                                     "accessors": {
-                                                        "header": "region.articles"
+                                                        "header": "region.stories"
                                                     }
                                                 },
                                                 "set": {
@@ -284,7 +317,7 @@
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body].blocks[0:WebPageHeader]",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body].blocks[0:WebPageBody]",
                                                 "@component": "['package.core.ui'].web.blocks.WebPageBody",
                                                 "name": "WebPageBody",
                                                 "class": "WebPageBody",
@@ -309,15 +342,15 @@
                                 {
                                     "meta": {
                                         "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer]",
-                                        "name": "footer",
+                                        "name": "main",
                                         "class": "Region",
                                         "kind": "region"
                                     },
                                     "genes": {
                                         "data": {
-                                            "selectors": "PersonList",
+                                            "selectors": "VideoList",
                                             "accessors": {
-                                                "articles": "document.articles"
+                                                "videos": "document.videos"
                                             }
                                         },
                                         "set": {
@@ -333,7 +366,7 @@
                                         {
                                             "meta": {
                                                 "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer].blocks[0:PersonList]",
-                                                "@component": "['package.core.ui'].web.blocks.GridTable",
+                                                "@component": "['package.core.ui'].app.blocks.GridTable",
                                                 "name": "PersonList",
                                                 "class": "PersonList",
                                                 "kind": "block"
@@ -342,7 +375,7 @@
                                                 "data": {
                                                     "selector": "PersonList",
                                                     "accessors": {
-                                                        "rows": "region.articles"
+                                                        "rows": "region.videos"
                                                     }
                                                 },
                                                 "set": {
@@ -930,7 +963,7 @@
                                         },
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer].blocks[1:WebPageFooter]",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[1:WebPageFooter]",
                                                 "@component": "['package.core.ui'].web.blocks.WebPageFooter",
                                                 "name": "WebPageFooter",
                                                 "class": "WebPageFooter",
@@ -939,7 +972,7 @@
                                             "genes": {
                                                 "data": {
                                                     "accessors": {
-                                                        "videos": "region.articles"
+                                                        "videos": "region.videos"
                                                     }
                                                 }
                                             }
@@ -952,7 +985,7 @@
                     "mutations": {
                         "static": {},
                         "scheduled": {
-                            "2019-08-28T06:55:21+00:00": {
+                            "2020-08-28T06:55:21+00:00": {
                                 "meta": {
                                     "@component": "['package.core.ui'].web.documents.Document",
                                     "@theme": "['package.core.cms'].web.documents.Document",
@@ -983,6 +1016,7 @@
                         }
                     }
                 }
+
             }
         },
         "genes": {
@@ -1010,7 +1044,6 @@
                 "blocks": {}
             }
         }
-
     }
 }
 

@@ -19,15 +19,17 @@ the same Toplevel props are reused across all components.
 The Toplevel props objects are: 
 - **meta**
 - **data**
+- **actions**
 - **ui**
 - **set**
 - **evt**
 - **own**
 - **fwd**
+- **context**
 ------------------
 - **meta**
 
-The **meta** prop object contains special meta locator annotations such as @dna, @registry and @theme as well as other meta data 
+The **meta** prop object contains special meta locator annotations such as @dna, @component and @theme as well as other meta data 
 which describes the component.
 
 - **data**
@@ -61,7 +63,7 @@ but need to pass through the component for prop drilling.
 ``` 
 meta: {
     '@dna',
-    '@registry',
+    '@component',
     id,
     name,
     class,
@@ -69,45 +71,42 @@ meta: {
 }
 
 props: {
-	data: {
+    data: {
         value,
         graph,
-        selector,
-        mutator,
-        accessor: {},
-        actions: {},
+        selectors,
+        mutators,
+        accessors: {},
     },
-	ui: {
-		theme: {
-            model: {
+    actions: {},
+    ui: {
+        theme: {
+            modelVariant: '',
+            modelParams: {
                 param: value
             },
-            design: 'asImageSlider',        [asDesignName (substitution) | inDesignName (context) ]
-            skin: {
-               tone: 'default',             [defaultInverted | taxonomyVehicles]
-               typography: 'sans',          [default | sans | classic | heavy]
-               spacial: 'compact',          [default | compact | open | wide]
-               motion: 'smooth',            [default | smooth | playful | instant]
+            designVariant: 'asImageSlider',        
+            skinTone: 'default',
+            skinTypography: 'sans',
+            skinSpacial: 'compact',          
+            skinMotion: 'smooth',            
             },
-            finish: {
-                class: 'custom-class',
-                style: {color: 'red'}
+            decorateClass: 'custom-class',
+            decorateStyle: {
+                color: 'red'
             }
-        },
-        actions: {}
-
-	},
-	set: {
-		isEditMode: true
-	},
-	evt: {},
-	own: {  
-		actions: {}
-		// private props
-	},
-	fwd: {
-		// prop drilling
-	}
+        }
+    },
+    set: {
+        isEditMode: true
+    },
+    evt: {},
+    own: {  
+        // private props
+    },
+    fwd: {
+	// prop drilling
+    }
 }
 ```
 
@@ -118,8 +117,8 @@ props: {
 context:
 
 {
-	locale,
-	theme,
+    locale,
+    theme,
 }
 ```
 
@@ -137,19 +136,19 @@ In order to theme a Component in a flexible and consistent way, a styled compone
 genes.ui.theme:
 
 {
-    model: {
+    modelVariant: '',
+    modelParams: {
         param: value
     },
-    design : 'asImageSlider',
-    skin: {
-       tone: default,
-       typography: sans, 
-       spacial: cozy, 
-       motion: smooth, 
+    designVariant: 'asImageSlider',        
+    skinTone: 'default',
+    skinTypography: 'sans',
+    skinSpacial: 'compact',          
+    skinMotion: 'smooth',            
     },
-    finish: {
-        class: 'custom-class',
-        style: {color: 'red'}
+    decorateClass: 'custom-class',
+    decorateStyle: {
+        color: 'red'
     }
 }
 ```
@@ -167,14 +166,17 @@ The default model of the component is first styled with the minimal basic struct
 to make the component functional. 
 The **default model**  should always be defined:
 
-genes.ui.theme.model: 'default'
+genes.ui.theme.modelVariant: 'default'
 
 ```
+genes.ui.theme.modelVariant: 'default'
+
+
 models = {
-	default: {
-		param: value
-	},
-}[genes.ui.theme.model]
+    default: {
+        param: value
+    },
+}[genes.ui.theme.modelVariant]
 ```
 
 
@@ -191,14 +193,14 @@ Only one **model** can be active for a styled component at the same time.
 
 ```
 models = {
-	default: {
-		param: value
-	},
-	modelVariantName: {
-		param: value
-	},
-	custom: null
-}[genes.ui.theme.model]
+    default: {
+        param: value
+    },
+    modelVariantName: {
+        param: value
+    },
+    custom: null
+}[genes.ui.theme.modelVariant]
 ```
 
 
@@ -225,9 +227,7 @@ These designs do not change the functionality of the component, but they alter t
 
 Naming convention for designs:
 - design substitution:
-	- use genes.ui.theme.design.**as**DesignName to select an alternative design for the styled component
-- design context:
-	- use genes.ui.theme.design.**in**DesignName to select a design that changes depending on the context wherein the Styled Component is used.
+	- use genes.ui.theme.designVariant to select an alternative design for the styled component
  
 
 
@@ -240,34 +240,37 @@ These are CSS values which are responsible for the final look and feel of the st
 These CSS values are defined globally at the global Theme level. 
 The Skin theming level enables multi-dimensional theming of a styled component.
 
-use: genes.ui.theme.skin.{skin} to apply a multi-dimensional skin to a styled component
+use: genes.ui.theme.skinVariant to apply a multi-dimensional skin to a styled component
 
 ```
-genes.ui.theme.skin:
+genes.ui.theme:
 
 {
-   tone: default,
-   typography: sans, //default
-   spacial: compact, //default
-   motion: playful, //default, instant, smooth
+   skinVariant: 'default',
+   skinTone: 'default',
+   skinTypography: 'sans', 
+   skinSpacial: 'compact', 
+   skinMotion: 'playful',  
 }
 ```
                 
 
-## Fourth Theming Layer: Finish
+## Fourth Theming Layer: Decorate
 
-#### Finishing Styled Components
+#### Decorating Styled Components
 Once a styled component has applied a Skin, the fourth and final theming layer can be applied.
 These styles are injected ad-hoc by applying a class or by directly injecting inline styles.
 
 use: genes.ui.theme.finish.{finish} to apply a class or inline styles to a styled component
 
 ```
-genes.ui.theme.finish:
+genes.ui.theme:
 
 {
-    class: 'is-custom-class',
-    style: {color: 'red'}
+    decorateClass: 'is-custom-class',
+    decorateStyle: {
+       color: 'red'
+    }
 }
 ```
 

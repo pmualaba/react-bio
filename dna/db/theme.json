@@ -1,1847 +1,394 @@
 {
-    "description": "Global Theme Skins",
     "skins": {
         "app": {
-            "theme": {
-                "themeVariant": {
-                    "dimension": {
-                        "dimensionVariant": {
-                            "variable": "value"
-                        }
-                    }
-                }
-            },
-            "themeBase": {
-                "inherits": null,
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantDefault": {
-                    "id": null,
-                    "name": "default",
-                    "inherits": null,
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
+            "themeSkin1(bio)": {
+                "skin1Variant1(vtmDefault)": {
+                    "dimension1(tone)": {
+                        "dimension1Variant1(toneVariant1)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        "dimension1Variant2(toneVariant2)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         }
                     },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
+                    "dimension2(typography)": {
+                        "dimension2Variant1(typographyVariant1)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
+                        "dimension2Variant2(typographyVariant2)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         }
                     }
                 },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "themeColor": "",
-                    "primaryColor": "rgba(0, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)"
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "themeColor": ""
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "themeColor": "",
-                    "accentColor": ""
-                }
-            },
-            "themeDefault": {
-                "inherits": "base",
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantDefault": {
-                    "id": null,
-                    "name": "default",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 255, 0, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "themeColor": "",
-                    "primaryColor": "rgba(255, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)"
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "themeColor": ""
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "themeColor": "",
-                    "accentColor": ""
-                }
-            },
-            "themeInverted": {
-                "inherits": "base",
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantDefault": {
-                    "id": null,
-                    "name": "default",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 0, 0, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "themeColor": "",
-                    "primaryColor": "rgba(0, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)"
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "themeColor": ""
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "themeColor": "",
-                    "accentColor": ""
-                }
-            },
-            "themeMoods": {
-                "inherits": "base",
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantDefault": {
-                    "id": null,
-                    "name": "default",
-                    "inherits": null,
-                    "themeColor": "",
-                    "themeColorInverted": "",
-                    "primaryFont": "Arial",
-                    "primaryColor": "rgba(255, 0, 0, 1)",
-                    "boxShadow": ""
-                },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "themeColor": "",
-                    "primaryColor": "rgba(0, 0, 255, 1)",
-                    "primaryColorInverted": "rgba(255, 0, 255, 1)"
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "themeColor": ""
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "themeColor": "",
-                    "accentColor": ""
-                },
-                "themeVariantCozy": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "themeColor": "",
-                    "accentColor": ""
-                }
-            }
-        },
-        "web": {
-            "skin": {
-                "skinVariant1": {
-                    "dimension": {
-                        "dimensionSet1": {
+                "skin1Variant2(vtmInverted)": {
+                    "dimension1(tone)": {
+                        "dimension1Variant1(toneVariant1)": {
                             "variable1": "value",
                             "variable2": "value"
                         }
                     }
                 }
+
             },
-            "themeBase": {
+            "bio": {
                 "inherits": null,
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 255, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDefault": {
+                "default": {
                     "id": null,
                     "name": "default",
                     "inherits": null,
                     "tone": {
                         "default": {
-                            "textDarkFront": "green",
-                            "textLightFront": "",
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
+                        "defaultInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantDefaultInverted": {
+                        "vtmRed": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmer": {
+                        "vtmRedInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmerInverted": {
+                        "vtmGreen": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCooler": {
+                        "vtmGreenInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCoolerInverted": {
+                        "vtmBlue": {
+                            "themeColor": "",
+                            "themeColorInverted": "",
+                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        },
+                        "vtmBlueInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         }
                     },
                     "typography": {
-                        "dimensionVariantSans": {
+                        "default": {
                             "primaryFont": "Arial",
                             "secondaryFont": "Mono"
                         },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
+                        "sans": {
+                            "primaryFont": "Arial",
                             "secondaryFont": "Mono"
                         },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
+                        "classic": {
                             "primaryFont": "Times",
                             "secondaryFont": "Mono"
                         }
                     },
                     "spacial": {
-                        "dimensionVariantCompact": {
+                        "compact": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         },
-                        "dimensionVariantOpen": {
+                        "open": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         }
                     },
                     "motion": {
-                        "dimensionVariantSmooth": {
+                        "smooth": {
                             "transitionDuration": "2s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         },
-                        "dimensionVariantPlayful": {
+                        "playful": {
                             "transitionDuration": "1s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         }
                     }
                 },
-                "themeVariantInverted": {
+                "defaultInverted": {
                     "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
+                    "name": "default",
+                    "inherits": null,
                     "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
+                        "default": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantDefaultInverted": {
+                        "defaultInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmer": {
+                        "vtmRed": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmerInverted": {
+                        "vtmRedInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCooler": {
+                        "vtmGreen": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCoolerInverted": {
+                        "vtmGreenInverted": {
+                            "themeColor": "",
+                            "themeColorInverted": "",
+                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        },
+                        "vtmBlue": {
+                            "themeColor": "",
+                            "themeColorInverted": "",
+                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        },
+                        "vtmBlueInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         }
                     },
                     "typography": {
-                        "dimensionVariantSans": {
+                        "sans": {
                             "primaryFont": "Arial",
                             "secondaryFont": "Mono"
                         },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
+                        "classic": {
                             "primaryFont": "Times",
                             "secondaryFont": "Mono"
                         }
                     },
                     "spacial": {
-                        "dimensionVariantCompact": {
+                        "compact": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         },
-                        "dimensionVariantOpen": {
+                        "open": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         }
                     },
                     "motion": {
-                        "dimensionVariantSmooth": {
+                        "smooth": {
                             "transitionDuration": "2s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
+                        "playful": {
                             "transitionDuration": "1s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         }
                     }
                 }
-            },
-            "themeDefault": {
-                "inherits": null,
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
+            }
+        },
+        "web": {
+            "themeSkin1(bio)": {
+                "skin1Variant1(vtmDefault)": {
+                    "dimension1(tone)": {
+                        "dimension1Variant1(toneVariant1)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        "dimension1Variant2(toneVariant2)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         }
                     },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
+                    "dimension2(typography)": {
+                        "dimension2Variant1(typographyVariant1)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
+                        "dimension2Variant2(typographyVariant2)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         }
                     }
                 },
-                "themeVariantDefault": {
-                    "id": null,
-                    "name": "default",
-                    "inherits": null,
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
+                "skin1Variant2(vtmInverted)": {
+                    "dimension1(tone)": {
+                        "dimension1Variant1(toneVariant1)": {
+                            "variable1": "value",
+                            "variable2": "value"
                         }
                     }
                 }
+
             },
-            "themeInverted": {
+            "bio": {
                 "inherits": null,
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDefault": {
+                "default": {
                     "id": null,
                     "name": "default",
                     "inherits": null,
                     "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
+                        "default": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantDefaultInverted": {
+                        "defaultInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmer": {
+                        "vtmRed": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmerInverted": {
+                        "vtmRedInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCooler": {
+                        "vtmGreen": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCoolerInverted": {
+                        "vtmGreenInverted": {
+                            "themeColor": "",
+                            "themeColorInverted": "",
+                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        },
+                        "vtmBlue": {
+                            "themeColor": "",
+                            "themeColorInverted": "",
+                            "primaryColor": "rgba(255, 0, 0, 1)"
+                        },
+                        "vtmBlueInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         }
                     },
                     "typography": {
-                        "dimensionVariantSans": {
+                        "sans": {
                             "primaryFont": "Arial",
                             "secondaryFont": "Mono"
                         },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
+                        "classic": {
                             "primaryFont": "Times",
                             "secondaryFont": "Mono"
                         }
                     },
                     "spacial": {
-                        "dimensionVariantCompact": {
+                        "compact": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         },
-                        "dimensionVariantOpen": {
+                        "open": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         }
                     },
                     "motion": {
-                        "dimensionVariantSmooth": {
+                        "smooth": {
                             "transitionDuration": "2s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         },
-                        "dimensionVariantPlayful": {
+                        "playful": {
                             "transitionDuration": "1s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         }
                     }
                 },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                }
-            },
-            "themeMoods": {
-                "inherits": null,
-                "themeVariantBase": {
-                    "id": null,
-                    "name": "base",
-                    "inherits": null,
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDefault": {
+                "defaultInverted": {
                     "id": null,
                     "name": "default",
                     "inherits": null,
                     "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
+                        "default": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantDefaultInverted": {
+                        "defaultInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmer": {
+                        "vtmRed": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmerInverted": {
+                        "vtmRedInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCooler": {
+                        "vtmGreen": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantInverted": {
-                    "id": null,
-                    "name": "inverted",
-                    "inherits": "default",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
+                        "vtmGreenInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantDefaultInverted": {
+                        "vtmBlue": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
+                        "vtmBlueInverted": {
                             "themeColor": "",
                             "themeColorInverted": "",
                             "primaryColor": "rgba(255, 0, 0, 1)"
                         }
                     },
                     "typography": {
-                        "dimensionVariantSans": {
+                        "sans": {
                             "primaryFont": "Arial",
                             "secondaryFont": "Mono"
                         },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
+                        "classic": {
                             "primaryFont": "Times",
                             "secondaryFont": "Mono"
                         }
                     },
                     "spacial": {
-                        "dimensionVariantCompact": {
+                        "compact": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         },
-                        "dimensionVariantOpen": {
+                        "open": {
                             "boxShadow": "",
                             "padding": "",
                             "margin": ""
                         }
                     },
                     "motion": {
-                        "dimensionVariantSmooth": {
+                        "smooth": {
                             "transitionDuration": "2s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantDarker": {
-                    "id": null,
-                    "name": "darker",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
-                            "transitionDuration": "1s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        }
-                    }
-                },
-                "themeVariantHighlight": {
-                    "id": null,
-                    "name": "highlight",
-                    "inherits": "base",
-                    "tone": {
-                        "dimensionVariantDefault": {
-                            "textDarkFront": "",
-                            "textLightFront": "",
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantDefaultInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmer": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantWarmerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCooler": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        },
-                        "dimensionVariantCoolerInverted": {
-                            "themeColor": "",
-                            "themeColorInverted": "",
-                            "primaryColor": "rgba(255, 0, 0, 1)"
-                        }
-                    },
-                    "typography": {
-                        "dimensionVariantSans": {
-                            "primaryFont": "Arial",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantClassic": {
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        },
-                        "dimensionVariantGloba": {
-                            "globalFontSize": "12px",
-                            "fontSizeLg": "16px",
-                            "globalFontWeight": 400,
-                            "primaryFont": "Times",
-                            "secondaryFont": "Mono"
-                        }
-                    },
-                    "spacial": {
-                        "dimensionVariantCompact": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        },
-                        "dimensionVariantOpen": {
-                            "boxShadow": "",
-                            "padding": "",
-                            "margin": ""
-                        }
-                    },
-                    "motion": {
-                        "dimensionVariantSmooth": {
-                            "transitionDuration": "2s",
-                            "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
-                        },
-                        "dimensionVariantPlayful": {
+                        "playful": {
                             "transitionDuration": "1s",
                             "transitionTimingFunction": "cubic-bezier(.694,.0482,.335,1)"
                         }

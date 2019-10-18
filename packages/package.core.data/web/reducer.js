@@ -41,7 +41,7 @@ export const queries = {
 
 export const mutations = {
     'package.core.cms': {
-        CREATE_ARTICLE: {
+        CREATE_STORY: {
             id: null,
             name: null
         }

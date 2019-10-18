@@ -81,9 +81,8 @@ const colors = {
             const colorString = `${color}`
             if (colorString.slice(0, 1) === '#' || colorString.slice(0, 3) === 'rgb') {
                 return color
-            } else {
-                return `rgba(${color.length === 3 ? `${color},1` : color})`
             }
+            return `rgba(${color.length === 3 ? `${color},1` : color})`
         }
     }
 }

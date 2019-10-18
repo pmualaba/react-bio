@@ -27,7 +27,7 @@ const app = nextjs({dev})
 const handle = app.getRequestHandler()
 const stats = {reqCount: 0}
 
-const apiLogic = require('./dna/router.api').logic
+const apiLogic = require('./dna/rna/registry.routes.api').logic
 
 console.time('CREATING DATABASE SERVICE - server.js...')
 const Database = {
@@ -125,30 +125,30 @@ app.prepare()
             console.log('SETUP NEXT.JS ROUTER - CREATING DNA ROUTES - server.js...')
             Object.values(db.json.dna.getState()).forEach(Package => {
                 Package.app &&
-                Package.app.documents &&
-                Object.values(Package.app.documents).forEach(document => {
-                    const route = document.genes.set.route
-                    console.log('     route app:', route.match)
-                    router.get(route.match, (req, res) => {
-                        const actualPage = `/templates/${route.template}`
-                        const queryParams = {url: req.path, locale: locale[req.params.lang] || locale.default, ...route.params}
-                        // app.renderToCache(req, res, actualPage, queryParams, 5)
-                        app.render(req, res, actualPage, queryParams)
+                    Package.app.documents &&
+                    Object.values(Package.app.documents).forEach(document => {
+                        const route = document.genes.set.route
+                        console.log('     route app:', route.match)
+                        router.get(route.match, (req, res) => {
+                            const actualPage = `/templates/${route.template}`
+                            const queryParams = {url: req.path, locale: locale[req.params.lang] || locale.default, ...route.params}
+                            // app.renderToCache(req, res, actualPage, queryParams, 5)
+                            app.render(req, res, actualPage, queryParams)
+                        })
                     })
-                })
                 Package.web &&
-                Package.web.documents &&
-                Object.values(Package.web.documents).forEach(document => {
-                    const route = document.genes.set.route
-                    console.log('     route web:', route.match)
+                    Package.web.documents &&
+                    Object.values(Package.web.documents).forEach(document => {
+                        const route = document.genes.set.route
+                        console.log('     route web:', route.match)
 
-                    router.get(route.match, (req, res) => {
-                        const actualPage = `/templates/${route.template}`
-                        const queryParams = {url: req.path, locale: locale.default, ...route.params}
-                        // app.renderToCache(req, res, actualPage, queryParams, 5)
-                        app.render(req, res, actualPage, queryParams)
+                        router.get(route.match, (req, res) => {
+                            const actualPage = `/templates/${route.template}`
+                            const queryParams = {url: req.path, locale: locale.default, ...route.params}
+                            // app.renderToCache(req, res, actualPage, queryParams, 5)
+                            app.render(req, res, actualPage, queryParams)
+                        })
                     })
-                })
             })
 
             /**
@@ -247,8 +247,8 @@ app.prepare()
              * LOAD ALL API ROUTES
              */
             server.use(router)
-            server.use(require('./dna/router.page'))
-            server.use(require('./dna/router.api').router)
+            server.use(require('./dna/rna/registry.routes.page'))
+            server.use(require('./dna/rna/registry.routes.api').router)
 
             /**
              * CONFIG NEXT.JS ROUTES

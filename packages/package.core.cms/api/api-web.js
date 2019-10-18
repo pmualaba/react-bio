@@ -9,11 +9,11 @@ const logic = {
         console.log('/api/package.core.cms/web/GET_ARTICLES')
 
         return new Promise((resolve, reject) => {
-            resolve(req.db.json.data.get('nodes.Article[0]').value())
+            resolve(req.db.json.data.get('nodes.Story').value())
         })
 
-        /** DB API CALL
-         const response = await axios.get('https://DGRAPH/Article/40ad48ee719c43449ad49164f1ca5574/', {
+        /** MODX API CALL
+            const response = await axios.get('https://MODX/Story/40ad48ee719c43449ad49164f1ca5574/', {
                 headers: {
                     Accept: 'application/json; charset=utf-8',
                     'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ const logic = {
                     'x-password': 'password'
                 }
             })
-         return new Promise((resolve, reject) => {
+            return new Promise((resolve, reject) => {
                 resolve(response.data.result)
             })
          */
@@ -33,8 +33,8 @@ const logic = {
             resolve(req.db.json.data.get('nodes.ContentPage[0]').value())
         })
 
-        /** DB API CALL
-         const response = await axios.get('https://DGRAPH/ContentPage/40ad48ee719c43449ad49164f1ca5574/', {
+        /** MODX API CALL
+            const response = await axios.get('https://MODX/ContentPage/40ad48ee719c43449ad49164f1ca5574/', {
                 headers: {
                     Accept: 'application/json; charset=utf-8',
                     'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const logic = {
                     'x-password': 'password'
                 }
             })
-         return new Promise((resolve, reject) => {
+            return new Promise((resolve, reject) => {
                 resolve(response.data.result)
             })
          */

@@ -1,5 +1,4 @@
 import {css} from 'styled-components'
-import {breakpoints} from '../css-responsive'
 
 export default css`
     .PageSection {
@@ -36,16 +35,6 @@ export default css`
                             background: #3a597f;
                         }
                     }
-                }
-            }
-        }
-    }
-
-    @media (min-width: ${breakpoints.screenMd}) {
-        .PageSection {
-            &.homeBenefits {
-                &.website {
-                    padding: 70px 30% 50px 5%;
                 }
             }
         }

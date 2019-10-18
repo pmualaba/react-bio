@@ -35,7 +35,7 @@ export const selections = {
 
 export const queries = {
     'package.core.cms': {
-        GET_STORIES: []
+        GET_ARTICLES: []
     }
 }
 

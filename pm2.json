@@ -14,7 +14,7 @@
             "watch": [
                 "packages/**/api/*",
                 "server.js",
-                "packages/package.core.db/driver/*"
+                "packages/package.core.data/driver/*"
             ],
             "ignore_watch": [
                 "node_modules",

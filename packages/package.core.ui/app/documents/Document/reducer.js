@@ -37,7 +37,6 @@ const global = {
 }
 
 const globalReducer = (state = global, action) => {
-
     switch (action.type) {
         case ActionTypes.SET_CURRENT_ROUTE:
             return {
@@ -46,12 +45,6 @@ const globalReducer = (state = global, action) => {
                     ...state.router,
                     currentRoute: action.payload.url
                 }
-            }
-
-        case ActionTypes.SET_USER_AUTHENTICATION_DATA:
-            return {
-                ...state,
-                user: {...action.payload.user}
             }
 
         default:

@@ -1,134 +1,226 @@
 {
-    "description": "",
     "nodes": {
         "ContentPage": [
             {
-                "id": "ck0xo8bo5000001l384jsh7lv",
-                "templateId": "ck0xo8bo5000001l384jsh7lv",
+                "id": "a28a62764ff1481fbe4b6a1b32770a3c",
                 "type": "ContentPage",
-                "name": "Home Page",
                 "role": "common.page.home",
+                "name": "Home",
+                "name_nl_BE": "Home",
+                "baseUrl": "/",
+                "slug": "",
+                "slug_nl_BE": "",
                 "url": "/",
-                "slug": "/",
-                "isPrimaryClassifiedByTaxonomyTerm": {},
-                "isClassifiedByTaxonomyTerms": [],
+                "url_nl_BE": "/nl/",
+                "createdBy": null,
+                "createdDate": "2019-08-29T11:15:43+0200",
+                "lastModifiedDate": "2019-08-29T11:15:43+0200",
+                "publishedDate": "2019-07-08T16:41:52+0200",
+                "unPublishDate": "2020-02-28T15:59:59.123Z",
+                "status": "PUBLISHED",
+                "title": "<h1>Home</h1>",
+                "title_nl_BE": "<h1>Home</h1>",
+                "subTitle": null,
+                "subTitle_nl_BE": null,
+                "body": "<p>Home...Lorem ipsum...</p>",
+                "body_nl_BE": "<p>Home...Lorem ipsum...</p>",
+                "excerpt": "<p>Home...Lorem ipsum...</p>",
+                "excerpt_nl_BE": "<p>Home...Lorem ipsum...</p>",
+                "icon": "fasHome",
+                "metaTitle_nl_BE": "React Bio",
+                "metaTitle": "React Bio",
+                "metaDescription": "Home",
+                "metaDescription_nl_BE": "Home",
                 "isRootNode": true,
-                "isTemplate": true,
                 "sortIndex": 0,
                 "nestIndex": 0,
-                "publishDate": "2019-05-28T15:59:59.123Z",
-                "unPublishDate": "2020-02-28T15:59:59.123Z",
-                "hasParentContentNodes": [],
-                "hasChildContentNodes": [
+                "isTemplate": false,
+                "templateId": "ck0xo8bo5000001l384jsh7lv",
+                "isPrimarilyClassifiedByTaxonomyTerm": null,
+                "isClassifiedByTaxonomyTerms": [
                     {
-                        "id": "ck0xo8v41000101l38l28fulk",
-                        "type": "ContentNode",
-                        "name": "Hero Slider",
-                        "role": "common.hero.slider",
-                        "url": "/ContentNode/common.hero.slider/ck0xo8v41000101l38l28fulk",
-                        "slug": "",
-                        "isRootNode": false,
-                        "isTemplate": true,
-                        "sortIndex": 0,
-                        "nestIndex": 1,
-                        "publishDate": "2019-05-28T15:59:59.123Z",
-                        "unPublishDate": "2020-02-28T15:59:59.123Z",
-                        "hasParentContentNodes": [
-                            {
-                                "id": "ck0xo8bo5000001l384jsh7lv"
-                            }
-                        ],
-                        "hasChildContentNodes": [
-                            {
-                                "id": "ck128dyz1000001la46e6bcks",
-                                "type": "ContentNode",
-                                "name": "Hero Slider Section 1",
-                                "role": "common.hero.slider:block.section.1",
-                                "url": "/ContentNode/common.hero.slider:block.section.1/ck128dyz1000001la46e6bcks",
-                                "isRootNode": false,
-                                "isTemplate": true,
-                                "sortIndex": 0,
-                                "nestIndex": 2,
-                                "isExtendByFieldGroups": [
-                                    {
-                                        "id": "ck128ejp7000101la1lh3h7rx",
-                                        "type": "FieldGroup",
-                                        "name": "FieldGroup",
-                                        "role": "common.hero.slider:block.section.1:FieldGroup.1"
-                                    }
-                                ],
-                                "hasChildContentNodes": [
-                                    {
-                                        "id": "ck128eyjs000201la2nd409jp",
-                                        "type": "ContentNode",
-                                        "name": "Hero Slider Section 1.1",
-                                        "role": "common.hero.slider:block.section.1.1",
-                                        "url": "/ContentNode/common.hero.slider:block.section.1.1/ck128eyjs000201la2nd409jp",
-                                        "isRootNode": false,
-                                        "isExtendByFieldGroups": [
-                                            {
-                                                "id": "ck128f8en000301labucubeje",
-                                                "type": "FieldGroup",
-                                                "name": "FieldGroup",
-                                                "role": "common.hero.slider:block.section.1.1:FieldGroup.1"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "ck128fmkd000401laewo73ios",
-                                        "type": "ContentNode",
-                                        "name": "Hero Slider Section 1.2",
-                                        "role": "common.hero.slider:block.section.1.2",
-                                        "url": "/ContentNode/common.hero.slider:block.section.1.2/ck128fmkd000401laewo73ios",
-                                        "isRootNode": false,
-                                        "isExtendByFieldGroups": [
-                                            {
-                                                "id": "ck128fyf1000501la9xrg8mht",
-                                                "type": "FieldGroup",
-                                                "name": "FieldGroup",
-                                                "role": "common.hero.slider:block.section.1.2:FieldGroup.1"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ],
-                        "isExtendByFieldGroups": [
-                            {
-                                "id": "ck10cl23n000101ks5xrq6a1t",
-                                "type": "FieldGroup",
-                                "name": "FieldGroup",
-                                "role": "common.hero.slider:block:FieldGroup.1"
-                            }
-                        ],
-                        "rendersWithDna": null,
-                        "rendersWithModifiedDna": null
-                    },
-                    {
-                        "id": "ck0xrf79q000001mm5zlf7s8d",
-                        "name": "Highlight Top Topical",
-                        "role": "common.highlight.topTopical",
-                        "url": "/ContentNode/common.highlight.topTopical/ck0xrf79q000001mm5zlf7s8d",
-                        "isRootNode": false,
-                        "isTemplate": true,
-                        "hasChildContentNodes": [
-                            {
-                                "id": "ck128gdee000601laftyoec9u",
-                                "type": "ContentNode",
-                                "name": "storySection.primary",
-                                "role": "common.highlight.topTopical:block.section.1",
-                                "url": "/ContentNode/common.highlight.topTopical:block.section.1/ck128gdee000601laftyoec9u",
-                                "isRootNode": false
-                            }
-                        ],
-                        "rendersWithDna": null,
-                        "rendersWithModifiedDna": null
+                        "id": "d482e97ddcaa48e39e86fd9a436b4c3e",
+                        "name": "home",
+                        "name_nl_BE": "Home",
+                        "slug": "home",
+                        "slug_nl_BE": "home",
+                        "belongsToTaxonomy": {
+                            "id": "d967f160db6740e298b08834763320ec",
+                            "name": "pageTypes"
+                        },
+                        "hasParentTaxonomyTerm": null
                     }
                 ],
+                "hasAuthorUser": null,
+                "hasFeaturedImage": null,
+                "hasMetaImage": null,
+                "hasImageCollection": [],
+                "hasWebLinks": [],
+                "isTargetOfWebLink": null,
+                "isTargetOfMenuItem": null,
+                "isExtendedByFieldGroups": [],
+                "hasChildContentNodes": [
+                    {
+                        "id": "89d79027acee47cea0c737cb5e662525",
+                        "type": "ContentNode",
+                        "role": "common.hero.primary",
+                        "name": "Hero Image",
+                        "name_nl_BE": "Hero Image",
+                        "baseUrl": "",
+                        "slug": "common.hero.primary",
+                        "slug_nl_BE": "common.hero.primary",
+                        "url": "/common.hero.primary/89d79027acee47cea0c737cb5e662525",
+                        "url_nl_BE": "/nl/common.hero.primary/89d79027acee47cea0c737cb5e662525",
+                        "createdBy": null,
+                        "createdDate": "2019-08-29T11:15:43+0200",
+                        "lastModifiedDate": "2019-08-29T11:15:43+0200",
+                        "publishedDate": "2019-07-08T16:41:52+0200",
+                        "unPublishDate": "2020-02-28T15:59:59.123Z",
+                        "title": "<h2><strong>REACT BIO</strong></h2>",
+                        "title_nl_BE": "<h2><strong>REACT BIO</strong></h2>",
+                        "subTitle": null,
+                        "subTitle_nl_BE": null,
+                        "body": "",
+                        "body_nl_BE": "",
+                        "excerpt": "",
+                        "excerpt_nl_BE": "",
+                        "icon": "fasHome",
+                        "metaTitle_nl_BE": "",
+                        "metaTitle": "",
+                        "metaDescription": "",
+                        "metaDescription_nl_BE": "",
+                        "isRootNode": false,
+                        "sortIndex": 0,
+                        "nestIndex": 1,
+                        "isTemplate": false,
+                        "templateId": "ck0xo8bo5000001l384jsh7lv",
+                        "isPrimarilyClassifiedByTaxonomyTerm": null,
+                        "isClassifiedByTaxonomyTerms": [],
+                        "hasAuthorUser": null,
+                        "hasMetaImage": null,
+                        "hasFeaturedImage": null,
+                        "hasCustomImages": [],
+                        "hasImageCollection": [
+                            {
+                                "id": "d6181a8ae8de4c228930bab4a3974433",
+                                "type": "CustomImage",
+                                "role": "common.hero.primary",
+                                "name": "hero-1a.jpg",
+                                "src": "https://my-react-bio-app.org/.../hero-1a.jpg"
+                            },
+                            {
+                                "id": "d6181a8ae8de4c228930bab4a3974433",
+                                "type": "CustomImage",
+                                "role": "common.hero.overlay",
+                                "name": "hero-1b.jpg",
+                                "src": "https://my-react-bio-app.org/.../hero-1b.jpg"
+                            }
+                        ],
+                        "hasWebLinks": [
+                            {
+                                "id": "3f5a3ff59d3d47f48be27bb10cfeb38c",
+                                "type": "WebLink",
+                                "role": "common.hero.link",
+                                "name": "Call To Action",
+                                "classification": "LINK",
+                                "isActionLink": true,
+                                "title_nl_BE": "Call To Action",
+                                "url": "/products",
+                                "url_nl_BE": "/nl/producten",
+                                "icon": "fasCircle"
+                            }
+                        ],
+                        "isTargetOfWebLink": null,
+                        "isTargetOfMenuItem": null,
+                        "isExtendedByFieldGroups": [{
+                            "id": "41000a29c6e24dcb8c51f228b896d4bd",
+                            "type": "FieldGroup",
+                            "role": "widget.timer.clock",
+                            "hasCustomFields": [
+                                {
+                                    "id": "ad3f5515793c4de7b849062554d0a181",
+                                    "type": "CustomField",
+                                    "role": "widget.timer.clock",
+                                    "name": "Clock Widget"
+                                }
+                            ]
+                        }],
+                        "hasChildContentNodes": [],
+                        "hasParentContentNodes": [{
+                            "id": "a28a62764ff1481fbe4b6a1b32770a3c"
+                        }]
+                    },
+                    {
+                        "id": "08cb822d5c454cf9b17d7ebf6d95a565",
+                        "type": "ContentNode",
+                        "role": "common.content.video",
+                        "name": "Promo",
+                        "name_nl_BE": "Promo",
+                        "baseUrl": "",
+                        "slug": "common.content.video",
+                        "slug_nl_BE": "common.content.video",
+                        "url": "/common.content.video/08cb822d5c454cf9b17d7ebf6d95a565",
+                        "url_nl_BE": "/nl/common.content.video/08cb822d5c454cf9b17d7ebf6d95a565",
+                        "createdBy": null,
+                        "createdDate": "2019-08-29T11:15:43+0200",
+                        "lastModifiedDate": "2019-08-29T11:15:43+0200",
+                        "publishedDate": "2019-07-08T16:41:52+0200",
+                        "unPublishDate": "2020-02-28T15:59:59.123Z",
+                        "title": "<h2><strong>Promo</strong></h2>",
+                        "title_nl_BE": "<h2><strong>Promo</strong></h2>",
+                        "subTitle": "<h3><strong>Product Launch</strong></h3>",
+                        "subTitle_nl_BE": null,
+                        "body": "Lorem ipsum...",
+                        "body_nl_BE": "Lorem ipsum...",
+                        "excerpt": "",
+                        "excerpt_nl_BE": "",
+                        "icon": "fasStory",
+                        "metaTitle_nl_BE": "",
+                        "metaTitle": "",
+                        "metaDescription": "",
+                        "metaDescription_nl_BE": "",
+                        "isRootNode": false,
+                        "sortIndex": 0,
+                        "nestIndex": 1,
+                        "isTemplate": false,
+                        "templateId": "ck0xo8bo5000001l384jsh7lv",
+                        "isPrimarilyClassifiedByTaxonomyTerm": null,
+                        "isClassifiedByTaxonomyTerms": [],
+                        "hasAuthorUser": null,
+                        "hasMetaImage": null,
+                        "hasFeaturedImage": null,
+                        "hasCustomImages": [],
+                        "hasImageCollection": [],
+                        "hasWebLinks": [
+                            {
+                                "id": "18f67c6547e940c9a524aef30c3828eb",
+                                "type": "WebLink",
+                                "role": "common.navigation.link",
+                                "name": "LEES MEER",
+                                "classification": "LINK",
+                                "isActionLink": true,
+                                "title": "LEES MEER",
+                                "title_nl_BE": "LEES MEER",
+                                "url": "/article/detail...",
+                                "url_nl_BE": "/article/detail...",
+                                "icon": "fasCircle"
+                            }
+                        ],
+                        "isTargetOfWebLink": null,
+                        "isTargetOfMenuItem": null,
+                        "isExtendedByFieldGroups": [],
+                        "hasChildContentNodes": [],
+                        "hasParentContentNodes": [{
+                            "id": "a28a62764ff1481fbe4b6a1b32770a3c"
+                        }]
+                    }
+
+                ],
+                "hasParentContentNodes": [],
                 "rendersWithDna": {
                     "id": "ck0xo92xs000201l328mc7ga7",
                     "type": "DnaNode",
-                    "name": "followPage",
+                    "name": "homePage",
                     "isRootNode": true,
                     "isTemplate": true,
                     "meta": {
@@ -136,7 +228,7 @@
                         "@theme": null,
                         "kind": "block"
                     },
-                    "props": {
+                    "genes": {
                         "data": {
                             "accessors": {
                                 "content": "this"
@@ -166,11 +258,10 @@
                                 "@theme": null,
                                 "kind": "block"
                             },
-                            "props": {
+                            "genes": {
                                 "data": {
                                     "accessors": {
-                                        "content": "this.hasChildContentNodes['storySection.primary']",
-                                        "stories": "initialProps.stories"
+                                        "articles": "region.articles"
                                     }
                                 },
                                 "ui": {
@@ -187,15 +278,15 @@
                             },
                             "blocks": [],
                             "mutations": {
-                                "inject": {},
-                                "schedule": {
+                                "static": {},
+                                "scheduled": {
                                     "2019-08-28T06:55:21+00:00": {
                                         "meta": {
                                             "@component": "['package.core.ui'].web.documents.Document",
                                             "@theme": "['package.core.cms'].web.documents.Document",
                                             "kind": "document"
                                         },
-                                        "props": {
+                                        "genes": {
                                             "ui": {
                                                 "theme": {
                                                     "model": {
@@ -226,38 +317,32 @@
                     "id": "ck0xseyyp000001l5a04o8wnn",
                     "modifiedId": "ck0xo92xs000201l328mc7ga7",
                     "type": "DnaNode",
-                    "name": "Home Page",
+                    "name": "story-1",
                     "meta": {
                         "@component": "['package.core.ui'].web.blocks.PageBody",
                         "@theme": null,
                         "kind": "block"
                     },
-                    "props": {},
+                    "genes": {},
                     "blocks": []
                 }
             }
-        ],
-        "Article": [{
-            "id": "1",
-            "name": "Article One"
-        }]
-
+        ]
     },
     "apis": {
         "facebook": {
-            "PhotoAlbum": [
+            "Album": [
                 {
                     "id": "1",
-                    "name": "Video One"
+                    "name": "Album One"
                 }
             ],
-            "Photo": [
+            "Comment": [
                 {
                     "id": "1",
-                    "name": "Show One"
+                    "name": "Comment One"
                 }
             ]
         }
     }
-
 }

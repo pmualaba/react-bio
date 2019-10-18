@@ -1,6 +1,4 @@
 import {css} from 'styled-components'
-import colors from './css-colors'
-import typography from './css-typography'
 
 const effects = {
     transition: (time = '0.5s', ease = 'cubic-bezier(.694,.0482,.335,1)') => css`
@@ -11,7 +9,7 @@ const effects = {
     animations: {},
     tools: {
         clearFix: css`
-            &::after {
+            &:after {
                 content: '';
                 display: block;
                 clear: both;

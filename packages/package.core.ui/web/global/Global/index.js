@@ -7,18 +7,19 @@ import PropTypes from 'prop-types'
 import {fromEvent} from 'rxjs'
 import {auditTime, map, pairwise} from 'rxjs/operators'
 import Router from 'next/router'
-import styled, {ThemeProvider} from 'styled-components'
-import {motion} from 'framer-motion'
+import Head from 'next/head'
+import {ThemeProvider} from 'styled-components'
 import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
 import theme from '../../../../../theme/web/theme'
+import {CSSvariables} from '../../../../../theme/web/functions'
+import CSSreset from '../../../../../theme/web/css-reset'
+import motion from '../../../../../dna/rna/registry.theme.motion'
 
 /**
  * Components
  */
 
-import CSSglobalReset from '../../../../../theme/web/css-global-reset'
-import CSSglobalStyling from '../../../../../theme/web/css-global-styling'
-import CSSglobalVariablesHOC from '../../../../../theme/web/css-global-variables'
+import GlobalStyled from './styled'
 
 /**
  * Context
@@ -26,21 +27,6 @@ import CSSglobalVariablesHOC from '../../../../../theme/web/css-global-variables
 
 export const GlobalContext = createContext({})
 GlobalContext.displayName = 'GlobalContext'
-
-/**
- * Styled Component
- */
-
-export const GlobalStyled = styled('div').attrs(props => ({
-    'data-kind': 'global',
-    'data-component': `${props.meta.class}`,
-    'data-registry': `${props.meta['@component']}`,
-    'data-dna': `${props.meta['@dna']}`,
-    className: `${props.meta.class} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`,
-    style: props.dna.ui.theme.decorateStyle
-}))`
-    ${props => props.theme.CSS(props)};
-`
 
 /**
  * Component
@@ -69,7 +55,9 @@ function Global(props) {
 
         const click$ = fromEvent(document, 'click')
         const click$domElement$ = click$.pipe(map(event => event.target))
-        const click$domElement$subscription = click$domElement$.subscribe(val => console.log('click', val))
+        const click$domElement$subscription = click$domElement$.subscribe(val =>
+            console.log('click', val)
+        )
 
         const mouseOver$ = fromEvent(document, 'mouseover')
         const mouseOver$domElement$ = mouseOver$.pipe(
@@ -111,18 +99,25 @@ function Global(props) {
         const root = document.querySelector(':root')
         Object.entries(props.skins[payload.skin]).forEach(([themeVariantName, themeVariant]) => {
             themeVariant &&
-            Object.entries(themeVariant).forEach(([dimensionName, dimension]) => {
-                dimension &&
-                dimensionName !== 'id' &&
-                dimensionName !== 'name' &&
-                dimensionName !== 'inherits' &&
-                Object.entries(dimension).forEach(([dimensionVariantName, dimensionVariant]) => {
-                    dimensionVariant &&
-                    Object.entries(dimensionVariant).forEach(([variable, value]) => {
-                        root.style.setProperty(`--${themeVariantName}-${dimensionName}-${dimensionVariantName}-${variable}`, value)
-                    })
+                Object.entries(themeVariant).forEach(([dimensionName, dimension]) => {
+                    dimension &&
+                        dimensionName !== 'id' &&
+                        dimensionName !== 'name' &&
+                        dimensionName !== 'inherits' &&
+                        Object.entries(dimension).forEach(
+                            ([dimensionVariantName, dimensionVariant]) => {
+                                dimensionVariant &&
+                                    Object.entries(dimensionVariant).forEach(
+                                        ([variable, value]) => {
+                                            root.style.setProperty(
+                                                `--${themeVariantName}-${dimensionName}-${dimensionVariantName}-${variable}`,
+                                                value
+                                            )
+                                        }
+                                    )
+                            }
+                        )
                 })
-            })
         })
         props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, payload))
     }
@@ -131,8 +126,8 @@ function Global(props) {
      * Render
      */
 
-    const currentSkinName = props.global.currentSkin || props.context.web.currentSkin || props.dna.set.defaultSkin
-    const CSSglobalVariables = CSSglobalVariablesHOC(currentSkinName, props.skins)
+    const currentSkinName =
+        props.global.currentSkin || props.context.web.currentSkin || props.dna.set.defaultSkin
 
     const context = {
         ...props.context,
@@ -147,11 +142,24 @@ function Global(props) {
     console.log('RENDER GLOBAL')
     return (
         <GlobalContext.Provider value={context}>
-            <CSSglobalReset />
-            <CSSglobalStyling />
+            <Head>
+                <style>{CSSreset}</style>
+                <style>{CSSvariables(currentSkinName, props.skins)}</style>
+            </Head>
             <ThemeProvider theme={theme(currentSkinName, props.skins)}>
-                <CSSglobalVariables />
-                <GlobalStyled meta={props.meta} as={motion.div} dna={props.dna} device={props.context.device} context={context} own={{...props.global}} animate={{scale: 0.5}}>
+                <GlobalStyled
+                    meta={props.meta}
+                    dna={props.dna}
+                    device={props.context.device}
+                    context={context}
+                    own={{...props.global}}
+                    as={
+                        props.dna.ui.theme.skinMotion
+                            ? motion[props.dna.ui.theme.skinMotion.as]
+                            : 'div'
+                    }
+                    animate={{scale: 0.5}}
+                >
                     {props.children}
                 </GlobalStyled>
             </ThemeProvider>

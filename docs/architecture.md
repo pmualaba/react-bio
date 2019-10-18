@@ -22,29 +22,25 @@
 ## Region
 
 - < Region > is connected to redux
-- < Region > has cuid > registry
 - < Region > contains Blocks or nested Layouts
-- < Region > is responsible for fetching Region data chunks and put it on the store (WebPage, EntityLists, EntityDetails, DashboardMetrics, PREFETCH_SELECTIONS)
+- < Region > is responsible for fetching Region data chunks (lazy loading) and put it on the store (WebPage, EntityLists, EntityDetails, DashboardMetrics, PREFETCH_SELECTIONS)
 - < Region > is NOT responsible for data injection into its components. Cell has the responsibility to pull data form the store.
 - < Region > has inheritable display OR edit mode
 
 
-props.own:
+props:
 - meta
 	- id
 	- address
 	- name
 	- cssName
 - data
-	- generate cuid
-	- fetch
-- settings
+	- accessors
+- actions
+- set
 	mode: edit/display
-- style
-	- inheritable base (set region fontsize)
-    - base
-    - context variant
-    - poses (opened, closed, expanded, collapsed)
+- ui
+    - theme
 
 props.fwd:
 
@@ -63,7 +59,7 @@ context:
 - locale
 - theme
 
-props.own: 
+props: 
 - meta
 	- id
 	- address
@@ -85,23 +81,20 @@ props.own:
                 design : 'imageSlider',
                 skin: {
                    tone: default,
-                   typography: sans, //default
-                   spacial: cozy, //default
-                   motion: playful, //default
-                   contextual: taxonomy // host
+                   typography: sans, 
+                   spacial: cozy, 
+                   motion: playful, 
                 },
                 class: 'is-root-section'
             }
 	
 - data
 	- graph			
-- settings
-- style
-	- base
-	- context variant
-	- poses
+- set
 
-props.fwd:
+
+props.fwd
+props.context
 
 
 ## Page
@@ -119,24 +112,21 @@ props.fwd:
 - < Cell > mutates redux and graph based on the Cell descriptor (which contains a block for onValueUpdateMutationSchema)
 - < Cell > is NOT responsible for fetching data over the network. This is done by Document or Region. 
 
-props.own: 
+props: 
 - meta
 	- id
 	- address
 	- name
 	- cssName
-- settings
-- style
-	- inheritable base (set cell fontsize)
+- set
+- ui
 	- theme
-	- skin
 - data
-	- generate cuid
-	- selector
-	- mutator
+	- selectors
+	- mutators
 	- value
 
-props.fwd:
+props.fwd
 
 ## Element
 
@@ -146,12 +136,12 @@ props.fwd:
 - < Element > can be a building block for Block level component (ex Pagination component vs ButtonList)
 
 
-props.own: 
-- settings
+props: 
+- set
 - data
 	- value
 
-props.fwd:
+props.fwd
 
 ## Composition
 

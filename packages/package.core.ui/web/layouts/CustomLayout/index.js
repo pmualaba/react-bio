@@ -1,21 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import Region from '../Region'
-
-const CustomLayoutStyled = styled('div').attrs(props => ({
-    'data-kind': 'layout',
-    'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
-    'data-registry': `${props.meta['@component']}`,
-    'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.decorateStyle,
-    className: `${props.dna.set.renderLayout} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
-}))`
-    .Region {
-        padding: 100px;
-    }
-    ${props => props.theme.CSS(props)};
-`
+import CustomLayoutStyled from './styled'
 
 function CustomLayout(props) {
     console.log('CustomLayout render()', props)

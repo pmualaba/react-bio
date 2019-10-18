@@ -1,10 +1,9 @@
 import {css} from 'styled-components'
 
-import typography from './css-typography'
 import colors from './css-colors'
 import effects from './css-effects'
 import shapes from './css-shapes'
-import {breakpoints} from './css-responsive'
+import CSS from './functions'
 
 import Global from './global/package.core.global.Global'
 
@@ -20,16 +19,16 @@ const design = {
                 Global: {
                     variants: {
                         default: css`
-                           
                             display: flex;
-
                         `
                     },
                     context: {
                         screenSize: {
                             S: css`
-                              position: relative;
-                        `
+                                position: relative;
+                                font-family: ${props =>
+                                    props.theme.skin.default.typography.sans.primaryFont};
+                            `
                         },
                         regionSize: {},
                         region: {},
@@ -45,22 +44,20 @@ const design = {
     },
     'package.core.ui': {
         web: {
-            typography,
+            typography: css``,
             colors,
             effects,
             shapes,
             documents: {
                 DocumentContainer: {
                     variants: {
-                        default: css``,
+                        default: css``
                     },
                     context: {
                         taxonomy: {
                             products: css``
                         },
-                        region: {
-
-                        },
+                        region: {},
                         regionSize: {
                             S: css``,
                             M: css``,
@@ -104,15 +101,13 @@ const design = {
                 },
                 BaseLayoutContainer: {
                     variants: {
-                        default: css``,
+                        default: css``
                     },
                     context: {
                         taxonomy: {
                             products: css``
                         },
-                        region: {
-
-                        },
+                        region: {},
                         regionSize: {
                             S: css``,
                             M: css``,
@@ -127,15 +122,36 @@ const design = {
                 },
                 PanelLayout: {
                     variants: {
-                        default: css``,
+                        default: css``
                     },
                     context: {
                         taxonomy: {
                             products: css``
                         },
-                        region: {
-
+                        region: {},
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
                         },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                }
+            },
+            blocks: {
+                PageHeader: {
+                    variants: {
+                        default: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {},
                         regionSize: {
                             S: css``,
                             M: css``,
@@ -196,36 +212,4 @@ const design = {
     }
 }
 
-
-
-function CSS(props) {
-    const metaTheme = props.meta['@theme'] || props.meta['@component']
-
-    const variant = (props.dna.ui.theme.designVariant) || 'default'
-    const themePrefix = metaTheme.split('].')
-    const themeSuffix = themePrefix[1].split('.')
-    const design = props.theme.design[themePrefix[0].slice(2, -1)][themeSuffix[0]][themeSuffix[1]][themeSuffix[2]] || {}
-
-    if (design.variants) {
-
-        //props.context.taxonomy = 'product'
-
-        return [
-            design.context.screenSize[props.context.device.screenSize] || '',
-            design.variants[variant] || '',
-            design.context.taxonomy[props.context.taxonomy] || '',
-            design.context.region[props.context.region] || '',
-            design.context.regionSize[props.context.regionSize] || '',
-        ]
-    }
-}
-
-export default function(skin, skins) {
-    console.log('skin', skin)
-    return {
-        name: skin,
-        skin: skins[skin],
-        design,
-        CSS
-    }
-}
+export default (skin, skins) => ({name: skin, skin: skins[skin], design, CSS})

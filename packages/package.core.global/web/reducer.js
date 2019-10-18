@@ -4,7 +4,7 @@ import * as ActionTypes from './actions'
  * Initial State db
  */
 const global = {
-    currentSkin: '',
+    currentSkinName: '',
     environment: {
         node: process.env.NODE_ENV
     },
@@ -30,7 +30,7 @@ const globalReducer = (state = global, action) => {
         case ActionTypes.SET_CURRENT_SKIN:
             return {
                 ...state,
-                currentSkin: action.payload.skin
+                currentSkinName: action.payload.skin
             }
 
         default:

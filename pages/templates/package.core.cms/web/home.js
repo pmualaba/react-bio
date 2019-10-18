@@ -1,20 +1,33 @@
 import React from 'react'
 import get from 'lodash/get'
 import axios from 'axios'
-import FSA, {SET_CURRENT_ROUTE, SET_INITIAL_PROPS} from '../../../../packages/package.core.global/web/actions'
-import registry from '../../../../dna/registry.web'
+import FSA, {
+    SET_CURRENT_ROUTE,
+    SET_INITIAL_PROPS
+} from '../../../../packages/package.core.global/web/actions'
+import components from '../../../../dna/rna/registry.components.web'
 
 const env = require('../../../../env.client')()
 const {locale} = require('../../../../env.client')
 
 export default function Page(props) {
-    const GlobalComponent = get(registry, props.dna.global.meta['@component'])
-    const DocumentComponent = get(registry, props.dna.document.meta['@component'])
-    const LayoutComponent = get(registry, props.dna.document.layouts[0].meta['@component'])
+    const GlobalComponent = get(components, props.dna.global.meta['@component'])
+    const DocumentComponent = get(components, props.dna.document.meta['@component'])
+    const LayoutComponent = get(components, props.dna.document.layouts[0].meta['@component'])
 
     return (
-        <GlobalComponent meta={props.dna.global.meta} dna={props.dna.global.genes} context={props.context} skins={props.skins}>
-            <DocumentComponent meta={props.dna.document.meta} dna={props.dna.document.genes} data={props.data} layouts={props.dna.document.layouts}>
+        <GlobalComponent
+            meta={props.dna.global.meta}
+            dna={props.dna.global.genes}
+            context={props.context}
+            skins={props.skins}
+        >
+            <DocumentComponent
+                meta={props.dna.document.meta}
+                dna={props.dna.document.genes}
+                data={props.data}
+                layouts={props.dna.document.layouts}
+            >
                 <LayoutComponent
                     meta={props.dna.document.layouts[0].meta}
                     dna={props.dna.document.layouts[0].genes}
@@ -48,6 +61,7 @@ Page.getInitialProps = async function(ctx) {
         }
     })
 
+    console.log('data', data.payload.actions.GET_ARTICLES.response)
     const props = {
         dna: {
             global: ctx.req.db.json.dna.get(`["package.core.global"].${Platform}.global`).value(),

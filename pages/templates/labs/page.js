@@ -3,10 +3,17 @@ import API from '../../../packages/package.core.fn/api'
 
 class Page extends Component {
     async componentDidMount() {
-        //setTimeout(async function() {
-        const result = await API('GET_TEST', false, {}, {package: 'package.core.cms', endpoint: '/api/cms/app'})
+        // setTimeout(async function() {
+
+        const result = await API(
+            'GET_TEST',
+            false,
+            {},
+            {package: 'package.core.cms', endpoint: '/api/cms/app'}
+        )
         console.log('Page componentDidMount result', result)
-        //}, 1000)
+
+        // }, 1000)
     }
 
     render() {

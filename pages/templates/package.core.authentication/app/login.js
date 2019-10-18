@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import FSA, {SET_CURRENT_ROUTE} from '../../../../packages/package.core.global/app/actions'
 import BaseLayoutContainer from '../../../../packages/package.core.ui/app/layouts/BaseLayout/container'
-import DocumentContainer from '../../../../packages/package.core.ui/app/documents/Document/container'
+import Document from '../../../../packages/package.core.ui/app/documents/Document'
 
 class Login extends React.Component {
     static getInitialProps(ctx) {
@@ -18,9 +18,14 @@ class Login extends React.Component {
 
     render() {
         return (
-            <DocumentContainer>
-                <BaseLayoutContainer JSXcontextPanelContent={<div />} currentRoute={this.props.currentRoute} className="Login" JSXdetailPanelContent={<div />} />
-            </DocumentContainer>
+            <Document>
+                <BaseLayoutContainer
+                    JSXcontextPanelContent={<div />}
+                    currentRoute={this.props.currentRoute}
+                    className="Login"
+                    JSXdetailPanelContent={<div />}
+                />
+            </Document>
         )
     }
 }

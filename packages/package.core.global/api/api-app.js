@@ -17,9 +17,9 @@ router.post('/', (req, res, next) => {
                     console.log('GET_SELECTION/GET_CUSTOMERS')
 
                     axios(
-                        `${env.DB_BASE_URL}/structr/rest/Identity/?sid=${req.SID}&deleted=false&pageSize=${
-                            req.body.payload.pagination.size
-                        }&page=${req.body.payload.pagination.page}`,
+                        `${env.DB_BASE_URL}/structr/rest/Identity/?sid=${req.SID}&deleted=false&pageSize=${req.body.payload.pagination.size}&page=${
+                            req.body.payload.pagination.page
+                        }`,
                         {
                             method: 'GET',
                             headers: {
@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
                         }
                     )
                         .then(response => {
-                            //console.dir(response.data, {depth: null, colors: true})
+                            // console.dir(response.data, {depth: null, colors: true})
                             res.json({
                                 type: 'GET_SELECTION/GET_CUSTOMERS',
                                 error: false,
@@ -54,7 +54,6 @@ router.post('/', (req, res, next) => {
                             res.json({error: e.message, data: []})
                         })
                     break
-
 
                 default:
                     break

@@ -37,7 +37,6 @@ const global = {
 }
 
 const globalReducer = (state = global, action) => {
-
     switch (action.type) {
         case ActionTypes.SET_CURRENT_ROUTE:
             return {

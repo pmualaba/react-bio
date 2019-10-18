@@ -1,14 +1,11 @@
 import {css} from 'styled-components'
-import {get} from 'lodash'
 
-import typography from './css-typography'
 import colors from './css-colors'
 import effects from './css-effects'
 import shapes from './css-shapes'
-import {breakpoints} from './css-responsive'
+import CSS from './functions'
 
 import Global from './global/package.core.global.Global'
-
 
 // TODO : Build Theme Inheritance Tree
 
@@ -18,29 +15,155 @@ const design = {
             colors: css``,
             effects: css``,
             typography: css``,
-            Global: {
-                themeBase: css``
+            global: {
+                Global: {
+                    variants: {
+                        default: css`
+                            display: flex;
+                        `
+                    },
+                    context: {
+                        screenSize: {
+                            S: css`
+                                position: relative;
+                                font-family: ${props =>
+                                    props.theme.skin.default.typography.sans.primaryFont};
+                            `
+                        },
+                        regionSize: {},
+                        region: {},
+                        taxonomy: {
+                            product: css`
+                                position: fixed;
+                            `
+                        }
+                    }
+                }
             }
         }
     },
     'package.core.ui': {
         web: {
-            typography,
+            typography: css``,
             colors,
             effects,
             shapes,
             documents: {
-                DocumentContainer: css``
+                DocumentContainer: {
+                    variants: {
+                        default: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {},
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                }
             },
             layouts: {
                 PageSection: {
-                    blogPost: Global,
-                    homeBenefits: css``,
-                    homeBenefitsItem: css``,
-                    homeHero: css``
+                    variants: {
+                        default: Global,
+                        asBlogPost: Global,
+                        asHomeBenefits: css``,
+                        asHomeBenefitsItem: css``,
+                        asHomeHero: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {
+                            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": css``
+                        },
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
                 },
-                BaseLayoutContainer: css``,
-                PanelLayout: css``
+                BaseLayoutContainer: {
+                    variants: {
+                        default: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {},
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                },
+                PanelLayout: {
+                    variants: {
+                        default: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {},
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                }
+            },
+            blocks: {
+                PageHeader: {
+                    variants: {
+                        default: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {},
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        }
+                    }
+                }
             }
         }
     },
@@ -49,42 +172,44 @@ const design = {
             colors: css``,
             effects: css``,
             typography: css``,
-            PersonList: css`
-
-            `,
-            Document: css`
-                    .Region {
-                        &.header {
-                            background: ${props=>props.theme.skin[props.dna.ui.theme.skin.variant].tone[props.dna.ui.theme.skin.tone].primaryColor}; // IE11
-                            background: var(${`--${props=>props.dna.ui.theme.skin.variant}-tone-${props=>props.dna.ui.theme.skin.tone}-primaryColor`});
-                            transition: background-color 2s;
+            PersonList: css``,
+            documents: {
+                Document: {
+                    variants: {
+                        default: css`
+                            .Region {
+                                &.header {
+                                    transition: background-color 3s;
+                                }
+                            }
+                        `,
+                        asBlogPost: Global,
+                        asHomeBenefits: css``,
+                        asHomeBenefitsItem: css``,
+                        asHomeHero: css``
+                    },
+                    context: {
+                        taxonomy: {
+                            products: css``
+                        },
+                        region: {
+                            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": css``
+                        },
+                        regionSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
+                        },
+                        screenSize: {
+                            S: css``,
+                            M: css``,
+                            L: css``
                         }
                     }
-                `
+                }
             }
-        }
-
-}
-
-function CSS(props) {
-    if (props.meta['@theme']) {
-        if (typeof props.meta['@theme'] === 'string') {
-            if (get(props.theme.design, props.meta['@theme'][0]) !== '`') {
-                return get(props.theme.design, props.meta['@theme'])
-            } else {
-                return get(props.theme.design, eval(props.meta['@theme']))
-            }
-        } else {
-            return props.meta['@theme'].map(theme => get(props.theme.design, theme[0] !== '`' ? theme : eval(theme)))
         }
     }
 }
 
-export default function(skin, skins) {
-    return {
-        name: skin,
-        skin: skins[skin],
-        design,
-        CSS
-    }
-}
+export default (skin, skins) => ({name: skin, skin: skins[skin], design, CSS})
