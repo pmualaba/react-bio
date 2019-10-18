@@ -5,7 +5,7 @@ const Jwt = require('njwt')
 
 const domains = require('./env.server').domains
 const env = require('./env.server')()
-const apiLogic = require('./dna/router').logic
+const apiLogic = require('./dna/router.api').logic
 
 const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config').getConfigSecretSigningKey
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()

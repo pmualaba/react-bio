@@ -6,7 +6,6 @@ import DocumentContainer from '../../../../packages/package.core.ui/app/document
 
 class Login extends React.Component {
     static getInitialProps(ctx) {
-
         /**
          * Server side ACTION: SET_CURRENT_ROUTE
          */

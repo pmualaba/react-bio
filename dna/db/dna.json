@@ -1,4 +1,73 @@
 {
+    "description": "Application DNA",
+    "semantics": {
+        "roles": {
+            "common": {
+                "page": {
+                    "home": "common.page.home"
+                },
+                "navigation": {
+                    "main": "common.navigation.main",
+                    "secondary": "common.navigation.secondary",
+                    "doormat": "common.navigation.doormat"
+                },
+                "header": {
+                    "top": "common.header.top",
+                    "secondary": "common.hero.secondary"
+                },
+                "hero": {
+                    "primary": "common.hero.primary",
+                    "secondary": "common.hero.secondary",
+                    "slider": "common.hero.slider",
+                    "image": "common.hero.image"
+                },
+                "highlight": {
+                    "topTopical": "common.highlight.topTopical"
+                },
+                "footer": {
+                    "doormat": "common.footer.doormat",
+                    "bottom": "common.footer.bottom"
+                },
+                "legal": {
+                    "gdpr": "common.legal.gdpr"
+                },
+                "media": {
+                    "photoGallery": "common.media.photoGallery",
+                    "videoGallery": "common.media.videoGallery",
+                    "mediaGallery": "common.media.mediaGallery",
+                    "masonryGallery": "common.media.masonryGallery"
+                }
+            },
+            "presentation": {},
+            "decoration": {
+                "logo": "decoration.logo"
+            },
+            "layout": {},
+            "engagement": {
+                "stories": {
+                    "slider": "engagement.stories.slider",
+                    "story": "engagement.stories.story"
+                },
+                "cta": {
+                    "newsletterSubscription": "engagement.cta.newsletterSubscription"
+                }
+            },
+            "personalization": {
+                "recommended": {
+                    "products": "personalization.recommended.products",
+                    "videos": "personalization.recommended.videos",
+                    "content": "personalization.recommended.content"
+                }
+            },
+            "commercial": {},
+            "interaction": {},
+            "tracking": {
+                "google": {
+                    "gtm": "tracking.google.gtm"
+                }
+            }
+        }
+    },
     "package.core.global": {
         "package": {
             "meta": {
@@ -19,7 +88,7 @@
                     "class": "Global",
                     "kind": "global"
                 },
-                "props": {
+                "genes": {
                     "ui": {
                         "theme": {
                             "decorateStyle": {}
@@ -28,74 +97,6 @@
                     "set": {
                         "defaultSkin": "themeBase",
                         "defaultSkinVariant": "themeVariantDefault"
-                    }
-                }
-            }
-        },
-        "semantics": {
-            "roles": {
-                "common": {
-                    "page": {
-                        "home": "common.page.home"
-                    },
-                    "navigation": {
-                        "main": "common.navigation.main",
-                        "secondary": "common.navigation.secondary",
-                        "doormat": "common.navigation.doormat"
-                    },
-                    "header": {
-                        "top": "common.header.top",
-                        "secondary": "common.hero.secondary"
-                    },
-                    "hero": {
-                        "primary": "common.hero.primary",
-                        "secondary": "common.hero.secondary",
-                        "slider": "common.hero.slider",
-                        "image": "common.hero.image"
-                    },
-                    "highlight": {
-                        "topTopical": "common.highlight.topTopical"
-                    },
-                    "footer": {
-                        "doormat": "common.footer.doormat",
-                        "bottom": "common.footer.bottom"
-                    },
-                    "legal": {
-                        "gdpr": "common.legal.gdpr"
-                    },
-                    "media": {
-                        "photoGallery": "common.media.photoGallery",
-                        "videoGallery": "common.media.videoGallery",
-                        "mediaGallery": "common.media.mediaGallery",
-                        "masonryGallery": "common.media.masonryGallery"
-                    }
-                },
-                "presentation": {},
-                "decoration": {
-                    "logo": "decoration.logo"
-                },
-                "layout": {},
-                "engagement": {
-                    "stories": {
-                        "slider": "engagement.stories.slider",
-                        "story": "engagement.stories.story"
-                    },
-                    "cta": {
-                        "newsletterSubscription": "engagement.cta.newsletterSubscription"
-                    }
-                },
-                "personalization": {
-                    "recommended": {
-                        "products": "personalization.recommended.products",
-                        "videos": "personalization.recommended.videos",
-                        "content": "personalization.recommended.content"
-                    }
-                },
-                "commercial": {},
-                "interaction": {},
-                "tracking": {
-                    "google": {
-                        "gtm": "tracking.google.gtm"
                     }
                 }
             }
@@ -122,7 +123,7 @@
                         "class": "Document",
                         "kind": "document"
                     },
-                    "props": {
+                    "genes": {
                         "actions": [
                             {
                                 "type": "GET_CONTENT_PAGE",
@@ -152,8 +153,8 @@
                         ],
                         "data": {
                             "accessors": {
-                                "body": "actions.GET_CONTENT_PAGE.result",
-                                "stories": "actions.GET_ARTICLES.result"
+                                "body": "actions.GET_CONTENT_PAGE.response",
+                                "articles": "actions.GET_ARTICLES.response"
                             }
                         },
                         "set": {
@@ -185,11 +186,12 @@
                             "meta": {
                                 "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]",
                                 "@component": "['package.core.ui'].web.layouts.RenderLayout",
-                                "name": "documentLayout",
+                                "@genes": "['package.core.cms'].genes.web.layouts.WebPageLayout",
+                                "name": "DocumentLayout",
                                 "class": "RenderLayout",
                                 "kind": "layout"
                             },
-                            "props": {
+                            "genes": {
                                 "set": {
                                     "renderLayout": "WebPageLayout",
                                     "boxCollapse": false
@@ -209,15 +211,15 @@
                                 {
                                     "meta": {
                                         "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header]",
-                                        "@component": "['package.core.cms'].web.blocks.WebPageHeader",
                                         "name": "header",
                                         "class": "Region",
                                         "kind": "region"
                                     },
-                                    "props": {
+                                    "genes": {
                                         "data": {
                                             "accessors": {
-                                                "site": "document.site"
+                                                "site": "document.site",
+                                                "articles": "document.articles"
                                             }
                                         },
                                         "set": {
@@ -227,19 +229,25 @@
                                             "layout": {
                                                 "display": "flex"
                                             }
+                                        },
+                                        "ui": {
+                                            "theme": {}
                                         }
                                     },
                                     "blocks": [
                                         {
                                             "meta": {
                                                 "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header].blocks[0:WebPageHeader]",
-                                                "@component": "['package.core.cms'].web.blocks.WebPageHeader",
+                                                "@component": "['package.core.ui'].web.blocks.WebPageHeader",
                                                 "name": "WebPageHeader",
                                                 "class": "WebPageHeader",
                                                 "kind": "block"
                                             },
-                                            "props": {
+                                            "genes": {
                                                 "data": {
+                                                    "accessors": {
+                                                        "header": "region.articles"
+                                                    }
                                                 },
                                                 "set": {
                                                 },
@@ -254,12 +262,11 @@
                                 {
                                     "meta": {
                                         "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body]",
-                                        "@component": "['package.core.cms'].web.layouts.Region",
                                         "name": "body",
                                         "class": "Region",
                                         "kind": "region"
                                     },
-                                    "props": {
+                                    "genes": {
                                         "data": {
                                             "accessors": {
                                                 "body": "document.body"
@@ -278,12 +285,12 @@
                                         {
                                             "meta": {
                                                 "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body].blocks[0:WebPageHeader]",
-                                                "@component": "['package.core.cms'].web.blocks.WebPageBody",
+                                                "@component": "['package.core.ui'].web.blocks.WebPageBody",
                                                 "name": "WebPageBody",
                                                 "class": "WebPageBody",
                                                 "kind": "block"
                                             },
-                                            "props": {
+                                            "genes": {
                                                 "data": {
                                                     "accessors": {
                                                         "body": "region.body"
@@ -301,17 +308,16 @@
                                 },
                                 {
                                     "meta": {
-                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main]",
-                                        "@component": "['package.core.ui'].web.layouts.Region",
-                                        "name": "main",
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer]",
+                                        "name": "footer",
                                         "class": "Region",
                                         "kind": "region"
                                     },
-                                    "props": {
+                                    "genes": {
                                         "data": {
                                             "selectors": "PersonList",
                                             "accessors": {
-                                                "identities": "document.identities"
+                                                "articles": "document.articles"
                                             }
                                         },
                                         "set": {
@@ -326,17 +332,17 @@
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[0:PersonList]",
-                                                "@component": "['package.core.ui'].app.blocks.tables.GridTable",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer].blocks[0:PersonList]",
+                                                "@component": "['package.core.ui'].web.blocks.GridTable",
                                                 "name": "PersonList",
                                                 "class": "PersonList",
                                                 "kind": "block"
                                             },
-                                            "props": {
+                                            "genes": {
                                                 "data": {
                                                     "selector": "PersonList",
                                                     "accessors": {
-                                                        "rows": "region.identities"
+                                                        "rows": "region.articles"
                                                     }
                                                 },
                                                 "set": {
@@ -361,7 +367,7 @@
                                                                     "@component": "['package.core.ui'].app.cells.TextInputCell",
                                                                     "kind": "cell"
                                                                 },
-                                                                "props": {
+                                                                "genes": {
                                                                     "data": {
                                                                         "accessor": "firstName",
                                                                         "instanceType": "package.core.identity:Identity",
@@ -396,7 +402,7 @@
                                                                                 "meta": {
                                                                                     "name": "TextInputCell"
                                                                                 },
-                                                                                "props": {
+                                                                                "genes": {
                                                                                     "data": {},
                                                                                     "ui": {},
                                                                                     "set": {
@@ -410,7 +416,7 @@
                                                                                         "meta": {
                                                                                             "name": "IconElement"
                                                                                         },
-                                                                                        "props": {
+                                                                                        "genes": {
                                                                                             "data": {
                                                                                                 "accessors": {
                                                                                                     "selection": "customers.avatar",
@@ -479,7 +485,7 @@
                                                                         "clickAction": ""
                                                                     }
                                                                 },
-                                                                "props": {
+                                                                "genes": {
                                                                     "ui": {
                                                                         "theme": {
                                                                             "decorateStyle": {
@@ -582,7 +588,7 @@
                                                                         "clickAction": ""
                                                                     }
                                                                 },
-                                                                "props": {
+                                                                "genes": {
                                                                     "ui": {
                                                                         "theme": {
                                                                             "decorateStyle": {
@@ -924,12 +930,19 @@
                                         },
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].composition[0:PersonList]",
-                                                "name": "PersonList",
-                                                "componentClass": "PersonList",
-                                                "componentLevel": "composition"
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer].blocks[1:WebPageFooter]",
+                                                "@component": "['package.core.ui'].web.blocks.WebPageFooter",
+                                                "name": "WebPageFooter",
+                                                "class": "WebPageFooter",
+                                                "kind": "block"
                                             },
-                                            "props": {}
+                                            "genes": {
+                                                "data": {
+                                                    "accessors": {
+                                                        "videos": "region.articles"
+                                                    }
+                                                }
+                                            }
                                         }
                                     ]
                                 }
@@ -945,7 +958,7 @@
                                     "@theme": "['package.core.cms'].web.documents.Document",
                                     "kind": "document"
                                 },
-                                "props": {
+                                "genes": {
                                     "ui": {
                                         "theme": {
                                             "model": {
@@ -973,7 +986,31 @@
             }
         },
         "genes": {
+            "app": {},
+            "web": {
+                "documents": {},
+                "layouts": {
+                    "WebPageLayout": {
+                        "set": {
+                            "renderLayout": "WebPageLayout",
+                            "collapse": false
+                        },
+                        "ui": {
+                            "theme": {
+                                "decorateStyle": {
+                                    "display": "flex",
+                                    "flexDirection": "column",
+                                    "width": "100%",
+                                    "minHeight": "fit-content"
+                                }
+                            }
+                        }
+                    }
+                },
+                "blocks": {}
+            }
         }
+
     }
 }
 

@@ -134,7 +134,7 @@ In order to theme a Component in a flexible and consistent way, a styled compone
 
 
 ``` 
-props.ui.theme:
+genes.ui.theme:
 
 {
     model: {
@@ -167,14 +167,14 @@ The default model of the component is first styled with the minimal basic struct
 to make the component functional. 
 The **default model**  should always be defined:
 
-props.ui.theme.model: 'default'
+genes.ui.theme.model: 'default'
 
 ```
 models = {
 	default: {
 		param: value
 	},
-}[props.ui.theme.model]
+}[genes.ui.theme.model]
 ```
 
 
@@ -184,9 +184,9 @@ That is why models operate at the bottom layer of the Theming stack.
 Only one **model** can be active for a styled component at the same time.
 
 - use (custom selection 'string') : 
-	- props.ui.theme.model: 'modelVariantName'
+	- genes.ui.theme.model: 'modelVariantName'
 - use (custom configuration {object}) : 
-	- props.ui.theme.model.custom = { param: value }
+	- genes.ui.theme.model.custom = { param: value }
 
 
 ```
@@ -198,11 +198,11 @@ models = {
 		param: value
 	},
 	custom: null
-}[props.ui.theme.model]
+}[genes.ui.theme.model]
 ```
 
 
-The effective model is selected or customized at **props.ui.theme.model**
+The effective model is selected or customized at **genes.ui.theme.model**
 The applied styles determine how the component should structurally look and behave. 
 These styles are living inside the component and are always loaded. 
 The component is now functional but not "Designed" yet. That's the task of the next Theming layer.
@@ -225,9 +225,9 @@ These designs do not change the functionality of the component, but they alter t
 
 Naming convention for designs:
 - design substitution:
-	- use props.ui.theme.design.**as**DesignName to select an alternative design for the styled component
+	- use genes.ui.theme.design.**as**DesignName to select an alternative design for the styled component
 - design context:
-	- use props.ui.theme.design.**in**DesignName to select a design that changes depending on the context wherein the Styled Component is used.
+	- use genes.ui.theme.design.**in**DesignName to select a design that changes depending on the context wherein the Styled Component is used.
  
 
 
@@ -240,10 +240,10 @@ These are CSS values which are responsible for the final look and feel of the st
 These CSS values are defined globally at the global Theme level. 
 The Skin theming level enables multi-dimensional theming of a styled component.
 
-use: props.ui.theme.skin.{skin} to apply a multi-dimensional skin to a styled component
+use: genes.ui.theme.skin.{skin} to apply a multi-dimensional skin to a styled component
 
 ```
-props.ui.theme.skin:
+genes.ui.theme.skin:
 
 {
    tone: default,
@@ -260,10 +260,10 @@ props.ui.theme.skin:
 Once a styled component has applied a Skin, the fourth and final theming layer can be applied.
 These styles are injected ad-hoc by applying a class or by directly injecting inline styles.
 
-use: props.ui.theme.finish.{finish} to apply a class or inline styles to a styled component
+use: genes.ui.theme.finish.{finish} to apply a class or inline styles to a styled component
 
 ```
-props.ui.theme.finish:
+genes.ui.theme.finish:
 
 {
     class: 'is-custom-class',

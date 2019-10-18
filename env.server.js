@@ -6,7 +6,7 @@
  *      const env = require('../../env.server')()
  *      env.DB_BASE_URL
  */
-const WS_ENABLED = true
+const WS_ENABLED = false
 const environment = () => {
     switch (process.env.NODE_ENV) {
         case 'production':
@@ -41,7 +41,7 @@ const environment = () => {
             }
     }
 }
-environment.id = '101'
+environment.eid = '101'
 environment.domainName = 'my-react-bio-app.org'
 environment.changelog = {}
 environment.schedulers = {

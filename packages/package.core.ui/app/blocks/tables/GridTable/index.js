@@ -102,7 +102,7 @@ class GridTable extends React.Component {
 
     renderGridCells() {
         // Array.apply(null, { length: this.config.cellCount })
-        let gridCells = []
+        const gridCells = []
         // loop over the rows
         for (let rowIndex = 0; rowIndex < this.props.data.length; rowIndex++) {
             console.log('GridTable this.props.data', this.props.data)

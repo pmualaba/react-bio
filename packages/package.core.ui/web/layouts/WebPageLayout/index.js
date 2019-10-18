@@ -1,21 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, {createGlobalStyle} from 'styled-components'
+import styled from 'styled-components'
 import Region from '../Region'
-
-const WebPageLayoutStyledContext = createGlobalStyle`
-    body .Region {
-        font-size: 1rem;
-        color: red;
-    }      
-`
 
 const WebPageLayoutStyled = styled('div').attrs(props => ({
     'data-kind': 'layout',
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
     'data-registry': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
+    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui && props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
 }))`
     width: 100%;
     height: 100%;
@@ -24,9 +17,9 @@ const WebPageLayoutStyled = styled('div').attrs(props => ({
 
     > .Region {
         display: flex;
-        background-color: orangered;
+        background-color: greenyellow;
         padding: 12rem;
-        color: white;
+        color: black;
         font-size: 3rem;
         font-family: sans-serif;
         border: 1px solid #fff;
@@ -61,26 +54,44 @@ const WebPageLayoutStyled = styled('div').attrs(props => ({
 `
 
 function WebPageLayout(props) {
-    // console.log('WebPageLayout render()', props)
     return (
-        <WebPageLayoutStyled meta={props.meta} dna={props.dna} context={props.context}>
-            <Region meta={props.meta} region="header">
-                Header
-            </Region>
-            <Region meta={props.meta} region="body">
-                Body
-            </Region>
-            <Region meta={props.meta} region="footer">
-                Footer
-            </Region>
-            <WebPageLayoutStyledContext />
+        <WebPageLayoutStyled meta={props.meta} dna={props.dna}>
+            {props.regions.map((region, i) => (
+                <Region
+                    key={region.meta.name}
+                    name={region.meta.name}
+                    meta={region.meta}
+                    dna={region.genes}
+                    data={{init: props.data.init.regions[i]}}
+                    context={props.context}
+                    blocks={region.blocks}
+                    layouts={region.layouts}
+                />
+            ))}
         </WebPageLayoutStyled>
     )
 }
 
+function WebPageHeader(props) {
+    return <div>WebPageHeader</div>
+}
+function WebPageBody(props) {
+    return <div>WebPageBody</div>
+}
+function WebPageFooter(props) {
+    return <div>WebPageFooter</div>
+}
+
+WebPageLayout.WebPageHeader = WebPageHeader
+WebPageLayout.WebPageBody = WebPageBody
+WebPageLayout.WebPageFooter = WebPageFooter
+
 WebPageLayout.propTypes = {
     meta: PropTypes.object,
-    dna: PropTypes.object
+    dna: PropTypes.object,
+    data: PropTypes.object,
+    context: PropTypes.object,
+    regions: PropTypes.array
 }
 
 export default WebPageLayout

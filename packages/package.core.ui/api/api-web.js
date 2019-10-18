@@ -24,7 +24,8 @@ const logic = {
         console.log('/api/package.core.ui/web/GET_INITIAL_PROPS')
 
         const actions = req.body.payload.actions
-        const promises = actions.map(action => req.apiLogic[action.meta.package][action.meta.endpoint][action.type](req, res, next, meta, action))
+        const promises = actions.map(action => req.apiLogic[action.meta.endpoint.split('/')[2]][action.meta.endpoint][action.type](req, res, next, meta, action))
+
 
         try {
             const responses = await Promise.all(promises)

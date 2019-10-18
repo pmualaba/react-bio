@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import API from './../../../packages/package.core.fn/api'
+import API from '../../../packages/package.core.fn/api'
 
 class Page extends Component {
     async componentDidMount() {

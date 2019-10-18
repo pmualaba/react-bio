@@ -8,5 +8,6 @@
   "parser": "babylon",
   "semi": false,
   "rcVerbose": true,
-  "bracketSpacing": false
+  "bracketSpacing": false,
+  "arrowParens": "avoid"
 }

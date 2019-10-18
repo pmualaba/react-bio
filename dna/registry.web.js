@@ -19,6 +19,7 @@ import RenderLayout from '../packages/package.core.ui/web/layouts/RenderLayout'
 import PanelLayout from '../packages/package.core.ui/web/layouts/PanelLayout'
 import WebPageLayout from '../packages/package.core.ui/web/layouts/WebPageLayout'
 import CustomLayout from '../packages/package.core.ui/web/layouts/CustomLayout'
+import GridTable from '../packages/package.core.ui/web/blocks/tables/GridTable'
 
 export default {
     'package.core.global': {
@@ -40,7 +41,12 @@ export default {
                 PanelLayout,
                 WebPageLayout
             },
-            blocks: {},
+            blocks: {
+                WebPageHeader: WebPageLayout.WebPageHeader,
+                WebPageBody: WebPageLayout.WebPageBody,
+                WebPageFooter: WebPageLayout.WebPageFooter,
+                GridTable
+            },
             cells: {},
             motion: {
                 div: motion.div,

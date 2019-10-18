@@ -13,13 +13,6 @@ import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
 import theme from '../../../../../theme/web/theme'
 
 /**
- * Context
- */
-
-export const GlobalContext = createContext({})
-GlobalContext.displayName = 'GlobalContext'
-
-/**
  * Components
  */
 
@@ -28,19 +21,24 @@ import CSSglobalStyling from '../../../../../theme/web/css-global-styling'
 import CSSglobalVariablesHOC from '../../../../../theme/web/css-global-variables'
 
 /**
+ * Context
+ */
+
+export const GlobalContext = createContext({})
+GlobalContext.displayName = 'GlobalContext'
+
+/**
  * Styled Component
  */
 
-export const GlobalStyled = styled('div').attrs(props => {
-    return {
-        'data-kind': 'global',
-        'data-component': `${props.meta.class}`,
-        'data-registry': `${props.meta['@component']}`,
-        'data-dna': `${props.meta['@dna']}`,
-        style: props.dna.ui.theme.decorateStyle,
-        className: `${props.meta.class} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
-    }
-})`
+export const GlobalStyled = styled('div').attrs(props => ({
+    'data-kind': 'global',
+    'data-component': `${props.meta.class}`,
+    'data-registry': `${props.meta['@component']}`,
+    'data-dna': `${props.meta['@dna']}`,
+    className: `${props.meta.class} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`,
+    style: props.dna.ui.theme.decorateStyle
+}))`
     ${props => props.theme.CSS(props)};
 `
 
@@ -79,7 +77,7 @@ function Global(props) {
                 if (event.target.classList.contains('input')) {
                     event.preventDefault()
                 } else {
-                    //event.target.props = props
+                    // event.target.props = props
                     return event.target
                 }
             }),
@@ -92,8 +90,8 @@ function Global(props) {
     }, [])
 
     useEffect(() => {
-        setTimeout(function() {
-            //props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, {skin: 'themeDefault'}))
+        setTimeout(() => {
+            // props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, {skin: 'themeDefault'}))
         }, 3000)
     }, [])
 
@@ -128,8 +126,6 @@ function Global(props) {
         })
         props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, payload))
     }
-
-
 
     /**
      * Render

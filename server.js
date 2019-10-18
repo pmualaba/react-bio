@@ -1,4 +1,5 @@
 const express = require('express')
+
 const router = express.Router()
 const LRU = require('lru-cache')
 const nextjs = require('next')
@@ -12,11 +13,13 @@ const Jwt = require('njwt')
 const domains = require('./env.server').domains
 const locale = require('./env.server').locale
 const env = require('./env.server')()
+
 console.log('   >> Server PID:', process.pid)
 console.log('Environment env.server - server.js', env)
 console.log('Environment domains - server.js', domains)
 
 const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config').getConfigSecretSigningKey
+
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -24,7 +27,7 @@ const app = nextjs({dev})
 const handle = app.getRequestHandler()
 const stats = {reqCount: 0}
 
-const apiLogic = require('./dna/router').logic
+const apiLogic = require('./dna/router.api').logic
 
 console.time('CREATING DATABASE SERVICE - server.js...')
 const Database = {
@@ -61,19 +64,19 @@ console.log('SETUP SSR CACHE')
 const ssrCache = {
     5: new LRU({
         max: 100 * 1024 * 1024 /* size (100 MB) using `return n.length` as length() function */,
-        length: function(n, key) {
+        length(n, key) {
             return n.length
         },
         maxAge: 1000 * 60 * 5 /* 5 minutes */
     }),
     15: new LRU({
         max: 100 * 1024 * 1024 /* size (100 MB) using `return n.length` as length() function */,
-        length: function(n, key) {
+        length(n, key) {
             return n.length
         },
         maxAge: 1000 * 60 * 15 /* 15 minutes */
     }),
-    renderToCache: function(req, res, actualPage, queryParams, cacheTime = 5) {
+    renderToCache(req, res, actualPage, queryParams, cacheTime = 5) {
         if (cacheTime !== 5 || cacheTime !== 15) {
             cacheTime = 5
         }
@@ -124,25 +127,25 @@ app.prepare()
                 Package.app &&
                 Package.app.documents &&
                 Object.values(Package.app.documents).forEach(document => {
-                    const route = document.props.set.route
+                    const route = document.genes.set.route
                     console.log('     route app:', route.match)
                     router.get(route.match, (req, res) => {
                         const actualPage = `/templates/${route.template}`
                         const queryParams = {url: req.path, locale: locale[req.params.lang] || locale.default, ...route.params}
-                        //app.renderToCache(req, res, actualPage, queryParams, 5)
+                        // app.renderToCache(req, res, actualPage, queryParams, 5)
                         app.render(req, res, actualPage, queryParams)
                     })
                 })
                 Package.web &&
                 Package.web.documents &&
                 Object.values(Package.web.documents).forEach(document => {
-                    const route = document.props.set.route
+                    const route = document.genes.set.route
                     console.log('     route web:', route.match)
 
                     router.get(route.match, (req, res) => {
                         const actualPage = `/templates/${route.template}`
                         const queryParams = {url: req.path, locale: locale.default, ...route.params}
-                        //app.renderToCache(req, res, actualPage, queryParams, 5)
+                        // app.renderToCache(req, res, actualPage, queryParams, 5)
                         app.render(req, res, actualPage, queryParams)
                     })
                 })
@@ -244,8 +247,8 @@ app.prepare()
              * LOAD ALL API ROUTES
              */
             server.use(router)
-            server.use(require('./router'))
-            server.use(require('./dna/router').router)
+            server.use(require('./dna/router.page'))
+            server.use(require('./dna/router.api').router)
 
             /**
              * CONFIG NEXT.JS ROUTES

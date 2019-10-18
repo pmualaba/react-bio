@@ -5,7 +5,7 @@
  *      const env = require('../../../env.client')()
  *      env.BASE_URL
  */
-const WS_ENABLED = true
+const WS_ENABLED = false
 const environment = () => {
     switch (process.env.NODE_ENV) {
         case 'production':
@@ -38,6 +38,10 @@ const environment = () => {
 
 /**
  * locale
+ *
+ * Usage:
+ *      const env = require('../../../../env.client')()
+ *      const locale = require('../../../../env.client').locale
  */
 environment.locale = {
     nl: 'nl_NL',

@@ -41,7 +41,6 @@ const DocumentStyled = styled('div').attrs(props => ({
     width: ${props => (props.dna.set.viewport === 'viewport' ? '100vw' : '100%')};
     overflow: ${props => (props.dna.set.viewport === 'viewport' ? 'hidden' : 'auto')};
 `
-DocumentStyled.defaultProps = {}
 
 /**
  * Component
