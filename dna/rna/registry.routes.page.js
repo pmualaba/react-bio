@@ -7,7 +7,8 @@ const express = require('express')
 const next = require('next')
 const Jwt = require('njwt')
 
-const getConfigSecretSigningKey = require('../../packages/package.core.authentication/api/config').getConfigSecretSigningKey
+const getConfigSecretSigningKey = require('../../packages/package.core.authentication/api/config')
+    .getConfigSecretSigningKey
 
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
 
@@ -22,34 +23,50 @@ app.prepare()
         console.log('SETUP NEXT.JS ROUTER - CREATING CUSTOM ROUTES - router.js...')
         /** LOGIN * */
         router.get('/login', (req, res) => {
-            const actualPage = '/templates/package.core.authentication/app/login'
+            const actualPage = '/templates/app/package.core.authentication.login'
             const queryParams = {url: req.path, module: 'login'}
             app.render(req, res, actualPage, queryParams)
         })
 
         /** APP * */
         router.get('/app/:module', (req, res) => {
-            Jwt.verify(req.universalCookies.get('_jwt') || '', SECRET_SIGNING_KEY, (error, token) => {
-                if (error) {
-                    res.redirect('/login')
-                } else {
-                    const actualPage = `/templates/package.core.${req.params.module}/app/${req.params.module}`
-                    const queryParams = {url: req.path, module: req.params.module}
-                    app.render(req, res, actualPage, queryParams)
+            Jwt.verify(
+                req.universalCookies.get('_jwt') || '',
+                SECRET_SIGNING_KEY,
+                (error, token) => {
+                    if (error) {
+                        res.redirect('/login')
+                    } else {
+                        const actualPage = `/templates/app/package.core.${req.params.module}.${
+                            req.params.module
+                        }`
+                        const queryParams = {url: req.path, module: req.params.module}
+                        app.render(req, res, actualPage, queryParams)
+                    }
                 }
-            })
+            )
         })
 
         router.get('/app/:module/:subModule', (req, res) => {
-            Jwt.verify(req.universalCookies.get('_jwt') || '', SECRET_SIGNING_KEY, (error, token) => {
-                if (error) {
-                    res.redirect('/login')
-                } else {
-                    const actualPage = `/templates/package.core.${req.params.module}/app/${req.params.subModule}`
-                    const queryParams = {url: req.path, module: req.params.module, subModule: req.params.subModule}
-                    app.render(req, res, actualPage, queryParams)
+            Jwt.verify(
+                req.universalCookies.get('_jwt') || '',
+                SECRET_SIGNING_KEY,
+                (error, token) => {
+                    if (error) {
+                        res.redirect('/login')
+                    } else {
+                        const actualPage = `/templates/app/package.core.${req.params.module}.${
+                            req.params.subModule
+                        }`
+                        const queryParams = {
+                            url: req.path,
+                            module: req.params.module,
+                            subModule: req.params.subModule
+                        }
+                        app.render(req, res, actualPage, queryParams)
+                    }
                 }
-            })
+            )
         })
 
         /** WEB HOME * */
@@ -64,7 +81,7 @@ app.prepare()
         */
 
         router.get('/:lang(nl|fr|en)', (req, res) => {
-            const actualPage = '/templates/package.core.cms/web/home'
+            const actualPage = '/templates/web/package.core.cms.home'
             const queryParams = {url: req.path, locale: locale[req.params.lang]}
             app.render(req, res, actualPage, queryParams)
         })

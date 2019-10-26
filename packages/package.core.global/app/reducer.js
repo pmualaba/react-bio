@@ -5,9 +5,6 @@ import * as ActionTypes from './actions'
  */
 const global = {
     currentSkin: '',
-    environment: {
-        node: process.env.NODE_ENV
-    },
     router: {
         loadingPage: false,
         currentRoute: '/home'
@@ -15,7 +12,6 @@ const global = {
 }
 
 const globalReducer = (state = global, action) => {
-
     switch (action.type) {
         case ActionTypes.SET_CURRENT_ROUTE:
             return {

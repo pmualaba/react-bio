@@ -7,10 +7,16 @@ const HtmlHead = props => (
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
         <link rel="shortcut icon" href="/static/theme/web/favicon.ico" />
-        <title>TEST</title>
+        <title>APP</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600|Muli:100,300,400,700" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600|Muli:100,300,400,700"
+            rel="stylesheet"
+        />
     </Head>
 )
 

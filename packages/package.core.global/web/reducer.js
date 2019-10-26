@@ -5,9 +5,6 @@ import * as ActionTypes from './actions'
  */
 const global = {
     currentSkinName: '',
-    environment: {
-        node: process.env.NODE_ENV
-    },
     router: {
         loadingPage: false,
         currentRoute: '/home'

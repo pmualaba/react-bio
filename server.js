@@ -18,7 +18,8 @@ console.log('   >> Server PID:', process.pid)
 console.log('Environment env.server - server.js', env)
 console.log('Environment domains - server.js', domains)
 
-const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config').getConfigSecretSigningKey
+const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config')
+    .getConfigSecretSigningKey
 
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
 
@@ -67,7 +68,8 @@ const ssrCache = {
         length(n, key) {
             return n.length
         },
-        maxAge: 1000 * 60 * 5 /* 5 minutes */
+        maxAge:
+            1000 * 60 * 5 * (process.env.NODE_ENV === 'production' ? 1 : 0.000001) /* 5 minutes */
     }),
     15: new LRU({
         max: 100 * 1024 * 1024 /* size (100 MB) using `return n.length` as length() function */,
@@ -111,8 +113,8 @@ app.prepare()
 
         console.time('LOADING DNA - server.js...')
         Promise.all([
-            JsonDB(new FileAsync('dna/db/dna.json')),
-            JsonDB(new FileAsync('dna/db/theme.json')),
+            JsonDB(new FileAsync('dna/master.json')),
+            JsonDB(new FileAsync('dna/theme.json')),
             JsonDB(new FileAsync('dna/db/i18n.json')),
             JsonDB(new FileAsync('dna/db/data.json'))
         ]).then(responses => {
@@ -131,7 +133,11 @@ app.prepare()
                         console.log('     route app:', route.match)
                         router.get(route.match, (req, res) => {
                             const actualPage = `/templates/${route.template}`
-                            const queryParams = {url: req.path, locale: locale[req.params.lang] || locale.default, ...route.params}
+                            const queryParams = {
+                                url: req.path,
+                                locale: locale[req.params.lang] || locale.default,
+                                ...route.params
+                            }
                             // app.renderToCache(req, res, actualPage, queryParams, 5)
                             app.render(req, res, actualPage, queryParams)
                         })
@@ -144,7 +150,11 @@ app.prepare()
 
                         router.get(route.match, (req, res) => {
                             const actualPage = `/templates/${route.template}`
-                            const queryParams = {url: req.path, locale: locale.default, ...route.params}
+                            const queryParams = {
+                                url: req.path,
+                                locale: locale.default,
+                                ...route.params
+                            }
                             // app.renderToCache(req, res, actualPage, queryParams, 5)
                             app.render(req, res, actualPage, queryParams)
                         })
@@ -171,7 +181,11 @@ app.prepare()
                 /**
                  * Prepare Context
                  */
-                const BASE_URL = (req.headers.referer && `${req.headers.referer.split('//')[0]}//${req.headers.host}`) || req.headers.origin || 'http://localhost:3000'
+                const BASE_URL =
+                    (req.headers.referer &&
+                        `${req.headers.referer.split('//')[0]}//${req.headers.host}`) ||
+                    req.headers.origin ||
+                    'http://localhost:3000'
 
                 const domain = req.headers.host.split(':')[0] || null
                 const eid = domains[BASE_URL].eid || null
@@ -203,43 +217,53 @@ app.prepare()
                 }
 
                 console.log('HTTP REQUEST COUNTER - server.js:', stats.reqCount)
-                console.log('HTTP REQUEST URL - server.js:', req.method, req.url, 'FROM', (req.headers && req.headers.referer) || 'Referer Unknown')
+                console.log(
+                    'HTTP REQUEST URL - server.js:',
+                    req.method,
+                    req.url,
+                    'FROM',
+                    (req.headers && req.headers.referer) || 'Referer Unknown'
+                )
 
                 /**
                  * Authenticate User
                  */
-                Jwt.verify(req.universalCookies.get('_jwt') || '', SECRET_SIGNING_KEY, (error, token = {}) => {
-                    if (error) {
-                        console.log('HTTP REQUEST UNAUTHENTICATED - server.js', error.message)
+                Jwt.verify(
+                    req.universalCookies.get('_jwt') || '',
+                    SECRET_SIGNING_KEY,
+                    (error, token = {}) => {
+                        if (error) {
+                            console.log('HTTP REQUEST UNAUTHENTICATED - server.js', error.message)
 
-                        next()
-                    } else {
-                        /**
-                         * JWT Token is Valid
-                         * Complete Context
-                         */
-                        req.CTX.metrics.tokenVerified = Date.now()
-                        req.CTX.USER_ID = token.body.sub.slice(0, 32)
-                        req.CTX.SESSION_ID = token.body.sub.slice(33)
-                        req.CTX.AUTHENTICATED = true
-                        req.CTX.ANONYMOUS = false
-                        req.CTX.user = token.body
-                        req.CTX.time = Date.now()
-                        if (token.body.sub === 'anonymous') {
-                            req.CTX.ANONYMOUS = true
+                            next()
+                        } else {
+                            /**
+                             * JWT Token is Valid
+                             * Complete Context
+                             */
+                            req.CTX.metrics.tokenVerified = Date.now()
+                            req.CTX.USER_ID = token.body.sub.slice(0, 32)
+                            req.CTX.SESSION_ID = token.body.sub.slice(33)
+                            req.CTX.AUTHENTICATED = true
+                            req.CTX.ANONYMOUS = false
+                            req.CTX.user = token.body
+                            req.CTX.time = Date.now()
+                            if (token.body.sub === 'anonymous') {
+                                req.CTX.ANONYMOUS = true
+                            }
+                            console.log('HTTP REQUEST AUTHENTICATED - server.js')
+
+                            /**
+                             * Init or Update Database Cache
+                             */
+                            console.time('HTTP REQUEST UPDATING DATABASE CACHE... - server.js')
+                            Database.updateCache(req.CTX.sid, req.CTX.user, req.CTX.metrics)
+                            console.timeEnd('HTTP REQUEST UPDATING DATABASE CACHE... - server.js')
+
+                            next()
                         }
-                        console.log('HTTP REQUEST AUTHENTICATED - server.js')
-
-                        /**
-                         * Init or Update Database Cache
-                         */
-                        console.time('HTTP REQUEST UPDATING DATABASE CACHE... - server.js')
-                        Database.updateCache(req.CTX.sid, req.CTX.user, req.CTX.metrics)
-                        console.timeEnd('HTTP REQUEST UPDATING DATABASE CACHE... - server.js')
-
-                        next()
                     }
-                })
+                )
             })
 
             /**

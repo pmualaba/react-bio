@@ -10,21 +10,16 @@ const TopNavStyled = styled('nav').attrs(props => {
     return {
         'data-kind': 'block',
         'data-component': `${props.meta.class}`,
-        'data-registry': `${props.meta['@component']}`,
+        'data-rna': `${props.meta['@component']}`,
         'data-dna': `${props.meta['@dna']}`,
-        style: props.dna.ui.theme.decorateStyle,
-        className: `${props.meta.class} ${
-            props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''
-        }`
+        style: props.dna.ui['theme.decorate.style'],
+        className: `${props.meta.class} ${props.dna.ui['theme.decorate.class'] || ''}`
     }
 })`
-    --styled: '/packages/package.core.ui/web/blocks/headers/PageHeader/styled.js';
+    --styled: '/packages/package.core.ui/web/blocks/navigation/TopNav/styled.js';
 
     display: flex;
     justify-content: space-between;
-    background: ${props => `url(${props.url}) no-repeat`};
-    background-size: cover;
-    height: 800px;
 
     ${props => props.theme.CSS(props)};
 `

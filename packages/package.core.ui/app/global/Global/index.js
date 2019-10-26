@@ -10,10 +10,10 @@ import Router from 'next/router'
 import Head from 'next/head'
 import {ThemeProvider} from 'styled-components'
 import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
-import theme from '../../../../../theme/web/theme'
-import {CSSvariables} from '../../../../../theme/web/functions'
+import theme from '../../../../../dna/rna/registry.theme.web'
+import {CSSvariables} from '../../../../package.core.fn/theme'
 import CSSreset from '../../../../../theme/web/css-reset'
-import motion from '../../../../../dna/rna/registry.theme.motion'
+import components from '../../../../../dna/rna/registry.components.web'
 
 /**
  * Components
@@ -154,8 +154,8 @@ function Global(props) {
                     context={context}
                     own={{...props.global}}
                     as={
-                        props.dna.ui.theme.skinMotion
-                            ? motion[props.dna.ui.theme.skinMotion.as]
+                        props.dna.ui['theme.skin.motion']
+                            ? components.motion[props.dna.ui['theme.skin.motion'].as]
                             : 'div'
                     }
                     animate={{scale: 0.5}}

@@ -7,22 +7,28 @@ const scrollBar = {
     guideColor: 'rgba(0,0,0,0.1)'
 }
 
-const CSSreset = css`
+const CSSreset = props => css`
     :root {
         --styled: '/theme/web/css-global-reset.js';
         font-size: 62.5%; /* 62.5% of 16px Browser default font-size => Result: 1rem == 10px */
         height: 100%;
+        width: 100%;
     }
     
     body {
         --styled: '/theme/web/css-global-reset.js';
+        font-size: ${props.context.device.fontSize};
+        color: var(--default-tone-default-text);
+        font-family: var(--default-typography-default-font-primary);
         height: 100%;
+        width: 100%;
         letter-spacing: 0;
         line-height: 1.5;
     }
 
     #__next {
         height: 100%;
+        width: 100%;
     }
 
     *,
@@ -37,10 +43,14 @@ const CSSreset = css`
     a {
         --styled: '/theme/web/css-global-reset.js';
         text-decoration: none;
-
-        &:hover {
-            text-decoration: none;
-        }
+        
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a:link, a:visited {
+        color: var(--default-tone-default-link);
+        font-size: 0.8em;
     }
 
     li {
@@ -51,10 +61,27 @@ const CSSreset = css`
     input,
     textarea {
         --styled: '/theme/web/css-global-reset.js';
-        &:focus {
-            outline: none;
-        }
+        
     }
+    input:focus, textarea:focus {
+        outline: none;
+    }
+    
+    h1 {
+        --styled: '/theme/web/css-global-reset.js';
+        font-weight: var(--default-typography-default-font-weight-h1);
+    }
+
+    h2 {
+        --styled: '/theme/web/css-global-reset.js';
+        font-weight: var(--default-typography-default-font-weight-h2);
+    }
+
+    h3 {
+        --styled: '/theme/web/css-global-reset.js';
+        font-weight: var(--default-typography-default-font-weight-h3);
+    }
+    
 
     // RESET CHROME/SAFARI SCROLLBAR
 

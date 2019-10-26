@@ -56,22 +56,27 @@ export default withRedux(
                 device.isMobile = true
                 device.formFactor = 'phone'
                 device.screenSize = 'S'
+                device.fontSize = '1.6rem'
             } else if (Modernizr.mq('(max-width: 991px)')) {
                 device.isMobile = true
                 device.formFactor = 'tablet'
                 device.screenSize = 'M'
+                device.fontSize = '1.8rem'
             } else if (Modernizr.mq('(min-width: 1800px)')) {
                 device.isMobile = false
                 device.formFactor = 'desktopXXL'
                 device.screenSize = 'XXL'
+                device.fontSize = '3.0rem'
             } else if (Modernizr.mq('(min-width: 1300px)')) {
                 device.isMobile = false
                 device.formFactor = 'desktopXL'
                 device.screenSize = 'XL'
+                device.fontSize = '2.2rem'
             } else {
                 device.isMobile = false
                 device.formFactor = 'desktop'
                 device.screenSize = 'L'
+                device.fontSize = '2.0rem'
             }
 
             return device
@@ -108,7 +113,15 @@ export default withRedux(
             return (
                 <Provider store={store}>
                     <Head>
+                        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                        <meta charSet="utf-8" />
                         <script src="/static/js/modernizr-custom.js" />
+                        {false && (
+                            <script
+                                src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.min.js"
+                                crossOrigin="anonymous"
+                            />
+                        )}
                     </Head>
                     <Component {...pageProps} context={context} />
                 </Provider>

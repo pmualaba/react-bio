@@ -6,6 +6,7 @@
  and then injected into the Page component. 
  The DNA will then dictate the Render process of the page, i.e. which Layouts, Regions and 
  Components will be rendered when and with which props. DNA should map the data to the Regions which in turn will provide their data to the containing Blocks
+- Component composition is achieved and dictated by the structure of the DNA tree, and is decoupled from the structure of the Data graph.
 
 ## Global
 
@@ -71,21 +72,27 @@ props:
 		- PaginationElement
 			- props
 	- variant
-	- theme
+	- theme.model.variant
+	- theme.design.variant
+	- theme.skin.variant
+	- theme.decorate.variant
 	
 			``` 
     		{
-                preset: {
+                theme.model.variant: {
                     slideTransition: 'slideImageText'
                 },
-                design : 'imageSlider',
-                skin: {
+                theme.design.variant : 'imageSlider',
+                theme.skin.variant: {
                    tone: default,
                    typography: sans, 
                    spacial: cozy, 
                    motion: playful, 
                 },
-                class: 'is-root-section'
+                theme.decorate.variant: {
+                   class: 'is-root-section'
+                   style: {color: '#fff'}
+                }
             }
 	
 - data

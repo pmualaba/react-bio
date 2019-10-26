@@ -72,27 +72,26 @@ meta: {
 
 props: {
     data: {
+        init,
         value,
-        graph,
+        accessors: {},
         selectors,
         mutators,
-        accessors: {},
     },
     actions: {},
     ui: {
         theme: {
-            modelVariant: '',
-            modelParams: {
+            theme.model.variant: {
                 param: value
             },
-            designVariant: 'asImageSlider',        
-            skinTone: 'default',
-            skinTypography: 'sans',
-            skinSpacial: 'compact',          
-            skinMotion: 'smooth',            
+            theme.design.variant: 'asImageSlider',        
+            theme.skin.tone: 'default',
+            theme.skin.typography: 'sans',
+            theme.skin.spacial: 'compact',          
+            theme.skin.motion: 'smooth',            
             },
-            decorateClass: 'custom-class',
-            decorateStyle: {
+            theme.decorate.class: 'custom-class',
+            theme.decorate.style: {
                 color: 'red'
             }
         }
@@ -126,35 +125,35 @@ context:
     
 
 
-# Theming Guidlines
+# Semantic Theming Guidelines
 ## Multilayer & Multidimensional Theming
 
-In order to theme a Component in a flexible and consistent way, a styled component should support a multi-layer and multi-dimensional theming strategy.
+In order to theme a Component in a flexible and consistent way, a styled component should support a multi-layer and multi-dimensional semantic theming strategy.
 
 
 ``` 
-genes.ui.theme:
+genes.ui:
 
 {
-    modelVariant: '',
-    modelParams: {
+    'theme.model.variant': '',
+    'theme.model.params': {
         param: value
     },
-    designVariant: 'asImageSlider',        
-    skinTone: 'default',
-    skinTypography: 'sans',
-    skinSpacial: 'compact',          
-    skinMotion: 'smooth',            
+    'theme.design.variant': 'asImageSlider',        
+    'theme.skin.tone': 'default',
+    'theme.skin.typography': 'sans',
+    'theme.skin.spacial': 'compact',          
+    'theme.skin.motion': 'smooth',            
     },
-    decorateClass: 'custom-class',
-    decorateStyle: {
+    'theme.decorate.class': 'custom-class',
+    'theme.decorate.style': {
         color: 'red'
     }
 }
 ```
 
 
-## First Theming Layer: Model
+## First Semantic Theming Layer: Model
 
 #### Modeling Styled Components
 
@@ -166,17 +165,17 @@ The default model of the component is first styled with the minimal basic struct
 to make the component functional. 
 The **default model**  should always be defined:
 
-genes.ui.theme.modelVariant: 'default'
+genes.ui['theme.model.variant']: 'default'
 
 ```
-genes.ui.theme.modelVariant: 'default'
+genes.ui['theme.model.variant']: 'default'
 
 
 models = {
     default: {
         param: value
     },
-}[genes.ui.theme.modelVariant]
+}[genes.ui['theme.model.variant']]
 ```
 
 
@@ -186,9 +185,9 @@ That is why models operate at the bottom layer of the Theming stack.
 Only one **model** can be active for a styled component at the same time.
 
 - use (custom selection 'string') : 
-	- genes.ui.theme.model: 'modelVariantName'
+	- genes.ui['theme.model.variant']: 'modelVariantName'
 - use (custom configuration {object}) : 
-	- genes.ui.theme.model.custom = { param: value }
+	- genes.ui['theme.model.variant']: { param: value }
 
 
 ```
@@ -200,11 +199,11 @@ models = {
         param: value
     },
     custom: null
-}[genes.ui.theme.modelVariant]
+}[genes.ui['theme.model.variant']]
 ```
 
 
-The effective model is selected or customized at **genes.ui.theme.model**
+The effective model is selected or customized at **genes.ui['theme.model.variant']**
 The applied styles determine how the component should structurally look and behave. 
 These styles are living inside the component and are always loaded. 
 The component is now functional but not "Designed" yet. That's the task of the next Theming layer.
@@ -212,7 +211,7 @@ The component is now functional but not "Designed" yet. That's the task of the n
 
 
 
-## Second Theming Layer: Design
+## Second Semantic Theming Layer: Design
 
 #### Designing Styled Components
 Once a styled component has been modeled into it's desired functional state, the next theming layer can be applied. 
@@ -227,11 +226,11 @@ These designs do not change the functionality of the component, but they alter t
 
 Naming convention for designs:
 - design substitution:
-	- use genes.ui.theme.designVariant to select an alternative design for the styled component
+	- use genes.ui['theme.design.variant'] to select an alternative design for the styled component
  
 
 
-## Third Theming Layer: Skin
+## Third Semantic Theming Layer: Skin
 
 #### Skinning Styled Components
 Once a styled component has applied a Design, the next theming layer can be applied.
@@ -240,35 +239,35 @@ These are CSS values which are responsible for the final look and feel of the st
 These CSS values are defined globally at the global Theme level. 
 The Skin theming level enables multi-dimensional theming of a styled component.
 
-use: genes.ui.theme.skinVariant to apply a multi-dimensional skin to a styled component
+use: genes.ui['theme.skin.variant'] to apply a multi-dimensional skin to a styled component
 
 ```
-genes.ui.theme:
+genes.ui:
 
 {
-   skinVariant: 'default',
-   skinTone: 'default',
-   skinTypography: 'sans', 
-   skinSpacial: 'compact', 
-   skinMotion: 'playful',  
+   'theme.skin.variant': 'default',
+   'theme.skin.tone: 'default',
+   'theme.skin.typography: 'sans', 
+   'theme.skin.spacial: 'compact', 
+   'theme.skin.motion: 'playful',  
 }
 ```
                 
 
-## Fourth Theming Layer: Decorate
+## Fourth Semantic Theming Layer: Decorate
 
 #### Decorating Styled Components
 Once a styled component has applied a Skin, the fourth and final theming layer can be applied.
 These styles are injected ad-hoc by applying a class or by directly injecting inline styles.
 
-use: genes.ui.theme.finish.{finish} to apply a class or inline styles to a styled component
+use: genes.ui['theme.decorate.{class|style} to apply a class or inline styles to a styled component
 
 ```
-genes.ui.theme:
+genes.ui:
 
 {
-    decorateClass: 'is-custom-class',
-    decorateStyle: {
+    'theme.decorate.class': 'is-custom-class',
+    'theme.decorate.style': {
        color: 'red'
     }
 }

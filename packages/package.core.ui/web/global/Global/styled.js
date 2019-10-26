@@ -1,18 +1,17 @@
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
 
 const GlobalStyled = styled('div').attrs(props => ({
     'data-kind': 'global',
     'data-component': `${props.meta.class}`,
-    'data-registry': `${props.meta['@component']}`,
+    'data-rna': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.meta.class} ${
-        props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''
-    }`,
-    style: props.dna.ui.theme.decorateStyle
+    className: `${props.meta.class} ${props.dna.ui['theme.decorate.class'] || ''}`
 }))`
     --styled: '/packages/package.core.ui/web/global/Global/styled.js';
-    height: 100%;
+    min-height: 100%;
 
     ${props => props.theme.CSS(props)};
 `
+
 export default GlobalStyled

@@ -28,10 +28,10 @@ function WebPageHeader(props) {
     return <div>WebPageHeader</div>
 }
 function WebPageBody(props) {
-    return <div>WebPageBody</div>
+    return <div />
 }
 function WebPageFooter(props) {
-    return <div>WebPageFooter</div>
+    return <div />
 }
 
 WebPageLayout.WebPageHeader = WebPageHeader

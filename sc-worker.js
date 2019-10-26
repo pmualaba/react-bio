@@ -7,7 +7,8 @@ const domains = require('./env.server').domains
 const env = require('./env.server')()
 const apiLogic = require('./dna/rna/registry.routes.api').logic
 
-const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config').getConfigSecretSigningKey
+const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config')
+    .getConfigSecretSigningKey
 
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
 
@@ -40,8 +41,8 @@ class Worker extends SCWorker {
 
         console.time('LOADING DNA - sc-worker.js...')
         Promise.all([
-            JsonDB(new FileAsync('dna/db/dna.json')),
-            JsonDB(new FileAsync('dna/db/theme.json')),
+            JsonDB(new FileAsync('dna/master.json')),
+            JsonDB(new FileAsync('dna/theme.json')),
             JsonDB(new FileAsync('dna/db/i18n.json')),
             JsonDB(new FileAsync('dna/db/data.json'))
         ]).then(responses => {
@@ -56,7 +57,9 @@ class Worker extends SCWorker {
              *   Socket Cluster Intercept Middleware: MIDDLEWARE_HANDSHAKE_SC
              */
             scServer.addMiddleware(scServer.MIDDLEWARE_HANDSHAKE_SC, function(req, next) {
-                console.time('SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js')
+                console.time(
+                    'SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js'
+                )
 
                 /**
                  * Link Database Service
@@ -68,7 +71,9 @@ class Worker extends SCWorker {
                  */
                 const BASE_URL = req.socket.request.headers.origin || 'http://localhost:3000'
                 const jwt =
-                    req.socket.request.headers.cookie && req.socket.request.headers.cookie.split('_jwt=')[1] && req.socket.request.headers.cookie.split('_jwt=')[1].split(';')[0]
+                    req.socket.request.headers.cookie &&
+                    req.socket.request.headers.cookie.split('_jwt=')[1] &&
+                    req.socket.request.headers.cookie.split('_jwt=')[1].split(';')[0]
 
                 /**
                  * Verify JWT Token
@@ -104,8 +109,13 @@ class Worker extends SCWorker {
                         /**
                          * Reject Client Connection Attempt
                          */
-                        console.timeEnd('SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js')
-                        console.log('SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC REJECTED - sc-worker.js', error.message)
+                        console.timeEnd(
+                            'SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js'
+                        )
+                        console.log(
+                            'SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC REJECTED - sc-worker.js',
+                            error.message
+                        )
                         next(error, 4500)
                     } else {
                         /**
@@ -123,7 +133,9 @@ class Worker extends SCWorker {
                             req.socket.request.CTX.ANONYMOUS = true
                         }
 
-                        console.timeEnd('SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js')
+                        console.timeEnd(
+                            'SOCKET CLIENT CONNECTION ATTEMPT: MIDDLEWARE_HANDSHAKE_SC - sc-worker.js'
+                        )
                         // console.log('SOCKET REQUEST CONTEXT \n', req.socket.request.CTX)
                         next()
                     }
@@ -138,7 +150,11 @@ class Worker extends SCWorker {
                 console.log('SOCKET status', status)
 
                 console.time('SOCKET CONNECTION UPDATING DATABASE CACHE... - sc-worker.js')
-                Database.updateCache(socket.request.CTX.sid, socket.request.CTX.user, socket.request.CTX.metrics)
+                Database.updateCache(
+                    socket.request.CTX.sid,
+                    socket.request.CTX.user,
+                    socket.request.CTX.metrics
+                )
                 console.timeEnd('SOCKET CONNECTION UPDATING DATABASE CACHE... - sc-worker.js')
 
                 socket.on('/api', async function(req, res, next) {
@@ -152,7 +168,12 @@ class Worker extends SCWorker {
                         }
                     }
 
-                    apiLogic[req.body.meta.package][req.body.meta.endpoint][req.body.type](req, res, next, meta)
+                    apiLogic[req.body.meta.package][req.body.meta.endpoint][req.body.type](
+                        req,
+                        res,
+                        next,
+                        meta
+                    )
                 })
 
                 socket.on('disconnect', function() {

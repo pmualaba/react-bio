@@ -16,7 +16,7 @@ const user = {
     },
     permissions: {
         db: {
-            Vehicle: '1111',
+            Article: '1111',
             Identity: '1111',
             Appointment: '1111'
         },

@@ -1,0 +1,450 @@
+{
+    "description": "Application DNA",
+    "semantics": {
+        "roles": {
+            "common": {
+                "page": {
+                    "home": "common.page.home",
+                    "link": "common.page.link"
+                },
+                "content": {
+                    "video": "common.content.video",
+                    "text": "common.content.text",
+                    "image": "common.content.image"
+                },
+                "navigation": {
+                    "main": "common.navigation.main",
+                    "secondary": "common.navigation.secondary",
+                    "doormat": "common.navigation.doormat",
+                    "link": "common.navigation.link"
+                },
+                "header": {
+                    "top": "common.header.top",
+                    "secondary": "common.hero.secondary"
+                },
+                "hero": {
+                    "primary": "common.hero.primary",
+                    "cutout": "common.hero.cutout",
+                    "overlay": "common.hero.overlay",
+                    "secondary": "common.hero.secondary",
+                    "slider": "common.hero.slider",
+                    "image": "common.hero.image",
+                    "link": "common.hero.link"
+                },
+                "highlight": {
+                    "topTopical": "common.highlight.topTopical",
+                    "video": "highlight.video"
+                },
+                "footer": {
+                    "doormat": "common.footer.doormat",
+                    "bottom": "common.footer.bottom"
+                },
+                "legal": {
+                    "gdpr": "common.legal.gdpr"
+                },
+                "media": {
+                    "photoGallery": "common.media.photoGallery",
+                    "videoGallery": "common.media.videoGallery",
+                    "mediaGallery": "common.media.mediaGallery",
+                    "masonryGallery": "common.media.masonryGallery"
+                }
+            },
+            "widget": {
+                "timer": {
+                    "countdown": "widget.timer.countdown",
+                    "clock": "widget.timer.clock"
+                }
+            },
+            "presentation": {},
+            "decoration": {
+                "logo": "decoration.logo"
+            },
+            "engagement": {
+                "stories": {
+                    "slider": "engagement.stories.slider",
+                    "story": "engagement.stories.story"
+                },
+                "cta": {
+                    "newsletterSubscription": "engagement.cta.newsletterSubscription",
+                    "button": "engagement.cta.button"
+                }
+            },
+            "personalization": {
+                "recommended": {
+                    "products": "personalization.recommended.products",
+                    "videos": "personalization.recommended.videos",
+                    "content": "personalization.recommended.content"
+                }
+            },
+            "commercial": {},
+            "interaction": {},
+            "tracking": {
+                "google": {
+                    "gtm": "tracking.google.gtm"
+                }
+            }
+        }
+    },
+    "package.core.global": {
+        "package": {
+            "meta": {
+                "@dna": "['package.core.global']",
+                "name": "package.core.global",
+                "kind": "package"
+            }
+        },
+        "api": {},
+        "app": {},
+        "web": {
+            "global": {
+                "meta": {
+                    "@dna": "['package.core.global'].web.global",
+                    "@component": "['package.core.global'].web.Global",
+                    "@theme": "['package.core.global'].web.global.Global",
+                    "name": "global",
+                    "class": "Global",
+                    "kind": "global"
+                },
+                "genes": {
+                    "ui": {
+                        "theme.skin.motion": {
+                            "tag": "div"
+                        },
+                        "theme.decorate.style": {
+                            "background": "#61a0a8"
+                        }
+                    },
+                    "set": {
+                        "defaultSkin": "bio",
+                        "defaultSkinVariant": "default",
+                        "fonts": [
+                            {
+                                "link": "https://fonts.googleapis.com/css?family=Roboto:300,700|Space+Mono:400,700&display=swap",
+                                "script": null,
+                                "family": {
+                                    "SpaceMono": "'Space Mono', monospace",
+                                    "Roboto": "'Roboto', sans-serif"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "genes": {
+            "app": {},
+            "web": {}
+        }
+    },
+    "package.core.cms": {
+        "package": {
+            "meta": {
+                "@dna": "['package.core.cms']",
+                "name": "package.core.cms",
+                "kind": "package"
+            }
+        },
+        "api": {},
+        "app": {},
+        "web": {
+            "documents": {
+                "home": {
+                    "meta": {
+                        "@dna": "['package.core.cms'].web.documents.home",
+                        "@component": "['package.core.ui'].web.documents.Document",
+                        "@theme": "['package.core.ui'].web.documents.Document",
+                        "name": "home",
+                        "class": "Document",
+                        "kind": "document"
+                    },
+                    "genes": {
+                        "actions": [
+                            {
+                                "type": "GET_DOMAIN",
+                                "payload": {},
+                                "error": false,
+                                "meta": {
+                                    "package": "package.core.cms",
+                                    "endpoint": "/api/package.core.cms/web"
+                                }
+                            },
+                            {
+                                "type": "GET_CONTENT_PAGE",
+                                "payload": {
+                                    "params": {
+                                        "url": "ctx.query"
+                                    }
+                                },
+                                "error": false,
+                                "meta": {
+                                    "package": "package.core.cms",
+                                    "endpoint": "/api/package.core.cms/web"
+                                }
+                            },
+                            {
+                                "type": "GET_ARTICLES",
+                                "payload": {
+                                    "params": {}
+                                },
+                                "error": false,
+                                "meta": {
+                                    "package": "package.core.cms",
+                                    "endpoint": "/api/package.core.cms/web"
+                                }
+                            },
+                            {
+                                "type": "GET_FACEBOOK_ALBUMS",
+                                "payload": {
+                                    "params": {
+                                        "id": "1"
+                                    }
+                                },
+                                "error": false,
+                                "meta": {
+                                    "package": "package.apis.facebook",
+                                    "endpoint": "/api/package.apis.facebook/web"
+                                }
+                            }
+                        ],
+                        "data": {
+                            "accessors": {
+                                "body": "actions.GET_CONTENT_PAGE.response",
+                                "stories": "actions.GET_ARTICLES.response",
+                                "videos": "actions.GET_FACEBOOK_ALBUMS.response"
+                            }
+                        },
+                        "set": {
+                            "viewport": "scroll",
+                            "backgroundColor": "#17141D",
+                            "backgroundImage": "url(/static/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)",
+                            "route": {
+                                "match": "/",
+                                "params": {},
+                                "template": "web/package.core.cms.home",
+                                "authenticated": false
+                            }
+                        },
+                        "ui": {
+                            "theme.model.variant": "scrollContainer",
+                            "theme.design.variant": "default",
+                            "theme.skin.variant": "themeVariantDefault",
+                            "theme.skin.tone": "dimensionVariantDefault",
+                            "theme.skin.typography": "sans",
+                            "theme.skin.spacial": "compact",
+                            "theme.skin.motion": "smooth",
+                            "theme.decorate.variant": "home",
+                            "theme.decorate.class": "home",
+                            "theme.decorate.style": {
+                            }
+                        }
+                    },
+                    "layouts": [
+                        {
+                            "meta": {
+                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]",
+                                "@component": "['package.core.ui'].web.layouts.RenderLayout",
+                                "name": "DocumentLayout",
+                                "class": "RenderLayout",
+                                "kind": "layout"
+                            },
+                            "genes": {
+                                "set": {
+                                    "renderLayout": "WebPageLayout",
+                                    "collapse": false
+                                },
+                                "ui": {
+                                    "theme.decorate.style": {
+                                        "display": "flex",
+                                        "flexDirection": "column",
+                                        "width": "100%",
+                                        "minHeight": "fit-content"
+                                    }
+                                }
+                            },
+                            "regions": [
+                                {
+                                    "meta": {
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header]",
+                                        "name": "header",
+                                        "class": "Region",
+                                        "kind": "region"
+                                    },
+                                    "genes": {
+                                        "data": {
+                                            "accessors": {
+                                                "articles": "document.articles"
+                                            }
+                                        },
+                                        "set": {
+                                            "position": "center",
+                                            "actions": {},
+                                            "controls": {},
+                                            "layout": {
+                                                "display": "flex"
+                                            }
+                                        },
+                                        "ui": {
+                                        }
+                                    },
+                                    "blocks": [
+                                        {
+                                            "meta": {
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header].blocks[0:PageHeader]",
+                                                "@component": "['package.core.ui'].web.blocks.PageHeader",
+                                                "name": "PageHeader",
+                                                "class": "PageHeader",
+                                                "kind": "block"
+                                            },
+                                            "genes": {
+                                                "data": {
+                                                    "accessors": {
+                                                        "header": "region.stories"
+                                                    }
+                                                },
+                                                "set": {
+                                                },
+                                                "ui": {
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "meta": {
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body]",
+                                        "name": "body",
+                                        "class": "Region",
+                                        "kind": "region"
+                                    },
+                                    "genes": {
+                                        "data": {
+                                            "accessors": {
+                                                "body": "document.body"
+                                            }
+                                        },
+                                        "set": {
+                                            "position": "center",
+                                            "actions": {},
+                                            "controls": {},
+                                            "layout": {
+                                                "display": "flex"
+                                            }
+                                        }
+                                    },
+                                    "blocks": [
+                                        {
+                                            "meta": {
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body].blocks[0:WebPageBody]",
+                                                "@component": "['package.core.ui'].web.blocks.WebPageBody",
+                                                "name": "WebPageBody",
+                                                "class": "WebPageBody",
+                                                "kind": "block"
+                                            },
+                                            "genes": {
+                                                "data": {
+                                                    "accessors": {
+                                                        "body": "region.body"
+                                                    }
+                                                },
+                                                "set": {
+                                                },
+                                                "ui": {
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "meta": {
+                                        "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer]",
+                                        "name": "main",
+                                        "class": "Region",
+                                        "kind": "region"
+                                    },
+                                    "genes": {
+                                        "data": {
+                                            "selectors": "VideoList",
+                                            "accessors": {
+                                                "videos": "document.videos"
+                                            }
+                                        },
+                                        "set": {
+                                            "position": "center",
+                                            "actions": {},
+                                            "controls": {},
+                                            "layout": {
+                                                "display": "flex"
+                                            }
+                                        }
+                                    },
+                                    "blocks": [
+                                        {
+                                            "meta": {
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[1:WebPageFooter]",
+                                                "@component": "['package.core.ui'].web.blocks.WebPageFooter",
+                                                "name": "WebPageFooter",
+                                                "class": "WebPageFooter",
+                                                "kind": "block"
+                                            },
+                                            "genes": {
+                                                "data": {
+                                                    "accessors": {
+                                                        "videos": "region.videos"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "mutations": {
+                        "static": {},
+                        "scheduled": {
+                            "2020-08-28T06:55:21+00:00": {
+                                "meta": {
+                                    "@component": "['package.core.ui'].web.documents.Document",
+                                    "@theme": "['package.core.cms'].web.documents.Document",
+                                    "kind": "document"
+                                },
+                                "genes": {
+                                    "ui": {
+                                        "theme.model.variant": {
+                                            "param": "value"
+                                        },
+                                        "theme.design.variant": "asImageSlider",
+                                        "theme.skin.variant": "themeVariantDefault",
+                                        "theme.skin.tone": "dimensionVariantDefault",
+                                        "theme.skin.typography": "sans",
+                                        "theme.skin.spacial": "compact",
+                                        "theme.skin.motion": "smooth"
+                                    }
+                                },
+                                "layouts": []
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "genes": {
+            "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]": {
+                "set": {
+                    "renderLayout": "WebPageLayout",
+                    "collapse": false
+                },
+                "ui": {
+                    "theme.decorate.style": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "width": "100%",
+                        "minHeight": "fit-content"
+                    }
+                }
+            }
+        }
+    }
+}
+
+

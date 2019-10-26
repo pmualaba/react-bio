@@ -3,10 +3,10 @@ import styled from 'styled-components'
 const CustomLayoutStyled = styled('div').attrs(props => ({
     'data-kind': 'layout',
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
-    'data-registry': `${props.meta['@component']}`,
+    'data-rna': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.decorateStyle,
-    className: `${props.dna.set.renderLayout} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
+    style: props.dna.ui['theme.decorate.style'],
+    className: `${props.dna.set.renderLayout} ${props.dna.ui['theme.decorate.class'] || ''}`
 }))`
     .Region {
         padding: 100px;

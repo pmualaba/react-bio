@@ -1,5 +1,5 @@
 /**
- * Component Registry
+ * @component
  */
 /*
 import dynamic from 'next/dynamic'

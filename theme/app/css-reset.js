@@ -7,7 +7,7 @@ const scrollBar = {
     guideColor: 'rgba(0,0,0,0.1)'
 }
 
-const CSSreset = css`
+const CSSreset = props => css`
     :root {
         --styled: '/theme/web/css-global-reset.js';
         font-size: 62.5%; /* 62.5% of 16px Browser default font-size => Result: 1rem == 10px */
@@ -16,6 +16,7 @@ const CSSreset = css`
     
     body {
         --styled: '/theme/web/css-global-reset.js';
+        font-size: ${props.context.device.fontSize};
         height: 100%;
         letter-spacing: 0;
         line-height: 1.5;

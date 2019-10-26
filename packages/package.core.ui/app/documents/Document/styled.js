@@ -3,10 +3,10 @@ import styled from 'styled-components'
 const DocumentStyled = styled('div').attrs(props => ({
     'data-kind': 'document',
     'data-component': `${props.meta.class}`,
-    'data-registry': `${props.meta['@component']}`,
+    'data-rna': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    style: props.dna.ui.theme.decorateStyle,
-    className: `${props.meta.class} ${props.dna.ui.theme.decorateClass ? props.dna.ui.theme.decorateClass : ''}`
+    style: props.dna.ui['theme.decorate.style'],
+    className: `${props.meta.class} ${props.dna.ui['theme.decorate.class'] ? props.dna.ui['theme.decorate.class'] : ''}`
 }))`
     --styled: '/packages/package.core.ui/web/documents/Document/styled.js';
     ${props => props.theme.CSS(props)};

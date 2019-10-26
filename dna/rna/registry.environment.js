@@ -3,10 +3,10 @@ module.exports = {
         WEB_SOCKETS_ENABLED: false
     },
     locale: {
-        default: 'nl_BE',
-        nl: 'nl_BE',
-        fr: 'fr_FR',
-        en: 'en_GB'
+        default: 'nlBE',
+        nl: 'nlBE',
+        fr: 'frFR',
+        en: 'enGB'
     },
     domains: {
         default: 'https://my-react-bio-app.org',
