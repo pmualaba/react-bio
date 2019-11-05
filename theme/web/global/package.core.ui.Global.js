@@ -1,9 +1,17 @@
 import {css} from 'styled-components'
 
 export default {
+    motion: {
+        tag: 'div',
+        animate: {
+            scale: 0.5,
+            opacity: 1
+        }
+    },
     variants: {
         default: css`
-            padding: 20px;
+            padding: 40px;
+            box-shadow: var(--default-spacial-open-shadow);
         `,
         asHomeBenefits: css``,
         asHomeBenefitsItem: css``,

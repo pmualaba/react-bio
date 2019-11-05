@@ -6,7 +6,7 @@ const HtmlHead = props => (
     <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
-        <link rel="shortcut icon" href="/static/theme/web/favicon.ico" />
+        <link rel="shortcut icon" href="/theme/web/favicon.ico" />
         <title>APP</title>
 
         <link

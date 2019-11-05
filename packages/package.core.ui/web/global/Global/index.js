@@ -34,15 +34,13 @@ GlobalContext.displayName = 'GlobalContext'
  */
 
 function Global(props) {
+    const {scrollYProgress} = useViewportScroll()
+
+    // scrollYProgress.onChange(e => console.log('scrollYProgress', e))
+
     /**
      * Hooks
      */
-
-    const {scrollYProgress} = useViewportScroll()
-    console.log('scrollYProgress', scrollYProgress)
-    const initial = useTransform(scrollYProgress, x => x + 1.0)
-    scrollYProgress.onChange(console.log('trace', initial))
-    console.log('initial', initial)
 
     useEffect(() => {
         /**
@@ -85,6 +83,30 @@ function Global(props) {
     }, [])
 
     useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.WebFontConfig = {
+                google: {families: props.dna.set.fonts.google}
+            }
+            ;(function() {
+                const script = document.createElement('script')
+                script.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
+                script.type = 'text/javascript'
+                script.async = 'true'
+                const s = document.getElementsByTagName('script')[0]
+                s.parentNode.insertBefore(script, s)
+            })()
+        }
+
+        props.context.environment.IE &&
+            typeof window !== 'undefined' &&
+            window.cssVars({
+                include: 'style',
+                onlyLegacy: false,
+                watch: true,
+                onComplete(cssText, styleNode, cssVariables) {
+                    console.log(cssText)
+                }
+            })
         setTimeout(() => {
             // props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, {skin: 'themeDefault'}))
         }, 3000)
@@ -139,6 +161,7 @@ function Global(props) {
     const context = {
         ...props.context,
         global: {...props.global, currentSkinName},
+        theme: theme(currentSkinName, props.skins),
         fn: {
             sendNotification,
             clearNotification,
@@ -147,14 +170,6 @@ function Global(props) {
     }
 
     console.log('RENDER GLOBAL', props)
-
-    /*
-        as={
-            props.dna.ui['theme.skin.motion']
-            ? components.motion[props.dna.ui['theme.skin.motion'].tag]
-            : 'div'
-        }
-     */
 
     const page = {}
     const website = {templates: {}}
@@ -175,19 +190,25 @@ function Global(props) {
                 </title>
                 <link
                     rel="shortcut icon"
-                    href={`/static/domains/${
+                    href={`/domains/${
                         context.environment.domain.host
                     }/package.core.cms/favicon.ico`}
                 />
-                {props.dna.set.fonts.map(
-                    font =>
-                        font.link ? (
-                            <link key={font.link} href={font.link} rel="stylesheet" />
-                        ) : (
-                            <script src={font.script} />
-                        )
+                {props.dna.set.fonts.script && <script src={props.dna.set.fonts.script} async />}
+                {props.dna.set.fonts.link && (
+                    <link rel="stylesheet" href={props.dna.set.fonts.link} />
                 )}
 
+                {props.context.environment.IE && (
+                    <script
+                        crossOrigin="anonymous"
+                        src="https://polyfill.io/v3/polyfill.min.js?features=WeakSet%2CString.prototype.startsWith%2CObject.assign%2CArray.prototype.find"
+                    />
+                )}
+
+                {props.context.environment.IE && (
+                    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2.1.2/dist/css-vars-ponyfill.min.js" />
+                )}
                 <style>{CSSreset(props)}</style>
                 <style>{CSSvariables(currentSkinName, props.skins)}</style>
             </Head>
@@ -197,12 +218,18 @@ function Global(props) {
                     dna={props.dna}
                     context={context}
                     style={{
-                        scaleY: initial,
-                        originY: 0,
                         ...props.dna.ui['theme.decorate.style']
                     }}
-                    animate={{}}
-                    transition={{}}
+                    animate={props.dna.ui['theme.skin.motion'].animate}
+                    transition={props.dna.ui['theme.skin.motion'].transition}
+                    initial={{opacity: 0}}
+                    /*
+                        as={
+                            props.dna.ui['theme.skin.motion']
+                            ? components.motion[props.dna.ui['theme.skin.motion'].tag]
+                            : 'div'
+                        }
+                    */
                     as={
                         props.dna.ui['theme.skin.motion']
                             ? components.motion[props.dna.ui['theme.skin.motion'].tag]

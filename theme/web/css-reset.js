@@ -11,7 +11,7 @@ const CSSreset = props => css`
     :root {
         --styled: '/theme/web/css-global-reset.js';
         font-size: 62.5%; /* 62.5% of 16px Browser default font-size => Result: 1rem == 10px */
-        height: 100%;
+        height: auto;
         width: 100%;
     }
     
@@ -20,14 +20,14 @@ const CSSreset = props => css`
         font-size: ${props.context.device.fontSize};
         color: var(--default-tone-default-text);
         font-family: var(--default-typography-default-font-primary);
-        height: 100%;
+        height: auto;
         width: 100%;
         letter-spacing: 0;
         line-height: 1.5;
     }
 
     #__next {
-        height: 100%;
+        height: inherit;
         width: 100%;
     }
 

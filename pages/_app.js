@@ -45,7 +45,8 @@ export default withRedux(
                 formFactor: '',
                 screenSize: '',
                 vh: window.innerHeight,
-                vw: window.innerWidth
+                vw: window.innerWidth,
+                bh: window.document.body.offsetHeight
             }
 
             if (renderCycle === 0) {
@@ -85,6 +86,7 @@ export default withRedux(
             /**
              * Detect FormFactor
              */
+
             this.setState(state => ({renderCycle: state.renderCycle + 1}))
 
             /**
@@ -115,7 +117,7 @@ export default withRedux(
                     <Head>
                         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                         <meta charSet="utf-8" />
-                        <script src="/static/js/modernizr-custom.js" />
+                        <script src="/js/modernizr-custom.js" />
                         {false && (
                             <script
                                 src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.min.js"

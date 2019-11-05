@@ -8,7 +8,7 @@ const DocumentStyled = styled('div').attrs(props => ({
     className: `${props.meta.class} ${props.dna.ui['theme.decorate.class'] || ''}`
 }))`
     --styled: '/packages/package.core.ui/web/documents/Document/styled.js';
-    height: 2000px;
+    height: auto;
     ${props => props.theme.CSS(props)};
 `
 export default DocumentStyled

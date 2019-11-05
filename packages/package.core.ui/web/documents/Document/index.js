@@ -26,6 +26,7 @@ export default function Document(props) {
     /**
      * Hooks
      */
+
     const context = useContext(GlobalContext)
 
     useEffect(() => {}, [])
@@ -37,7 +38,8 @@ export default function Document(props) {
     if (context.renderCycle === 0) {
         return <></>
     }
-    console.log('RENDER DOCUMENT  ')
+    console.log('RENDER DOCUMENT  ', props)
+    console.log('RENDER DOCUMENT  ', context)
     return (
         <DocumentStyled
             meta={props.meta}
@@ -56,8 +58,7 @@ export default function Document(props) {
 
 Document.propTypes = {
     meta: PropTypes.object,
-    dna: PropTypes.object,
-    global: PropTypes.object
+    dna: PropTypes.object
 }
 
 Document.defaultProps = {}

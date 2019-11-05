@@ -108,25 +108,30 @@
                 "genes": {
                     "ui": {
                         "theme.skin.motion": {
-                            "tag": "div"
+                            "tag": "div",
+                            "animate": {
+                                "scale": 0.5,
+                                "opacity": 1
+                            }
+
                         },
                         "theme.decorate.style": {
-                            "background": "#61a0a8"
+                            "background": "#FF1239"
                         }
                     },
                     "set": {
                         "defaultSkin": "bio",
                         "defaultSkinVariant": "default",
-                        "fonts": [
-                            {
-                                "link": "https://fonts.googleapis.com/css?family=Roboto:300,700|Space+Mono:400,700&display=swap",
-                                "script": null,
-                                "family": {
-                                    "SpaceMono": "'Space Mono', monospace",
-                                    "Roboto": "'Roboto', sans-serif"
-                                }
+                        "fonts": {
+                            "google": ["Roboto:300,700", "Space+Mono:400,700"],
+                            "edge": null,
+                            "link": null,
+                            "script": null,
+                            "family": {
+                                "SpaceMono": "'Space Mono', monospace",
+                                "Roboto": "'Roboto', sans-serif"
                             }
-                        ]
+                        }
                     }
                 }
             }
@@ -216,7 +221,7 @@
                         "set": {
                             "viewport": "scroll",
                             "backgroundColor": "#17141D",
-                            "backgroundImage": "url(/static/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)",
+                            "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)",
                             "route": {
                                 "match": "/",
                                 "params": {},
@@ -284,6 +289,10 @@
                                             }
                                         },
                                         "ui": {
+                                        },
+                                        "a11y": {
+                                            "role": "region",
+                                            "label": "header"
                                         }
                                     },
                                     "blocks": [
@@ -329,7 +338,12 @@
                                             "layout": {
                                                 "display": "flex"
                                             }
+                                        },
+                                        "a11y": {
+                                            "role": "main",
+                                            "label": "main"
                                         }
+
                                     },
                                     "blocks": [
                                         {
@@ -357,15 +371,15 @@
                                 {
                                     "meta": {
                                         "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer]",
-                                        "name": "main",
+                                        "name": "footer",
                                         "class": "Region",
                                         "kind": "region"
                                     },
                                     "genes": {
                                         "data": {
-                                            "selectors": "VideoList",
+                                            "selectors": "Links",
                                             "accessors": {
-                                                "videos": "document.videos"
+                                                "videos": "document.links"
                                             }
                                         },
                                         "set": {
@@ -375,23 +389,28 @@
                                             "layout": {
                                                 "display": "flex"
                                             }
+                                        },
+                                        "a11y": {
+                                            "role": "region",
+                                            "label": "footer"
                                         }
                                     },
                                     "blocks": [
                                         {
                                             "meta": {
-                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[1:WebPageFooter]",
-                                                "@component": "['package.core.ui'].web.blocks.WebPageFooter",
-                                                "name": "WebPageFooter",
-                                                "class": "WebPageFooter",
+                                                "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[0:PageFooter]",
+                                                "@component": "['package.core.ui'].web.blocks.PageFooter",
+                                                "name": "PageFooter",
+                                                "class": "PageFooter",
                                                 "kind": "block"
                                             },
                                             "genes": {
                                                 "data": {
                                                     "accessors": {
-                                                        "videos": "region.videos"
+                                                        "videos": "region.links"
                                                     }
-                                                }
+                                                },
+                                                "ui": {}
                                             }
                                         }
                                     ]

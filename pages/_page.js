@@ -21,11 +21,7 @@ export default function Page(props) {
             dna={props.dna.global.genes}
             context={{
                 ...props.context,
-                environment: {
-                    locale: props.locale,
-                    domain: props.domain,
-                    node: process.env.NODE_ENV
-                }
+                environment: props.environment
             }}
             skins={props.skins}
         >
@@ -50,6 +46,7 @@ Page.getInitialProps = async function(ctx) {
     const Package = Page.DNA.split('"]')[0].substring(2)
     const Platform = Page.DNA.indexOf('web') !== -1 ? 'web' : 'app'
     const locale = ctx.asPath.split('/')[1] || ctx.query.locale || locale.default
+    console.log('ctx.req.headers.user-agent3', ctx.req.headers['user-agent'])
 
     /**
      * Server side ACTION: SET_CURRENT_ROUTE
@@ -74,8 +71,14 @@ Page.getInitialProps = async function(ctx) {
         domain.host = ctx.req.CTX.domain
 
         const props = {
-            locale,
-            domain,
+            environment: {
+                locale,
+                domain,
+                node: process.env.NODE_ENV,
+                IE: ctx.req.headers['user-agent'].includes('Trident/7'),
+                IE10: ctx.req.headers['user-agent'].includes('rv:10'),
+                IE11: ctx.req.headers['user-agent'].includes('rv:11')
+            },
             dna: {
                 global: ctx.req.db.json.dna
                     .get(`["package.core.global"].${Platform}.global`)

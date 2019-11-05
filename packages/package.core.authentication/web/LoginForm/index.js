@@ -11,7 +11,7 @@ const LoginForm = props => (
             label={props.identityField.label}
             value={props.identityField.value}
             className=""
-            icon="/static/package.core.ui/app/icons/icon-user.svg"
+            icon="/package.core.ui/app/icons/icon-user.svg"
             isRequired={false}
             alert={props.identityField.error.alert}
             onChange={props.onCredentialsChange}
@@ -21,7 +21,7 @@ const LoginForm = props => (
             label={props.passwordField.label}
             value={props.passwordField.value}
             className=""
-            icon="/static/package.core.ui/app/icons/icon-login.svg"
+            icon="/package.core.ui/app/icons/icon-login.svg"
             isRequired={false}
             alert={props.passwordField.error.alert}
             onChange={props.onCredentialsChange}

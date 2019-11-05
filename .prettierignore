@@ -1,6 +1,6 @@
 nodejs/.next
 nodejs/node_modules
-nodejs/static
+nodejs/public
 nodejs/jest_0
 nodejs/.temp
 nodejs/.git

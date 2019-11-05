@@ -5,7 +5,7 @@ import styled from 'styled-components'
  */
 
 const TopNavStyled = styled('nav').attrs(props => {
-    props.url = '/static/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg'
+    props.url = '/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg'
     console.log('test', props.url)
     return {
         'data-kind': 'block',

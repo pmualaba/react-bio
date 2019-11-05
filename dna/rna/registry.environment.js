@@ -21,6 +21,10 @@ module.exports = {
         'https://my-react-bio-app.org': {
             eid: '101',
             sid: '1999'
+        },
+        'https://bio.pluss.cloud': {
+            eid: '101',
+            sid: '1999'
         }
     }
 }

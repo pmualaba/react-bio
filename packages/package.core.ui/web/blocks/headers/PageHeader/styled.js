@@ -15,6 +15,10 @@ const PageHeaderStyled = styled('article').attrs(props => {
     }
 })`
     --styled: '/packages/package.core.ui/web/blocks/headers/PageHeader/styled.js';
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 
     ${props => props.theme.CSS(props)};
 `

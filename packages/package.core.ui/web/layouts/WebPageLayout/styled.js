@@ -11,9 +11,12 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
 
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     > .Region {
         --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js ';
+        height: calc(33vh - (2 / 3 * var(--default-spacial-open-padding-document)));
+        display: flex;
     }
 
     > .header {
