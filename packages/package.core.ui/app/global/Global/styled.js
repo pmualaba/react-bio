@@ -13,6 +13,6 @@ const GlobalStyled = styled('div').attrs(props => ({
     --styled: '/packages/package.core.ui/web/global/Global/styled.js';
     height: 100%;
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default GlobalStyled

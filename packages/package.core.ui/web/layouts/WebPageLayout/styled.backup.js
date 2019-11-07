@@ -54,6 +54,6 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
         grid-area: footer;
     }
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default WebPageLayoutStyled

@@ -43,6 +43,6 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
         --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js';
     }
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default WebPageLayoutStyled

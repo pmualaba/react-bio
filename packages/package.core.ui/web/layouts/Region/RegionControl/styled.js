@@ -6,7 +6,7 @@ const RegionControlStyled = styled.div.attrs(props => ({
 }))`
     display: flex;
     
-    /*${props => props.theme.CSS(props)};*/
+    /*${props => props.context.theme.CSS(props)};*/
     --styled: '/packages/package.core.ui/web/layouts/Region/RegionControl/styled.js';
 `
 

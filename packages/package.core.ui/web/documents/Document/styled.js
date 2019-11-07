@@ -9,6 +9,6 @@ const DocumentStyled = styled('div').attrs(props => ({
 }))`
     --styled: '/packages/package.core.ui/web/documents/Document/styled.js';
     height: auto;
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default DocumentStyled

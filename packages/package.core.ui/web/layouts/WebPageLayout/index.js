@@ -7,7 +7,7 @@ function WebPageLayout(props) {
     console.log('WebPageLayout render()', props.data.init.regions)
 
     return (
-        <WebPageLayoutStyled meta={props.meta} dna={props.dna}>
+        <WebPageLayoutStyled meta={props.meta} dna={props.dna} context={props.context}>
             {props.regions.map((region, i) => (
                 <Region
                     key={region.meta.name}

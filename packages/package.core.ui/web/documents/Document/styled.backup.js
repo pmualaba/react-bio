@@ -31,6 +31,6 @@ const DocumentStyled = styled('div').attrs(props => ({
         margin-bottom: -80px;
     }
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default DocumentStyled

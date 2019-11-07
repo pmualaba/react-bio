@@ -12,7 +12,7 @@ const CustomLayoutStyled = styled('div').attrs(props => ({
         padding: 100px;
     }
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
     --styled: '/packages/package.core.ui/web/layouts/CustomLayout/styled.js';
 `
 export default CustomLayoutStyled

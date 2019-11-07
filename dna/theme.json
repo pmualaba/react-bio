@@ -595,6 +595,10 @@
                     },
                     "motion": {
                         "smooth": {
+                            "animate": {
+                                "scale": 0.5,
+                                "opacity": 1
+                            },
                             "transition-duration": "2s",
                             "transition-timingFunction": "cubic-bezier(-694,-0482,-335,1)"
                         },

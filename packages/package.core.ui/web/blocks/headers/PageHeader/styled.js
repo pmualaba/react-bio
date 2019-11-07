@@ -20,6 +20,6 @@ const PageHeaderStyled = styled('article').attrs(props => {
     justify-content: space-between;
     width: 100%;
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default PageHeaderStyled

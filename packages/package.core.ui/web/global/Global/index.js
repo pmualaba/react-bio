@@ -11,7 +11,7 @@ import Head from 'next/head'
 import {ThemeProvider} from 'styled-components'
 import {useViewportScroll, useTransform} from 'framer-motion'
 import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
-import theme from '../../../../../dna/rna/registry.theme.web'
+import Theme from '../../../../../dna/rna/registry.theme.web'
 import {CSSvariables} from '../../../../package.core.fn/theme'
 import CSSreset from '../../../../../theme/web/css-reset'
 import components from '../../../../../dna/rna/registry.components.web'
@@ -58,13 +58,13 @@ function Global(props) {
          * Setup Global Event Bus
          */
 
-        const click$ = fromEvent(document, 'click')
+        const click$ = fromEvent(window.document, 'click')
         const click$domElement$ = click$.pipe(map(event => event.target))
         const click$domElement$subscription = click$domElement$.subscribe(val => {
             // console.log('click', val)
         })
 
-        const mouseOver$ = fromEvent(document, 'mouseover')
+        const mouseOver$ = fromEvent(window.document, 'mouseover')
         const mouseOver$domElement$ = mouseOver$.pipe(
             map(event => {
                 if (event.target.classList.contains('input')) {
@@ -88,11 +88,11 @@ function Global(props) {
                 google: {families: props.dna.set.fonts.google}
             }
             ;(function() {
-                const script = document.createElement('script')
+                const script = window.document.createElement('script')
                 script.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
                 script.type = 'text/javascript'
                 script.async = 'true'
-                const s = document.getElementsByTagName('script')[0]
+                const s = window.document.getElementsByTagName('script')[0]
                 s.parentNode.insertBefore(script, s)
             })()
         }
@@ -158,10 +158,12 @@ function Global(props) {
     const currentSkinName =
         props.global.currentSkin || props.context.web.currentSkin || props.dna.set.defaultSkin
 
+    const theme = Theme(currentSkinName, props.skins)
+
     const context = {
         ...props.context,
         global: {...props.global, currentSkinName},
-        theme: theme(currentSkinName, props.skins),
+        theme,
         fn: {
             sendNotification,
             clearNotification,
@@ -169,25 +171,51 @@ function Global(props) {
         }
     }
 
-    console.log('RENDER GLOBAL', props)
+    console.log('RENDER GLOBAL', props.context.environment.domain)
 
-    const page = {}
-    const website = {templates: {}}
+    const document = props.data.init.document
+    const domain = props.context.environment.domain
 
-    const l = props.context.locale
+    const l = props.context.environment.locale
+
+    const motion = {
+        style: {
+            ...props.dna.ui['theme.decorate.style']
+        },
+        animate:
+            props.dna.ui['theme.skin.motion'].animate ||
+            props.context.theme[props.dna.ui['theme.variant'] || 'default'].motion[
+                props.dna.ui['theme.skin.motion'].animate
+            ].animate,
+        transition: props.dna.ui['theme.skin.motion'].transition,
+        initial: {opacity: 0},
+        as: props.dna.ui['theme.skin.motion']
+            ? components.motion[props.dna.ui['theme.skin.motion'].tag]
+            : 'div'
+        /*
+            as={
+                props.dna.ui['theme.skin.motion']
+                ? components.motion[props.dna.ui['theme.skin.motion'].tag]
+                : 'div'
+            }
+        */
+    }
+
     return (
         <GlobalContext.Provider value={context}>
             <Head>
-                <meta name="description" content={page[`metaDescription_${l}`]} />
-                <meta property="og:title" content={page[`metaTitle_${l}`]} />
-                <meta property="og:description" content={page[`metaDescription_${l}`]} />
+                <meta name="description" content={document[`metaDescription_${l}`]} />
+                <meta property="og:title" content={document[`metaTitle_${l}`]} />
+                <meta property="og:description" content={document[`metaDescription_${l}`]} />
                 <meta
                     property="og:image"
-                    content={page.hasFeaturedImage && page.hasFeaturedImage.localUrl}
+                    content={document.hasFeaturedImage && document.hasFeaturedImage.localUrl}
                 />
                 <title>
-                    {website[`name_${l}`] || website.name} | {page[`metaTitle_${l}`]}
+                    {domain[`title_${l}`] || domain.title || domain.name} |{' '}
+                    {document[`metaTitle_${l}`]}
                 </title>
+
                 <link
                     rel="shortcut icon"
                     href={`/domains/${
@@ -212,33 +240,10 @@ function Global(props) {
                 <style>{CSSreset(props)}</style>
                 <style>{CSSvariables(currentSkinName, props.skins)}</style>
             </Head>
-            <ThemeProvider theme={theme(currentSkinName, props.skins)}>
-                <GlobalStyled
-                    meta={props.meta}
-                    dna={props.dna}
-                    context={context}
-                    style={{
-                        ...props.dna.ui['theme.decorate.style']
-                    }}
-                    animate={props.dna.ui['theme.skin.motion'].animate}
-                    transition={props.dna.ui['theme.skin.motion'].transition}
-                    initial={{opacity: 0}}
-                    /*
-                        as={
-                            props.dna.ui['theme.skin.motion']
-                            ? components.motion[props.dna.ui['theme.skin.motion'].tag]
-                            : 'div'
-                        }
-                    */
-                    as={
-                        props.dna.ui['theme.skin.motion']
-                            ? components.motion[props.dna.ui['theme.skin.motion'].tag]
-                            : 'div'
-                    }
-                >
-                    {props.children}
-                </GlobalStyled>
-            </ThemeProvider>
+
+            <GlobalStyled meta={props.meta} dna={props.dna} context={context} {...motion}>
+                {props.children}
+            </GlobalStyled>
         </GlobalContext.Provider>
     )
 }

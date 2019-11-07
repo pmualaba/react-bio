@@ -1,21 +1,25 @@
 import {css} from 'styled-components'
 
+// 'css.SubComponent', motion.SubComponent //
+
 export default {
-    motion: {
-        tag: 'div',
-        animate: {
-            scale: 0.5,
-            opacity: 1
-        }
-    },
     variants: {
-        default: css`
-            padding: 40px;
-            box-shadow: var(--default-spacial-open-shadow);
-        `,
-        asHomeBenefits: css``,
-        asHomeBenefitsItem: css``,
-        asHomeHero: css``
+        default: {
+            css: css`
+                padding: 40px;
+                box-shadow: var(--default-spacial-open-shadow);
+            `,
+            motion: {
+                tag: 'div',
+                animate: {
+                    scale: 0.5,
+                    opacity: 1
+                }
+            }
+        },
+        asHomeBenefits: {css: css``},
+        asHomeBenefitsItem: {css: css``},
+        asHomeHero: {css: css``}
     },
     context: {
         screenSize: {
@@ -40,12 +44,17 @@ export default {
             XL: css`
                 --styled: '/theme/web/global/package.core.ui.Global.js';
                 position: static;
-                font-family: ${props => props.theme.default.typography.default['font-primary']};
+                font-family: ${props =>
+                    props.context.theme.default.typography.default['font-primary']};
             `
         },
-        regionSize: {},
-        region: {},
-        taxonomy: {
+        regionSize: {
+            S: {css: css``},
+            M: {css: css``},
+            L: {css: css``}
+        },
+        region: {'region@dna': {css: css``}},
+        classification: {
             product: css`
                 position: fixed;
             `

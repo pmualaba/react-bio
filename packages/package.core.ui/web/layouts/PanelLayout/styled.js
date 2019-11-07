@@ -54,7 +54,7 @@ const PanelLayoutStyled = styled('div').attrs(props => ({
         grid-area: footer;
     }
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
     --styled: '/packages/package.core.ui/web/layouts/PanelLayout/styled.js';
 `
 export default PanelLayoutStyled

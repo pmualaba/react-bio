@@ -230,6 +230,7 @@
                             }
                         },
                         "ui": {
+                            "theme.variant": "default",
                             "theme.model.variant": "scrollContainer",
                             "theme.design.variant": "default",
                             "theme.skin.variant": "themeVariantDefault",

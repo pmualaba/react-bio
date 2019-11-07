@@ -13,24 +13,28 @@ export default {
                     color: #f00;
                 }
                 position: relative;
-                font-family: ${props => props.theme.skin.default.typography.sans.primaryFont};
+                font-family: ${props => props.context.theme.skin.default.typography.sans.primaryFont};
             `,
             M: css`
                 position: relative;
-                font-family: ${props => props.theme.skin.default.typography.sans.primaryFont};
+                font-family: ${props => props.context.theme.skin.default.typography.sans.primaryFont};
             `,
             L: css`
                 position: relative;
-                font-family: ${props => props.theme.skin.default.typography.sans.primaryFont};
+                font-family: ${props => props.context.theme.skin.default.typography.sans.primaryFont};
             `,
             XL: css`
                 position: static;
-                font-family: ${props => props.theme.skin.default.typography.sans.primaryFont};
+                font-family: ${props => props.context.theme.skin.default.typography.sans.primaryFont};
             `
         },
-        regionSize: {},
-        region: {},
-        taxonomy: {
+        regionSize: {
+            S: {css: css``},
+            M: {css: css``},
+            L: {css: css``}
+        },
+        region: {'region@dna': {css: css``}},
+        classification: {
             product: css`
                 position: fixed;
             `

@@ -2,17 +2,17 @@ import {css} from 'styled-components'
 
 export default {
     variants: {
-        default: css``
+        default: {css: css``}
     },
     context: {
-        taxonomy: {
-            products: css``
+        classification: {
+            products: {css: css``}
         },
-        region: {},
+        region: {'region@dna': {css: css``}},
         regionSize: {
-            S: css``,
-            M: css``,
-            L: css``
+            S: {css: css``},
+            M: {css: css``},
+            L: {css: css``}
         },
         blockSize: css`
             &.M {
@@ -31,8 +31,8 @@ export default {
                     color: yellow;
                 }
             `,
-            M: css``,
-            L: css``
+            M: {css: css``},
+            L: {css: css``}
         }
     }
 }

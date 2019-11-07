@@ -7,7 +7,8 @@
                 "name": "my-react-bio-app.org",
                 "url": "https://my-react-bio-app.org",
                 "title": "React Bio",
-                "title_nlBE": "React Bio"
+                "title_nlBE": "React Bio",
+                "hasFeaturedImage": {"localUrl": "https://my-react-bio-app.org/logo.png"}
             }
         ],
         "ContentPage": [
@@ -37,8 +38,8 @@
                 "excerpt": "<p>Home...Lorem ipsum...</p>",
                 "excerpt_nlBE": "<p>Home...Lorem ipsum...</p>",
                 "icon": "fasHome",
-                "metaTitle_nlBE": "React Bio",
                 "metaTitle": "React Bio",
+                "metaTitle_nlBE": "React Bio",
                 "metaDescription": "Home",
                 "metaDescription_nlBE": "Home",
                 "isRootNode": true,

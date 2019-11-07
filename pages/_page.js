@@ -11,29 +11,38 @@ const env = require('../env.client')()
 const {locale} = require('../env.client')
 
 export default function Page(props) {
+    console.log('props', props)
     const GlobalComponent = get(components, props.dna.global.meta['@component'])
     const DocumentComponent = get(components, props.dna.document.meta['@component'])
     const LayoutComponent = get(components, props.dna.document.layouts[0].meta['@component'])
+    const context = {
+        ...props.context,
+        environment: props.environment,
+        classification:
+            (props.data.init.isClassifiedByTaxonomyTerms &&
+                props.data.init.isClassifiedByTaxonomyTerms.map(term => term.name)) ||
+            []
+    }
 
     return (
         <GlobalComponent
             meta={props.dna.global.meta}
             dna={props.dna.global.genes}
-            context={{
-                ...props.context,
-                environment: props.environment
-            }}
+            context={context}
+            data={props.data}
             skins={props.skins}
         >
             <DocumentComponent
                 meta={props.dna.document.meta}
                 dna={props.dna.document.genes}
+                context={context}
                 data={props.data}
                 layouts={props.dna.document.layouts}
             >
                 <LayoutComponent
                     meta={props.dna.document.layouts[0].meta}
                     dna={props.dna.document.layouts[0].genes}
+                    context={context}
                     data={props.data}
                     regions={props.dna.document.layouts[0].regions}
                 />

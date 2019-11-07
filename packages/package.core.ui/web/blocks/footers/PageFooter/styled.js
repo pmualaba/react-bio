@@ -24,6 +24,6 @@ const PageFooterStyled = styled('article').attrs(props => {
         display: inline-block;
     }
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default PageFooterStyled

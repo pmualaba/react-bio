@@ -2,34 +2,36 @@ import {css} from 'styled-components'
 
 export default {
     variants: {
-        default: css`
-            .Region {
-                &.header {
-                    transition: background-color 3s;
+        default: {
+            css: css`
+                .Region {
+                    &.header {
+                        transition: background-color 3s;
+                    }
                 }
-            }
-        `,
-        asBlogPost: css``,
-        asHomeBenefits: css``,
-        asHomeBenefitsItem: css``,
-        asHomeHero: css``
+            `
+        },
+        asBlogPost: {css: css``},
+        asHomeBenefits: {css: css``},
+        asHomeBenefitsItem: {css: css``},
+        asHomeHero: {css: css``}
     },
     context: {
-        taxonomy: {
-            products: css``
+        classification: {
+            products: {css: css``}
         },
         region: {
-            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": css``
+            "['package.core.cms'].web.documents.home.layouts.BaseLayout.regions.main": {css: css``}
         },
         regionSize: {
-            S: css``,
-            M: css``,
-            L: css``
+            S: {css: css``},
+            M: {css: css``},
+            L: {css: css``}
         },
         screenSize: {
-            S: css``,
-            M: css``,
-            L: css``
+            S: {css: css``},
+            M: {css: css``},
+            L: {css: css``}
         }
     }
 }

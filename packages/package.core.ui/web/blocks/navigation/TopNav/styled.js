@@ -21,6 +21,6 @@ const TopNavStyled = styled('nav').attrs(props => {
     display: flex;
     justify-content: space-between;
 
-    ${props => props.theme.CSS(props)};
+    ${props => props.context.theme.CSS(props)};
 `
 export default TopNavStyled

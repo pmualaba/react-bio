@@ -13,7 +13,7 @@ const TextInputCell = props => (
         meta={props.meta}
         isEditMode={props.cellIsEditMode}
         className="TextInputCell"
-        themeColor={props.themeColor}
+        themeColor={props.context.themeColor}
         placeholder={props.placeholder && (props.l ? props.placeholder[`${props.l}`] : props.placeholder)}
         onKeyUp={props.onKeyUp}
         onValueUpdate={props.onValueUpdate}
