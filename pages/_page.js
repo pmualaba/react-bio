@@ -55,8 +55,7 @@ Page.getInitialProps = async function(ctx) {
     const Package = Page.DNA.split('"]')[0].substring(2)
     const Platform = Page.DNA.indexOf('web') !== -1 ? 'web' : 'app'
     const locale = ctx.asPath.split('/')[1] || ctx.query.locale || locale.default
-    console.log('ctx.req.headers.user-agent3', ctx.req.headers['user-agent'])
-
+    const sid = ctx.req.CTX.sid
     /**
      * Server side ACTION: SET_CURRENT_ROUTE
      */
@@ -68,7 +67,7 @@ Page.getInitialProps = async function(ctx) {
                 url: ctx.query.url || ctx.asPath,
                 locale,
                 slug: ctx.query.slug || '',
-                actions: ctx.req.db.json.dna.get(`${Page.DNA}.genes.actions`).value()
+                actions: ctx.req.db.json.dna.get(`${sid + Page.DNA}.genes.actions`).value()
             },
             error: false,
             meta: {
@@ -90,9 +89,9 @@ Page.getInitialProps = async function(ctx) {
             },
             dna: {
                 global: ctx.req.db.json.dna
-                    .get(`["package.core.global"].${Platform}.global`)
+                    .get(`${sid}["package.core.global"].${Platform}.global`)
                     .value(),
-                document: ctx.req.db.json.dna.get(Page.DNA).value()
+                document: ctx.req.db.json.dna.get(sid + Page.DNA).value()
             },
             data: {init: null},
             skins: ctx.req.db.json.theme.get(`skins.${Platform}`).value()

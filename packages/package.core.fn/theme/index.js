@@ -12,7 +12,7 @@ function CSS(props) {
         ] || {}
 
     const screenSize = design.variants ? props.context.device.screenSize : null
-
+    console.log('design.context.screenSize.S.css', design.context)
     return design.variants
         ? [
               (screenSize === 'S' && design.context.screenSize.S.css) || '',

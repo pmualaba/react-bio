@@ -14,23 +14,27 @@ export default {
             M: {css: css``},
             L: {css: css``}
         },
-        blockSize: css`
-            &.M {
-                --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.blockSize";
-                color: aqua;
-            }
-            &.L {
-                --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.blockSize";
-                color: blueviolet;
-            }
-        `,
-        screenSize: {
-            S: css`
+        blockSize: {
+            css: css`
                 &.M {
-                    --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.screenSize.S";
-                    color: yellow;
+                    --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.blockSize";
+                    color: aqua;
                 }
-            `,
+                &.L {
+                    --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.blockSize";
+                    color: blueviolet;
+                }
+            `
+        },
+        screenSize: {
+            S: {
+                css: css`
+                    &.M {
+                        --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.screenSize.S";
+                        color: yellow;
+                    }
+                `
+            },
             M: {css: css``},
             L: {css: css``}
         }

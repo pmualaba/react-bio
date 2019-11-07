@@ -125,40 +125,43 @@ app.prepare()
             console.timeEnd('LOADING DNA - server.js...')
 
             console.log('SETUP NEXT.JS ROUTER - CREATING DNA ROUTES - server.js...')
-            Object.values(db.json.dna.getState()).forEach(Package => {
-                Package.app &&
-                    Package.app.documents &&
-                    Object.values(Package.app.documents).forEach(document => {
-                        const route = document.genes.set.route
-                        console.log('     route app:', route.match)
-                        router.get(route.match, (req, res) => {
-                            const actualPage = `/templates/${route.template}`
-                            const queryParams = {
-                                url: req.path,
-                                locale: locale[req.params.lang] || locale.default,
-                                ...route.params
-                            }
-                            // app.renderToCache(req, res, actualPage, queryParams, 5)
-                            app.render(req, res, actualPage, queryParams)
-                        })
-                    })
-                Package.web &&
-                    Package.web.documents &&
-                    Object.values(Package.web.documents).forEach(document => {
-                        const route = document.genes.set.route
-                        console.log('     route web:', route.match)
 
-                        router.get(route.match, (req, res) => {
-                            const actualPage = `/templates/${route.template}`
-                            const queryParams = {
-                                url: req.path,
-                                locale: locale.default,
-                                ...route.params
-                            }
-                            // app.renderToCache(req, res, actualPage, queryParams, 5)
-                            app.render(req, res, actualPage, queryParams)
+            Object.values(db.json.dna.getState()).forEach(dna => {
+                Object.values(dna).forEach(Package => {
+                    Package.app &&
+                        Package.app.documents &&
+                        Object.values(Package.app.documents).forEach(document => {
+                            const route = document.genes.set.route
+                            console.log('     route app:', route.match)
+                            router.get(route.match, (req, res) => {
+                                const actualPage = `/templates/${route.template}`
+                                const queryParams = {
+                                    url: req.path,
+                                    locale: locale[req.params.lang] || locale.default,
+                                    ...route.params
+                                }
+                                // app.renderToCache(req, res, actualPage, queryParams, 5)
+                                app.render(req, res, actualPage, queryParams)
+                            })
                         })
-                    })
+                    Package.web &&
+                        Package.web.documents &&
+                        Object.values(Package.web.documents).forEach(document => {
+                            const route = document.genes.set.route
+                            console.log('     route web:', route.match)
+
+                            router.get(route.match, (req, res) => {
+                                const actualPage = `/templates/${route.template}`
+                                const queryParams = {
+                                    url: req.path,
+                                    locale: locale.default,
+                                    ...route.params
+                                }
+                                // app.renderToCache(req, res, actualPage, queryParams, 5)
+                                app.render(req, res, actualPage, queryParams)
+                            })
+                        })
+                })
             })
 
             /**

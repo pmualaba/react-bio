@@ -2,9 +2,11 @@ import {css} from 'styled-components'
 
 export default {
     variants: {
-        default: css`
-            --styled: '/theme/web/documents/package.core.ui.Document.js';
-        `
+        default: {
+            css: css`
+                --styled: '/theme/web/documents/package.core.ui.Document.js';
+            `
+        }
     },
     context: {
         classification: {
@@ -12,11 +14,13 @@ export default {
         },
         region: {'region@dna': {css: css``}},
         regionSize: {
-            S: css`
-                .M {
-                    color: #0f0;
-                }
-            `,
+            S: {
+                css: css`
+                    .M {
+                        color: #0f0;
+                    }
+                `
+            },
             M: {css: css``},
             L: {css: css``}
         },

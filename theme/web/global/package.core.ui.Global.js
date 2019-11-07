@@ -23,30 +23,38 @@ export default {
     },
     context: {
         screenSize: {
-            S: css`
-                --styled: '/theme/web/global/package.core.ui.Global.js';
-                &.M {
-                    color: #f00;
-                }
-                position: relative;
-                font-family: var(--default-typography-default-font-primary);
-            `,
-            M: css`
-                --styled: '/theme/web/global/package.core.ui.Global.js';
-                position: relative;
-                font-family: var(--default-typography-default-font-primary);
-            `,
-            L: css`
-                --styled: '/theme/web/global/package.core.ui.Global.js';
-                position: relative;
-                font-family: var(--default-typography-default-font-primary);
-            `,
-            XL: css`
-                --styled: '/theme/web/global/package.core.ui.Global.js';
-                position: static;
-                font-family: ${props =>
-                    props.context.theme.default.typography.default['font-primary']};
-            `
+            S: {
+                css: css`
+                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    &.M {
+                        color: #f00;
+                    }
+                    position: relative;
+                    font-family: var(--default-typography-default-font-primary);
+                `
+            },
+            M: {
+                css: css`
+                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    position: relative;
+                    font-family: var(--default-typography-default-font-primary);
+                `
+            },
+            L: {
+                css: css`
+                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    position: relative;
+                    font-family: var(--default-typography-default-font-primary);
+                `
+            },
+            XL: {
+                css: css`
+                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    position: static;
+                    font-family: ${props =>
+                        props.context.theme.default.typography.default['font-primary']};
+                `
+            }
         },
         regionSize: {
             S: {css: css``},
@@ -55,9 +63,11 @@ export default {
         },
         region: {'region@dna': {css: css``}},
         classification: {
-            product: css`
-                position: fixed;
-            `
+            product: {
+                css: css`
+                    position: fixed;
+                `
+            }
         }
     }
 }
