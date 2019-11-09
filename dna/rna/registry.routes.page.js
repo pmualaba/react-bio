@@ -7,7 +7,7 @@ const express = require('express')
 const next = require('next')
 const Jwt = require('njwt')
 
-const getConfigSecretSigningKey = require('../../packages/package.core.authentication/api/config')
+const getConfigSecretSigningKey = require('../../packages/package.core.auth/api/config')
     .getConfigSecretSigningKey
 
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()

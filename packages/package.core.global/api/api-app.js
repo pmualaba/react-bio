@@ -4,7 +4,8 @@ const orderBy = require('lodash/orderBy')
 
 const router = express.Router()
 const env = require('../../../env.server')()
-const getLocalApiCredentials = require('../../../package.core.authentication/api/api-fn').getLocalApiCredentials
+const getLocalApiCredentials = require('../../../package.core.authentication/api/api-fn')
+    .getLocalApiCredentials
 
 // POST /api/global/app
 router.post('/', (req, res, next) => {
@@ -17,7 +18,9 @@ router.post('/', (req, res, next) => {
                     console.log('GET_SELECTION/GET_CUSTOMERS')
 
                     axios(
-                        `${env.DB_BASE_URL}/structr/rest/Identity/?sid=${req.SID}&deleted=false&pageSize=${req.body.payload.pagination.size}&page=${
+                        `${env.DB_BASE_URL}/structr/rest/Identity/?sid=${
+                            req.SID
+                        }&deleted=false&pageSize=${req.body.payload.pagination.size}&page=${
                             req.body.payload.pagination.page
                         }`,
                         {

@@ -106,7 +106,7 @@
                         "class": "Global",
                         "kind": "global"
                     },
-                    "dna": {
+                    "genes": {
                         "['package.core.global'].web.global": {
                             "ui": {
                                 "theme.skin.motion": {
@@ -531,7 +531,7 @@
                                 }
                             }
                         },
-                        "dna": {
+                        "genes": {
                             "['package.core.cms'].web.documents.home": {
                                 "actions": [
                                     {

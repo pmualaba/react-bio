@@ -1,5 +1,6 @@
 import React from 'react'
 import get from 'lodash/get'
+import set from 'lodash/set'
 import axios from 'axios'
 import FSA, {
     SET_CURRENT_ROUTE,
@@ -11,7 +12,6 @@ const env = require('../env.client')()
 const {locale} = require('../env.client')
 
 export default function Page(props) {
-    console.log('props', props)
     const GlobalComponent = get(components, props.dna.global.meta['@component'])
     const DocumentComponent = get(components, props.dna.document.meta['@component'])
     const LayoutComponent = get(components, props.dna.document.layouts[0].meta['@component'])
@@ -60,14 +60,47 @@ Page.getInitialProps = async function(ctx) {
      * Server side ACTION: SET_CURRENT_ROUTE
      */
     ctx.store.dispatch(FSA(SET_CURRENT_ROUTE, false, {url: ctx.asPath}))
+
     async function prepareInitialProps() {
+        /**
+         * Prepare Page DNA
+         */
+        console.time('SSR PREPARE PAGE DNA... - _page.js')
+        const documentDna = ctx.req.db.json.dna.get(sid + Page.DNA).value()
+
+        const globalDNA = ctx.req.db.json.dna
+            .get(`${sid}['package.core.global'].${Platform}.global`)
+            .value()
+
+        const globalDna = {
+            ...globalDNA,
+            genes: globalDNA.dna[`['package.core.global'].${Platform}.global`]
+        }
+
+        Object.entries(documentDna.dna).forEach(([key, genes]) => {
+            key === Page.DNA
+                ? set(documentDna, 'genes', genes)
+                : set(
+                      documentDna,
+                      `${key.replace(`${Page.DNA}.`, '').replace(/:(.*?)]/g, ']')}.genes`,
+                      genes
+                  )
+        })
+
+        delete documentDna.dna
+        delete globalDna.dna
+        console.timeEnd('SSR PREPARE PAGE DNA... - _page.js')
+
+        /**
+         * Get Initial Props
+         */
         const {data} = await axios.post(`${env.BASE_URL}/api/package.core.ui/${Platform}`, {
             type: 'GET_INITIAL_PROPS',
             payload: {
                 url: ctx.query.url || ctx.asPath,
                 locale,
                 slug: ctx.query.slug || '',
-                actions: ctx.req.db.json.dna.get(`${sid + Page.DNA}.genes.actions`).value()
+                actions: documentDna.genes.actions
             },
             error: false,
             meta: {
@@ -88,16 +121,14 @@ Page.getInitialProps = async function(ctx) {
                 IE11: ctx.req.headers['user-agent'].includes('rv:11')
             },
             dna: {
-                global: ctx.req.db.json.dna
-                    .get(`${sid}["package.core.global"].${Platform}.global`)
-                    .value(),
-                document: ctx.req.db.json.dna.get(sid + Page.DNA).value()
+                global: globalDna,
+                document: documentDna
             },
             data: {init: null},
             skins: ctx.req.db.json.theme.get(`skins.${Platform}`).value()
         }
 
-        props.data.init = Object.entries(props.dna.document.genes.data.accessors).reduce(
+        props.data.init = Object.entries(documentDna.genes.data.accessors).reduce(
             (value, [key, accessor]) => {
                 value.document[key] = get(data.payload, accessor)
                 return value

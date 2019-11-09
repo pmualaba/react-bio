@@ -18,7 +18,7 @@ console.log('   >> Server PID:', process.pid)
 console.log('Environment env.server - server.js', env)
 console.log('Environment domains - server.js', domains)
 
-const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config')
+const getConfigSecretSigningKey = require('./packages/package.core.auth/api/config')
     .getConfigSecretSigningKey
 
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
@@ -126,12 +126,12 @@ app.prepare()
 
             console.log('SETUP NEXT.JS ROUTER - CREATING DNA ROUTES - server.js...')
 
-            Object.values(db.json.dna.getState()).forEach(dna => {
-                Object.values(dna).forEach(Package => {
+            Object.values(db.json.dna.getState()).forEach(domain => {
+                Object.values(domain).forEach(Package => {
                     Package.app &&
                         Package.app.documents &&
                         Object.values(Package.app.documents).forEach(document => {
-                            const route = document.genes.set.route
+                            const route = document.meta['@route']
                             console.log('     route app:', route.match)
                             router.get(route.match, (req, res) => {
                                 const actualPage = `/templates/${route.template}`
@@ -147,7 +147,7 @@ app.prepare()
                     Package.web &&
                         Package.web.documents &&
                         Object.values(Package.web.documents).forEach(document => {
-                            const route = document.genes.set.route
+                            const route = document.meta['@route']
                             console.log('     route web:', route.match)
 
                             router.get(route.match, (req, res) => {

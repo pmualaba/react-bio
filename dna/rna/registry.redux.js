@@ -6,7 +6,7 @@ import {rootReducer as globalRootReducer} from '../../packages/package.core.glob
 import db from '../../packages/package.core.data/web/reducer'
 import io from '../../packages/package.core.io/io/reducer'
 
-import {rootReducer as loginRootReducer} from '../../packages/package.core.authentication/redux'
+import {rootReducer as loginRootReducer} from '../../packages/package.core.auth/redux'
 
 /**
  * Import Root Logic
@@ -15,7 +15,7 @@ import {rootLogic as globalRootLogic} from '../../packages/package.core.global/r
 import dbLogic from '../../packages/package.core.data/web/logic'
 import ioLogic from '../../packages/package.core.io/io/logic'
 
-import {rootLogic as loginRootLogic} from '../../packages/package.core.authentication/redux'
+import {rootLogic as loginRootLogic} from '../../packages/package.core.auth/redux'
 
 /**
  * Root Reducer Composition

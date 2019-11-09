@@ -12,7 +12,6 @@ function CSS(props) {
         ] || {}
 
     const screenSize = design.variants ? props.context.device.screenSize : null
-    console.log('design.context.screenSize.S.css', design.context)
     return design.variants
         ? [
               (screenSize === 'S' && design.context.screenSize.S.css) || '',
@@ -25,14 +24,14 @@ function CSS(props) {
               (screenSize === 'XL' && [
                   design.context.screenSize.M.css,
                   design.context.screenSize.L.css,
-                  design.context.screenSize.XL.css
+                  design.context.screenSize.XL ? design.context.screenSize.XL.css : ''
               ]) ||
                   '',
               (screenSize === 'XXL' && [
                   design.context.screenSize.M.css,
                   design.context.screenSize.L.css,
-                  design.context.screenSize.XL.css,
-                  design.context.screenSize.XXL.css
+                  design.context.screenSize.XL ? design.context.screenSize.XL.css : '',
+                  design.context.screenSize.XXL ? design.context.screenSize.XXL.css : ''
               ]) ||
                   '',
               design.variants[variant].css || '',

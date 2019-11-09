@@ -99,7 +99,6 @@ export default withRedux(
         }
 
         render() {
-            console.log('RENDER _APP', this.state.renderCycle)
             const {Component, pageProps, store} = this.props
             const isBrowser = typeof window !== 'undefined'
 
@@ -112,6 +111,7 @@ export default withRedux(
                 web: (isBrowser && JSON.parse(localStorage.getItem('web'))) || {}
             }
 
+            console.log('RENDER _APP', this.state.renderCycle, context.device.screenSize)
             return (
                 <Provider store={store}>
                     <Head>

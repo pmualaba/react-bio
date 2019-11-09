@@ -4,6 +4,6 @@ import Page from '../../_page'
  * Inject Page DNA
  */
 
-Page.DNA = "['package.core.cms'].web.documents.home"
+Page.DNA = "['package.core.auth'].web.documents.login"
 
 export default Page

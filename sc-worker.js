@@ -7,7 +7,7 @@ const domains = require('./env.server').domains
 const env = require('./env.server')()
 const apiLogic = require('./dna/rna/registry.routes.api').logic
 
-const getConfigSecretSigningKey = require('./packages/package.core.authentication/api/config')
+const getConfigSecretSigningKey = require('./packages/package.core.auth/api/config')
     .getConfigSecretSigningKey
 
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()
