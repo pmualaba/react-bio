@@ -65,16 +65,16 @@ Page.getInitialProps = async function(ctx) {
         /**
          * Prepare Page DNA
          */
-        console.time('SSR PREPARE PAGE DNA... - _page.js')
+        console.time('SSR PREPARE MASTER DNA... - _page.js')
         const documentDna = ctx.req.db.json.dna.get(sid + Page.DNA).value()
 
-        const globalDNA = ctx.req.db.json.dna
+        const _globalDna = ctx.req.db.json.dna
             .get(`${sid}['package.core.global'].${Platform}.global`)
             .value()
 
         const globalDna = {
-            ...globalDNA,
-            genes: globalDNA.dna[`['package.core.global'].${Platform}.global`]
+            ..._globalDna,
+            genes: _globalDna.dna[`['package.core.global'].${Platform}.global`]
         }
 
         Object.entries(documentDna.dna).forEach(([key, genes]) => {
@@ -89,7 +89,7 @@ Page.getInitialProps = async function(ctx) {
 
         delete documentDna.dna
         delete globalDna.dna
-        console.timeEnd('SSR PREPARE PAGE DNA... - _page.js')
+        console.timeEnd('SSR PREPARE MASTER DNA... - _page.js')
 
         /**
          * Get Initial Props

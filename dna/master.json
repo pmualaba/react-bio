@@ -1,6 +1,6 @@
 {
     "1999": {
-        "description": "Application DNA",
+        "description": "Application DNA - SITE 1999 - https://my-react-bio-app.org",
         "semantics": {
             "roles": {
                 "common": {
@@ -168,209 +168,32 @@
                             "class": "Document",
                             "kind": "document"
                         },
-                        "genes": {
-                            "actions": [
-                                {
-                                    "type": "GET_DOMAIN",
-                                    "payload": {},
-                                    "error": false,
-                                    "meta": {
-                                        "package": "package.core.cms",
-                                        "endpoint": "/api/package.core.cms/web"
-                                    }
-                                }
-                            ],
-                            "data": {
-                                "accessors": {
-                                }
-                            },
-                            "set": {
-                                "viewport": "scroll",
-                                "backgroundColor": "#17141D",
-                                "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)"
-                            },
-                            "ui": {
-                                "theme.variant": "default",
-                                "theme.model.variant": "scrollContainer",
-                                "theme.design.variant": "default",
-                                "theme.skin.variant": "themeVariantDefault",
-                                "theme.skin.tone": "dimensionVariantDefault",
-                                "theme.skin.typography": "sans",
-                                "theme.skin.spacial": "compact",
-                                "theme.skin.motion": "smooth",
-                                "theme.decorate.variant": "home",
-                                "theme.decorate.class": "home",
-                                "theme.decorate.style": {
-                                }
-                            }
-                        },
                         "layouts": [
                             {
                                 "meta": {
-                                    "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]",
+                                    "@dna": "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout]",
                                     "@component": "['package.core.ui'].web.layouts.RenderLayout",
+                                    "@layout": "WebPageLayout",
                                     "name": "DocumentLayout",
                                     "class": "RenderLayout",
                                     "kind": "layout"
                                 },
-                                "genes": {
-                                    "set": {
-                                        "renderLayout": "WebPageLayout",
-                                        "collapse": false
-                                    },
-                                    "ui": {
-                                        "theme.decorate.style": {
-                                            "display": "flex",
-                                            "flexDirection": "column",
-                                            "width": "100%",
-                                            "minHeight": "fit-content"
-                                        }
-                                    }
-                                },
                                 "regions": [
                                     {
                                         "meta": {
-                                            "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header]",
-                                            "name": "header",
+                                            "@dna": "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main]",
+                                            "name": "main",
                                             "class": "Region",
                                             "kind": "region"
-                                        },
-                                        "genes": {
-                                            "data": {
-                                                "accessors": {
-                                                    "articles": "document.articles"
-                                                }
-                                            },
-                                            "set": {
-                                                "position": "center",
-                                                "actions": {},
-                                                "controls": {},
-                                                "layout": {
-                                                    "display": "flex"
-                                                }
-                                            },
-                                            "ui": {
-                                            },
-                                            "a11y": {
-                                                "role": "region",
-                                                "label": "header"
-                                            }
                                         },
                                         "blocks": [
                                             {
                                                 "meta": {
-                                                    "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header].blocks[0:PageHeader]",
-                                                    "@component": "['package.core.ui'].web.blocks.PageHeader",
-                                                    "name": "PageHeader",
-                                                    "class": "PageHeader",
+                                                    "@dna": "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[0:LoginForm]",
+                                                    "@component": "['package.core.auth'].web.blocks.LoginForm",
+                                                    "name": "LoginForm",
+                                                    "class": "LoginForm",
                                                     "kind": "block"
-                                                },
-                                                "genes": {
-                                                    "data": {
-                                                        "accessors": {
-                                                            "header": "region.stories"
-                                                        }
-                                                    },
-                                                    "set": {
-                                                    },
-                                                    "ui": {
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "meta": {
-                                            "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body]",
-                                            "name": "body",
-                                            "class": "Region",
-                                            "kind": "region"
-                                        },
-                                        "genes": {
-                                            "data": {
-                                                "accessors": {
-                                                    "body": "document.body"
-                                                }
-                                            },
-                                            "set": {
-                                                "position": "center",
-                                                "actions": {},
-                                                "controls": {},
-                                                "layout": {
-                                                    "display": "flex"
-                                                }
-                                            },
-                                            "a11y": {
-                                                "role": "main",
-                                                "label": "main"
-                                            }
-                                        },
-                                        "blocks": [
-                                            {
-                                                "meta": {
-                                                    "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[1:body].blocks[0:WebPageBody]",
-                                                    "@component": "['package.core.ui'].web.blocks.WebPageBody",
-                                                    "name": "WebPageBody",
-                                                    "class": "WebPageBody",
-                                                    "kind": "block"
-                                                },
-                                                "genes": {
-                                                    "data": {
-                                                        "accessors": {
-                                                            "body": "region.body"
-                                                        }
-                                                    },
-                                                    "set": {
-                                                    },
-                                                    "ui": {
-                                                    }
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "meta": {
-                                            "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer]",
-                                            "name": "footer",
-                                            "class": "Region",
-                                            "kind": "region"
-                                        },
-                                        "genes": {
-                                            "data": {
-                                                "selectors": "Links",
-                                                "accessors": {
-                                                    "videos": "document.links"
-                                                }
-                                            },
-                                            "set": {
-                                                "position": "center",
-                                                "actions": {},
-                                                "controls": {},
-                                                "layout": {
-                                                    "display": "flex"
-                                                }
-                                            },
-                                            "a11y": {
-                                                "role": "region",
-                                                "label": "footer"
-                                            }
-                                        },
-                                        "blocks": [
-                                            {
-                                                "meta": {
-                                                    "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[0:PageFooter]",
-                                                    "@component": "['package.core.ui'].web.blocks.PageFooter",
-                                                    "name": "PageFooter",
-                                                    "class": "PageFooter",
-                                                    "kind": "block"
-                                                },
-                                                "genes": {
-                                                    "data": {
-                                                        "accessors": {
-                                                            "videos": "region.links"
-                                                        }
-                                                    },
-                                                    "ui": {}
                                                 }
                                             }
                                         ]
@@ -401,6 +224,91 @@
                                         }
                                     },
                                     "layouts": []
+                                }
+                            }
+                        },
+                        "dna": {
+                            "['package.core.auth'].web.documents.login": {
+                                "actions": [
+                                    {
+                                        "type": "GET_DOMAIN",
+                                        "payload": {},
+                                        "error": false,
+                                        "meta": {
+                                            "package": "package.core.cms",
+                                            "endpoint": "/api/package.core.cms/web"
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "accessors": {
+                                        "domain": "actions.GET_DOMAIN.response"
+                                    }
+                                },
+                                "set": {
+                                    "viewport": "scroll",
+                                    "backgroundColor": "#17141D",
+                                    "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)"
+                                },
+                                "ui": {
+                                    "theme.variant": "default",
+                                    "theme.model.variant": "scrollContainer",
+                                    "theme.design.variant": "default",
+                                    "theme.skin.variant": "themeVariantDefault",
+                                    "theme.skin.tone": "dimensionVariantDefault",
+                                    "theme.skin.typography": "sans",
+                                    "theme.skin.spacial": "compact",
+                                    "theme.skin.motion": "smooth",
+                                    "theme.decorate.variant": "home",
+                                    "theme.decorate.class": "home",
+                                    "theme.decorate.style": {
+                                    }
+                                }
+                            },
+                            "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout]": {
+                                "set": {
+                                    "renderLayout": "WebPageLayout",
+                                    "collapse": false
+                                },
+                                "ui": {
+                                    "theme.decorate.style": {
+                                        "display": "flex",
+                                        "flexDirection": "column",
+                                        "width": "100%",
+                                        "minHeight": "fit-content"
+                                    }
+                                }
+                            },
+                            "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main]": {
+                                "data": {
+                                    "accessors": {
+                                        "domain": "document.domain"
+                                    }
+                                },
+                                "set": {
+                                    "position": "center",
+                                    "actions": {},
+                                    "controls": {},
+                                    "layout": {
+                                        "display": "flex"
+                                    }
+                                },
+                                "ui": {
+                                },
+                                "a11y": {
+                                    "role": "region",
+                                    "label": "header"
+                                }
+                            },
+                            "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[0:LoginForm]": {
+                                "data": {
+                                    "accessors": {
+                                        "domain": "region.domain"
+                                    }
+                                },
+                                "set": {
+                                },
+                                "ui": {
                                 }
                             }
                         }
@@ -584,7 +492,7 @@
                                 "data": {
                                     "accessors": {
                                         "body": "actions.GET_CONTENT_PAGE.response",
-                                        "stories": "actions.GET_ARTICLES.response",
+                                        "articles": "actions.GET_ARTICLES.response",
                                         "videos": "actions.GET_FACEBOOK_ALBUMS.response"
                                     }
                                 },

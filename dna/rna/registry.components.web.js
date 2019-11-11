@@ -37,6 +37,7 @@ import WebPageLayout from '../../packages/package.core.ui/web/layouts/WebPageLay
 import CustomLayout from '../../packages/package.core.ui/web/layouts/CustomLayout'
 import GridTable from '../../packages/package.core.ui/app/blocks/tables/GridTable'
 import PageHeader from '../../packages/package.core.ui/web/blocks/headers/PageHeader'
+import LoginForm from '../../packages/package.core.auth/web/LoginForm'
 import PageFooter from '../../packages/package.core.ui/web/blocks/footers/PageFooter'
 import Test from '../../packages/package.core.ui/web/blocks/Test'
 
@@ -64,6 +65,13 @@ const components = {
     'package.core.global': {
         web: {
             Global
+        }
+    },
+    'package.core.auth': {
+        web: {
+            blocks: {
+                LoginForm
+            }
         }
     },
     'package.core.cms': {

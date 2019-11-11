@@ -26,6 +26,12 @@ import WebPageLayout from '../../theme/web/layouts/package.core.ui.WebPageLayout
  */
 import Stories from '../../theme/web/blocks/social/package.core.ui.Stories'
 import PageHeader from '../../theme/web/blocks/headers/package.core.ui.PageHeader'
+import LoginForm from '../../theme/web/blocks/forms/package.core.auth.LoginForm'
+
+/**
+ * Elements
+ */
+import Image from '../../theme/web/elements/media/package.core.ui.Image'
 
 // TODO : Build Theme Inheritance Tree
 
@@ -37,6 +43,13 @@ const design = {
         web: {
             global: {
                 Global
+            }
+        }
+    },
+    'package.core.auth': {
+        web: {
+            blocks: {
+                LoginForm
             }
         }
     },
@@ -55,6 +68,9 @@ const design = {
             blocks: {
                 PageHeader,
                 Stories
+            },
+            elements: {
+                Image
             }
         }
     },

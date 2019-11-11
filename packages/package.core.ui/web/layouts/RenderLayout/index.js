@@ -15,19 +15,31 @@ const RenderLayout = props => {
      * Render
      */
 
-    const values = props.regions.map(region =>
-        Object.entries(region.genes.data.accessors).reduce(
+    const values = props.regions.map(region => {
+        console.log('region', region)
+        return Object.entries(region.genes.data.accessors).reduce(
             (value, [key, accessor]) => {
                 value.region[key] = get(props.data.init, accessor)
                 return value
             },
             {region: {}}
         )
-    )
+    })
 
-    const LayoutComponent = get(components, props.meta['@component'].replace('RenderLayout', props.dna.set.renderLayout))
+    const LayoutComponent = get(
+        components,
+        props.meta['@component'].replace('RenderLayout', props.dna.set.renderLayout)
+    )
     console.log('RENDER LAYOUT:', props.dna.set.renderLayout)
-    return <LayoutComponent meta={props.meta} dna={props.dna} data={{init: {regions: values}}} context={context} regions={props.regions} />
+    return (
+        <LayoutComponent
+            meta={props.meta}
+            dna={props.dna}
+            data={{init: {regions: values}}}
+            context={context}
+            regions={props.regions}
+        />
+    )
 }
 
 RenderLayout.propTypes = {

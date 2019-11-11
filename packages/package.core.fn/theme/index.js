@@ -14,33 +14,50 @@ function CSS(props) {
     const screenSize = design.variants ? props.context.device.screenSize : null
     return design.variants
         ? [
-              (screenSize === 'S' && design.context.screenSize.S.css) || '',
-              (screenSize === 'M' && design.context.screenSize.M.css) || '',
+              screenSize === 'S' && design.context.screenSize.S
+                  ? design.context.screenSize.S.css
+                  : '',
+              screenSize === 'M' && design.context.screenSize.M
+                  ? design.context.screenSize.M.css
+                  : '',
               (screenSize === 'L' && [
-                  design.context.screenSize.M.css,
-                  design.context.screenSize.L.css
+                  design.context.screenSize.M ? design.context.screenSize.M.css : '',
+                  design.context.screenSize.L ? design.context.screenSize.L.css : ''
               ]) ||
                   '',
               (screenSize === 'XL' && [
-                  design.context.screenSize.M.css,
-                  design.context.screenSize.L.css,
+                  design.context.screenSize.M ? design.context.screenSize.M.css : '',
+                  design.context.screenSize.L ? design.context.screenSize.L.css : '',
                   design.context.screenSize.XL ? design.context.screenSize.XL.css : ''
               ]) ||
                   '',
               (screenSize === 'XXL' && [
-                  design.context.screenSize.M.css,
-                  design.context.screenSize.L.css,
+                  design.context.screenSize.M ? design.context.screenSize.M.css : '',
+                  design.context.screenSize.L ? design.context.screenSize.L.css : '',
                   design.context.screenSize.XL ? design.context.screenSize.XL.css : '',
                   design.context.screenSize.XXL ? design.context.screenSize.XXL.css : ''
               ]) ||
                   '',
+
               design.variants[variant].css || '',
+
               props.context.classification.reduce(
-                  (css, term) => css.concat(design.context.classification[term].css || ''),
+                  (css, term) =>
+                      css.concat(
+                          (design.context.classification &&
+                              design.context.classification[term].css) ||
+                              ''
+                      ),
                   ''
               ),
-              props.own ? design.context.region[props.own.region || 'region@dna'].css : '',
-              props.own ? design.context.regionSize[props.own.regionSize || 'S'].css : ''
+              props.own
+                  ? design.context.region &&
+                    design.context.region[props.own.region || 'region@dna'].css
+                  : '',
+              props.own
+                  ? design.context.regionSize &&
+                    design.context.regionSize[props.own.regionSize || 'S'].css
+                  : ''
           ]
         : ''
 }

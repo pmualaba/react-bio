@@ -68,8 +68,7 @@ const ssrCache = {
         length(n, key) {
             return n.length
         },
-        maxAge:
-            1000 * 60 * 5 * (process.env.NODE_ENV === 'production' ? 1 : 0.000001) /* 5 minutes */
+        maxAge: 1000 * 60 * 5 * (process.env.NODE_ENV === 'production' ? 1 : 1) /* 5 minutes */
     }),
     15: new LRU({
         max: 100 * 1024 * 1024 /* size (100 MB) using `return n.length` as length() function */,
