@@ -14,6 +14,13 @@ export default {
                 animate: {
                     scale: 0.5,
                     opacity: 1
+                },
+                initial: 'initial',
+                exit: 'exit',
+                variants: {
+                    exit: {
+                        transition: {staggerChildren: 2}
+                    }
                 }
             }
         },

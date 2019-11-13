@@ -1,3 +1,5 @@
+const set = require('lodash/set')
+
 const express = require('express')
 const axios = require('axios')
 
@@ -21,8 +23,9 @@ const logic = {
             meta
         )
     },
+
     GET_INITIAL_PROPS: async (req, res, next, meta) => {
-        console.log('/api/package.core.ui/web/GET_INITIAL_PROPS!')
+        console.log('/api/package.core.ui/web/GET_INITIAL_PROPS')
 
         const actions = req.body.payload.actions
 
@@ -68,6 +71,55 @@ const logic = {
             })
         }
     },
+
+    GET_PAGE_DNA: async (req, res, next, meta) => {
+        console.log('/api/package.core.ui/web/GET_PAGE_DNA')
+
+        const sid = req.CTX.sid
+        const dnaKey = req.body.payload.dnaKey
+        /**
+         * Prepare Page DNA
+         */
+        console.time('SSR PREPARE MASTER DNA... - _page.js')
+        const documentDna = req.db.json.dna.get(sid + dnaKey).value()
+        const _globalDna = req.db.json.dna.get(`${sid}['package.core.global'].web.global`).value()
+        const theme = req.db.json.theme.get('skins.web').value()
+        console.log('theme', theme)
+
+        const globalDna = {
+            ..._globalDna,
+            genes: _globalDna.dna["['package.core.global'].web.global"]
+        }
+
+        documentDna.dna &&
+            Object.entries(documentDna.dna).forEach(([key, genes]) => {
+                key === dnaKey
+                    ? set(documentDna, 'genes', genes)
+                    : set(
+                          documentDna,
+                          `${key.replace(`${dnaKey}.`, '').replace(/:(.*?)]/g, ']')}.genes`,
+                          genes
+                      )
+            })
+
+        delete documentDna.dna
+        delete globalDna.dna
+        console.timeEnd('SSR PREPARE MASTER DNA... - _page.js')
+
+        res.json({
+            type: 'GET_PAGE_DNA_SUCCESS',
+            error: false,
+            payload: {
+                globalDna,
+                documentDna,
+                theme
+            },
+            meta: {
+                package: 'package.core.ui'
+            }
+        })
+    },
+
     GET_LAZY_PROPS: async (req, res, next, meta) => {}
 }
 /** API /api/cms/web

@@ -178,7 +178,7 @@ function Global(props) {
 
     const l = props.context.environment.locale
 
-    const motion = {
+    const motion1 = {
         style: {
             ...props.dna.ui['theme.decorate.style']
         },
@@ -199,6 +199,41 @@ function Global(props) {
                 : 'div'
             }
         */
+    }
+
+    const motion2 = {
+        initial: 'initial',
+        exit: 'exit',
+        animate: 'enter',
+        variants: {
+            initial: {scale: 0.96, y: 30, opacity: 0},
+            enter: {
+                scale: 1,
+                y: 0,
+                opacity: 1,
+                transition: {duration: 2, ease: [0.48, 0.15, 0.25, 0.96]}
+            },
+            exit: {
+                scale: 0.6,
+                y: 100,
+                opacity: 0,
+                transition: {duration: 2, ease: [0.48, 0.15, 0.25, 0.96]}
+            }
+        },
+        as: components.motion.div,
+        style: {
+            ...props.dna.ui['theme.decorate.style']
+        }
+    }
+
+    const motion = {
+        initial: 'exit',
+        animate: 'enter',
+        exit: 'exit',
+        as: components.motion.div,
+        style: {
+            ...props.dna.ui['theme.decorate.style']
+        }
     }
 
     return (

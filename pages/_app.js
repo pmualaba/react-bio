@@ -8,6 +8,7 @@ import withRedux from 'next-redux-wrapper'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension' // import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
+import {AnimatePresence} from 'framer-motion'
 
 import {createLogicMiddleware} from 'redux-logic'
 import API from '../packages/package.core.fn/api'
@@ -99,7 +100,7 @@ export default withRedux(
         }
 
         render() {
-            const {Component, pageProps, store} = this.props
+            const {Component, pageProps, store, router} = this.props
             const isBrowser = typeof window !== 'undefined'
 
             const context = {
@@ -125,7 +126,9 @@ export default withRedux(
                             />
                         )}
                     </Head>
-                    <Component {...pageProps} context={context} />
+                    <AnimatePresence exitBeforeEnter>
+                        <Component {...pageProps} key={router.route} context={context} />
+                    </AnimatePresence>
                 </Provider>
             )
         }

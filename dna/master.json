@@ -117,7 +117,6 @@
                                     }
                                 },
                                 "theme.decorate.style": {
-                                    "background": "#FF1239"
                                 }
                             },
                             "set": {
@@ -513,6 +512,7 @@
                                     "theme.decorate.variant": "home",
                                     "theme.decorate.class": "home",
                                     "theme.decorate.style": {
+                                        "background": "#FF1239"
                                     }
                                 }
                             },

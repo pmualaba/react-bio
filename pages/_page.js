@@ -2,16 +2,18 @@ import React from 'react'
 import get from 'lodash/get'
 import set from 'lodash/set'
 import axios from 'axios'
+import components from '../dna/rna/registry.components.web'
+
 import FSA, {
     SET_CURRENT_ROUTE,
     SET_INITIAL_PROPS
 } from '../packages/package.core.global/web/actions'
-import components from '../dna/rna/registry.components.web'
 
 const env = require('../env.client')()
 const {locale} = require('../env.client')
 
-export default function Page(props) {
+export function RenderPage(props) {
+    console.log('RenderPage props', props)
     const GlobalComponent = get(components, props.dna.global.meta['@component'])
     const DocumentComponent = get(components, props.dna.document.meta['@component'])
     const LayoutComponent = get(components, props.dna.document.layouts[0].meta['@component'])
@@ -51,22 +53,28 @@ export default function Page(props) {
     )
 }
 
-Page.getInitialProps = async function(ctx) {
+export function getInitialProps(ctx, Page) {
     const Package = Page.DNA.split('"]')[0].substring(2)
     const Platform = Page.DNA.indexOf('web') !== -1 ? 'web' : 'app'
     const locale = ctx.asPath.split('/')[1] || ctx.query.locale || locale.default
-    const sid = ctx.req.CTX.sid
-    /**
-     * Server side ACTION: SET_CURRENT_ROUTE
-     */
-    ctx.store.dispatch(FSA(SET_CURRENT_ROUTE, false, {url: ctx.asPath}))
 
     async function prepareInitialProps() {
+        /**
+         * asPath: "/login"
+         * isServer: false
+         * pathname: "/templates/web/package.core.auth.login"
+         * query: {}
+         * store
+         *
+         */
+        const sid = ctx.req.CTX.sid
         /**
          * Prepare Page DNA
          */
         console.time('SSR PREPARE MASTER DNA... - _page.js')
         const documentDna = ctx.req.db.json.dna.get(sid + Page.DNA).value()
+        console.log('documentDna !!!', documentDna)
+        console.log('documentDna !!!', documentDna.dna)
 
         const _globalDna = ctx.req.db.json.dna
             .get(`${sid}['package.core.global'].${Platform}.global`)
@@ -77,15 +85,16 @@ Page.getInitialProps = async function(ctx) {
             genes: _globalDna.dna[`['package.core.global'].${Platform}.global`]
         }
 
-        Object.entries(documentDna.dna).forEach(([key, genes]) => {
-            key === Page.DNA
-                ? set(documentDna, 'genes', genes)
-                : set(
-                      documentDna,
-                      `${key.replace(`${Page.DNA}.`, '').replace(/:(.*?)]/g, ']')}.genes`,
-                      genes
-                  )
-        })
+        documentDna.dna &&
+            Object.entries(documentDna.dna).forEach(([key, genes]) => {
+                key === Page.DNA
+                    ? set(documentDna, 'genes', genes)
+                    : set(
+                          documentDna,
+                          `${key.replace(`${Page.DNA}.`, '').replace(/:(.*?)]/g, ']')}.genes`,
+                          genes
+                      )
+            })
 
         delete documentDna.dna
         delete globalDna.dna
@@ -141,7 +150,96 @@ Page.getInitialProps = async function(ctx) {
         return props
     }
 
-    return process.env.NODE_ENV === 'production'
-        ? ctx.req.db.json.dna.read() && ctx.req.db.json.theme.read() && prepareInitialProps()
-        : ctx.req.db.json.dna.read() && ctx.req.db.json.theme.read().then(prepareInitialProps)
+    async function prepareInitialPropsBrowser() {
+        /**
+         * Get Page DNA
+         */
+        const getPageDnaResponse = await axios.post(
+            `${env.BASE_URL}/api/package.core.ui/${Platform}`,
+            {
+                type: 'GET_PAGE_DNA',
+                payload: {
+                    dnaKey: Page.DNA
+                },
+                error: false,
+                meta: {
+                    package: Package
+                }
+            }
+        )
+
+        /**
+         * Get Initial Props
+         */
+        const getInitialPropsResponse = await axios.post(
+            `${env.BASE_URL}/api/package.core.ui/${Platform}`,
+            {
+                type: 'GET_INITIAL_PROPS',
+                payload: {
+                    url: ctx.asPath,
+                    locale,
+                    slug: ctx.query.slug || '',
+                    actions: getPageDnaResponse.data.payload.documentDna.genes.actions
+                },
+                error: false,
+                meta: {
+                    package: Package
+                }
+            }
+        )
+
+        const domain = getInitialPropsResponse.data.payload.actions.GET_DOMAIN.response
+        domain.host = window.location.hostname
+
+        const props = {
+            environment: {
+                locale,
+                domain,
+                node: 'production',
+                IE: window.navigator.userAgent.includes('Trident/7'),
+                IE10: window.navigator.userAgent.includes('rv:10'),
+                IE11: window.navigator.userAgent.includes('rv:10')
+            },
+            dna: {
+                global: getPageDnaResponse.data.payload.globalDna,
+                document: getPageDnaResponse.data.payload.documentDna
+            },
+            data: {init: null},
+            skins: getPageDnaResponse.data.payload.theme
+        }
+
+        props.data.init = Object.entries(
+            getPageDnaResponse.data.payload.documentDna.genes.data.accessors
+        ).reduce(
+            (value, [key, accessor]) => {
+                value.document[key] = get(getInitialPropsResponse.data.payload, accessor)
+                return value
+            },
+            {document: {}}
+        )
+
+        // ctx.store.dispatch(FSA(SET_INITIAL_PROPS, false, {data: normalized}))
+
+        return props
+    }
+
+    if (ctx.req) {
+        /**
+         * Server side ACTION: SET_CURRENT_ROUTE
+         */
+        ctx.store.dispatch(FSA(SET_CURRENT_ROUTE, false, {url: ctx.asPath}))
+
+        return process.env.NODE_ENV === 'production'
+            ? ctx.req.db.json.dna.read() && ctx.req.db.json.theme.read() && prepareInitialProps()
+            : ctx.req.db.json.dna.read() && ctx.req.db.json.theme.read().then(prepareInitialProps)
+    }
+    console.log('Browser getInitialProps', ctx)
+
+    ctx.store.dispatch(FSA(SET_CURRENT_ROUTE, false, {url: ctx.asPath}))
+
+    return prepareInitialPropsBrowser()
+}
+
+export default function Page() {
+    return <></>
 }
