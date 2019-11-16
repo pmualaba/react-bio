@@ -48,7 +48,7 @@ const MainLayoutStyled = styled.div.attrs(props => ({
         grid-area: footer;
     }
 
-    ${props => props.context.theme.CSS(props)};
+    ${props => props.css};
     --styled: '/packages/package.core.ui/web/layouts/PanelLayout/MainLayout/styled.js';
 `
 export default MainLayoutStyled

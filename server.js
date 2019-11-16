@@ -139,7 +139,7 @@ app.prepare()
                                     locale: locale[req.params.lang] || locale.default,
                                     ...route.params
                                 }
-                                // app.renderToCache(req, res, actualPage, queryParams, 5)
+                                // app.renderToCache(req, res, actualPage, queryParams, route.cacheTime)
                                 app.render(req, res, actualPage, queryParams)
                             })
                         })
@@ -156,7 +156,7 @@ app.prepare()
                                     locale: locale.default,
                                     ...route.params
                                 }
-                                // app.renderToCache(req, res, actualPage, queryParams, 5)
+                                // app.renderToCache(req, res, actualPage, queryParams, route.cacheTime)
                                 app.render(req, res, actualPage, queryParams)
                             })
                         })

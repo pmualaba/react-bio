@@ -9,14 +9,14 @@ const scrollBar = {
 
 const CSSreset = props => css`
     :root {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-size: 62.5%; /* 62.5% of 16px Browser default font-size => Result: 1rem == 10px */
         height: auto;
         width: 100%;
     }
     
     body {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-size: ${props.context.device.fontSize};
         color: var(--default-tone-default-text);
         font-family: var(--default-typography-default-font-primary);
@@ -34,14 +34,14 @@ const CSSreset = props => css`
     *,
     *::before,
     *::after {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
     a {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         text-decoration: none;
         
     }
@@ -54,13 +54,13 @@ const CSSreset = props => css`
     }
 
     li {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         list-style: none;
     }
 
     input,
     textarea {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         
     }
     input:focus, textarea:focus {
@@ -68,17 +68,17 @@ const CSSreset = props => css`
     }
     
     h1 {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-weight: var(--default-typography-default-font-weight-h1);
     }
 
     h2 {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-weight: var(--default-typography-default-font-weight-h2);
     }
 
     h3 {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-weight: var(--default-typography-default-font-weight-h3);
     }
     

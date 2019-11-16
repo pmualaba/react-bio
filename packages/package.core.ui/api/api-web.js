@@ -84,7 +84,6 @@ const logic = {
         const documentDna = req.db.json.dna.get(sid + dnaKey).value()
         const _globalDna = req.db.json.dna.get(`${sid}['package.core.global'].web.global`).value()
         const theme = req.db.json.theme.get('skins.web').value()
-        console.log('theme', theme)
 
         const globalDna = {
             ..._globalDna,

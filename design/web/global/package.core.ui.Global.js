@@ -1,27 +1,20 @@
 import {css} from 'styled-components'
 
-// 'css.SubComponent', motion.SubComponent //
-
 export default {
     variants: {
         default: {
             css: css`
                 padding: 40px;
-                box-shadow: var(--default-spacial-open-shadow);
             `,
-            motion: {
-                tag: 'div',
-                animate: {
-                    scale: 0.5,
-                    opacity: 1
-                },
-                initial: 'initial',
+            motion: props => ({
+                initial: 'exit',
+                animate: 'enter',
                 exit: 'exit',
-                variants: {
-                    exit: {
-                        transition: {staggerChildren: 2}
-                    }
-                }
+                as: 'div'
+            }),
+            SubComponent: {
+                css: {},
+                motion: {}
             }
         },
         asHomeBenefits: {css: css``},
@@ -32,7 +25,7 @@ export default {
         screenSize: {
             S: {
                 css: css`
-                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    --styled: '/design/web/global/package.core.ui.Global.js';
                     &.M {
                         color: #f00;
                     }
@@ -42,21 +35,21 @@ export default {
             },
             M: {
                 css: css`
-                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    --styled: '/design/web/global/package.core.ui.Global.js';
                     position: relative;
                     font-family: var(--default-typography-default-font-primary);
                 `
             },
             L: {
                 css: css`
-                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    --styled: '/design/web/global/package.core.ui.Global.js';
                     position: relative;
                     font-family: var(--default-typography-default-font-primary);
                 `
             },
             XL: {
                 css: css`
-                    --styled: '/theme/web/global/package.core.ui.Global.js';
+                    --styled: '/design/web/global/package.core.ui.Global.js';
                     position: static;
                     font-family: ${props =>
                         props.context.theme.default.typography.default['font-primary']};

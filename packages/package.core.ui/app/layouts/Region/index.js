@@ -10,7 +10,6 @@ const RegionStyled = styled.div.attrs(props => ({
 
 class Region extends React.Component {
     render() {
-        // console.log('REGION this.props.at', this.props.at)
         return (
             <RegionStyled at={this.props.at} component="Region" region={this.props.region} className={`Region ${this.props.region}`}>
                 {this.props.children}

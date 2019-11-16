@@ -109,14 +109,7 @@
                     "dna": {
                         "['package.core.global'].web.global": {
                             "ui": {
-                                "theme.skin.motion": {
-                                    "tag": "div",
-                                    "animate": {
-                                        "scale": 0.5,
-                                        "opacity": 1
-                                    }
-                                },
-                                "theme.decorate.style": {
+                                "theme.style.css": {
                                 }
                             },
                             "set": {
@@ -245,22 +238,22 @@
                                     }
                                 },
                                 "set": {
-                                    "viewport": "scroll",
-                                    "backgroundColor": "#17141D",
-                                    "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)"
+                                    "viewport": "scroll"
                                 },
                                 "ui": {
                                     "theme.variant": "default",
                                     "theme.model.variant": "scrollContainer",
-                                    "theme.design.variant": "default",
+                                    "theme.design.variant": "login",
                                     "theme.skin.variant": "themeVariantDefault",
                                     "theme.skin.tone": "dimensionVariantDefault",
                                     "theme.skin.typography": "sans",
                                     "theme.skin.spacial": "compact",
                                     "theme.skin.motion": "smooth",
-                                    "theme.decorate.variant": "home",
-                                    "theme.decorate.class": "home",
-                                    "theme.decorate.style": {
+                                    "theme.style.variant": "home",
+                                    "theme.style.class": "home",
+                                    "theme.style.css": {
+                                        "backgroundColor": "#17141D",
+                                        "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)"
                                     }
                                 }
                             },
@@ -270,7 +263,7 @@
                                     "collapse": false
                                 },
                                 "ui": {
-                                    "theme.decorate.style": {
+                                    "theme.style.css": {
                                         "display": "flex",
                                         "flexDirection": "column",
                                         "width": "100%",
@@ -336,7 +329,8 @@
                                 "match": "/",
                                 "params": {},
                                 "template": "web/package.core.cms.home",
-                                "authenticated": false
+                                "authenticated": false,
+                                "cacheTime": 5
                             },
                             "kind": "document",
                             "class": "Document",
@@ -496,9 +490,7 @@
                                     }
                                 },
                                 "set": {
-                                    "viewport": "scroll",
-                                    "backgroundColor": "#17141D",
-                                    "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)"
+                                    "viewport": "scroll"
                                 },
                                 "ui": {
                                     "theme.variant": "default",
@@ -509,10 +501,10 @@
                                     "theme.skin.typography": "sans",
                                     "theme.skin.spacial": "compact",
                                     "theme.skin.motion": "smooth",
-                                    "theme.decorate.variant": "home",
-                                    "theme.decorate.class": "home",
-                                    "theme.decorate.style": {
-                                        "background": "#FF1239"
+                                    "theme.style.variant": "home",
+                                    "theme.style.class": "home",
+                                    "theme.style.css": {
+                                        "backgroundColor": "#FF1239"
                                     }
                                 }
                             },
@@ -522,7 +514,7 @@
                                     "collapse": false
                                 },
                                 "ui": {
-                                    "theme.decorate.style": {
+                                    "theme.style.css": {
                                         "display": "flex",
                                         "flexDirection": "column",
                                         "width": "100%",

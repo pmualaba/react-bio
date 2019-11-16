@@ -17,11 +17,11 @@ export default {
         blockSize: {
             css: css`
                 &.M {
-                    --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.blockSize";
+                    --styled: 'design/web/blocks/social/package.core.ui.Stories.js';
                     color: aqua;
                 }
                 &.L {
-                    --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.blockSize";
+                    --styled: 'design/web/blocks/social/package.core.ui.Stories.js';
                     color: blueviolet;
                 }
             `
@@ -30,7 +30,7 @@ export default {
             S: {
                 css: css`
                     &.M {
-                        --styled: "/theme/web/theme.js:['package.core.ui'].web.blocks.Stories.screenSize.S";
+                        --styled: 'design/web/blocks/social/package.core.ui.Stories.js';
                         color: yellow;
                     }
                 `

@@ -13,11 +13,20 @@ export default function PageHeader(props) {
 
     hooks.blocks.useResponsiveBlock(refBlock, 20)
 
+    const {css, motion} = props.context.theme.render(props)
     return (
-        <PageHeaderStyled ref={refBlock} meta={props.meta} dna={props.dna} context={props.context}>
+        <PageHeaderStyled
+            ref={refBlock}
+            meta={props.meta}
+            dna={props.dna}
+            context={props.context}
+            css={css}
+            {...motion}
+            style={props.dna.ui['theme.style.css']}
+        >
             <h1 className="PageHeader__title">React Bio</h1>
             <h3>A Full Stack Open Source Platform to Build DNA Driven React Applications</h3>
-            <Link href="/templates/web/package.core.auth.login" title="Login Page" as="/login">
+            <Link href="/templates/web/package.core.auth.login" as="/login">
                 <a>Login Page</a>
             </Link>
         </PageHeaderStyled>

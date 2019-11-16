@@ -5,20 +5,37 @@ import components from '../../../../../dna/rna/registry.components.web'
 import RegionStyled from './styled'
 
 function Region(props) {
-    console.log('REGION props', props)
-
     return (
-        <RegionStyled meta={props.meta} dna={props.dna} context={props.context} blocks={props.blocks} layouts={props.layouts}>
+        <RegionStyled
+            meta={props.meta}
+            dna={props.dna}
+            context={props.context}
+            blocks={props.blocks}
+            layouts={props.layouts}
+        >
             {props[props.blocks ? 'blocks' : 'layouts'].map(component => {
                 const RegionChildComponent = get(components, component.meta['@component'])
-                const data = Object.entries(component.genes.data ? component.genes.data.accessors : {}).reduce(
+                const data = Object.entries(
+                    component.genes.data ? component.genes.data.accessors : {}
+                ).reduce(
                     (d, [key, accessor]) => {
                         d.init[key] = get(props.data.init, accessor)
                         return d
                     },
                     {init: {}}
                 )
-                return <RegionChildComponent key={`${props.name}:${component.meta.name}`} meta={component.meta} dna={component.genes} context={props.context} data={data} />
+                console.log('RegionChildComponent', `${props.name}:${component.meta.name}`)
+                return RegionChildComponent ? (
+                    <RegionChildComponent
+                        key={`${props.name}:${component.meta.name}`}
+                        meta={component.meta}
+                        dna={component.genes}
+                        context={props.context}
+                        data={data}
+                    />
+                ) : (
+                    <React.Fragment key={`${props.name}:${component.meta.name}`} />
+                )
             })}
         </RegionStyled>
     )

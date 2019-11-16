@@ -13,7 +13,7 @@ const env = require('../env.client')()
 const {locale} = require('../env.client')
 
 export function RenderPage(props) {
-    console.log('RenderPage props', props)
+    console.log('RENDER PAGE')
     const GlobalComponent = get(components, props.dna.global.meta['@component'])
     const DocumentComponent = get(components, props.dna.document.meta['@component'])
     const LayoutComponent = get(components, props.dna.document.layouts[0].meta['@component'])
@@ -59,14 +59,6 @@ export function getInitialProps(ctx, Page) {
     const locale = ctx.asPath.split('/')[1] || ctx.query.locale || locale.default
 
     async function prepareInitialProps() {
-        /**
-         * asPath: "/login"
-         * isServer: false
-         * pathname: "/templates/web/package.core.auth.login"
-         * query: {}
-         * store
-         *
-         */
         const sid = ctx.req.CTX.sid
         /**
          * Prepare Page DNA
@@ -103,21 +95,24 @@ export function getInitialProps(ctx, Page) {
         /**
          * Get Initial Props
          */
-        const {data} = await axios.post(`${env.BASE_URL}/api/package.core.ui/${Platform}`, {
-            type: 'GET_INITIAL_PROPS',
-            payload: {
-                url: ctx.query.url || ctx.asPath,
-                locale,
-                slug: ctx.query.slug || '',
-                actions: documentDna.genes.actions
-            },
-            error: false,
-            meta: {
-                package: Package
+        const getInitialPropsResponse = await axios.post(
+            `${env.BASE_URL}/api/package.core.ui/${Platform}`,
+            {
+                type: 'GET_INITIAL_PROPS',
+                payload: {
+                    url: ctx.query.url || ctx.asPath,
+                    locale,
+                    slug: ctx.query.slug || '',
+                    actions: documentDna.genes.actions
+                },
+                error: false,
+                meta: {
+                    package: Package
+                }
             }
-        })
+        )
 
-        const domain = data.payload.actions.GET_DOMAIN.response
+        const domain = getInitialPropsResponse.data.payload.actions.GET_DOMAIN.response
         domain.host = ctx.req.CTX.domain
 
         const props = {
@@ -139,7 +134,7 @@ export function getInitialProps(ctx, Page) {
 
         props.data.init = Object.entries(documentDna.genes.data.accessors).reduce(
             (value, [key, accessor]) => {
-                value.document[key] = get(data.payload, accessor)
+                value.document[key] = get(getInitialPropsResponse.data.payload, accessor)
                 return value
             },
             {document: {}}
@@ -151,6 +146,16 @@ export function getInitialProps(ctx, Page) {
     }
 
     async function prepareInitialPropsBrowser() {
+        /**
+         * ctx:
+         * asPath: "/login"
+         * isServer: false
+         * pathname: "/templates/web/package.core.auth.login"
+         * query: {}
+         * store
+         *
+         */
+
         /**
          * Get Page DNA
          */
@@ -225,7 +230,7 @@ export function getInitialProps(ctx, Page) {
 
     if (ctx.req) {
         /**
-         * Server side ACTION: SET_CURRENT_ROUTE
+         * Server
          */
         ctx.store.dispatch(FSA(SET_CURRENT_ROUTE, false, {url: ctx.asPath}))
 
@@ -233,8 +238,10 @@ export function getInitialProps(ctx, Page) {
             ? ctx.req.db.json.dna.read() && ctx.req.db.json.theme.read() && prepareInitialProps()
             : ctx.req.db.json.dna.read() && ctx.req.db.json.theme.read().then(prepareInitialProps)
     }
-    console.log('Browser getInitialProps', ctx)
 
+    /**
+     * Browser
+     */
     ctx.store.dispatch(FSA(SET_CURRENT_ROUTE, false, {url: ctx.asPath}))
 
     return prepareInitialPropsBrowser()

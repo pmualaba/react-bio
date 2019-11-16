@@ -8,13 +8,11 @@ import {fromEvent} from 'rxjs'
 import {auditTime, map, pairwise} from 'rxjs/operators'
 import Router from 'next/router'
 import Head from 'next/head'
-import {ThemeProvider} from 'styled-components'
 import {useViewportScroll, useTransform} from 'framer-motion'
 import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
-import Theme from '../../../../../dna/rna/registry.theme.web'
+import Theme from '../../../../../dna/rna/registry.design.web'
 import {CSSvariables} from '../../../../package.core.fn/theme'
-import CSSreset from '../../../../../theme/web/css-reset'
-import components from '../../../../../dna/rna/registry.components.web'
+import CSSreset from '../../../../../design/web/css-reset'
 
 /**
  * Components
@@ -34,10 +32,6 @@ GlobalContext.displayName = 'GlobalContext'
  */
 
 function Global(props) {
-    const {scrollYProgress} = useViewportScroll()
-
-    // scrollYProgress.onChange(e => console.log('scrollYProgress', e))
-
     /**
      * Hooks
      */
@@ -112,6 +106,14 @@ function Global(props) {
         }, 3000)
     }, [])
 
+    useEffect(() => {
+        const {scrollYProgress} = useViewportScroll()
+
+        return scrollYProgress.onChange(e => {
+            props.context.device.vs = e
+        })
+    })
+
     /**
      * Methods
      */
@@ -171,70 +173,12 @@ function Global(props) {
         }
     }
 
-    console.log('RENDER GLOBAL', props.context.environment.domain)
-
     const document = props.data.init.document
     const domain = props.context.environment.domain
-
     const l = props.context.environment.locale
+    const {css, motion} = context.theme.render(props, context)
 
-    const motion1 = {
-        style: {
-            ...props.dna.ui['theme.decorate.style']
-        },
-        animate:
-            props.dna.ui['theme.skin.motion'].animate ||
-            props.context.theme[props.dna.ui['theme.variant'] || 'default'].motion[
-                props.dna.ui['theme.skin.motion'].animate
-            ].animate,
-        transition: props.dna.ui['theme.skin.motion'].transition,
-        initial: {opacity: 0},
-        as: props.dna.ui['theme.skin.motion']
-            ? components.motion[props.dna.ui['theme.skin.motion'].tag]
-            : 'div'
-        /*
-            as={
-                props.dna.ui['theme.skin.motion']
-                ? components.motion[props.dna.ui['theme.skin.motion'].tag]
-                : 'div'
-            }
-        */
-    }
-
-    const motion2 = {
-        initial: 'initial',
-        exit: 'exit',
-        animate: 'enter',
-        variants: {
-            initial: {scale: 0.96, y: 30, opacity: 0},
-            enter: {
-                scale: 1,
-                y: 0,
-                opacity: 1,
-                transition: {duration: 2, ease: [0.48, 0.15, 0.25, 0.96]}
-            },
-            exit: {
-                scale: 0.6,
-                y: 100,
-                opacity: 0,
-                transition: {duration: 2, ease: [0.48, 0.15, 0.25, 0.96]}
-            }
-        },
-        as: components.motion.div,
-        style: {
-            ...props.dna.ui['theme.decorate.style']
-        }
-    }
-
-    const motion = {
-        initial: 'exit',
-        animate: 'enter',
-        exit: 'exit',
-        as: components.motion.div,
-        style: {
-            ...props.dna.ui['theme.decorate.style']
-        }
-    }
+    console.log('RENDER GLOBAL')
 
     return (
         <GlobalContext.Provider value={context}>
@@ -253,9 +197,7 @@ function Global(props) {
 
                 <link
                     rel="shortcut icon"
-                    href={`/domains/${
-                        context.environment.domain.host
-                    }/package.core.cms/favicon.ico`}
+                    href={`/domains/${context.environment.domain.host}/package.core.cms/favicon.ico`}
                 />
                 {props.dna.set.fonts.script && <script src={props.dna.set.fonts.script} async />}
                 {props.dna.set.fonts.link && (
@@ -276,7 +218,14 @@ function Global(props) {
                 <style>{CSSvariables(currentSkinName, props.skins)}</style>
             </Head>
 
-            <GlobalStyled meta={props.meta} dna={props.dna} context={context} {...motion}>
+            <GlobalStyled
+                meta={props.meta}
+                dna={props.dna}
+                context={context}
+                css={css}
+                {...motion}
+                style={props.dna.ui['theme.style.css']}
+            >
                 {props.children}
             </GlobalStyled>
         </GlobalContext.Provider>

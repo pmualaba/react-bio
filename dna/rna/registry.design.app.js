@@ -2,30 +2,30 @@
  * @theme
  */
 
-import colors from '../../theme/web/css-colors'
-import effects from '../../theme/web/css-effects'
-import shapes from '../../theme/web/css-shapes'
+import colors from '../../design/web/css-colors'
+import effects from '../../design/web/css-effects'
+import shapes from '../../design/web/css-shapes'
 import CSS from '../../packages/package.core.fn/theme'
 
 /**
  * Global
  * Documents
  */
-import Global from '../../theme/web/global/package.core.ui.Global'
-import Document from '../../theme/web/documents/package.core.ui.Document'
-import DocumentCms from '../../theme/web/documents/package.core.cms.Document'
+import Global from '../../design/web/global/package.core.ui.Global'
+import Document from '../../design/web/documents/package.core.ui.Document'
+import DocumentCms from '../../design/web/documents/package.core.cms.Document'
 
 /**
  * Layouts
  */
-import PanelLayout from '../../theme/web/layouts/package.core.ui.PanelLayout'
-import WebPageLayout from '../../theme/web/layouts/package.core.ui.WebPageLayout'
+import PanelLayout from '../../design/web/layouts/package.core.ui.PanelLayout'
+import WebPageLayout from '../../design/web/layouts/package.core.ui.WebPageLayout'
 
 /**
  * Blocks
  */
-import Stories from '../../theme/web/blocks/social/package.core.ui.Stories'
-import PageHeader from '../../theme/web/blocks/headers/package.core.ui.PageHeader'
+import Stories from '../../design/web/blocks/social/package.core.ui.Stories'
+import PageHeader from '../../design/web/blocks/headers/package.core.ui.PageHeader'
 
 // TODO : Build Theme Inheritance Tree
 

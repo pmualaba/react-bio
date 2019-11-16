@@ -10,9 +10,9 @@ import Router from 'next/router'
 import Head from 'next/head'
 import {ThemeProvider} from 'styled-components'
 import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
-import theme from '../../../../../dna/rna/registry.theme.web'
+import theme from '../../../../../dna/rna/registry.design.web'
 import {CSSvariables} from '../../../../package.core.fn/theme'
-import CSSreset from '../../../../../theme/web/css-reset'
+import CSSreset from '../../../../../design/web/css-reset'
 import components from '../../../../../dna/rna/registry.components.web'
 
 /**

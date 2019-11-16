@@ -12,8 +12,8 @@ const TopNavStyled = styled('nav').attrs(props => {
         'data-component': `${props.meta.class}`,
         'data-rna': `${props.meta['@component']}`,
         'data-dna': `${props.meta['@dna']}`,
-        style: props.dna.ui['theme.decorate.style'],
-        className: `${props.meta.class} ${props.dna.ui['theme.decorate.class'] || ''}`
+        style: props.dna.ui['theme.style.css'],
+        className: `${props.meta.class} ${props.dna.ui['theme.style.class'] || ''}`
     }
 })`
     --styled: '/packages/package.core.ui/web/blocks/navigation/TopNav/styled.js';
@@ -21,6 +21,6 @@ const TopNavStyled = styled('nav').attrs(props => {
     display: flex;
     justify-content: space-between;
 
-    ${props => props.context.theme.CSS(props)};
+    ${props => props.css};
 `
 export default TopNavStyled

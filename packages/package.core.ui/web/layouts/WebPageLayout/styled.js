@@ -5,7 +5,7 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
     'data-rna': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.dna.set.renderLayout} layout ${props.dna.ui['theme.decorate.class'] || ''}`
+    className: `${props.dna.set.renderLayout} layout ${props.dna.ui['theme.style.class'] || ''}`
 }))`
     --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js';
 
@@ -43,6 +43,6 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
         --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js';
     }
 
-    ${props => props.context.theme.CSS(props)};
+    ${props => props.css};
 `
 export default WebPageLayoutStyled

@@ -90,8 +90,8 @@ props: {
             theme.skin.spacial: 'compact',          
             theme.skin.motion: 'smooth',            
             },
-            theme.decorate.class: 'custom-class',
-            theme.decorate.style: {
+            theme.style.class: 'custom-class',
+            theme.style.css: {
                 color: 'red'
             }
         }
@@ -145,8 +145,8 @@ genes.ui:
     'theme.skin.spacial': 'compact',          
     'theme.skin.motion': 'smooth',            
     },
-    'theme.decorate.class': 'custom-class',
-    'theme.decorate.style': {
+    'theme.style.class': 'custom-class',
+    'theme.style.css': {
         color: 'red'
     }
 }
@@ -260,14 +260,14 @@ genes.ui:
 Once a styled component has applied a Skin, the fourth and final theming layer can be applied.
 These styles are injected ad-hoc by applying a class or by directly injecting inline styles.
 
-use: genes.ui['theme.decorate.{class|style} to apply a class or inline styles to a styled component
+use: genes.ui['theme.style.{class|style} to apply a class or inline styles to a styled component
 
 ```
 genes.ui:
 
 {
-    'theme.decorate.class': 'is-custom-class',
-    'theme.decorate.style': {
+    'theme.style.class': 'is-custom-class',
+    'theme.style.css': {
        color: 'red'
     }
 }

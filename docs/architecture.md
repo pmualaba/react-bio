@@ -75,7 +75,7 @@ props:
 	- theme.model.variant
 	- theme.design.variant
 	- theme.skin.variant
-	- theme.decorate.variant
+	- theme.style.variant
 	
 			``` 
     		{
@@ -89,9 +89,9 @@ props:
                    spacial: cozy, 
                    motion: playful, 
                 },
-                theme.decorate.variant: {
+                theme.style.variant: {
                    class: 'is-root-section'
-                   style: {color: '#fff'}
+                   css: {color: '#fff'}
                 }
             }
 	

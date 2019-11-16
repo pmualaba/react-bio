@@ -1,65 +1,83 @@
 import {css} from 'styled-components'
+import components from '../../../dna/rna/registry.components.web'
 
-function CSS(props) {
+function render(props, ctx) {
+    const context = ctx || props.context
     const metaTheme = props.meta['@theme'] || props.meta['@component']
 
     const variant = props.dna.ui['theme.design.variant'] || 'default'
     const designPrefix = metaTheme.split('].')
     const designSuffix = designPrefix[1].split('.')
     const design =
-        props.context.theme.design[designPrefix[0].slice(2, -1)][designSuffix[0]][designSuffix[1]][
+        context.theme.design[designPrefix[0].slice(2, -1)][designSuffix[0]][designSuffix[1]][
             designSuffix[2]
         ] || {}
 
-    const screenSize = design.variants ? props.context.device.screenSize : null
-    return design.variants
-        ? [
-              screenSize === 'S' && design.context.screenSize.S
-                  ? design.context.screenSize.S.css
-                  : '',
-              screenSize === 'M' && design.context.screenSize.M
-                  ? design.context.screenSize.M.css
-                  : '',
-              (screenSize === 'L' && [
-                  design.context.screenSize.M ? design.context.screenSize.M.css : '',
-                  design.context.screenSize.L ? design.context.screenSize.L.css : ''
-              ]) ||
-                  '',
-              (screenSize === 'XL' && [
-                  design.context.screenSize.M ? design.context.screenSize.M.css : '',
-                  design.context.screenSize.L ? design.context.screenSize.L.css : '',
-                  design.context.screenSize.XL ? design.context.screenSize.XL.css : ''
-              ]) ||
-                  '',
-              (screenSize === 'XXL' && [
-                  design.context.screenSize.M ? design.context.screenSize.M.css : '',
-                  design.context.screenSize.L ? design.context.screenSize.L.css : '',
-                  design.context.screenSize.XL ? design.context.screenSize.XL.css : '',
-                  design.context.screenSize.XXL ? design.context.screenSize.XXL.css : ''
-              ]) ||
-                  '',
+    const screenSize = design.variants ? context.device.screenSize : null
 
-              design.variants[variant].css || '',
+    if (design.variants) {
+        const motion = {
+            ...((typeof design.variants[variant].motion === 'function' &&
+                design.variants[variant].motion(props)) ||
+                design.variants[variant].motion),
+            ...props.dna.ui['theme.skin.motion']
+        }
+        if (motion.as) {
+            motion.as = components.motion[motion.as || 'div']
+        }
 
-              props.context.classification.reduce(
-                  (css, term) =>
-                      css.concat(
-                          (design.context.classification &&
-                              design.context.classification[term].css) ||
-                              ''
-                      ),
-                  ''
-              ),
-              props.own
-                  ? design.context.region &&
-                    design.context.region[props.own.region || 'region@dna'].css
-                  : '',
-              props.own
-                  ? design.context.regionSize &&
-                    design.context.regionSize[props.own.regionSize || 'S'].css
-                  : ''
-          ]
-        : ''
+        return {
+            css: [
+                screenSize === 'S' && design.context.screenSize.S
+                    ? design.context.screenSize.S.css
+                    : '',
+                screenSize === 'M' && design.context.screenSize.M
+                    ? design.context.screenSize.M.css
+                    : '',
+                (screenSize === 'L' && [
+                    design.context.screenSize.M ? design.context.screenSize.M.css : '',
+                    design.context.screenSize.L ? design.context.screenSize.L.css : ''
+                ]) ||
+                    '',
+                (screenSize === 'XL' && [
+                    design.context.screenSize.M ? design.context.screenSize.M.css : '',
+                    design.context.screenSize.L ? design.context.screenSize.L.css : '',
+                    design.context.screenSize.XL ? design.context.screenSize.XL.css : ''
+                ]) ||
+                    '',
+                (screenSize === 'XXL' && [
+                    design.context.screenSize.M ? design.context.screenSize.M.css : '',
+                    design.context.screenSize.L ? design.context.screenSize.L.css : '',
+                    design.context.screenSize.XL ? design.context.screenSize.XL.css : '',
+                    design.context.screenSize.XXL ? design.context.screenSize.XXL.css : ''
+                ]) ||
+                    '',
+
+                design.variants[variant].css || '',
+
+                context.classification.reduce(
+                    (css, term) =>
+                        css.concat(
+                            (design.context.classification &&
+                                design.context.classification[term].css) ||
+                                ''
+                        ),
+                    ''
+                ),
+                props.own
+                    ? design.context.region &&
+                      design.context.region[props.own.region || 'region@dna'].css
+                    : '',
+                props.own
+                    ? design.context.regionSize &&
+                      design.context.regionSize[props.own.regionSize || 'S'].css
+                    : ''
+            ],
+            motion
+        }
+    }
+
+    return {css: '', motion: {}}
 }
 
 export function CSSvariables(skin, skins) {
@@ -91,4 +109,4 @@ export function CSSvariables(skin, skins) {
     `
 }
 
-export default CSS
+export default render

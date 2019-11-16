@@ -1,6 +1,10 @@
-nodejs/.next
-nodejs/node_modules
-nodejs/public
-nodejs/jest_0
-nodejs/.temp
-nodejs/.git
+/.next
+/node_modules
+/public
+/jest_0
+/.temp
+/.git
+/dna/**/*.js
+**/dna/rna/*.js
+dna
+/home/pmualaba/Development/github/react-bio/dna/rna/registry.components.web.js

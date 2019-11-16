@@ -8,14 +8,14 @@ const RegionStyled = styled('section').attrs(props => ({
     'aria-label': props.dna.a11y.label,
     role: props.dna.a11y.role,
     className: `Region ${props.meta.name} ${(props.dna.ui &&
-        props.dna.ui['theme.decorate.class']) ||
+        props.dna.ui['theme.style.class']) ||
         ''}`,
-    style: props.dna.ui && props.dna.ui['theme.decorate.style']
+    style: props.dna.ui && props.dna.ui['theme.style.css']
 }))`
     --styled: '/packages/package.core.ui/web/layouts/Region/styled.js';
     height: inherit;
 
-    /*${props => props.context.theme.CSS(props)};*/
+    /*${props => props.css};*/
 `
 
 export default RegionStyled

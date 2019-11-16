@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Region from '../Region'
 import WebPageLayoutStyled from './styled'
+import Region from '../Region'
 
 function WebPageLayout(props) {
-    console.log('WebPageLayout render()', props.data.init.regions)
+    console.log('WebPageLayout render()', props)
 
     return (
         <WebPageLayoutStyled meta={props.meta} dna={props.dna} context={props.context}>

@@ -5,7 +5,7 @@ const PanelLayoutStyled = styled('div').attrs(props => ({
     'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
     'data-rna': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui['theme.decorate.class'] || ''}`
+    className: `${props.dna.set.renderLayout} layout grid ${props.dna.ui['theme.style.class'] || ''}`
 }))`
     width: 100%;
     height: 100%;
@@ -54,7 +54,7 @@ const PanelLayoutStyled = styled('div').attrs(props => ({
         grid-area: footer;
     }
 
-    ${props => props.context.theme.CSS(props)};
+    ${props => props.css};
     --styled: '/packages/package.core.ui/web/layouts/PanelLayout/styled.js';
 `
 export default PanelLayoutStyled

@@ -9,13 +9,13 @@ const scrollBar = {
 
 const CSSreset = props => css`
     :root {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-size: 62.5%; /* 62.5% of 16px Browser default font-size => Result: 1rem == 10px */
         height: 100%;
     }
     
     body {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         font-size: ${props.context.device.fontSize};
         height: 100%;
         letter-spacing: 0;
@@ -29,14 +29,14 @@ const CSSreset = props => css`
     *,
     *::before,
     *::after {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
     a {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         text-decoration: none;
 
         &:hover {
@@ -45,13 +45,13 @@ const CSSreset = props => css`
     }
 
     li {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         list-style: none;
     }
 
     input,
     textarea {
-        --styled: '/theme/web/css-global-reset.js';
+        --styled: '/design/web/css-global-reset.js';
         &:focus {
             outline: none;
         }

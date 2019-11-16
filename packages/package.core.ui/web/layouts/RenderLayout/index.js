@@ -16,7 +16,6 @@ const RenderLayout = props => {
      */
 
     const values = props.regions.map(region => {
-        console.log('region', region)
         return Object.entries(region.genes.data.accessors).reduce(
             (value, [key, accessor]) => {
                 value.region[key] = get(props.data.init, accessor)
