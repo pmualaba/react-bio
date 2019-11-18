@@ -23,10 +23,11 @@ const CSSreset = props => css`
         height: auto;
         width: 100%;
         letter-spacing: 0;
-        line-height: 1.5;
+        
     }
 
     #__next {
+        --styled: '/design/web/css-global-reset.js';
         height: inherit;
         width: 100%;
     }
@@ -80,6 +81,13 @@ const CSSreset = props => css`
     h3 {
         --styled: '/design/web/css-global-reset.js';
         font-weight: var(--default-typography-default-font-weight-h3);
+    }
+    
+    .block {
+        --styled: '/design/web/css-global-reset.js';
+        height: 100%;
+        width: 100%;
+        overflow: auto;
     }
     
 

@@ -165,7 +165,8 @@
                                 "meta": {
                                     "@dna": "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout]",
                                     "@component": "['package.core.ui'].web.layouts.RenderLayout",
-                                    "@layout": "WebPageLayout",
+                                    "@theme": "['package.core.ui'].web.layouts.PositionLayout",
+                                    "@layout": "PositionLayout",
                                     "name": "DocumentLayout",
                                     "class": "RenderLayout",
                                     "kind": "layout"
@@ -259,16 +260,9 @@
                             },
                             "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout]": {
                                 "set": {
-                                    "renderLayout": "WebPageLayout",
                                     "collapse": false
                                 },
                                 "ui": {
-                                    "theme.style.css": {
-                                        "display": "flex",
-                                        "flexDirection": "column",
-                                        "width": "100%",
-                                        "minHeight": "fit-content"
-                                    }
                                 }
                             },
                             "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main]": {
@@ -295,7 +289,8 @@
                             "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[0:LoginForm]": {
                                 "data": {
                                     "accessors": {
-                                        "domain": "region.domain"
+                                        "logo": "region.domain.hasFeaturedImage",
+                                        "title": "region.domain.title"
                                     }
                                 },
                                 "set": {
@@ -341,6 +336,7 @@
                                 "meta": {
                                     "@dna": "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]",
                                     "@component": "['package.core.ui'].web.layouts.RenderLayout",
+                                    "@layout": "WebPageLayout",
                                     "kind": "layout",
                                     "class": "RenderLayout",
                                     "name": "DocumentLayout"
@@ -510,16 +506,9 @@
                             },
                             "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout]": {
                                 "set": {
-                                    "renderLayout": "WebPageLayout",
                                     "collapse": false
                                 },
                                 "ui": {
-                                    "theme.style.css": {
-                                        "display": "flex",
-                                        "flexDirection": "column",
-                                        "width": "100%",
-                                        "minHeight": "fit-content"
-                                    }
                                 }
                             },
                             "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[0:header]": {
@@ -604,7 +593,7 @@
                                     "label": "footer"
                                 }
                             },
-                            "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:main].blocks[0:PageFooter]": {
+                            "['package.core.cms'].web.documents.home.layouts[0:DocumentLayout].regions[2:footer].blocks[0:PageFooter]": {
                                 "data": {
                                     "accessors": {
                                         "videos": "region.links"

@@ -13,7 +13,7 @@ const logic = {
         })
 
         /** DATABASE API CALL
-            const response = await axios.get('https://DATABASE/Story/40ad48ee719c43449ad49164f1ca5574/', {
+            const response = await axios.get('https://DATABASE/Article/40ad48ee719c43449ad49164f1ca5574/', {
                 headers: {
                     Accept: 'application/json; charset=utf-8',
                     'Content-Type': 'application/json',

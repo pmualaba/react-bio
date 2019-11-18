@@ -3,7 +3,6 @@
  */
 import React, {createContext, useEffect} from 'react'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
 import {fromEvent} from 'rxjs'
 import {auditTime, map, pairwise} from 'rxjs/operators'
 import Router from 'next/router'
@@ -230,13 +229,6 @@ function Global(props) {
             </GlobalStyled>
         </GlobalContext.Provider>
     )
-}
-
-Global.propTypes = {
-    meta: PropTypes.object,
-    dna: PropTypes.object,
-    global: PropTypes.object,
-    skins: PropTypes.object
 }
 
 const mapState = (state, props) => ({

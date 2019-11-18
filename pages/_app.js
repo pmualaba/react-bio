@@ -119,12 +119,6 @@ export default withRedux(
                         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                         <meta charSet="utf-8" />
                         <script src="/js/modernizr-custom.js" />
-                        {false && (
-                            <script
-                                src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.min.js"
-                                crossOrigin="anonymous"
-                            />
-                        )}
                     </Head>
                     <AnimatePresence exitBeforeEnter>
                         <Component {...pageProps} key={router.route} context={context} />

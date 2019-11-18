@@ -8,7 +8,7 @@
                 "url": "https://my-react-bio-app.org",
                 "title": "React Bio",
                 "title_nlBE": "React Bio",
-                "hasFeaturedImage": {"localUrl": "https://my-react-bio-app.org/logo.png"}
+                "hasFeaturedImage": {"src": "/theme/web/img/genlabss.svg"}
             }
         ],
         "ContentPage": [

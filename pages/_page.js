@@ -65,8 +65,6 @@ export function getInitialProps(ctx, Page) {
          */
         console.time('SSR PREPARE MASTER DNA... - _page.js')
         const documentDna = ctx.req.db.json.dna.get(sid + Page.DNA).value()
-        console.log('documentDna !!!', documentDna)
-        console.log('documentDna !!!', documentDna.dna)
 
         const _globalDna = ctx.req.db.json.dna
             .get(`${sid}['package.core.global'].${Platform}.global`)
@@ -87,6 +85,8 @@ export function getInitialProps(ctx, Page) {
                           genes
                       )
             })
+
+        console.log('documentDna', documentDna)
 
         delete documentDna.dna
         delete globalDna.dna

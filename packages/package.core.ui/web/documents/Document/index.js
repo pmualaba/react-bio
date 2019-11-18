@@ -3,7 +3,6 @@
  */
 
 import React, {useEffect, useContext} from 'react'
-import PropTypes from 'prop-types'
 
 /**
  * Components
@@ -59,10 +58,3 @@ export default function Document(props) {
         </DocumentStyled>
     )
 }
-
-Document.propTypes = {
-    meta: PropTypes.object,
-    dna: PropTypes.object
-}
-
-Document.defaultProps = {}

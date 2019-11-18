@@ -28,6 +28,8 @@ function render(props, ctx) {
 
         return {
             css: [
+                design.variants[variant].css || '',
+
                 screenSize === 'S' && design.context.screenSize.S
                     ? design.context.screenSize.S.css
                     : '',
@@ -53,8 +55,6 @@ function render(props, ctx) {
                 ]) ||
                     '',
 
-                design.variants[variant].css || '',
-
                 context.classification.reduce(
                     (css, term) =>
                         css.concat(
@@ -76,7 +76,9 @@ function render(props, ctx) {
             motion
         }
     }
-
+    console.log(
+        `Bio Debug Message: ${metaTheme} is not Registered in RNA OR @theme: ${metaTheme} in DNA is not the correct one`
+    )
     return {css: '', motion: {}}
 }
 

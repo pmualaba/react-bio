@@ -8,6 +8,7 @@ const cssDefault = css`
 const cssLogin = css`
     --styled: '/design/web/documents/package.core.ui.Document.js';
     box-shadow: rgba(30, 21, 61, 0.86) 0 5px 30px 0;
+    background-size: cover;
 `
 const motionFastFadeIn = {}
 

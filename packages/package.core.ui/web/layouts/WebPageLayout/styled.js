@@ -2,20 +2,19 @@ import styled from 'styled-components'
 
 const WebPageLayoutStyled = styled('main').attrs(props => ({
     'data-kind': 'layout',
-    'data-component': `${props.meta.class}:${props.dna.set.renderLayout}`,
+    'data-component': `${props.meta.class}:${props.meta['@layout']}`,
     'data-rna': `${props.meta['@component']}`,
     'data-dna': `${props.meta['@dna']}`,
-    className: `${props.dna.set.renderLayout} layout ${props.dna.ui['theme.style.class'] || ''}`
+    className: `${props.meta['@layout']} layout ${props.dna.ui['theme.style.class'] || ''}`
 }))`
     --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js';
 
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: calc(100vh - 2 * var(--default-spacial-open-padding-document));
 
     > .Region {
         --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js ';
-        height: calc(33vh - (2 / 3 * var(--default-spacial-open-padding-document)));
         display: flex;
     }
 

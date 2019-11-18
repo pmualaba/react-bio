@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import components from '../../../../../dna/rna/registry.components.web'
 import RegionStyled from './styled'
@@ -12,6 +11,7 @@ function Region(props) {
             context={props.context}
             blocks={props.blocks}
             layouts={props.layouts}
+            style={props.dna.ui && props.dna.ui['theme.style.css']}
         >
             {props[props.blocks ? 'blocks' : 'layouts'].map(component => {
                 const RegionChildComponent = get(components, component.meta['@component'])
@@ -24,7 +24,7 @@ function Region(props) {
                     },
                     {init: {}}
                 )
-                console.log('RegionChildComponent', `${props.name}:${component.meta.name}`)
+                console.log('RENDER REGION CHILD: ', `${props.name}:${component.meta.name}`)
                 return RegionChildComponent ? (
                     <RegionChildComponent
                         key={`${props.name}:${component.meta.name}`}
@@ -39,15 +39,6 @@ function Region(props) {
             })}
         </RegionStyled>
     )
-}
-
-Region.propTypes = {
-    meta: PropTypes.object,
-    dna: PropTypes.object,
-    data: PropTypes.object,
-    context: PropTypes.object,
-    blocks: PropTypes.array,
-    layouts: PropTypes.array
 }
 
 export default Region

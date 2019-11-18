@@ -30,6 +30,8 @@ const PanelLayout = dynamic(() => import('../../packages/package.core.ui/web/lay
 // prettier-ignore
 const WebPageLayout = dynamic(() => import('../../packages/package.core.ui/web/layouts/WebPageLayout'))
 // prettier-ignore
+const PositionLayout = dynamic(() => import('../../packages/package.core.ui/web/layouts/PositionLayout'))
+// prettier-ignore
 const CustomLayout = dynamic(() => import('../../packages/package.core.ui/web/layouts/CustomLayout'))
 // prettier-ignore
 const GridTable = dynamic(() => import('../../packages/package.core.ui/app/blocks/tables/GridTable'))
@@ -69,6 +71,7 @@ const components = {
             },
             layouts: {
                 RenderLayout,
+                PositionLayout,
                 CustomLayout,
                 PanelLayout,
                 WebPageLayout

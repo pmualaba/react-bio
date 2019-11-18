@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import PropTypes from 'prop-types'
 import {get} from 'lodash'
 import components from '../../../../../dna/rna/registry.components.web'
 import {GlobalContext} from '../../global/Global'
@@ -27,9 +26,14 @@ const RenderLayout = props => {
 
     const LayoutComponent = get(
         components,
-        props.meta['@component'].replace('RenderLayout', props.dna.set.renderLayout)
+        props.meta['@component'].replace('RenderLayout', props.meta['@layout'])
     )
-    console.log('RENDER LAYOUT:', props.dna.set.renderLayout)
+
+    !LayoutComponent &&
+        console.log(
+            `Bio Debug Message: LayoutComponent ${props.meta['@layout']} not Registered in RNA`
+        )
+    console.log('RENDER LAYOUT:', props.meta['@layout'])
     return (
         <LayoutComponent
             meta={props.meta}
@@ -39,13 +43,6 @@ const RenderLayout = props => {
             regions={props.regions}
         />
     )
-}
-
-RenderLayout.propTypes = {
-    meta: PropTypes.object,
-    dna: PropTypes.object,
-    data: PropTypes.object,
-    regions: PropTypes.array
 }
 
 export default RenderLayout

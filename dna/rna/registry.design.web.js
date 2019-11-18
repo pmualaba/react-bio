@@ -20,11 +20,11 @@ import DocumentCms from '../../design/web/documents/package.core.cms.Document'
  */
 import PanelLayout from '../../design/web/layouts/package.core.ui.PanelLayout'
 import WebPageLayout from '../../design/web/layouts/package.core.ui.WebPageLayout'
+import PositionLayout from '../../design/web/layouts/package.core.ui.PositionLayout'
 
 /**
  * Blocks
  */
-import Stories from '../../design/web/blocks/social/package.core.ui.Stories'
 import PageHeader from '../../design/web/blocks/headers/package.core.ui.PageHeader'
 import LoginForm from '../../design/web/blocks/forms/package.core.auth.LoginForm'
 
@@ -62,12 +62,12 @@ const design = {
                 Document
             },
             layouts: {
+                PositionLayout,
                 WebPageLayout,
                 PanelLayout
             },
             blocks: {
-                PageHeader,
-                Stories
+                PageHeader
             },
             elements: {
                 Image

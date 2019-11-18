@@ -90,6 +90,8 @@ const logic = {
             genes: _globalDna.dna["['package.core.global'].web.global"]
         }
 
+        !documentDna && console.log(`No DNA found for Page:  ${dnaKey}`)
+
         documentDna.dna &&
             Object.entries(documentDna.dna).forEach(([key, genes]) => {
                 key === dnaKey

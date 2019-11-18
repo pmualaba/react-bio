@@ -39,7 +39,12 @@ export default function Document(props) {
     }
     console.log('RENDER DOCUMENT  ')
     return (
-        <DocumentStyled meta={props.meta} dna={props.dna} context={context} own={{global: props.global}}>
+        <DocumentStyled
+            meta={props.meta}
+            dna={props.dna}
+            context={context}
+            styled={props.dna.ui['theme.style.css']}
+        >
             <Layer id="layout">{props.children}</Layer>
             <Layer id="modal" modals={{}} />
             <Layer id="takeover" takeovers={{}} />
