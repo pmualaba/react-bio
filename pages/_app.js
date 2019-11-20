@@ -27,10 +27,12 @@ const deps = {
  */
 export default withRedux(
     (initialState = {}) => {
-        const composedEnhancer = composeWithDevTools(
-            applyMiddleware(createLogicMiddleware(rootLogic, deps))
+        const composedEnhancer = composeWithDevTools({trace: false, traceLimit: 25})
+        return createStore(
+            rootReducer,
+            initialState,
+            composedEnhancer(applyMiddleware(createLogicMiddleware(rootLogic, deps)))
         )
-        return createStore(rootReducer, initialState, composedEnhancer)
     },
     {debug: false}
 )(

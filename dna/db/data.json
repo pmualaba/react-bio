@@ -5,10 +5,17 @@
             {
                 "id": "5350bc2ae82d42d9b67486114bac2229",
                 "name": "my-react-bio-app.org",
+                "package": "package.core.cms",
                 "url": "https://my-react-bio-app.org",
                 "title": "React Bio",
                 "title_nlBE": "React Bio",
-                "hasFeaturedImage": {"src": "/theme/web/img/genlabss.svg"}
+                "hasFeaturedImage": {
+                    "id": "d2e4c3a78b2c49a89ee240048e1a01a7",
+                    "type": "Image",
+                    "package": "package.core.cms",
+                    "localUrl": "/theme/web/img/genlabss.svg",
+                    "name": "Logo Genlabss"
+                }
             }
         ],
         "ContentPage": [

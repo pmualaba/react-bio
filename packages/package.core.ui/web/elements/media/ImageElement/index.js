@@ -6,8 +6,10 @@ import ImageElementStyled from './styled'
  */
 
 export default function ImageElement(props) {
-    const data = props.data.value || props.data.init
+    const data = props.data.current || props.data.init || props.data
+    console.log('ImageElement props', props)
 
+    console.log(`RENDER ELEMENT: ImageElement ${props.meta['@dna']}`)
     return (
         <ImageElementStyled
             meta={props.meta}

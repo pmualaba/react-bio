@@ -19,7 +19,7 @@ import PageFooter from '../../packages/package.core.ui/web/blocks/footers/PageFo
 import Test from '../../packages/package.core.ui/web/blocks/Test'
 */
 
-/* prettier-ignore */
+// prettier-ignore
 const Global = dynamic(() => import('../../packages/package.core.ui/web/global/Global'))
 // prettier-ignore
 const Document = dynamic(() => import('../../packages/package.core.ui/web/documents/Document'))

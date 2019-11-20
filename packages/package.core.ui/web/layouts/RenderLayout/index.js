@@ -14,15 +14,15 @@ const RenderLayout = props => {
      * Render
      */
 
-    const values = props.regions.map(region => {
-        return Object.entries(region.genes.data.accessors).reduce(
+    const values = props.regions.map(region =>
+        Object.entries(region.genes.data.accessors).reduce(
             (value, [key, accessor]) => {
                 value.region[key] = get(props.data.init, accessor)
                 return value
             },
             {region: {}}
         )
-    })
+    )
 
     const LayoutComponent = get(
         components,

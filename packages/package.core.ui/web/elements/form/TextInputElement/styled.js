@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const TextInputElementStyled = styled('em').attrs(props => ({
+const TextInputElementStyled = styled('div').attrs(props => ({
     'data-kind': 'element',
     'data-component': `${props.meta.class}`,
     'data-rna': `${props.meta['@component']}`,

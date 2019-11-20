@@ -1,13 +1,30 @@
-import React from 'react'
+import React, {useReducer} from 'react'
 import TextInputElementStyled from './styled'
+
+/**
+ * Reducer
+ */
+function reducer(state, [type, payload]) {
+    switch (type) {
+        case 'ON_CHANGE':
+            return {...state, value: payload}
+        case 'ON_RESET':
+            return {...state, value: ''}
+        default:
+            return state
+    }
+}
 
 /**
  * Component
  */
 
 export default function TextInputElement(props) {
-    const data = props.data.value || props.data.init
+    const data = props.data.current || props.data.init || props.data
+    console.log('TextInputElement props', props)
+    const [state, dispatch] = useReducer(reducer, {value: data.value || ''})
 
+    console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`)
     return (
         <TextInputElementStyled
             meta={props.meta}
@@ -20,11 +37,23 @@ export default function TextInputElement(props) {
                 id={data.name}
                 autoComplete={data.autocomplete}
                 placeholder={data.placeholder}
-                onChange={props.fn.onKeyUp}
-                onBlur={props.fn.onValueUpdate}
+                value={data.value}
+                onChange={e => {
+                    dispatch(['ON_CHANGE', e.target.value])
+                    props.fn.onKeyUp({
+                        meta: props.meta,
+                        value: e.target.value
+                    })
+                }}
+                onBlur={e =>
+                    props.fn.onValueUpdate({
+                        meta: props.meta,
+                        value: e.target.value
+                    })
+                }
             />
             <label htmlFor={data.name}>
-                <span>{data.label}</span>
+                <span>{data.label || 'Label: '}</span>
             </label>
         </TextInputElementStyled>
     )

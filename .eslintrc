@@ -5,6 +5,7 @@
         "it": true,
         "document": true
     },
+    "plugins": ["react-hooks"],
     "rules": {
         "arrow-body-style": ["error", "as-needed"],
         "arrow-parens": [0, "error"],
@@ -44,6 +45,7 @@
         "object-curly-newline": 0,
         "operator-linebreak": 0,
         "prefer-destructuring": 0,
+        "quotes": 0,
         "react/destructuring-assignment": [0, "never"],
         "react/forbid-prop-types": [0, "never"],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
@@ -52,6 +54,8 @@
         "react/jsx-one-expression-per-line": 0,
         "react/prop-types": 0,
         "react/require-default-props": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "semi": ["error", "never"],
         "space-before-function-paren": 0
     }
