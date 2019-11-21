@@ -25,7 +25,7 @@ export const rootReducer = combineReducers({
     db,
     io,
     ui: combineReducers({
-        'package.core.authentication': loginRootReducer
+        'package.core.auth': loginRootReducer
     })
 })
 

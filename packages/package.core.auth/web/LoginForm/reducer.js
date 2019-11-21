@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 import * as ActionTypes from './actions'
 
 /**
-* Initial State db
-*/
+ * Initial State db
+ */
 export const db = {
     errors: {},
     user: {
@@ -21,10 +21,19 @@ export const db = {
 }
 
 /**
- * Reducers db
+ * Reducer db
  */
 const dbReducer = (state = db, action) => {
     switch (action.type) {
+        case 'ON_RESET':
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    identity: action.payload
+                }
+            }
+
         case ActionTypes.AUTHENTICATE_USER:
             return {
                 ...state,
@@ -34,13 +43,13 @@ const dbReducer = (state = db, action) => {
         case ActionTypes.AUTHENTICATE_USER_SUCCESS:
             return {
                 ...state,
-                user: { ...state.user, secret: '****************' }
+                user: {...state.user, secret: '****************'}
             }
 
         case ActionTypes.AUTHENTICATE_USER_FAILED:
             return {
                 ...state,
-                user: { ...state.user, secret: '****************' }
+                user: {...state.user, secret: '****************'}
             }
 
         default:
@@ -102,72 +111,31 @@ export const ui = {
 }
 
 /**
- * Reducers ui
+ * Reducer ui
  */
-const uiErrorsReducer = (errors = ui.errors, action) => {
-    const clearUiErrors = {}
-    Object.keys(errors).forEach(key => {
-        clearUiErrors[key] = {}
-    })
-
+const uiReducer = (state = ui, action) => {
     switch (action.type) {
         case ActionTypes.UI_INPUTVALIDATION_ERROR:
             return {
-                ...clearUiErrors,
                 ...action.payload
             }
 
         case ActionTypes.AUTHENTICATE_USER_FAILED:
             return {
-                ...clearUiErrors,
                 ...action.payload
             }
 
         case ActionTypes.AUTHENTICATE_USER:
-            return {
-                ...clearUiErrors
-            }
+            return {}
 
         default:
-            return errors
-    }
-}
-
-const uiFormFieldReducer = (formField, action) => {
-    switch (action.type) {
-        case ActionTypes.UI_UPDATE_VALUE:
-            return {
-                ...formField,
-                currentValue: action.payload.currentValue
-            }
-
-        default:
-            return formField
-    }
-}
-
-const uiFormFieldsReducer = (formFields = ui.formFields, action) => {
-    switch (action.type) {
-        case ActionTypes.UI_UPDATE_VALUE:
-            return formFields.map(
-                formField => (formField.name !== action.payload.uiTarget ? formField : uiFormFieldReducer(formField, action))
-            )
-
-        case ActionTypes.AUTHENTICATE_USER_FAILED:
-            return formFields.map((formField, index) => (index !== 1 ? formField : { ...formField, currentValue: '' }))
-
-        default:
-            return formFields
+            return state
     }
 }
 
 /**
  * Export Reducers
  */
-const uiReducer = combineReducers({
-    errors: uiErrorsReducer,
-    formFields: uiFormFieldsReducer
-})
 
 export default combineReducers({
     db: dbReducer,

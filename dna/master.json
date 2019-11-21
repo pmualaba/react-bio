@@ -188,6 +188,15 @@
                                                     "class": "LoginForm",
                                                     "kind": "block"
                                                 }
+                                            },
+                                            {
+                                                "meta": {
+                                                    "@dna": "['package.core.ui'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[1:Test]",
+                                                    "@component": "['package.core.ui'].web.blocks.Test",
+                                                    "name": "Test",
+                                                    "class": "Test",
+                                                    "kind": "block"
+                                                }
                                             }
                                         ]
                                     }
@@ -297,7 +306,20 @@
                                 },
                                 "ui": {
                                 }
+                            },
+                            "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[1:Test]": {
+                                "data": {
+                                    "accessors": {
+                                        "logo": "region.domain.hasFeaturedImage",
+                                        "title": "region.domain.title"
+                                    }
+                                },
+                                "set": {
+                                },
+                                "ui": {
+                                }
                             }
+
                         }
                     }
                 }

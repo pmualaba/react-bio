@@ -15,6 +15,11 @@ function Region(props) {
         >
             {props[props.blocks ? 'blocks' : 'layouts'].map(component => {
                 const RegionChildComponent = get(components, component.meta['@component'])
+
+                !component.genes &&
+                    console.log(
+                        `Bio Debug Message: Missing dna entry in Master DNA for component ${component.meta['@dna']}`
+                    )
                 const data = Object.entries(
                     component.genes.data ? component.genes.data.accessors : {}
                 ).reduce(

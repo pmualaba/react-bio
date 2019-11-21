@@ -22,45 +22,40 @@ function Cell(props) {
     const store = useSelector(
         store =>
             Object.entries(props.dna.data.selectors).reduce((selectors, [key, value]) => {
-                selectors[key] = get(store, value)
+                if (typeof value === 'object') {
+                    selectors[key] = get(store, value)
+                } else {
+                    selectors[key] = {value: get(store, value)}
+                }
                 return selectors
             }, {}),
         shallowEqual
     )
 
-    console.log('CELL STORE', store)
-
     /**
-     * Block Override
+     * Intercept Element Actions
      */
     function onKeyUp(payload) {
         console.log('LOG', payload)
-        props.fn.onKeyUp(payload)
+
+        // props.fn.onKeyUp(payload)
     }
 
-    const children = props.children.map((child, i) => {
-        console.log('Child', child)
-
-        return React.cloneElement(child, {
+    const children = props.children.map((child, i) =>
+        React.cloneElement(child, {
             key: child.props.meta['@dna'],
             data: {
-                ...child.props.data.init,
-                ...Object.entries(store).reduce((data, [key, value]) => {
-                    if (key.startsWith(child.props.meta.name && value)) {
-                        data[key.split('.')[1]] = value
-                    }
-                    return data
-                }, {})
+                init: child.props.data.init,
+                store
             },
             fn: {
                 ...child.props.fn,
                 onKeyUp
             }
         })
-    })
+    )
 
-    console.log('RENDER CELL')
-
+    console.log('RENDER CELL', store)
     return children
 }
 

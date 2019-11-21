@@ -9,6 +9,7 @@ import Cell from '../../../package.core.ui/web/cells/Cell'
 /**
  * Reducer
  */
+
 function reducer(state, [type, payload]) {
     switch (type) {
         case 'ON_CHANGE':
@@ -48,8 +49,8 @@ export default function LoginForm(props) {
                 selectors: {
                     'ImageElement__logo.src': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].localUrl`,
                     'ImageElement__logo.name': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].name`,
-                    'TextInputElement__user.name': `ui['package.core.authentication'].web.LoginForm.db.user`,
-                    'TextInputElement__password.name': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].name`
+                    'TextInputElement__user.value': `ui['package.core.auth'].web.LoginForm.db.user.identity`,
+                    'TextInputElement__password.value': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].name`
                 }
             }
         },
@@ -121,7 +122,11 @@ export default function LoginForm(props) {
                 })
             }
         },
-        data: {init: {value: ''}},
+        data: {
+            init: {
+                value: ''
+            }
+        },
         context: props.context
     }
 
@@ -161,13 +166,18 @@ export default function LoginForm(props) {
                 })
             }
         },
-        data: {init: {value: ''}},
+        data: {
+            init: {
+                value: ''
+            }
+        },
         context: props.context
     }
 
     /**
      * Render
      */
+
     console.log('RENDER BLOCK: LoginForm')
     const {css, motion} = props.context.theme.render(props)
     return (
