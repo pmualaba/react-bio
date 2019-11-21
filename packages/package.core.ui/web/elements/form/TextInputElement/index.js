@@ -20,9 +20,13 @@ function reducer(state, [type, payload]) {
  */
 
 export default function TextInputElement(props) {
-    const data = props.data.store || props.data.init
-
-    console.log('DATA', data)
+    const selectors = {
+        value: `${props.meta.name}.value`,
+        placeholder: `${props.meta.name}.placeholder`
+    }
+    const data = {
+        value: props.data[selectors.value].value || props.data.init.value
+    }
     const [state, dispatch] = useReducer(reducer, data || {value: ''})
 
     console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`, props)
@@ -35,21 +39,27 @@ export default function TextInputElement(props) {
         >
             <input
                 type="text"
-                id={data.name}
+                id={data.value}
                 autoComplete={data.autocomplete}
                 placeholder={data.placeholder}
-                value={data.value || state.value || data['TextInputElement__user.value'].value}
+                value={data.value}
                 onChange={e => {
                     dispatch(['on_change', e.target.value])
                     props.fn.onKeyUp({
                         meta: props.meta,
-                        value: e.target.value
+                        data: {
+                            value: e.target.value,
+                            selector: selectors.value
+                        }
                     })
                 }}
                 onBlur={e =>
                     props.fn.onValueUpdate({
                         meta: props.meta,
-                        value: e.target.value
+                        data: {
+                            value: e.target.value,
+                            selector: selectors.value
+                        }
                     })
                 }
             />

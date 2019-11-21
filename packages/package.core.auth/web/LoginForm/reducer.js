@@ -34,6 +34,16 @@ const dbReducer = (state = db, action) => {
                 }
             }
 
+        case 'ON_KEY_UP':
+            const key = action.payload.data.selector.split('.').pop()
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    [key]: action.payload.data.value
+                }
+            }
+
         case ActionTypes.AUTHENTICATE_USER:
             return {
                 ...state,

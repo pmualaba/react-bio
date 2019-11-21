@@ -17,6 +17,13 @@ function reducer(state, [type, payload]) {
 }
 
 function Cell(props) {
+    /**
+     * Default Props
+     */
+    if (!props.fn.onValueUpdate) {
+        props.fn.onValueUpdate = () => {}
+    }
+
     const [state, dispatch] = useReducer(reducer, {})
 
     const store = useSelector(
@@ -36,9 +43,13 @@ function Cell(props) {
      * Intercept Element Actions
      */
     function onKeyUp(payload) {
-        console.log('LOG', payload)
+        payload.data.selector = props.dna.data.selectors[payload.data.selector]
+        props.fn.onKeyUp(payload)
+    }
 
-        // props.fn.onKeyUp(payload)
+    function onValueUpdate(payload) {
+        payload.data.selector = props.dna.data.selectors[payload.data.selector]
+        props.fn.onValueUpdate(payload)
     }
 
     const children = props.children.map((child, i) =>
@@ -46,11 +57,12 @@ function Cell(props) {
             key: child.props.meta['@dna'],
             data: {
                 init: child.props.data.init,
-                store
+                ...store
             },
             fn: {
                 ...child.props.fn,
-                onKeyUp
+                onKeyUp,
+                onValueUpdate
             }
         })
     )

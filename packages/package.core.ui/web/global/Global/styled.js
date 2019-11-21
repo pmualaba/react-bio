@@ -8,7 +8,6 @@ const GlobalStyled = styled('div').attrs(props => ({
     className: `${props.meta.class} ${props.dna.ui['theme.style.class'] || ''}`
 }))`
     --styled: '/packages/package.core.ui/web/global/Global/styled.js';
-    min-height: 100%;
 
     ${props => props.css};
 `

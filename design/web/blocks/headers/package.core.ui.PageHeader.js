@@ -11,9 +11,6 @@ export default {
                 h3 {
                     --styled: '/design/web/blocks/headers/package.core.ui.PageHeader.js';
                 }
-                a {
-                    position: absolute;
-                }
             `
         }
     },

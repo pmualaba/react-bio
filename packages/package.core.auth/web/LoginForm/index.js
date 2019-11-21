@@ -29,7 +29,7 @@ export default function LoginForm(props) {
     const [state, dispatch] = useReducer(reducer, {user: '', password: ''})
     const refBlock = useRef()
     hooks.blocks.useResponsiveBlock(refBlock, 30)
-    const dispatchRedux = useDispatch()
+    const dispatchStore = useDispatch()
     const bio = {}
 
     /**
@@ -37,27 +37,27 @@ export default function LoginForm(props) {
      */
 
     bio.Cell__login = {
+        meta: {
+            '@dna': `${props.meta['@dna']}.cells[0:Cell]`,
+            '@component': "['package.core.ui'].web.cells.Cell",
+            name: 'Cell__login',
+            class: 'Cell',
+            kind: 'cell'
+        },
         dna: {
-            meta: {
-                '@dna': `${props.meta['@dna']}.cells[0:Cell]`,
-                '@component': "['package.core.ui'].web.cells.Cell",
-                name: 'Cell__login',
-                class: 'Cell',
-                kind: 'cell'
-            },
             data: {
                 selectors: {
                     'ImageElement__logo.src': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].localUrl`,
                     'ImageElement__logo.name': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].name`,
                     'TextInputElement__user.value': `ui['package.core.auth'].web.LoginForm.db.user.identity`,
-                    'TextInputElement__password.value': `ui['package.core.cms'].Image['${props.data.init.logo.id}'].name`
+                    'TextInputElement__password.value': `ui['package.core.auth'].web.LoginForm.db.user.secret`
                 }
             }
         },
         fn: {
             onKeyUp(payload) {
                 /* dispatch(['ON_CHANGE', payload.value]) */
-                dispatchRedux({
+                dispatchStore({
                     type: 'ON_KEY_UP',
                     error: false,
                     payload,
@@ -114,7 +114,7 @@ export default function LoginForm(props) {
         fn: {
             onKeyUp: bio.Cell__login.fn.onKeyUp,
             onValueUpdate(payload) {
-                dispatchRedux({
+                dispatchStore({
                     type: 'ON_VALUE_UPDATE',
                     error: false,
                     payload,
@@ -150,7 +150,7 @@ export default function LoginForm(props) {
         fn: {
             onKeyUp(payload) {
                 /* dispatch(['ON_CHANGE', payload.value]) */
-                dispatchRedux({
+                dispatchStore({
                     type: 'ON_KEY_UP',
                     error: false,
                     payload,
@@ -158,7 +158,7 @@ export default function LoginForm(props) {
                 })
             },
             onValueUpdate(payload) {
-                dispatchRedux({
+                dispatchStore({
                     type: 'ON_VALUE_UPDATE',
                     error: false,
                     payload,

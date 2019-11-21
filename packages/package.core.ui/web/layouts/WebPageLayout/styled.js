@@ -11,6 +11,7 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     min-height: calc(100vh - 2 * var(--default-spacial-open-padding-document));
 
     > .Region {
@@ -20,6 +21,7 @@ const WebPageLayoutStyled = styled('main').attrs(props => ({
 
     > .header {
         --styled: '/packages/package.core.ui/web/layouts/WebPageLayout/styled.js';
+        flex-direction: column;
     }
 
     > .sidebar-left {
