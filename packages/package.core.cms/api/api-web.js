@@ -2,7 +2,7 @@ const express = require('express')
 const axios = require('axios')
 
 const router = express.Router()
-const Transform = require('../../package.core.fn/data')
+const Transform = require('../../package.core.fn/data').Transform
 
 const logic = {
     GET_ARTICLES: async (req, res, next, meta, action) => {

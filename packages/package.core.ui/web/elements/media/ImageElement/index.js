@@ -1,5 +1,6 @@
 import React from 'react'
 import ImageElementStyled from './styled'
+import TextInputElement from '../../form/TextInputElement'
 
 /**
  * Component
@@ -20,4 +21,12 @@ export default function ImageElement(props) {
             <figcaption>{data.caption}</figcaption>
         </ImageElementStyled>
     )
+}
+
+ImageElement.defaultProps = {
+    dna: {
+        set: {},
+        ui: {},
+        actions: {}
+    }
 }

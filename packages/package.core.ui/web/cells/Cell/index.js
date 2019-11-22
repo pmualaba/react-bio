@@ -1,6 +1,7 @@
 import React, {useRef, useReducer, memo} from 'react'
-import {useDispatch, useSelector, shallowEqual} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {get} from 'lodash'
+import {storeEquality} from '../../../../package.core.fn/data'
 
 /**
  * Reducer
@@ -24,19 +25,20 @@ function Cell(props) {
         props.fn.onValueUpdate = () => {}
     }
 
-    const [state, dispatch] = useReducer(reducer, {})
+    /**
+     * Data Management
+     */
 
+    const [state, dispatch] = useReducer(reducer, {})
+    const dispatchStore = useDispatch()
     const store = useSelector(
         store =>
             Object.entries(props.dna.data.selectors).reduce((selectors, [key, value]) => {
-                if (typeof value === 'object') {
-                    selectors[key] = get(store, value)
-                } else {
-                    selectors[key] = {value: get(store, value)}
-                }
+                const keys = key.split('.')
+                selectors[keys[0]] = {[keys[1]]: get(store, value)}
                 return selectors
             }, {}),
-        shallowEqual
+        storeEquality
     )
 
     /**
@@ -56,8 +58,8 @@ function Cell(props) {
         React.cloneElement(child, {
             key: child.props.meta['@dna'],
             data: {
-                init: child.props.data.init,
-                ...store
+                init: {...child.props.data.init},
+                store: {...store[child.props.meta.name]}
             },
             fn: {
                 ...child.props.fn,
@@ -67,7 +69,7 @@ function Cell(props) {
         })
     )
 
-    console.log('RENDER CELL', store)
+    console.log('RENDER CELL', store, props)
     return children
 }
 

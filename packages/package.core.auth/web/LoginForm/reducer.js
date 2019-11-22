@@ -25,12 +25,20 @@ export const db = {
  */
 const dbReducer = (state = db, action) => {
     switch (action.type) {
-        case 'ON_RESET':
+        case 'TEST_ACTION_1':
             return {
                 ...state,
                 user: {
                     ...state.user,
                     identity: action.payload
+                }
+            }
+
+        case 'TEST_ACTION_2':
+            return {
+                ...state,
+                errors: {
+                    error: action.payload
                 }
             }
 

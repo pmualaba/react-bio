@@ -1,9 +1,11 @@
 import React, {useReducer} from 'react'
 import TextInputElementStyled from './styled'
+import hooks from '../../../../../package.core.fn/hooks'
 
 /**
  * Reducer
  */
+
 function reducer(state, [type, payload]) {
     switch (type) {
         case 'on_change':
@@ -20,14 +22,27 @@ function reducer(state, [type, payload]) {
  */
 
 export default function TextInputElement(props) {
-    const selectors = {
-        value: `${props.meta.name}.value`,
-        placeholder: `${props.meta.name}.placeholder`
+    /**
+     * Default Props
+     */
+
+    if (!props.fn.onKeyUp) {
+        props.fn.onKeyUp = () => {}
     }
-    const data = {
-        value: props.data[selectors.value].value || props.data.init.value
+    if (!props.fn.onValueUpdate) {
+        props.fn.onValueUpdate = () => {}
     }
+
+    /**
+     * Data Management
+     */
+
+    const [data, selectors] = hooks.elements.useDataSelectors(props, ['value'])
     const [state, dispatch] = useReducer(reducer, data || {value: ''})
+
+    /**
+     * Render Element
+     */
 
     console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`, props)
     return (
@@ -42,7 +57,7 @@ export default function TextInputElement(props) {
                 id={data.value}
                 autoComplete={data.autocomplete}
                 placeholder={data.placeholder}
-                value={data.value}
+                value={data.value || state.value}
                 onChange={e => {
                     dispatch(['on_change', e.target.value])
                     props.fn.onKeyUp({
@@ -68,4 +83,16 @@ export default function TextInputElement(props) {
             </label>
         </TextInputElementStyled>
     )
+}
+
+TextInputElement.defaultProps = {
+    dna: {
+        set: {},
+        ui: {},
+        actions: {}
+    },
+    fn: {
+        onKeyUp: () => {},
+        onValueUpdate: () => {}
+    }
 }

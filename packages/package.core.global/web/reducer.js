@@ -8,7 +8,8 @@ const global = {
     router: {
         loadingPage: false,
         currentRoute: '/home'
-    }
+    },
+    test: null
 }
 
 const globalReducer = (state = global, action) => {

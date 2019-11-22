@@ -38,7 +38,7 @@ export default function LoginForm(props) {
 
     bio.Cell__login = {
         meta: {
-            '@dna': `${props.meta['@dna']}.cells[0:Cell]`,
+            '@dna': `${props.meta['@dna']}.cells[0:Cell__login]`,
             '@component': "['package.core.ui'].web.cells.Cell",
             name: 'Cell__login',
             class: 'Cell',
@@ -63,6 +63,14 @@ export default function LoginForm(props) {
                     payload,
                     meta: props.meta
                 })
+            },
+            onValueUpdate(payload) {
+                dispatchStore({
+                    type: 'ON_VALUE_UPDATE',
+                    error: false,
+                    payload,
+                    meta: props.meta
+                })
             }
         }
     }
@@ -73,16 +81,11 @@ export default function LoginForm(props) {
 
     bio.ImageElement__logo = {
         meta: {
-            '@dna': `${props.meta['@dna']}.elements[0:ImageElement]`,
+            '@dna': `${props.meta['@dna']}.cells[0:Cell__login].elements[0:ImageElement__logo]`,
             '@component': "['package.core.ui'].web.elements.ImageElement",
             name: 'ImageElement__logo',
             class: 'ImageElement',
             kind: 'element'
-        },
-        dna: {
-            set: {},
-            ui: {},
-            actions: {}
         },
         data: {
             init: {
@@ -100,27 +103,11 @@ export default function LoginForm(props) {
 
     bio.TextInputElement__user = {
         meta: {
-            '@dna': `${props.meta['@dna']}.elements[1:TextInputElement]`,
+            '@dna': `${props.meta['@dna']}.cells[0:Cell__login].elements[1:TextInputElement__user]`,
             '@component': "['package.core.ui'].web.elements.TextInputElement",
             name: 'TextInputElement__user',
             class: 'TextInputElement',
             kind: 'element'
-        },
-        dna: {
-            set: {},
-            ui: {},
-            actions: {}
-        },
-        fn: {
-            onKeyUp: bio.Cell__login.fn.onKeyUp,
-            onValueUpdate(payload) {
-                dispatchStore({
-                    type: 'ON_VALUE_UPDATE',
-                    error: false,
-                    payload,
-                    meta: props.meta
-                })
-            }
         },
         data: {
             init: {
@@ -136,35 +123,31 @@ export default function LoginForm(props) {
 
     bio.TextInputElement__password = {
         meta: {
-            '@dna': `${props.meta['@dna']}.elements[2:TextInputElement]`,
+            '@dna': `${props.meta['@dna']}.cells[0:Cell__login].elements[2:TextInputElement__password]`,
             '@component': "['package.core.ui'].web.elements.TextInputElement",
             name: 'TextInputElement__password',
             class: 'TextInputElement',
             kind: 'element'
         },
-        dna: {
-            set: {},
-            ui: {},
-            actions: {}
-        },
-        fn: {
-            onKeyUp(payload) {
-                /* dispatch(['ON_CHANGE', payload.value]) */
-                dispatchStore({
-                    type: 'ON_KEY_UP',
-                    error: false,
-                    payload,
-                    meta: props.meta
-                })
-            },
-            onValueUpdate(payload) {
-                dispatchStore({
-                    type: 'ON_VALUE_UPDATE',
-                    error: false,
-                    payload,
-                    meta: props.meta
-                })
+        data: {
+            init: {
+                value: ''
             }
+        },
+        context: props.context
+    }
+
+    /**
+     * TextInputElement__passwordConfirm
+     */
+
+    bio.TextInputElement__passwordConfirm = {
+        meta: {
+            '@dna': `${props.meta['@dna']}.elements[1:TextInputElement__passwordConfirm]`,
+            '@component': "['package.core.ui'].web.elements.TextInputElement",
+            name: 'TextInputElement__passwordConfirm',
+            class: 'TextInputElement',
+            kind: 'element'
         },
         data: {
             init: {
@@ -195,6 +178,7 @@ export default function LoginForm(props) {
                 <TextInputElement {...bio.TextInputElement__user} />
                 <TextInputElement {...bio.TextInputElement__password} />
             </Cell>
+            <TextInputElement {...bio.TextInputElement__passwordConfirm} />
         </LoginFormStyled>
     )
 }

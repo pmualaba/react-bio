@@ -15,14 +15,40 @@ export default function Test(props) {
                 type="button"
                 onClick={e =>
                     dispatch({
-                        type: 'ON_RESET',
+                        type: 'TEST_ACTION_1',
                         error: false,
                         payload: e.target.innerText,
                         meta: {}
                     })
                 }
             >
-                Dispatch Action
+                Dispatch Test Action 1
+            </button>
+            <button
+                type="button"
+                onClick={e =>
+                    dispatch({
+                        type: 'TEST_ACTION_2',
+                        error: false,
+                        payload: e.target.innerText,
+                        meta: {}
+                    })
+                }
+            >
+                Dispatch Test Action 2
+            </button>
+            <button
+                type="button"
+                onClick={e =>
+                    dispatch({
+                        type: 'TEST_ACTION_3',
+                        error: false,
+                        payload: e.target.innerText,
+                        meta: {}
+                    })
+                }
+            >
+                Dispatch Test Action 3
             </button>
         </div>
     )
