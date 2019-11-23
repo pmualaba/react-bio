@@ -25,13 +25,13 @@ import PositionLayout from '../../design/web/layouts/package.core.ui.PositionLay
 /**
  * Blocks
  */
-import PageHeader from '../../design/web/blocks/headers/package.core.ui.PageHeader'
-import LoginForm from '../../design/web/blocks/forms/package.core.auth.LoginForm'
+import PageHeader from '../../design/web/blocks/package.core.ui.PageHeader'
+import LoginForm from '../../design/web/blocks/package.core.auth.LoginForm'
 
 /**
  * Elements
  */
-import Image from '../../design/web/elements/media/package.core.ui.Image'
+import ImageElement from '../../design/web/elements/package.core.ui.ImageElement'
 
 // TODO : Build Theme Inheritance Tree
 
@@ -70,7 +70,7 @@ const design = {
                 PageHeader
             },
             elements: {
-                Image
+                ImageElement
             }
         }
     },

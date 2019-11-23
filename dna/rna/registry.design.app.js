@@ -24,8 +24,8 @@ import WebPageLayout from '../../design/web/layouts/package.core.ui.WebPageLayou
 /**
  * Blocks
  */
-import Stories from '../../design/web/blocks/social/package.core.ui.Stories'
-import PageHeader from '../../design/web/blocks/headers/package.core.ui.PageHeader'
+import Stories from '../../design/web/blocks/package.core.ui.Stories'
+import PageHeader from '../../design/web/blocks/package.core.ui.PageHeader'
 
 // TODO : Build Theme Inheritance Tree
 

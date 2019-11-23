@@ -1,5 +1,5 @@
 import React from 'react'
-import GridTable from '../../../package.core.ui/app/blocks/tables/GridTable'
+import GridTable from '../../../package.core.ui/app/blocks/GridTable'
 
 class PersonList extends React.Component {
     l = (this.props.user && this.props.user.locale) || 'nl_NL'

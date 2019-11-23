@@ -2,7 +2,7 @@
  *  Dependencies
  */
 import React, {createContext, useEffect} from 'react'
-import {connect} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {fromEvent} from 'rxjs'
 import {auditTime, map, pairwise} from 'rxjs/operators'
 import Router from 'next/router'
@@ -10,12 +10,9 @@ import Head from 'next/head'
 import {useViewportScroll, useTransform} from 'framer-motion'
 import FSA, * as ActionTypes from '../../../../package.core.global/web/actions'
 import Theme from '../../../../../dna/rna/registry.design.web'
-import {CSSvariables} from '../../../../package.core.fn/theme'
+import {CSSvariables, getGoogleFonts} from '../../../../package.core.fn/theme'
+import {storeEquality} from '../../../../package.core.fn/data'
 import CSSreset from '../../../../../design/web/css-reset'
-
-/**
- * Components
- */
 
 import GlobalStyled from './styled'
 
@@ -26,11 +23,14 @@ import GlobalStyled from './styled'
 export const GlobalContext = createContext({})
 GlobalContext.displayName = 'GlobalContext'
 
-/**
- * Component
- */
+export default function Global(props) {
+    /**
+     * Data
+     */
 
-function Global(props) {
+    const store = useSelector(store => ({global: store.global.web}), storeEquality)
+    const dispatchStore = useDispatch()
+
     /**
      * Hooks
      */
@@ -76,19 +76,7 @@ function Global(props) {
     }, [])
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            window.WebFontConfig = {
-                google: {families: props.dna.set.fonts.google}
-            }
-            ;(function() {
-                const script = window.document.createElement('script')
-                script.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
-                script.type = 'text/javascript'
-                script.async = 'true'
-                const s = window.document.getElementsByTagName('script')[0]
-                s.parentNode.insertBefore(script, s)
-            })()
-        }
+        getGoogleFonts({families: props.dna.set.fonts.google})
 
         props.context.environment.IE &&
             typeof window !== 'undefined' &&
@@ -101,13 +89,14 @@ function Global(props) {
                 }
             })
         setTimeout(() => {
-            // props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, {skin: 'themeDefault'}))
+            // dispatchStore(FSA(ActionTypes.SET_CURRENT_SKIN, false, {skin: 'themeDefault'}))
         }, 3000)
     }, [])
 
     useEffect(() => {
+        /* eslint-disable */
         const {scrollYProgress} = useViewportScroll()
-
+        /* eslint-enable */
         return scrollYProgress.onChange(e => {
             props.context.device.vs = e
         })
@@ -118,11 +107,11 @@ function Global(props) {
      */
 
     function sendNotification(payload) {
-        props.dispatch(FSA(ActionTypes.SEND_NOTIFICATION, false, payload))
+        dispatchStore(FSA(ActionTypes.SEND_NOTIFICATION, false, payload))
     }
 
     function clearNotification(payload) {
-        props.dispatch(FSA(ActionTypes.CLEAR_NOTIFICATION, false, payload))
+        dispatchStore(FSA(ActionTypes.CLEAR_NOTIFICATION, false, payload))
     }
 
     function setSkin(payload) {
@@ -149,7 +138,7 @@ function Global(props) {
                         )
                 })
         })
-        props.dispatch(FSA(ActionTypes.SET_CURRENT_SKIN, false, payload))
+        dispatchStore(FSA(ActionTypes.SET_CURRENT_SKIN, false, payload))
     }
 
     /**
@@ -157,13 +146,13 @@ function Global(props) {
      */
 
     const currentSkinName =
-        props.global.currentSkin || props.context.web.currentSkin || props.dna.set.defaultSkin
+        store.global.currentSkin || props.context.web.currentSkin || props.dna.set.defaultSkin
 
     const theme = Theme(currentSkinName, props.skins)
 
     const context = {
         ...props.context,
-        global: {...props.global, currentSkinName},
+        global: {...store.global, currentSkinName},
         theme,
         fn: {
             sendNotification,
@@ -230,9 +219,3 @@ function Global(props) {
         </GlobalContext.Provider>
     )
 }
-
-const mapState = (state, props) => ({
-    global: state.global.web
-})
-
-export default connect(mapState)(Global)

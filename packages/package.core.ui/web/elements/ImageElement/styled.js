@@ -7,7 +7,7 @@ const ImageElementStyled = styled('figure').attrs(props => ({
     'data-dna': `${props.meta['@dna']}`,
     className: `${props.meta.class} ${props.dna.ui['theme.style.class'] || ''}`
 }))`
-    --styled: '/packages/package.core.ui/web/elements/media/Image/styled.js';
+    --styled: '/packages/package.core.ui/web/elements/ImageElement/styled.js';
 
     ${props => props.css};
 `

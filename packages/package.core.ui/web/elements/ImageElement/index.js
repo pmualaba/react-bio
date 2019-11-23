@@ -1,13 +1,17 @@
 import React from 'react'
+import hooks from '../../../../package.core.fn/hooks'
 import ImageElementStyled from './styled'
-import TextInputElement from '../../form/TextInputElement'
-
-/**
- * Component
- */
 
 export default function ImageElement(props) {
-    const data = props.data.init || props.data.store
+    /**
+     * Data
+     */
+
+    const [data, selectors] = hooks.elements.useDataSelectors(props, ['src', 'alt', 'caption'])
+
+    /**
+     * Render
+     */
 
     console.log(`RENDER ELEMENT: ImageElement ${props.meta['@dna']}`, props)
     return (

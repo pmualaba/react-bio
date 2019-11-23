@@ -12,10 +12,10 @@ import RenderLayout from '../../packages/package.core.ui/web/layouts/RenderLayou
 import PanelLayout from '../../packages/package.core.ui/web/layouts/PanelLayout'
 import WebPageLayout from '../../packages/package.core.ui/web/layouts/WebPageLayout'
 import CustomLayout from '../../packages/package.core.ui/web/layouts/CustomLayout'
-import GridTable from '../../packages/package.core.ui/app/blocks/tables/GridTable'
-import PageHeader from '../../packages/package.core.ui/web/blocks/headers/PageHeader'
+import GridTable from '../../packages/package.core.ui/app/blocks/GridTable'
+import PageHeader from '../../packages/package.core.ui/web/blocks/PageHeader'
 import LoginForm from '../../packages/package.core.auth/web/LoginForm'
-import PageFooter from '../../packages/package.core.ui/web/blocks/footers/PageFooter'
+import PageFooter from '../../packages/package.core.ui/web/blocks/PageFooter'
 import Test from '../../packages/package.core.ui/web/blocks/Test'
 */
 
@@ -34,13 +34,13 @@ const PositionLayout = dynamic(() => import('../../packages/package.core.ui/web/
 // prettier-ignore
 const CustomLayout = dynamic(() => import('../../packages/package.core.ui/web/layouts/CustomLayout'))
 // prettier-ignore
-const GridTable = dynamic(() => import('../../packages/package.core.ui/app/blocks/tables/GridTable'))
+const GridTable = dynamic(() => import('../../packages/package.core.ui/app/blocks/GridTable'))
 // prettier-ignore
-const PageHeader = dynamic(() => import('../../packages/package.core.ui/web/blocks/headers/PageHeader'))
+const PageHeader = dynamic(() => import('../../packages/package.core.ui/web/blocks/PageHeader'))
 // prettier-ignore
 const LoginForm = dynamic(() => import('../../packages/package.core.auth/web/LoginForm'))
 // prettier-ignore
-const PageFooter = dynamic(() => import('../../packages/package.core.ui/web/blocks/footers/PageFooter'))
+const PageFooter = dynamic(() => import('../../packages/package.core.ui/web/blocks/PageFooter'))
 // prettier-ignore
 const Test = dynamic(() => import('../../packages/package.core.ui/web/blocks/Test'))
 

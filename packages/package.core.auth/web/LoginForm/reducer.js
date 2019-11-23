@@ -1,9 +1,28 @@
 import {combineReducers} from 'redux'
-import * as ActionTypes from './actions'
+
+/**
+ * Actions
+ */
+
+export const ON_KEY_UP = 'ON_KEY_UP'
+export const ON_CELL_UPDATE = 'ON_CELL_UPDATE'
+export const AUTHENTICATE_USER = 'AUTHENTICATE_USER'
+export const AUTHENTICATE_USER_SUCCESS = 'AUTHENTICATE_USER_SUCCESS'
+export const AUTHENTICATE_USER_FAILED = 'AUTHENTICATE_USER_FAILED'
+export const CANCEL_AUTHENTICATE_USER = 'CANCEL_AUTHENTICATE_USER'
+export const UI_UPDATE_VALUE = 'UI_UPDATE_VALUE'
+export const UI_INPUTVALIDATION_ERROR = 'UI_INPUTVALIDATION_ERROR'
+export const FSA = (type, error = false, payload = {}, meta = {package: 'package.core.auth'}) => ({
+    type,
+    error,
+    payload,
+    meta: meta.package ? meta : {...meta, package: 'package.core.auth'}
+})
 
 /**
  * Initial State db
  */
+
 export const db = {
     errors: {},
     user: {
@@ -23,7 +42,17 @@ export const db = {
 /**
  * Reducer db
  */
+
 const dbReducer = (state = db, action) => {
+    if (
+        action.payload &&
+        action.payload.data &&
+        !(action.payload.data.selector.indexOf("ui['package.core.auth'].web.LoginForm.db") === 0)
+    ) {
+        console.log('FALSE')
+        return state
+    }
+
     switch (action.type) {
         case 'TEST_ACTION_1':
             return {
@@ -42,7 +71,7 @@ const dbReducer = (state = db, action) => {
                 }
             }
 
-        case 'ON_KEY_UP':
+        case ON_KEY_UP:
             const key = action.payload.data.selector.split('.').pop()
             return {
                 ...state,
@@ -52,19 +81,19 @@ const dbReducer = (state = db, action) => {
                 }
             }
 
-        case ActionTypes.AUTHENTICATE_USER:
+        case AUTHENTICATE_USER:
             return {
                 ...state,
                 user: action.payload
             }
 
-        case ActionTypes.AUTHENTICATE_USER_SUCCESS:
+        case AUTHENTICATE_USER_SUCCESS:
             return {
                 ...state,
                 user: {...state.user, secret: '****************'}
             }
 
-        case ActionTypes.AUTHENTICATE_USER_FAILED:
+        case AUTHENTICATE_USER_FAILED:
             return {
                 ...state,
                 user: {...state.user, secret: '****************'}
@@ -78,6 +107,7 @@ const dbReducer = (state = db, action) => {
 /**
  * Initial State ui
  */
+
 export const ui = {
     errors: {
         identity: {},
@@ -131,19 +161,28 @@ export const ui = {
 /**
  * Reducer ui
  */
+
 const uiReducer = (state = ui, action) => {
+    if (
+        action.payload &&
+        action.payload.data &&
+        !(action.payload.data.selector.indexOf("ui['package.core.auth'].web.LoginForm.ui") === 0)
+    ) {
+        return state
+    }
+
     switch (action.type) {
-        case ActionTypes.UI_INPUTVALIDATION_ERROR:
+        case UI_INPUTVALIDATION_ERROR:
             return {
                 ...action.payload
             }
 
-        case ActionTypes.AUTHENTICATE_USER_FAILED:
+        case AUTHENTICATE_USER_FAILED:
             return {
                 ...action.payload
             }
 
-        case ActionTypes.AUTHENTICATE_USER:
+        case AUTHENTICATE_USER:
             return {}
 
         default:

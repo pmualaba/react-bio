@@ -287,7 +287,7 @@ app.prepare()
                 if (req.url.includes('/sw')) {
                     const filePath = join(__dirname, 'db.json', 'workbox', 'sw.js')
                     app.serveStatic(req, res, filePath)
-                } else if (req.url.startsWith('static/workbox/')) {
+                } else if (req.url.indexOf('static/workbox/') === 0) {
                     app.serveStatic(req, res, join(__dirname, req.url))
                 } else {
                     handle(req, res)

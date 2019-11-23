@@ -14,7 +14,7 @@ const PageFooterStyled = styled('article').attrs(props => {
         className: `${props.meta.class} ${props.dna.ui['theme.style.class'] || ''}`
     }
 })`
-    --styled: '/packages/package.core.ui/web/blocks/footers/PageFooter/styled.js';
+    --styled: '/packages/package.core.ui/web/blocks/PageFooter/styled.js';
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

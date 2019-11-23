@@ -1,10 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
 
-/**
- * Component
- */
-
 export default function Test(props) {
     const dispatch = useDispatch()
 

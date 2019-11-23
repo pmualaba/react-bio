@@ -4,13 +4,20 @@ import {get} from 'lodash'
 import {storeEquality} from '../../../../package.core.fn/data'
 
 /**
+ * Actions
+ */
+export const ON_KEY_UP = 'ON_KEY_UP'
+export const ON_CELL_UPDATE = 'ON_CELL_UPDATE'
+
+/**
  * Reducer
  */
+
 function reducer(state, [type, payload]) {
     switch (type) {
-        case 'ON_CHANGE':
-            return {...state, user: payload}
-        case 'ON_RESET':
+        case 'on_change':
+            return {...state, value: payload}
+        case 'on_reset':
             return {...state, value: ''}
         default:
             return state
@@ -21,16 +28,18 @@ function Cell(props) {
     /**
      * Default Props
      */
-    if (!props.fn.onValueUpdate) {
-        props.fn.onValueUpdate = () => {}
-    }
+
+    // prettier-ignore
+    if (!props.fn.onValueUpdate) { props.fn.onValueUpdate = () => {} }
+    // prettier-ignore
+    if (!props.fn.onKeyUp) { props.fn.onKeyUp = () => {} }
 
     /**
-     * Data Management
+     * Data
      */
 
     const [state, dispatch] = useReducer(reducer, {})
-    const dispatchStore = useDispatch()
+    /* dispatch(['on_change', payload.value]) */
     const store = useSelector(
         store =>
             Object.entries(props.dna.data.selectors).reduce((selectors, [key, value]) => {
@@ -40,23 +49,47 @@ function Cell(props) {
             }, {}),
         storeEquality
     )
+    const dispatchStore = useDispatch()
 
     /**
      * Intercept Element Actions
      */
+
     function onKeyUp(payload) {
         payload.data.selector = props.dna.data.selectors[payload.data.selector]
+        dispatchStore({
+            type: ON_KEY_UP,
+            error: false,
+            payload,
+            meta: {
+                ...props.meta
+            }
+        })
         props.fn.onKeyUp(payload)
     }
 
     function onValueUpdate(payload) {
         payload.data.selector = props.dna.data.selectors[payload.data.selector]
+        dispatchStore({
+            type: ON_CELL_UPDATE,
+            error: false,
+            payload,
+            meta: props.meta
+        })
         props.fn.onValueUpdate(payload)
     }
 
-    const children = props.children.map((child, i) =>
+    /**
+     * Render
+     */
+
+    const children = React.Children.map(props.children, (child, i) =>
         React.cloneElement(child, {
             key: child.props.meta['@dna'],
+            meta: {
+                ...child.props.meta,
+                '@flag.controlled': true
+            },
             data: {
                 init: {...child.props.data.init},
                 store: {...store[child.props.meta.name]}
@@ -74,3 +107,10 @@ function Cell(props) {
 }
 
 export default Cell
+
+Cell.defaultProps = {
+    fn: {
+        onKeyUp: () => {},
+        onValueUpdate: () => {}
+    }
+}

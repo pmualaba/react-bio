@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react'
 import TextInputElementStyled from './styled'
-import hooks from '../../../../../package.core.fn/hooks'
+import hooks from '../../../../package.core.fn/hooks'
 
 /**
  * Reducer
@@ -17,34 +17,32 @@ function reducer(state, [type, payload]) {
     }
 }
 
-/**
- * Component
- */
-
 export default function TextInputElement(props) {
     /**
      * Default Props
      */
 
-    if (!props.fn.onKeyUp) {
-        props.fn.onKeyUp = () => {}
-    }
-    if (!props.fn.onValueUpdate) {
-        props.fn.onValueUpdate = () => {}
-    }
+    // prettier-ignore
+    if (!props.fn.onValueUpdate) { props.fn.onValueUpdate = () => {} }
+    // prettier-ignore
+    if (!props.fn.onKeyUp) { props.fn.onKeyUp = () => {} }
 
     /**
-     * Data Management
+     * Data
      */
 
-    const [data, selectors] = hooks.elements.useDataSelectors(props, ['value'])
+    const [data, selectors] = hooks.elements.useDataSelectors(props, [
+        'value',
+        'name',
+        'autocomplete'
+    ])
     const [state, dispatch] = useReducer(reducer, data || {value: ''})
-
+    const value = props.meta['@flag.controlled'] ? data.value : state.value
     /**
-     * Render Element
+     * Render
      */
 
-    console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`, props)
+    console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`, props, state)
     return (
         <TextInputElementStyled
             meta={props.meta}
@@ -54,10 +52,10 @@ export default function TextInputElement(props) {
         >
             <input
                 type="text"
-                id={data.value}
+                id={data.name}
                 autoComplete={data.autocomplete}
                 placeholder={data.placeholder}
-                value={data.value || state.value}
+                value={value}
                 onChange={e => {
                     dispatch(['on_change', e.target.value])
                     props.fn.onKeyUp({

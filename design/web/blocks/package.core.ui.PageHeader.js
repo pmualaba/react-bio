@@ -5,11 +5,11 @@ export default {
         default: {
             css: css`
                 h1 {
-                    --styled: '/design/web/blocks/headers/package.core.ui.PageHeader.js';
+                    --styled: '/design/web/blocks/package.core.ui.PageHeader.js';
                     font-size: 3em;
                 }
                 h3 {
-                    --styled: '/design/web/blocks/headers/package.core.ui.PageHeader.js';
+                    --styled: '/design/web/blocks/package.core.ui.PageHeader.js';
                 }
             `
         }
@@ -27,11 +27,11 @@ export default {
         blockSize: {
             css: css`
                 &.M {
-                    --styled: '/design/web/blocks/headers/package.core.ui.PageHeader.js';
+                    --styled: '/design/web/blocks/package.core.ui.PageHeader.js';
                     color: aqua;
                 }
                 &.L {
-                    --styled: 'design/web/blocks/headers/package.core.ui.PageHeader.js';
+                    --styled: 'design/web/blocks/package.core.ui.PageHeader.js';
                     color: blueviolet;
                 }
             `

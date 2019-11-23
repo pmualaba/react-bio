@@ -1,49 +1,12 @@
-import React, {useRef, useReducer} from 'react'
 import {useDispatch} from 'react-redux'
-import {FSA, ON_KEY_UP, AUTHENTICATE_USER} from './reducer'
-import hooks from '../../../package.core.fn/hooks'
-
-import ImageElement from '../../../package.core.ui/web/elements/ImageElement'
-import TextInputElement from '../../../package.core.ui/web/elements/TextInputElement'
-import ButtonElement from '../../../package.core.ui/web/elements/ButtonElement'
-import Cell from '../../../package.core.ui/web/cells/Cell'
-import LoginFormStyled from './styled'
+import {AUTHENTICATE_USER, FSA, ON_KEY_UP} from './reducer'
 
 /**
- * Reducer
+ * Cell__login
  */
 
-function reducer(state, [type, payload]) {
-    switch (type) {
-        case 'on_change':
-            return {...state, value: payload}
-        case 'on_reset':
-            return {...state, value: ''}
-        default:
-            return state
-    }
-}
-
-export default function LoginForm(props) {
-    /**
-     * Data
-     */
-
-    const [state, dispatch] = useReducer(reducer, {user: '', password: ''})
-    /* dispatch(['on_change', payload.value]) */
+export default function Bio(props) {
     const dispatchStore = useDispatch()
-
-    /**
-     * Hooks
-     */
-
-    const refBlock = useRef()
-    hooks.blocks.useResponsiveBlock(refBlock, 30)
-
-    /**
-     * Cell__login
-     */
-
     const bio = {}
     bio.Cell__login = {
         meta: {
@@ -216,32 +179,5 @@ export default function LoginForm(props) {
         }
     }
 
-    /**
-     * Render
-     */
-    console.log('RENDER BLOCK: LoginForm')
-    const {css, motion} = props.context.theme.render(props)
-    return (
-        <LoginFormStyled
-            ref={refBlock}
-            meta={props.meta}
-            dna={props.dna}
-            context={props.context}
-            css={css}
-            {...motion}
-            style={props.dna.ui['theme.style.css']}
-        >
-            <Cell {...bio.Cell__login}>
-                <ImageElement {...bio.ImageElement__logo} />
-                <TextInputElement {...bio.TextInputElement__user} />
-                <TextInputElement {...bio.TextInputElement__password} />
-            </Cell>
-
-            <Cell {...bio.Cell__loginConfirm}>
-                <TextInputElement {...bio.TextInputElement__passwordConfirm} />
-            </Cell>
-            <TextInputElement {...bio.TextInputElement__passwordConfirm} />
-            <ButtonElement {...bio.ButtonElement__submit} />
-        </LoginFormStyled>
-    )
+    return bio
 }

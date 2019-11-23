@@ -111,4 +111,19 @@ export function CSSvariables(skin, skins) {
     `
 }
 
+export function getGoogleFonts(families) {
+    if (typeof window !== 'undefined') {
+        window.WebFontConfig = {
+            google: families
+        }
+
+        const script = window.document.createElement('script')
+        script.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
+        script.type = 'text/javascript'
+        script.async = 'true'
+        const s = window.document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(script, s)
+    }
+}
+
 export default render

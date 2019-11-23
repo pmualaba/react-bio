@@ -7,7 +7,7 @@ const TextInputElementStyled = styled('div').attrs(props => ({
     'data-dna': `${props.meta['@dna']}`,
     className: `element ${props.meta.class} ${props.dna.ui['theme.style.class'] || ''}`
 }))`
-    --styled: '/packages/package.core.ui/web/elements/form/TextInputElement/styled.js';
+    --styled: '/packages/package.core.ui/web/elements/InputTextElement/styled.js';
 
     position: relative;
     height: 50px;
