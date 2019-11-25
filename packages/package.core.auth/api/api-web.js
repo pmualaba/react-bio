@@ -6,9 +6,9 @@ const Jwt = require('njwt')
 
 const env = require('../../../env.server')()
 const ErrorTypes = require('./../../package.core.utils/errors')
-// const getConfigJwtTokenExpiration = require('./config').getConfigJwtTokenExpiration
-// const getConfigJwtTokenCookieExpiration = require('./config').getConfigJwtTokenCookieExpiration
-const getConfigSecretSigningKey = require('./config').getConfigSecretSigningKey
+// const {getConfigJwtTokenExpiration} = require('./config')
+// const {getConfigJwtTokenCookieExpiration} = require('./config')
+const {getConfigSecretSigningKey} = require('./config')
 
 const router = express.Router()
 const SECRET_SIGNING_KEY = getConfigSecretSigningKey()

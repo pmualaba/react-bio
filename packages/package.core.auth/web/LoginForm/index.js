@@ -1,7 +1,7 @@
 import React, {useRef, useReducer} from 'react'
 import {useDispatch} from 'react-redux'
 import {FSA, ON_KEY_UP, AUTHENTICATE_USER} from './reducer'
-import hooks from '../../../package.core.fn/hooks'
+import {hooks} from '../../../package.core.fn'
 
 import ImageElement from '../../../package.core.ui/web/elements/ImageElement'
 import TextInputElement from '../../../package.core.ui/web/elements/TextInputElement'

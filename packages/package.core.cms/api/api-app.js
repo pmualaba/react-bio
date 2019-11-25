@@ -3,7 +3,7 @@ const express = require('express')
 // alpine: npm rebuild grpc --target=9.5.0 --target_arch=x64 --target_platform=linux --target_libc=musl --build-from-source
 
 const router = express.Router()
-const API = require('./../../package.core.fn/api/res')
+const API = require('../../package.core.fn/node.js').api
 
 const logic = {
     GET_TEST: async (req, res, next, meta) => {

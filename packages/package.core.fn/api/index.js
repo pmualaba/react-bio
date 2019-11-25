@@ -1,6 +1,7 @@
 import axios from 'axios'
 import socketCluster from 'socketcluster-client'
 import cuid from 'cuid'
+
 const env = require('../../../env.client')()
 
 /**
@@ -9,10 +10,10 @@ const env = require('../../../env.client')()
 let socket = null
 if (typeof window !== 'undefined' && env.WS_ENABLED) {
     const options = {
-        port: (location.hostname !== 'localhost' && 443) || 8000,
-        hostname: location.hostname,
+        port: (window.location.hostname !== 'localhost' && 443) || 8000,
+        hostname: window.location.hostname,
         path: '/api',
-        secure: (location.hostname !== 'localhost' && true) || false
+        secure: (window.location.hostname !== 'localhost' && true) || false
     }
 
     /**
@@ -47,16 +48,23 @@ if (typeof window !== 'undefined' && env.WS_ENABLED) {
      */
 
     socket.on(socket.client.channel, function(data) {
-        window.__NEXT_REDUX_STORE__.dispatch(FSA('API_STOP_LOADING', false, {action: data.type}, {endpoint: data.meta.endpoint}))
-        window.__NEXT_REDUX_STORE__.dispatch(FSA(`${data.type}_SUCCESS`, false, data.payload, data.meta))
-        data.error && window.__NEXT_REDUX_STORE__.dispatch(FSA(`${data.type}_FAILED`, true, data.payload, data.meta))
+        window.__NEXT_REDUX_STORE__.dispatch(
+            FSA('API_STOP_LOADING', false, {action: data.type}, {endpoint: data.meta.endpoint})
+        )
+        window.__NEXT_REDUX_STORE__.dispatch(
+            FSA(`${data.type}_SUCCESS`, false, data.payload, data.meta)
+        )
+        data.error &&
+            window.__NEXT_REDUX_STORE__.dispatch(
+                FSA(`${data.type}_FAILED`, true, data.payload, data.meta)
+            )
         console.log('Received "clientId" event from server with data: ', data)
     })
 
     const BROADCAST = socket.subscribe('BROADCAST')
 
     BROADCAST.on('subscribeFail', function(error) {
-        console.error('Failed to subscribe to the BROADCAST channel due to error: ' + error)
+        console.error(`Failed to subscribe to the BROADCAST channel due to error: ${error}`)
     })
 
     /**
@@ -83,7 +91,12 @@ const api = axios.create({
  * FSA
  * Flux Standard Action Creator
  */
-export const FSA = (type, error = false, payload = {}, meta = {package: 'package.core.fn/api'}) => ({
+export const FSA = (
+    type,
+    error = false,
+    payload = {},
+    meta = {package: 'package.core.fn/api'}
+) => ({
     type,
     error,
     payload,
@@ -94,7 +107,12 @@ export const FSA = (type, error = false, payload = {}, meta = {package: 'package
  * API
  * Flux Standard Compliant API
  */
-const API = async (type, error = false, payload = {}, meta = {package: 'package.core.fn/api', endpoint: '/test', baseUrl: env.BASE_URL}) => {
+const API = async (
+    type,
+    error = false,
+    payload = {},
+    meta = {package: 'package.core.fn/api', endpoint: '/test', baseUrl: env.BASE_URL}
+) => {
     if (socket && socket.client.isAuthenticated) {
         /**
          * WEBSOCKET
@@ -120,22 +138,32 @@ const API = async (type, error = false, payload = {}, meta = {package: 'package.
          */
         console.log('Protocol: http')
         api.interceptors.request.use(config => {
-            window.__NEXT_REDUX_STORE__.dispatch(FSA('API_START_LOADING', false, {action: type}, meta))
+            window.__NEXT_REDUX_STORE__.dispatch(
+                FSA('API_START_LOADING', false, {action: type}, meta)
+            )
             return config
         })
 
         api.interceptors.response.use(
             resp => {
-                window.__NEXT_REDUX_STORE__.dispatch(FSA('API_STOP_LOADING', false, {action: type}, meta))
+                window.__NEXT_REDUX_STORE__.dispatch(
+                    FSA('API_STOP_LOADING', false, {action: type}, meta)
+                )
                 return resp
             },
             error => {
-                window.__NEXT_REDUX_STORE__.dispatch(FSA('API_STOP_LOADING', true, {action: type}, meta))
+                window.__NEXT_REDUX_STORE__.dispatch(
+                    FSA('API_STOP_LOADING', true, {action: type}, meta)
+                )
                 const {data, status, headers} = error.response
-                if (400 < status) {
+                if (status > 400) {
                     const message = data.message || data || 'An API error occurred'
-                    window.__NEXT_REDUX_STORE__.dispatch(FSA('API_ERROR', true, {action: type, message, code: status, headers}, meta))
-                    window.__NEXT_REDUX_STORE__.dispatch(FSA(`${type}_FAILED`, true, {message, code: status}, meta))
+                    window.__NEXT_REDUX_STORE__.dispatch(
+                        FSA('API_ERROR', true, {action: type, message, code: status, headers}, meta)
+                    )
+                    window.__NEXT_REDUX_STORE__.dispatch(
+                        FSA(`${type}_FAILED`, true, {message, code: status}, meta)
+                    )
                 }
                 throw error
             }

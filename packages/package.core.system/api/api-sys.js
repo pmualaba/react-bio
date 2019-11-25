@@ -2,7 +2,7 @@ const express = require('express')
 const axios = require('axios')
 
 const router = express.Router()
-const API = require('../../package.core.fn/api/res')
+const API = require('../../package.core.fn/node.js').api
 
 const logic = {
     TEST_TIMEOUT: async (req, res, next, meta, action) => {
@@ -10,7 +10,9 @@ const logic = {
 
         return await new Promise((resolve, reject) => {
             setTimeout(() => {
-                true === true ? resolve({test: 'TEST_TIMEOUT_SUCCESS'}) : reject({reject: 'TEST_TIMEOUT_FAILED'})
+                true === true
+                    ? resolve({test: 'TEST_TIMEOUT_SUCCESS'})
+                    : reject({reject: 'TEST_TIMEOUT_FAILED'})
             }, 3000)
         })
     },

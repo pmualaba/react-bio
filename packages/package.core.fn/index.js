@@ -1,34 +1,35 @@
-/*
-const fs = require('fs')
+import {ERR_JOI} from './errors'
+import API from './api'
+import render, {CSSvariables, getGoogleFonts} from './theme'
+import {storeEquality, objectify, getDepthOfTree} from './data'
+import {keyCodes} from './utils'
+import {blocks, elements} from './hooks'
 
-module.exports = {
-    // ui helper functions
-    ui: {
-        bar: () => null
-    },
-    // db helper functions
-    db: {
-        getDepthOfTree: function getDepthOfTree(rootObject, childrenKey) {
-            let depth = 0
-            if (rootObject[childrenKey]) {
-                rootObject[childrenKey].forEach(d => {
-                    const tmpDepth = getDepthOfTree(d, childrenKey)
-                    if (tmpDepth > depth) {
-                        depth = tmpDepth
-                    }
-                })
-            }
-            return 1 + depth
-        },
-        getPropertyFromRelation: function getPropertyFromRelation(relation, property) {
-            return relation ? relation[property] : null
-        },
-        base64Encode: function base64Encode(filePath) {
-            // read binary data
-            var file = fs.readFileSync(filePath)
-            // convert binary data to base64 encoded string
-            return new Buffer(file).toString('base64')
-        }
-    }
+export const api = {
+    API
 }
-*/
+
+export const data = {
+    storeEquality,
+    objectify,
+    getDepthOfTree
+}
+
+export const hooks = {
+    blocks,
+    elements
+}
+
+export const theme = {
+    render,
+    CSSvariables,
+    getGoogleFonts
+}
+
+export const errors = {
+    ERR_JOI
+}
+
+export const utils = {
+    keyCodes
+}

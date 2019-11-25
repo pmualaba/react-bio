@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react'
 import TextInputElementStyled from './styled'
-import hooks from '../../../../package.core.fn/hooks'
+import {hooks} from '../../../../package.core.fn'
 
 /**
  * Reducer

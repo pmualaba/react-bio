@@ -1,5 +1,10 @@
 const API = {
-    res: (type, error = false, payload = {}, meta = {package: 'package.core.fn', endpoint: '/api', baseUrl: ''}) => {
+    res: (
+        type,
+        error = false,
+        payload = {},
+        meta = {package: 'package.core.fn', endpoint: '/api', baseUrl: ''}
+    ) => {
         const data = {
             type,
             error,

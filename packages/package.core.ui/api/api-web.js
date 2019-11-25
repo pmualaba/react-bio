@@ -4,7 +4,7 @@ const express = require('express')
 const axios = require('axios')
 
 const router = express.Router()
-const API = require('../../package.core.fn/api/res')
+const API = require('../../package.core.fn/node.js').api
 
 const logic = {
     DISPATCH: async (req, res, next, meta) => {

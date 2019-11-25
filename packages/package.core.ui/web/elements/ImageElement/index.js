@@ -1,5 +1,5 @@
 import React from 'react'
-import hooks from '../../../../package.core.fn/hooks'
+import {hooks} from '../../../../package.core.fn'
 import ImageElementStyled from './styled'
 
 export default function ImageElement(props) {

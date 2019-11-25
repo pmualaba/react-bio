@@ -3,7 +3,7 @@ const JsonDB = require('lowdb')
 const FileAsync = require('lowdb/adapters/FileAsync')
 const Jwt = require('njwt')
 
-const domains = require('./env.server').domains
+const {domains} = require('./env.server')
 const env = require('./env.server')()
 const apiLogic = require('./dna/rna/registry.routes.api').logic
 

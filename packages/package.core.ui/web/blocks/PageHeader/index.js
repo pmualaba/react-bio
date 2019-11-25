@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import Link from 'next/link'
 import PageHeaderStyled from './styled'
 import TopNav from '../TopNav'
-import hooks from '../../../../package.core.fn/hooks'
+import {hooks} from '../../../../package.core.fn'
 
 /**
  * Component

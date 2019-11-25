@@ -1,4 +1,4 @@
-const keyEvents = {
+export const keyCodes = {
     BACKSPACE: 8,
     TAB: 9,
     ENTER: 13,
@@ -101,9 +101,3 @@ const keyEvents = {
     CLOSE_BRACKET: 221,
     SINGLE_QUOTE: 222
 }
-
-const Utils = {
-    keyEvents
-}
-
-module.exports = Utils

@@ -1,6 +1,6 @@
 /** Functions API for package.core.authentication */
 
-const getSharedSecretCredentials = require('./config').getSharedSecretCredentials
+const {getSharedSecretCredentials} = require('./config')
 
 /** @function getLocalApiCredentials
  *  Generate a shared secret to authenticate internal private API calls.

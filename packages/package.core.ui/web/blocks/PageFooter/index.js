@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import PageFooterStyled from './styled'
-import hooks from '../../../../package.core.fn/hooks'
+import {hooks} from '../../../../package.core.fn'
 
 /**
  * Component

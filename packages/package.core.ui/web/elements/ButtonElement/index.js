@@ -1,5 +1,5 @@
 import React from 'react'
-import hooks from '../../../../package.core.fn/hooks'
+import {hooks} from '../../../../package.core.fn'
 import IconElement from '../IconElement'
 import ButtonElementStyled from './styled'
 
@@ -61,7 +61,10 @@ export default function ButtonElement(props) {
 
 ButtonElement.defaultProps = {
     dna: {
-        set: {},
+        set: {
+            icon: '',
+            label: ''
+        },
         ui: {},
         actions: {}
     }

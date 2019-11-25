@@ -1,5 +1,5 @@
 import React from 'react'
-import LockButton from '../../../elements/ButtonSwitchElement'
+import LockButton from '../../../elements/ButtonToggleElement'
 import RegionControlStyled from './styled'
 
 const RegionControl = props => (
