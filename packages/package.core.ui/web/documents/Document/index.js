@@ -1,12 +1,5 @@
-/**
- *  Dependencies
- */
-
 import React, {useEffect, useContext} from 'react'
-
-/**
- * Components
- */
+import Head from 'next/head'
 
 import Layer from './Layer'
 import DocumentStyled from './styled'
@@ -16,10 +9,6 @@ import DocumentStyled from './styled'
  */
 
 import {GlobalContext} from '../../global/Global'
-
-/**
- * Component
- */
 
 export default function Document(props) {
     /**
@@ -38,7 +27,7 @@ export default function Document(props) {
         return <></>
     }
 
-    console.log('RENDER DOCUMENT')
+    console.log('RENDER DOCUMENT', props.dna.set['enable.stripe'])
     const {css, motion} = context.theme.render(props, context)
 
     return (
@@ -50,6 +39,9 @@ export default function Document(props) {
             {...motion}
             style={props.dna.ui['theme.style.css']}
         >
+            <Head>
+                {props.dna.set['enable.stripe'] && <script src="https://js.stripe.com/v3/" />}
+            </Head>
             <Layer id="layout">{props.children}</Layer>
             <Layer id="modal" modals={{}} />
             <Layer id="takeover" takeovers={{}} />

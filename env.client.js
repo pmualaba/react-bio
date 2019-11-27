@@ -6,7 +6,7 @@
  *      env.BASE_URL
  */
 
-import {locale, flags, domains} from './dna/rna/registry.environment'
+import {locales, flags, domains} from './dna/rna/registry.environment'
 
 const environment = () => {
     switch (process.env.NODE_ENV) {
@@ -43,6 +43,6 @@ const environment = () => {
 /**
  * locale
  */
-environment.locale = locale
+environment.locales = locales
 
 module.exports = environment

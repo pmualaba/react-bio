@@ -28,6 +28,7 @@ const logic = {
         console.log('/api/package.core.ui/web/GET_INITIAL_PROPS')
 
         const actions = req.body.payload.actions
+        req.CTX.locale = req.body.payload.locale
 
         const promises = actions.map(action =>
             req.apiLogic[action.meta.endpoint.split('/')[2]][action.meta.endpoint][action.type](
@@ -46,6 +47,10 @@ const logic = {
                 response[actions[i].type] = {response: r}
                 return response
             }, {})
+
+            actionsResponse.GET_I18N = {
+                response: req.db.json.i18n[req.CTX.locale]
+            }
 
             res.json({
                 type: 'GET_INITIAL_PROPS_SUCCESS',

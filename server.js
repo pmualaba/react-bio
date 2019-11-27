@@ -11,7 +11,7 @@ const FileAsync = require('lowdb/adapters/FileAsync')
 
 const Jwt = require('njwt')
 const domains = require('./env.server').domains
-const locale = require('./env.server').locale
+const locales = require('./env.server').locales
 const env = require('./env.server')()
 
 console.log('   >> Server PID:', process.pid)
@@ -60,6 +60,7 @@ console.timeEnd('CREATING DATABASE SERVICE - server.js...')
 /**
  * SETUP SSR CACHE
  */
+
 console.log('SETUP SSR CACHE')
 
 const ssrCache = {
@@ -123,6 +124,10 @@ app.prepare()
             db.json.data = responses[3]
             console.timeEnd('LOADING DNA - server.js...')
 
+            /**
+             * SETUP DNA ROUTES
+             */
+
             console.log('SETUP NEXT.JS ROUTER - CREATING DNA ROUTES - server.js...')
 
             Object.values(db.json.dna.getState()).forEach(domain => {
@@ -136,7 +141,7 @@ app.prepare()
                                 const actualPage = `/templates/${route.template}`
                                 const queryParams = {
                                     url: req.path,
-                                    locale: locale[req.params.lang] || locale.default,
+                                    locale: locales[req.params.lang] || locales.default,
                                     ...route.params
                                 }
                                 // app.renderToCache(req, res, actualPage, queryParams, route.cacheTime)
@@ -153,7 +158,7 @@ app.prepare()
                                 const actualPage = `/templates/${route.template}`
                                 const queryParams = {
                                     url: req.path,
-                                    locale: locale.default,
+                                    locale: locales.default,
                                     ...route.params
                                 }
                                 // app.renderToCache(req, res, actualPage, queryParams, route.cacheTime)
@@ -164,8 +169,35 @@ app.prepare()
             })
 
             /**
+             * SETUP I18N DICTIONARIES
+             */
+
+            console.time('SETUP I18N - server.js...')
+            const i18n = {
+                nlBE: {},
+                frFR: {},
+                enGB: {}
+            }
+            Object.entries(db.json.i18n.getState()).forEach(([domain, terms]) => {
+                if (typeof terms === 'object') {
+                    i18n.nlBE[domain] = {}
+                    i18n.frFR[domain] = {}
+                    i18n.enGB[domain] = {}
+
+                    Object.entries(terms).forEach(([term, translations]) => {
+                        i18n.nlBE[domain][term] = translations.nlBE
+                        i18n.frFR[domain][term] = translations.frFR
+                        i18n.enGB[domain][term] = translations.enGB
+                    })
+                }
+            })
+            db.json.i18n = i18n
+            console.timeEnd('SETUP I18N - server.js...')
+
+            /**
              * CONFIG EXPRESS SERVER
              */
+
             server.use(bodyParser.urlencoded({extended: false}))
             server.use(bodyParser.json())
             server.use(cookies())
@@ -202,6 +234,7 @@ app.prepare()
                     AUTHENTICATED: false,
                     ANONYMOUS: null,
                     PROTOCOL: 'HTTP',
+                    locale: null,
                     origin: BASE_URL,
                     domain,
                     eid,
@@ -269,9 +302,9 @@ app.prepare()
             })
 
             /**
-             * LOAD ALL PAGE ROUTES
-             * LOAD ALL API ROUTES
+             * LOAD ALL ROUTES
              */
+
             server.use(router)
             server.use(require('./dna/rna/registry.routes.page'))
             server.use(require('./dna/rna/registry.routes.api').router)
@@ -279,6 +312,7 @@ app.prepare()
             /**
              * CONFIG NEXT.JS ROUTES
              */
+
             server.get('/templates/*', (req, res) => {
                 res.sendStatus(404)
             })
@@ -297,6 +331,7 @@ app.prepare()
             /**
              * START SERVER & SOCKET CLUSTER
              */
+
             server.listen(3000, err => {
                 if (err) throw err
                 console.log('> Ready on http://localhost:3000')

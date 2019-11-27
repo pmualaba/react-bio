@@ -127,6 +127,10 @@
                                         "SpaceMono": "'Space Mono', monospace",
                                         "Roboto": "'Roboto', sans-serif"
                                     }
+                                },
+                                "i18n": {
+                                    "dictionaries": ["cms", "commerce", "crm"],
+                                    "locales": ["nlNL", "frFR"]
                                 }
                             }
                         }
@@ -248,7 +252,8 @@
                                     }
                                 },
                                 "set": {
-                                    "viewport": "scroll"
+                                    "viewport": "scroll",
+                                    "enable.stripe": true
                                 },
                                 "ui": {
                                     "theme.variant": "default",
@@ -509,7 +514,8 @@
                                     }
                                 },
                                 "set": {
-                                    "viewport": "scroll"
+                                    "viewport": "scroll",
+                                    "enable.stripe": true
                                 },
                                 "ui": {
                                     "theme.variant": "default",

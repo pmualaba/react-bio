@@ -6,6 +6,7 @@ import {hooks} from '../../../package.core.fn'
 import ImageElement from '../../../package.core.ui/web/elements/ImageElement'
 import TextInputElement from '../../../package.core.ui/web/elements/TextInputElement'
 import ButtonElement from '../../../package.core.ui/web/elements/ButtonElement'
+import PaymentMethodElement from '../../../package.core.commerce/web/PaymentMethodElement'
 import Cell from '../../../package.core.ui/web/cells/Cell'
 import LoginFormStyled from './styled'
 
@@ -16,7 +17,8 @@ import LoginFormStyled from './styled'
 function reducer(state, [type, payload]) {
     switch (type) {
         case 'on_change':
-            return {...state, value: payload}
+            console.log('on_change LoginForm', payload)
+            return {...state, ...payload}
         case 'on_reset':
             return {...state, value: ''}
         default:
@@ -29,8 +31,8 @@ export default function LoginForm(props) {
      * Data
      */
 
-    const [state, dispatch] = useReducer(reducer, {user: '', password: ''})
-    /* dispatch(['on_change', payload.value]) */
+    const [state, dispatch] = useReducer(reducer, {user: '', password: '', value: 'bancontact'})
+
     const dispatchStore = useDispatch()
 
     /**
@@ -198,7 +200,8 @@ export default function LoginForm(props) {
         dna: {
             set: {
                 icon: 'fa-home',
-                label: 'Login'
+                label: 'Login',
+                buttonType: 'button'
             },
             ui: {}
         },
@@ -212,6 +215,40 @@ export default function LoginForm(props) {
             onClick(payload) {
                 payload.data.selector = `ui['package.core.auth'].web.LoginForm.db.user.secret`
                 dispatchStore(FSA(AUTHENTICATE_USER, false, payload, props.meta))
+            }
+        }
+    }
+
+    /**
+     * PaymentStripeElement__pay
+     */
+    console.log('state.value', state.value)
+    bio.PaymentMethodElement__pay = {
+        meta: {
+            '@dna': `${props.meta['@dna']}.elements[2:PaymentMethodElement__pay]`,
+            '@component': "['package.core.commerce'].web.PaymentMethodElement",
+            name: 'PaymentMethodElement__pay',
+            class: 'PaymentMethodElement',
+            kind: 'element'
+        },
+        dna: {
+            set: {
+                icon: 'fa-home',
+                publishableKey: 'pk_test_rZKTp2SyMW4IR5TrH4Ybzk0X00rPQzyC4H',
+                paymentMethod: 'paypal'
+            },
+            ui: {}
+        },
+        data: {
+            init: {
+                paymentMethod: state.value
+            }
+        },
+        context: props.context,
+        fn: {
+            onClick(payload) {
+                dispatch(['on_change', {value: 'paypal'}])
+                dispatchStore(FSA('SEND_PAYMENT', false, payload, props.meta))
             }
         }
     }
@@ -242,6 +279,12 @@ export default function LoginForm(props) {
             </Cell>
             <TextInputElement {...bio.TextInputElement__passwordConfirm} />
             <ButtonElement {...bio.ButtonElement__submit} />
+            <PaymentMethodElement {...bio.PaymentMethodElement__pay} />
         </LoginFormStyled>
     )
 }
+
+/**
+ <PaymentStripeElement {...bio.PaymentStripeElement__pay} />
+
+ */

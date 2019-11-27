@@ -2,7 +2,7 @@ module.exports = {
     flags: {
         WEB_SOCKETS_ENABLED: false
     },
-    locale: {
+    locales: {
         default: 'nlBE',
         nl: 'nlBE',
         fr: 'frFR',

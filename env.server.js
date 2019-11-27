@@ -67,6 +67,6 @@ environment.domains = env.domains
 /**
  * locale
  */
-environment.locale = env.locale
+environment.locales = env.locales
 
 module.exports = environment

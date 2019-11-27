@@ -10,7 +10,9 @@ import FSA, {
 } from '../packages/package.core.global/web/actions'
 
 const env = require('../env.client')()
-const {locale} = require('../env.client')
+const {locales} = require('../env.client')
+
+console.log('locales', locales)
 
 export function RenderPage(props) {
     console.log('RENDER PAGE')
@@ -20,6 +22,7 @@ export function RenderPage(props) {
     const context = {
         ...props.context,
         environment: props.environment,
+        i18n: props.i18n,
         classification:
             (props.data.init.isClassifiedByTaxonomyTerms &&
                 props.data.init.isClassifiedByTaxonomyTerms.map(term => term.name)) ||
@@ -56,7 +59,9 @@ export function RenderPage(props) {
 export function getInitialProps(ctx, Page) {
     const Package = Page.DNA.split('"]')[0].substring(2)
     const Platform = Page.DNA.indexOf('web') !== -1 ? 'web' : 'app'
-    const locale = ctx.asPath.split('/')[1] || ctx.query.locale || locale.default
+    const lang = ctx.asPath.split('/')[1]
+    console.log('locales2', locales)
+    const locale = lang.length === 2 ? locales[lang] : ctx.query.locale || locales.default
 
     async function prepareInitialProps() {
         const sid = ctx.req.CTX.sid
@@ -86,8 +91,6 @@ export function getInitialProps(ctx, Page) {
                       )
             })
 
-        console.log('documentDna', documentDna)
-
         delete documentDna.dna
         delete globalDna.dna
         console.timeEnd('SSR PREPARE MASTER DNA... - _page.js')
@@ -112,6 +115,7 @@ export function getInitialProps(ctx, Page) {
             }
         )
 
+        const i18n = getInitialPropsResponse.data.payload.actions.GET_I18N.response
         const domain = getInitialPropsResponse.data.payload.actions.GET_DOMAIN.response
         domain.host = ctx.req.CTX.domain
 
@@ -129,7 +133,8 @@ export function getInitialProps(ctx, Page) {
                 document: documentDna
             },
             data: {init: null},
-            skins: ctx.req.db.json.theme.get(`skins.${Platform}`).value()
+            skins: ctx.req.db.json.theme.get(`skins.${Platform}`).value(),
+            i18n
         }
 
         props.data.init = Object.entries(documentDna.genes.data.accessors).reduce(
@@ -164,6 +169,7 @@ export function getInitialProps(ctx, Page) {
             {
                 type: 'GET_PAGE_DNA',
                 payload: {
+                    locale,
                     dnaKey: Page.DNA
                 },
                 error: false,
@@ -193,6 +199,7 @@ export function getInitialProps(ctx, Page) {
             }
         )
 
+        const i18n = getInitialPropsResponse.data.payload.actions.GET_I18N.response
         const domain = getInitialPropsResponse.data.payload.actions.GET_DOMAIN.response
         domain.host = window.location.hostname
 
@@ -210,7 +217,8 @@ export function getInitialProps(ctx, Page) {
                 document: getPageDnaResponse.data.payload.documentDna
             },
             data: {init: null},
-            skins: getPageDnaResponse.data.payload.theme
+            skins: getPageDnaResponse.data.payload.theme,
+            i18n
         }
 
         props.data.init = Object.entries(

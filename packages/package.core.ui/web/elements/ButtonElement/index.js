@@ -49,6 +49,8 @@ export default function ButtonElement(props) {
             dna={dna}
             context={context}
             style={dna.ui['theme.style.css']}
+            type="button"
+            onClick={props.fn.onClick}
         >
             {dna.set.icon && <IconElement {...bio.IconElement__icon} />}
             <span

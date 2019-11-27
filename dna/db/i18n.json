@@ -1,3 +1,3036 @@
 {
-    "description": "Internationalization"
+    "description": "Internationalization",
+    "automotive": {
+        "allPartsFor": {
+            "nlBE": "Alle onderdelen voor:",
+            "frFR": "Toutes les pièces pour:",
+            "enGB": "All parts for:"
+        },
+        "BICYCLE": {
+            "nlBE": "Fiets",
+            "frFR": "Vélo",
+            "enGB": "Bicycle"
+        },
+        "bodyColor": {
+            "nlBE": "Kleur",
+            "frFR": "Couleur",
+            "enGB": "Body color"
+        },
+        "bodyType": {
+            "nlBE": "Carrosserie",
+            "frFR": "Type de châssis",
+            "enGB": "Body type"
+        },
+        "CAR": {
+            "nlBE": "Wagen",
+            "frFR": "Voiture",
+            "enGB": "Car"
+        },
+        "co2": {
+            "nlBE": "CO2 uitstoot",
+            "frFR": "émissions CO2",
+            "enGB": "CO2 emission"
+        },
+        "colorName": {
+            "nlBE": "Exacte naam kleur",
+            "frFR": "Nom de la couleur",
+            "enGB": "Color name"
+        },
+        "comfort": {
+            "nlBE": "Comfort",
+            "frFR": "Comfort",
+            "enGB": "Comfort"
+        },
+        "cylinderCapacity": {
+            "nlBE": "Cylinder inhoud",
+            "frFR": "Cylindrée",
+            "enGB": "Cylinder capacity"
+        },
+        "cylinders": {
+            "nlBE": "Cylinders",
+            "frFR": "Cylindres",
+            "enGB": "Cylinders"
+        },
+        "dealer": {
+            "nlBE": "Dealer",
+            "frFR": "Dealer",
+            "enGB": "Dealer"
+        },
+        "doors": {
+            "nlBE": "Deuren",
+            "frFR": "Portes",
+            "enGB": "Doors"
+        },
+        "emissionLabel": {
+            "nlBE": "Emissie Label",
+            "frFR": "Étiquette d'émission",
+            "enGB": "Emission Label (at least)"
+        },
+        "environment": {
+            "nlBE": "Milieu",
+            "frFR": "Environnement",
+            "enGB": "Environment"
+        },
+        "euroEmissionClass": {
+            "nlBE": "Emissieklasse",
+            "frFR": "Classe d'émission (min)",
+            "enGB": "Euro Emission Class (at least)"
+        },
+        "equipment": {
+            "nlBE": "Opties",
+            "frFR": "Equipement",
+            "enGB": "Equipment"
+        },
+        "equipmentAndAccessories": {
+            "nlBE": "Opties en accessoires",
+            "frFR": "Options et accessoires",
+            "enGB": "Equipment and accessories"
+        },
+        "exterior": {
+            "nlBE": "Buitenkant",
+            "frFR": "Extérieur",
+            "enGB": "Exterior"
+        },
+        "firstChooseAVehicle": {
+            "nlBE": "Kies eerst een voertuig",
+            "frFR": "d'Abord choisir un véhicule",
+            "enGB": "First choose a vehicle"
+        },
+        "firstRegistration": {
+            "nlBE": "Eerste inschrijving",
+            "frFR": "Première immatriculation",
+            "enGB": "First registration"
+        },
+        "fuelType": {
+            "nlBE": "Brandstof",
+            "frFR": "Carburant",
+            "enGB": "Fuel type"
+        },
+        "garage": {
+            "nlBE": "Garage",
+            "frFR": "Garage",
+            "enGB": "Garage"
+        },
+        "garageName": {
+            "nlBE": "Garage naam",
+            "frFR": "Nom du garage",
+            "enGB": "Garage name"
+        },
+        "gearBox": {
+            "nlBE": "Versnellingsbak",
+            "frFR": "Boîte de vitesses",
+            "enGB": "Gear box"
+        },
+        "interior": {
+            "nlBE": "Binnenkant",
+            "frFR": "Intérieur",
+            "enGB": "Interior"
+        },
+        "interiorColor": {
+            "nlBE": "Kleur",
+            "frFR": "Couleur",
+            "enGB": "Interior color"
+        },
+        "licencePlate": {
+            "nlBE": "Nummerplaat",
+            "frFR": "No d' Immatriculation",
+            "enGB": "Licence plate"
+        },
+        "maintenance": {
+            "nlBE": "Onderhoud",
+            "frFR": "Maintenance",
+            "enGB": "Maintenance"
+        },
+        "make": {
+            "nlBE": "Merk",
+            "frFR": "Marque",
+            "enGB": "Make"
+        },
+        "makeModel": {
+            "nlBE": "Merk | Model",
+            "frFR": "Marque | Modèle",
+            "enGB": "Make | Model"
+        },
+        "mechanic": {
+            "nlBE": "Monteur",
+            "frFR": "Mécanicien",
+            "enGB": "Mechanic"
+        },
+        "message": {
+            "interestedInThisVehicle": {
+                "nlBE": "Interesse in dit voertuig?",
+                "frFR": "Intéressé par ce véhicule?",
+                "enGB": "Interested in this vehicle?"
+            },
+            "noVehiclesFound": {
+                "nlBE": "Sorry, geen voertuigen gevonden...",
+                "frFR": "Désolé, aucun véhicule trouvé...",
+                "enGB": "Sorry, no vehicles found..."
+            },
+            "selectMake": {
+                "nlBE": "Kies eerst een merk voor dit voertuig",
+                "frFR": "Choisissez d'abord une marque pour ce véhicule",
+                "enGB": "Select a make for this vehicle"
+            },
+            "selectModel": {
+                "nlBE": "Kies eerst een model voor dit voertuig",
+                "frFR": "Choisissez d'abord un modèle pour ce véhicule",
+                "enGB": "Select a model for this vehicle"
+            },
+            "selectSubModel": {
+                "nlBE": "Kies eerst een uitvoering voor dit voertuig",
+                "frFR": "Choisissez d'abord une variante du modèle pour ce véhicule",
+                "enGB": "Select a version for this vehicle"
+            },
+            "selectYear": {
+                "nlBE": "Kies eerst een bouwjaar voor dit voertuig",
+                "frFR": "Choisissez d'abord une année de construction pour ce véhicule",
+                "enGB": "Select a year of construction for this vehicle"
+            },
+            "vehiclesAreBeingLoaded": {
+                "nlBE": "Voertuigen worden geladen...",
+                "frFR": "Véhicules en cours de chargement...",
+                "enGB": "Vehicles are being loaded..."
+            }
+        },
+        "metallic": {
+            "nlBE": "Metallic",
+            "frFR": "Métallique",
+            "enGB": "Metallic"
+        },
+        "mileage": {
+            "nlBE": "Kilometerstand",
+            "frFR": "Kilométrage",
+            "enGB": "Mileage"
+        },
+        "mobility": {
+            "nlBE": "Mobiliteit",
+            "frFR": "La mobilité",
+            "enGB": "Mobility"
+        },
+        "model": {
+            "nlBE": "Model",
+            "frFR": "Modèle",
+            "enGB": "Model"
+        },
+        "motorTransmission": {
+            "nlBE": "Motor en transmissie",
+            "frFR": "Moteur et transmission",
+            "enGB": "Motor and transmission"
+        },
+        "myVehicles": {
+            "nlBE": "Mijn Voertuigen",
+            "frFR": "Mes Véhicules",
+            "enGB": "My Vehicles"
+        },
+        "newVehicle": {
+            "nlBE": "Nieuw Voertuig",
+            "frFR": "Nouveau véhicule",
+            "enGB": "New Vehicle"
+        },
+        "noiseLevel": {
+            "nlBE": "Geluidsniveau",
+            "frFR": "Niveau sonore",
+            "enGB": "Noise level"
+        },
+        "numberOfCylinders": {
+            "nlBE": "Aantal cylinders",
+            "frFR": "Nombre de cylindres",
+            "enGB": "Number of cylinders"
+        },
+        "numberOfGears": {
+            "nlBE": "Aantal versnellingen",
+            "frFR": "Nombre d'engrenages",
+            "enGB": "Number of gears"
+        },
+        "order": {
+            "nlBE": "Opdracht",
+            "frFR": "Travail",
+            "enGB": "Order"
+        },
+        "particulateFilter": {
+            "nlBE": "Roetpartikelfilter",
+            "frFR": "Filtre à particules",
+            "enGB": "Particulate Filter"
+        },
+        "parts": {
+            "nlBE": "Onderdelen",
+            "frFR": "Parties",
+            "enGB": "Parts"
+        },
+        "partCatalog": {
+            "nlBE": "Onderdelen Catalogus",
+            "frFR": "Parties Catalogue",
+            "enGB": "Parts Catalog"
+        },
+        "power": {
+            "nlBE": "Vermogen",
+            "frFR": "Puissance",
+            "enGB": "Power"
+        },
+        "replacementVehicle": {
+            "nlBE": "Vervangvoertuig",
+            "frFR": "Véhicule de remplacement",
+            "enGB": "Replacement vehicle"
+        },
+        "replacementVehicleFor": {
+            "nlBE": "Vervangvoertuig voor",
+            "frFR": "Véhicule de remplacement pour",
+            "enGB": "Replacement vehicle for"
+        },
+        "requestedReplacementVehicleType": {
+            "nlBE": "Vervangvoertuig",
+            "frFR": "Véhicule de remplacement",
+            "enGB": "Replacement vehicle"
+        },
+        "safety": {
+            "nlBE": "Veiligheid",
+            "frFR": "Sécurité",
+            "enGB": "Safety"
+        },
+        "searchByLicensePlate": {
+            "nlBE": "Zoek op nummerplaat...",
+            "frFR": "Recherche par plaque d'immatriculation...",
+            "enGB": "Search by licenceplate..."
+        },
+        "seats": {
+            "nlBE": "Zitplaatsen",
+            "frFR": "Sièges",
+            "enGB": "Nr. of Seats"
+        },
+        "secondHandVehicles": {
+            "nlBE": "2e Hands Voertuigen",
+            "frFR": "Véhicules d'occasions",
+            "enGB": "Second-hand vehicles"
+        },
+        "transmission": {
+            "nlBE": "Transmissie",
+            "frFR": "Transmission",
+            "enGB": "Transmission"
+        },
+        "upholstery": {
+            "nlBE": "Bekleding",
+            "frFR": "Garniture",
+            "enGB": "Upholstery"
+        },
+        "vehicle": {
+            "nlBE": "Voertuig",
+            "frFR": "Véhicule",
+            "enGB": "Vehicle"
+        },
+        "vehicleLicencePlate": {
+            "nlBE": "Voertuig nummerplaat",
+            "frFR": "No d' Immatriculation du véhicule",
+            "enGB": "Vehicle licenceplate"
+        },
+        "vehicleMake": {
+            "nlBE": "Voertuig merk",
+            "frFR": "Véhicule marque",
+            "enGB": "Vehicle make"
+        },
+        "vehicleModel": {
+            "nlBE": "Voertuig model",
+            "frFR": "Véhicule modèle",
+            "enGB": "Vehicle model"
+        },
+        "vehicles": {
+            "nlBE": "Voertuigen",
+            "frFR": "Véhicules",
+            "enGB": "Vehicles"
+        },
+        "vehicleProperties": {
+            "nlBE": "Voertuig Gegevens",
+            "frFR": "Données du Véhicule",
+            "enGB": "Vehicle Properties"
+        },
+        "version": {
+            "nlBE": "Uitvoering",
+            "frFR": "Variante du modèle",
+            "enGB": "Version"
+        },
+        "vin": {
+            "nlBE": "Chassisnummer (VIN)",
+            "frFR": "Numéro de châssis (VIN)",
+            "enGB": "VIN"
+        },
+        "year": {
+            "nlBE": "Bouwjaar",
+            "frFR": "Année de construction",
+            "enGB": "Year"
+        }
+    },
+    "care": {
+        "careCapacity": {
+            "nlBE": "Erkende bedden",
+            "frFR": "Capacité de soins",
+            "enGB": "Care capacity"
+        },
+        "numberOfBeds": {
+            "nlBE": "Aantal bedden",
+            "frFR": "Nombre de lits",
+            "enGB": "Number of beds"
+        }
+    },
+    "cms": {
+        "actionButton": {
+            "nlBE": "Actie knop",
+            "frFR": "Bouton d'action",
+            "enGB": "Action button"
+        },
+        "appearedIn": {
+            "nlBE": "Verschenen in",
+            "frFR": "Apparu dans",
+            "enGB": "Appeared in"
+        },
+        "approvalDate": {
+            "nlBE": "Datum goedkeuring",
+            "frFR": "Date d'approbation",
+            "enGB": "Published Date"
+        },
+        "articleBody": {
+            "nlBE": "Inhoud van je artikel",
+            "frFR": "Contenu de votre article",
+            "enGB": "Body of your article"
+        },
+        "articleTitle": {
+            "nlBE": "Titel van je artikel",
+            "frFR": "Titre de votre article",
+            "enGB": "Title of your post"
+        },
+        "author": {
+            "nlBE": "Auteur",
+            "frFR": "Auteur",
+            "enGB": "Author"
+        },
+        "basicVersion": {
+            "nlBE": "Basisversie",
+            "frFR": "Version de base",
+            "enGB": "Basic version"
+        },
+        "body": {
+            "nlBE": "Inhoud",
+            "frFR": "Contenu",
+            "enGB": "Body"
+        },
+        "buttonLabel": {
+            "allowCookies": {
+                "nlBE": "Cookies toestaan",
+                "frFR": "Autoriser les cookies",
+                "enGB": "Allow cookies"
+            },
+            "applyForThisJob": {
+                "nlBE": "Solliciteer voor deze job",
+                "frFR": "Postuler à cet emploi",
+                "enGB": "Apply for this job"
+            },
+            "apply": {
+                "nlBE": "Solliciteer",
+                "frFR": "Postuler",
+                "enGB": "Apply"
+            },
+            "backToTop": {
+                "nlBE": "Naar Boven",
+                "frFR": "Back To Top",
+                "enGB": "Back To Top"
+            },
+            "backToOverview": {
+                "nlBE": "Terug naar overzicht",
+                "frFR": "Retour à l'aperçu",
+                "enGB": "Back to overview"
+            },
+            "bookSpeaker": {
+                "nlBE": "<strong>Boek</strong> spreker",
+                "frFR": "<strong>Réserver</strong> orateur",
+                "enGB": "<strong>Book</strong> speaker"
+            },
+            "bookTraining": {
+                "nlBE": "<strong>Boek</strong> training",
+                "frFR": "<strong>Réserver</strong> formation",
+                "enGB": "<strong>Book</strong> training"
+            },
+            "chooseAFile": {
+                "nlBE": "Kies een bestand",
+                "frFR": "Choisissez un fichier",
+                "enGB": "Choose a file"
+            },
+            "contactUs": {
+                "nlBE": "Contacteer ons",
+                "frFR": "Contactez-nous",
+                "enGB": "Contact us"
+            },
+            "contentId": {
+                "nlBE": "Inhouds-ID",
+                "frFR": "Identifiant de contenu",
+                "enGB": "Content ID"
+            },
+            "contentIdOrUrl": {
+                "nlBE": "Inhouds-ID of URL",
+                "frFR": "Identifiant de contenu ou URL",
+                "enGB": "Content ID or URL"
+            },
+            "contentLabels": {
+                "nlBE": "Labels",
+                "frFR": "Labels",
+                "enGB": "Labels"
+            },
+            "contentType": {
+                "nlBE": "Inhoudstype",
+                "frFR": "Type de contenu",
+                "enGB": "Content type"
+            },
+            "confirmMyRegistration": {
+                "nlBE": "<strong>Bevestig</strong> mijn regsitratie",
+                "frFR": "<strong>Confirmer</strong> mon inscription",
+                "enGB": "<strong>Confirm</strong> my registration"
+            },
+            "createAnAccount": {
+                "nlBE": "Maak een account aan",
+                "frFR": "Créer un compte",
+                "enGB": "Create an account"
+            },
+            "discover": {
+                "nlBE": "Ontdekken",
+                "frFR": "Découvrir",
+                "enGB": "Discover"
+            },
+            "donateThisAmount": {
+                "nlBE": "<strong>Schenk</strong> dit bedrag",
+                "frFR": "<strong>Donner</strong> ce montant",
+                "enGB": "<strong>Donate</strong> this amount"
+            },
+            "download": {
+                "nlBE": "Downloaden",
+                "frFR": "Télécharger",
+                "enGB": "Download"
+            },
+            "followUsOnSocialMedia": {
+                "nlBE": "Volg ons op <strong>sociale media</strong>",
+                "frFR": "Suivez-nous sur les <strong> médias sociaux </ strong>.",
+                "enGB": "Follow us on <strong>social media</strong>"
+            },
+            "letUsKnowYourInterest": {
+                "nlBE": "Laat ons uw interesse weten",
+                "frFR": "Faites-nous savoir votre intérêt",
+                "enGB": "Let us know your interest"
+            },
+            "makeAppointment": {
+                "nlBE": "Afspraak maken?",
+                "frFR": "Fixer un</br> rendez-vous?",
+                "enGB": "Make an appointment?"
+            },
+            "makeAnAppointment": {
+                "nlBE": "Maak een <strong>afspraak</strong>",
+                "frFR": "Fixer un <strong>rendez-vous</strong>",
+                "enGB": "Make an <strong>appointment</strong>"
+            },
+            "more": {
+                "nlBE": "Meer",
+                "frFR": "Plus",
+                "enGB": "More"
+            },
+            "moreInfo": {
+                "nlBE": "Meer info",
+                "frFR": "Plus d'infos",
+                "enGB": "More info"
+            },
+            "moreInfoAboutThisTheme": {
+                "nlBE": "Meer info over dit thema",
+                "frFR": "Plus d'infos sur ce thème",
+                "enGB": "More info about this theme"
+            },
+            "moreAboutThis": {
+                "nlBE": "Meer hierover",
+                "frFR": "Plus sur ce sujet",
+                "enGB": "More about this"
+            },
+            "next": {
+                "nlBE": "Volgende",
+                "frFR": "Suivant",
+                "enGB": "Next"
+            },
+            "pay": {
+                "nlBE": "Betalen",
+                "frFR": "Payer",
+                "enGB": "Pay"
+            },
+            "payment": {
+                "nlBE": "Betaling",
+                "frFR": "Paiement",
+                "enGB": "Payment"
+            },
+            "previous": {
+                "nlBE": "Vorige",
+                "frFR": "Précédent",
+                "enGB": "Previous"
+            },
+            "print": {
+                "nlBE": "Afdrukken",
+                "frFR": "Imprimer",
+                "enGB": "Print"
+            },
+            "readMore": {
+                "nlBE": "Meer weten",
+                "frFR": "En savoir plus",
+                "enGB": "Read more"
+            },
+            "reserveNow": {
+                "nlBE": "Reserveer nu",
+                "frFR": "Réservez maintenant",
+                "enGB": "Reserve now"
+            },
+            "scaleImage": {
+                "nlBE": "Afbeelding vergroten",
+                "frFR": "Agrandir l'image",
+                "enGB": "Scale image"
+            },
+            "shareThisArticle": {
+                "nlBE": "<strong>Deel</strong> dit artikel",
+                "frFR": "<strong> Partager </ strong> cet article",
+                "enGB": "<strong> Share </strong> this post"
+            },
+            "submit": {
+                "nlBE": "Verzenden",
+                "frFR": "Envoyer",
+                "enGB": "Submit"
+            },
+            "subscribe": {
+                "nlBE": "Inschrijven",
+                "frFR": "s'Inscrire",
+                "enGB": "Subscribe"
+            },
+            "requestFreeQuote": {
+                "nlBE": "Vrijblijvend offerte aanvragen",
+                "frFR": "Demander un devis gratuit",
+                "enGB": "Request a free quote?"
+            },
+            "requestQuote": {
+                "nlBE": "<strong>Offerte</strong> aanvragen",
+                "frFR": "Demander un <strong>devis</strong>",
+                "enGB": "Request <strong>quote</strong>"
+            },
+            "requestTrial": {
+                "nlBE": "Vraag je proefperiode aan",
+                "frFR": "Demandez votre essai",
+                "enGB": "Request your trial"
+            },
+            "uploadImage": {
+                "nlBE": "Afbeelding uploaden",
+                "frFR": "Télécharger une image",
+                "enGB": "Upload image"
+            },
+            "visitUs": {
+                "nlBE": "<strong>Bezoek</strong> ons",
+                "frFR": "<strong>Visitez</strong>-nous",
+                "enGB": "<strong>Visit</strong> us"
+            },
+            "view": {
+                "nlBE": "Bekijk",
+                "frFR": "Voir",
+                "enGB": "View"
+            },
+            "visitWebsite": {
+                "nlBE": "<strong>Bezoek</strong> website",
+                "frFR": "<strong>Visitez</strong> le site",
+                "enGB": "<strong>Visit</strong> website"
+            },
+            "watch": {
+                "nlBE": "Kijk",
+                "frFR": "Regarder",
+                "enGB": "Watch"
+            }
+        },
+        "contentLabel": {
+            "popular": {
+                "nlBE": "Populair",
+                "frFR": "Populaire",
+                "enGB": "Popular"
+            },
+            "new": {
+                "nlBE": "Nieuw",
+                "frFR": "Nouveau",
+                "enGB": "New"
+            },
+            "full": {
+                "nlBE": "Volzet",
+                "frFR": "Plein",
+                "enGB": "Full"
+            },
+            "promo": {
+                "nlBE": "Promo",
+                "frFR": "Promotion",
+                "enGB": "Promo"
+            },
+            "spotlight": {
+                "nlBE": "In de kijker",
+                "frFR": "Promotion",
+                "enGB": "In the spotlight"
+            }
+        },
+        "cases": {
+            "situation": {
+                "nlBE": "Situation",
+                "frFR": "Situation",
+                "enGB": "Situation"
+            },
+            "need": {
+                "nlBE": "The need",
+                "frFR": "The need",
+                "enGB": "The need"
+            },
+            "action": {
+                "nlBE": "What we did",
+                "frFR": "What we did",
+                "enGB": "What we did"
+            },
+            "impact": {
+                "nlBE": "The impact",
+                "frFR": "The impact",
+                "enGB": "The impact"
+            }
+        },
+        "category": {
+            "nlBE": "Categorie",
+            "frFR": "Catégorie",
+            "enGB": "Category"
+        },
+        "categories": {
+            "nlBE": "Categoriën",
+            "frFR": "Catégories",
+            "enGB": "Categories"
+        },
+        "content": {
+            "nlBE": "Inhoud",
+            "frFR": "Contenu",
+            "enGB": "Content"
+        },
+        "cookiesTitle": {
+            "nlBE": "Deze website maakt gebruik van cookies",
+            "frFR": "Ce site utilise des cookies",
+            "enGB": "This website uses cookies"
+        },
+        "cookiesText": {
+            "nlBE": "Deze website maakt net zoals de meeste websites gebruik van cookies. Via deze cookies verzamelen wij en derde partijen informatie over uw bezoek en interesses. Op deze manier is het mogelijk om het gebruik van onze site te analyseren en de inhoud van de website te personaliseren. Zo houden we het voor u op elk moment interessant. Centraal in ons cookiebeleid staat respect voor uw privacy. Via de link \"Meer informatie\" onderaan verneemt u welke cookies we gebruiken. Door verder te gaan naar onze website, geeft u toestemming voor alle cookies en een optimale surfervaring. Bedankt voor uw vertrouwen en veel plezier!",
+            "frFR": "Comme la plupart des sites Web, ce site utilise des cookies. Nous et des tiers collectons des informations sur votre visite et vos intérêts via ces cookies. De cette manière, il est possible d'analyser l'utilisation de notre site et de personnaliser le contenu du site. De cette façon, nous gardons cela intéressant pour vous à tout moment. Le respect de votre vie privée est au cœur de notre politique en matière de cookies. Vous pouvez savoir quels cookies nous utilisons via le lien \"Plus d'informations\" ci-dessous. En poursuivant votre navigation sur notre site, vous acceptez tous les cookies et une expérience de navigation optimale. Merci pour votre confiance et amusez-vous!",
+            "enGB": "Like most websites, this website uses cookies. We and third parties collect information about your visit and interests via these cookies. This allows us to analyze the use of our site and to personalize the websites content. This way we keep it interesting for you at all times. Respect for your privacy is central to our cookie policy. You can find out which cookies we use via the \"More information\" link below. By continuing to our website, you consent to all cookies and an optimal browsing experience. Thank you for your confidence and have fun!"
+        },
+        "design": {
+            "nlBE": "Ontwerp",
+            "frFR": "Design",
+            "enGB": "Design"
+        },
+        "domain": {
+            "nlBE": "Domein",
+            "frFR": "Domaine",
+            "enGB": "Domain"
+        },
+        "draft": {
+            "nlBE": "Concept",
+            "frFR": "Brouillon",
+            "enGB": "Draft"
+        },
+        "dropImagesToUpload": {
+            "nlBE": "Plaats afbeeldingen om te uploaden",
+            "frFR": "Déposer des images pour les télécharger",
+            "enGB": "Drop images to upload"
+        },
+        "dropFilesToUpload": {
+            "nlBE": "Plaats bestanden om te uploaden",
+            "frFR": "Déposez les fichiers à télécharger",
+            "enGB": "Drop files to upload"
+        },
+        "downloadButton": {
+            "nlBE": "Downloadknop",
+            "frFR": "Bouton de téléchargement",
+            "enGB": "Download button"
+        },
+        "element": {
+            "button": {
+                "nlBE": "Knop",
+                "frFR": "Bouton",
+                "enGB": "Button"
+            },
+            "icon": {
+                "nlBE": "Pictogram",
+                "frFR": "Icône",
+                "enGB": "Icon"
+            },
+            "image": {
+                "nlBE": "Afbeelding",
+                "frFR": "Image",
+                "enGB": "Image"
+            },
+            "subTitle": {
+                "nlBE": "Subtitel",
+                "frFR": "Sous-titre",
+                "enGB": "Subtitle"
+            },
+            "text": {
+                "nlBE": "Tekst",
+                "frFR": "Texte",
+                "enGB": "Text"
+            },
+            "title": {
+                "nlBE": "Titel",
+                "frFR": "Titre",
+                "enGB": "Title"
+            }
+        },
+        "emailCampaign": {
+            "nlBE": "Email campagne",
+            "frFR": "Campagne email",
+            "enGB": "Email campaign"
+        },
+        "externalLink": {
+            "nlBE": "Externe link",
+            "frFR": "Lien externe",
+            "enGB": "External link"
+        },
+        "finalVersion": {
+            "nlBE": "Eindversie",
+            "frFR": "Version finale",
+            "enGB": "Final version"
+        },
+        "form": {
+            "nlBE": "Formulier",
+            "frFR": "Formulaire",
+            "enGB": "Form"
+        },
+        "googleData": {
+            "nlBE": "Google gegevens",
+            "frFR": "Données Google",
+            "enGB": "Google data"
+        },
+        "image": {
+            "nlBE": "Afbeelding",
+            "frFR": "Photo",
+            "enGB": "Image"
+        },
+        "imageGalleryPost": {
+            "nlBE": "Afbeelding galerij artikel",
+            "frFR": "Article avec galerie d'images",
+            "enGB": "Image gallery post"
+        },
+        "icon": {
+            "nlBE": "Pictogram",
+            "frFR": "Icône",
+            "enGB": "Icon"
+        },
+        "googleAnalytics": {
+            "nlBE": "Google Analytics",
+            "frFR": "Google Analytics",
+            "enGB": "Google Analytics"
+        },
+        "googleTagManager": {
+            "nlBE": "Google Tag Manager",
+            "frFR": "Google Tag Manager",
+            "enGB": "Google Tag Manager"
+        },
+        "googleSearchResult": {
+            "nlBE": "Google zoekresultaat",
+            "frFR": "Résultat de recherche Google",
+            "enGB": "Google Search result"
+        },
+        "googleSearchTitle": {
+            "nlBE": "Google Search titel",
+            "frFR": "Titre de recherche Google",
+            "enGB": "Google Search title"
+        },
+        "googleSearchConsole": {
+            "nlBE": "Google Search Console",
+            "frFR": "Google Search Console",
+            "enGB": "Google Search Console"
+        },
+        "googleSearchDescription": {
+            "nlBE": "Google Search omschrijving",
+            "frFR": "Description de recherche Google",
+            "enGB": "Google Search description"
+        },
+        "greeting": {
+            "dear": {
+                "nlBE": "Beste",
+                "frFR": "Cher",
+                "enGB": "Dear"
+            }
+        },
+        "images": {
+            "nlBE": "Afbeeldingen",
+            "frFR": "Photos",
+            "enGB": "Images"
+        },
+        "language": {
+            "nlBE": "Taal",
+            "frFR": "Langue",
+            "enGB": "Language"
+        },
+        "languages": {
+            "nlBE": "Talen",
+            "frFR": "Langues",
+            "enGB": "Languages"
+        },
+        "marketing": {
+            "nlBE": "Marketing",
+            "frFR": "Marketing",
+            "enGB": "Marketing"
+        },
+        "message": {
+            "allRightsReserved": {
+                "nlBE": "Alle rechten voorbehouden",
+                "frFR": "Tous droits réservés",
+                "enGB": "All rights reserved"
+            },
+            "choosePageCategory": {
+                "nlBE": "Kies een categorie voor je pagina",
+                "frFR": "Sélectionnez une catégorie pour votre page",
+                "enGB": "Select a page category"
+            },
+            "chooseEmailCampaign": {
+                "nlBE": "Kies een email campagne voor je nieuwsbrief",
+                "frFR": "Sélectionnez une campagne email pour vôtre newsletter",
+                "enGB": "Select an email campaign for your newsletter"
+            },
+            "chooseNewsletterName": {
+                "nlBE": "Kies een naam voor je nieuwsbrief",
+                "frFR": "Choisissez un nom pour vôtre newsletter",
+                "enGB": "Choose a name for your newsletter"
+            },
+            "choosePageFromYourWebsite": {
+                "nlBE": "Kies een pagina uit je website",
+                "frFR": "Choisissez une page de votre site web",
+                "enGB": "Choose a page from your website"
+            },
+            "choosePageLayout": {
+                "nlBE": "Kies een layout voor je pagina",
+                "frFR": "Choisissez une mise en page pour votre page",
+                "enGB": "Select a layout for your page"
+            },
+            "choosePageName": {
+                "nlBE": "Kies een naam voor je pagina",
+                "frFR": "Choisissez un nom pour vôtre page",
+                "enGB": "Choose a name for your page"
+            },
+            "choosePagePosition": {
+                "nlBE": "Kies een positie in het hoofdmenu voor je pagina",
+                "frFR": "Choisissez une position dans le menu principal pour vôtre page",
+                "enGB": "Choose your page position in the main menu"
+            },
+            "choosePostCategory": {
+                "nlBE": "Kies een categorie voor je artikel",
+                "frFR": "Sélectionnez une catégorie pour votre article",
+                "enGB": "Select a post category"
+            },
+            "choosePostFromYourWebsite": {
+                "nlBE": "Kies een artikel uit je website",
+                "frFR": "Choisissez un article de votre site web",
+                "enGB": "Choose a post from your website"
+            },
+            "chooseNewsletterLayout": {
+                "nlBE": "Kies een layout voor je nieuwsbrief",
+                "frFR": "Choisissez une mise en page pour votre newsletter",
+                "enGB": "Select a layout for your newsletter"
+            },
+            "choosePostLayout": {
+                "nlBE": "Kies een layout voor je artikel",
+                "frFR": "Choisissez une mise en page pour votre article",
+                "enGB": "Select a layout for your post"
+            },
+            "choosePostName": {
+                "nlBE": "Kies een naam voor je artikel",
+                "frFR": "Choisissez un nom pour vôtre article",
+                "enGB": "Choose a name for your post"
+            },
+            "chooseProfileImage": {
+                "nlBE": "Kies je profielfoto...",
+                "frFR": "Choisissez votre photo de profil...",
+                "enGB": "Choose your profile photo..."
+            },
+            "chooseRecipients": {
+                "nlBE": "Kies de ontvangers voor je nieuwsbrief",
+                "frFR": "Choisissez les destinataires de votre newsletter",
+                "enGB": "Choose the recipients for your newsletter"
+            },
+            "clickNextToSelectPage": {
+                "nlBE": "Klik \"VERDERGAAN\" om een pagina aan te maken met deze layout",
+                "frFR": "Cliquez sur \"CONTINUER\" pour créer une page avec cette mise en page",
+                "enGB": "Click \"NEXT\" to create a page with this layout"
+            },
+            "clickNextToSelectPost": {
+                "nlBE": "Klik \"VERDERGAAN\" om een artikel aan te maken met deze layout",
+                "frFR": "Cliquez sur \"CONTINUER\" pour créer un article avec cette mise en page",
+                "enGB": "Click \"NEXT\" to create a post with this layout"
+            },
+            "contactUs": {
+                "nlBE": "Contacteer ons",
+                "frFR": "Contactez-nous",
+                "enGB": "Contact us"
+            },
+            "createLink": {
+                "nlBE": "Voer een URL in en druk op Enter",
+                "frFR": "Entrez une URL et appuyez sur Entrée",
+                "enGB": "Enter a URL and press Enter"
+            },
+            "createNewNewsletter": {
+                "nlBE": "Maak een nieuwe nieuwsbrief",
+                "frFR": "Créer une nouvelle newsletter",
+                "enGB": "Create a new newsletter"
+            },
+            "createNewPage": {
+                "nlBE": "Maak een nieuwe pagina",
+                "frFR": "Créer une nouvelle page",
+                "enGB": "Create a new page"
+            },
+            "createNewPost": {
+                "nlBE": "Maak een nieuw artikel",
+                "frFR": "Créer un nouvel article",
+                "enGB": "Create a new post"
+            },
+            "describeYourProject": {
+                "nlBE": "Omschrijf uw project",
+                "frFR": "Décrivez votre projet",
+                "enGB": "Describe your project"
+            },
+            "dropImagesToUpload": {
+                "nlBE": "Zet afbeeldingen neer om te uploaden",
+                "frFR": "Déposer les images à télécharger",
+                "enGB": "Drop images to upload"
+            },
+            "enterTitle": {
+                "nlBE": "Voer je titel in",
+                "frFR": "Entrez votre titre",
+                "enGB": "Enter your title"
+            },
+            "enterEventDetails": {
+                "nlBE": "Voer je evenement details in",
+                "frFR": "Entrez les détails de votre événement",
+                "enGB": "Enter your event details"
+            },
+            "enterEventLocation": {
+                "nlBE": "Voer je evenement locatie in",
+                "frFR": "Entrez le lieu de votre événement",
+                "enGB": "Enter your event location"
+            },
+            "enterEventTitle": {
+                "nlBE": "Voer je evenement titel in",
+                "frFR": "Entrez le titre de votre événement",
+                "enGB": "Enter your event title"
+            },
+            "enterText": {
+                "nlBE": "Voer je tekst in",
+                "frFR": "Entrez votre texte",
+                "enGB": "Enter your text"
+            },
+            "enterTextLine": {
+                "nlBE": "Dit is een regel tekst. Klik hier om de tekst te bewerken.",
+                "frFR": "Ceci est une ligne de texte. Cliquez ici pour éditer le texte.",
+                "enGB": "This is a line of text. Click here to edit the text."
+            },
+            "enterTextParagraph": {
+                "nlBE": "Dit is een tekst paragraaf. Klik hier om de tekst te bewerken en een eigen tekst toe te voegen. Indien je wenst kan je deze tekst ook later nog wijzigen.",
+                "frFR": "Ceci est un paragraphe de texte. Cliquez dans le texte pour ajouter votre propre texte. Si vous le souhaitez, vous pouvez toujours modifier ce texte plus tard.",
+                "enGB": "This is a text paragraph. Click here to edit this text and add your own. This text can still be edited later."
+            },
+            "enterTextFull": {
+                "nlBE": "<p>Dit is een tekstblok. Klik hier om de tekst te bewerken en een eigen tekst toe te voegen. Indien je wenst kan je deze tekst ook later nog wijzigen.</p><p>Probeer je tekst zo bondig en eenvoudig mogelijk te houden. Lange teksten worden minder gemakkelijk gelezen op een scherm.</p><p>Maak eventueel gebruik van een lijst. Je kan hiermee de inhoud op een overzichtelijke manier weergeven. Hieronder zie je een voorbeeld:</p><ul><li>Formuleer hier je eerste punt.</li><li>Hier kan je een tweede punt toeveogen.</li><li>Sluit ten slotte af met een derde punt</li></ul><p>Je kan de <strong>leesbaarheid van je tekst</strong> verbeteren door je tekst op te delen in <strong>verschillende paragrafen</strong> en eventueel delen in het vet te plaatsen.</p>",
+                "frFR": "<p>Ceci est un paragraphe de texte. Cliquez dans le texte pour ajouter votre propre texte. Si vous le souhaitez, vous pouvez toujours modifier ce texte plus tard.</p><p>Essayez de garder votre texte aussi concis et simple que possible. Des textes longs sont moins faciles à lire sur un écran.</p><p>Utilisez une liste si possible. Cela vous permet d'afficher le contenu de manière bien organisée. Voici un exemple: </p> <ul><li>Formulez votre premier point ici.</li><li>Ici, vous pouvez ajouter un deuxième point.</li><li>Enfin, terminez avec un troisième point.</li></ul><p>Vous pouvez améliorer la <strong> lisibilité de votre texte </strong> en divisant votre texte en <strong> différents paragraphes </strong> et en mettant éventuellement des parties en gras.</p>",
+                "enGB": "<p>This is a textblock. Click here to edit this text and add your own. This text can still be edited later.</p><p>Try to keep your text as concise and simple as possible. Long texts are harder to read on a screen.</p><p> Use a list if possible. This allows you to display the content in a well-organized way. Below is an example: </p> <ul><li>Formulate your first point here.</li><li>Here you can add a second point.</li><li>Finally, finish with a third point.</li></ul><p>You can also improve the <strong>readability of your text</strong> by dividing your text into <strong>multiple paragraphs</strong> and by putting parts of your sentences in the bold.</p>"
+            },
+            "facebookPostsAreBeingLoaded": {
+                "nlBE": "Facebook artikels worden geladen...",
+                "frFR": "Articles de Facebook en cours de chargement...",
+                "enGB": "Facebook posts are being loaded..."
+            },
+            "followUsOnSocialMedia": {
+                "nlBE": "Volg ons op <strong>Social Media</strong>",
+                "frFR": "Suivez-nous sur les <strong>Réseaux Sociaux</strong>",
+                "enGB": "Follow us on <strong>Social Media</strong>"
+            },
+            "howCanWeHelpYou": {
+                "nlBE": "Waarmee kunnen wij u <strong>helpen</strong>?",
+                "frFR": "Comment pouvons-nous vous <strong>aider</strong>?",
+                "enGB": "How can we <strong>help</strong> you?"
+            },
+            "iAgreeWithThePrivacyPolicy": {
+                "nlBE": "Ik ga akkoord met het privacybeleid",
+                "frFR": "Je suis d'accord avec la politique de confidentialité",
+                "enGB": "I agree with the privacy policy"
+            },
+            "imagesAreBeingLoaded": {
+                "nlBE": "Afbeeldingen worden geladen...",
+                "frFR": "Images en cours de chargement...",
+                "enGB": "Images are being loaded..."
+            },
+            "iWantToSubscribeToTheNewsletter": {
+                "nlBE": "Ik wil mij inschrijven op de nieuwsbrief",
+                "frFR": "Je veux m'inscrire à la newsletter",
+                "enGB": "I want to subscribe to the newsletter"
+            },
+            "iWantAQuoteFor": {
+                "nlBE": "Ik wil een offerte voor:",
+                "frFR": "Je veux un devis pour:",
+                "enGB": "I want a quote for:"
+            },
+            "iWantToApplyFor": {
+                "nlBE": "Ik wil solliciteren voor:",
+                "frFR": "Je veux postuler pour:",
+                "enGB": "I want to apply for:"
+            },
+            "noImagesFound": {
+                "nlBE": "Sorry, geen afbeeldingen gevonden...",
+                "frFR": "Désolé, aucun image trouvé...",
+                "enGB": "Sorry, no images found..."
+            },
+            "noPostsFound": {
+                "nlBE": "Sorry, geen artikels gevonden...",
+                "frFR": "Désolé, aucun article trouvé...",
+                "enGB": "Sorry, no posts found..."
+            },
+            "noFacebookPostsFound": {
+                "nlBE": "Sorry, geen Facebook artikels gevonden...",
+                "frFR": "Désolé, aucun article facebook trouvé...",
+                "enGB": "Sorry, no facebook posts found..."
+            },
+            "postsAreBeingLoaded": {
+                "nlBE": "Artikels worden geladen...",
+                "frFR": "Articles en cours de chargement...",
+                "enGB": "Posts are being loaded..."
+            },
+            "readThePrivacyPolicyHere": {
+                "nlBE": "Lees hier het privacybeleid",
+                "frFR": "Lisez la politique de confidentialité ici",
+                "enGB": "Read the privacy policy here"
+            },
+            "thankYouForYourInterest": {
+                "nlBE": "Bedankt voor je interesse. Wij hebben je aanvraag ontvangen en nemen zo spoedig mogelijk contact op.",
+                "frFR": "Merci de votre intérêt. Nous avons bien reçu votre demande et nous vous contacterons dès que possible.",
+                "enGB": "Thank you for your interest. We have received your request and will contact you as soon as possible."
+            },
+            "userRegistrationConfirmation": {
+                "nlBE": "Je bent bijna geregistreerd als gebruiker! Gelieve je registratie te bevestigen via onderstaande knop.",
+                "frFR": "Vous êtes presque enregistré en tant qu'utilisateur! Veuillez confirmer votre inscription via le bouton ci-dessous.",
+                "enGB": "You are almost registered as a user! Please confirm your registration via the button below."
+            },
+            "vistWebsite": {
+                "nlBE": "Bezoek website",
+                "frFR": "Visitez le site web",
+                "enGB": "Vistit website"
+            },
+            "whatDoYouWantToBookUsFor": {
+                "nlBE": "Waarvoor wil je ons boeken?",
+                "frFR": "Pourquoi voulez-vous nous réserver?",
+                "enGB": "What do you want to book us for?"
+            },
+            "whatTypeOfServiceIsRequired": {
+                "nlBE": "Welk <strong>soort dienst</strong> is vereist?",
+                "frFR": "Quel <strong>type de service</strong> est requis?",
+                "enGB": "What <strong>type of service</strong> is required?"
+            },
+            "youHaveSuccessfullyBeenRegistered": {
+                "nlBE": "Je bent succesvol geregistreerd!",
+                "frFR": "Vous avez été enregistré avec succès!",
+                "enGB": "You have successfully been registered!"
+            },
+            "youHaveSuccessfullyBeenSubscribedToOurNewsletter": {
+                "nlBE": "Je bent succesvol ingeschreven op onze nieuwsbrief!",
+                "frFR": "Vous avez été abonné à notre newsletter avec succès!",
+                "enGB": "You have successfully been subscribed to our newsletter!"
+            }
+        },
+        "metaDescription": {
+            "nlBE": "Meta description",
+            "frFR": "Meta description",
+            "enGB": "Meta description"
+        },
+        "myWebsites": {
+            "nlBE": "Mijn websites",
+            "frFR": "Mes sites",
+            "enGB": "My websites"
+        },
+        "newCampaign": {
+            "nlBE": "Nieuwe Campagne",
+            "frFR": "Nouveau Campagne",
+            "enGB": "New Campaign"
+        },
+        "newPage": {
+            "nlBE": "Nieuwe Pagina",
+            "frFR": "Nouvelle Page",
+            "enGB": "New Page"
+        },
+        "newPost": {
+            "nlBE": "Nieuw Artikel",
+            "frFR": "Nouvel Article",
+            "enGB": "New Post"
+        },
+        "newWebsite": {
+            "nlBE": "Nieuwe Website",
+            "frFR": "Nouveau Site web",
+            "enGB": "New Website"
+        },
+        "newsletter": {
+            "nlBE": "Nieuwsbrief",
+            "frFR": "Newsletter",
+            "enGB": "Newsletter"
+        },
+        "newsletters": {
+            "nlBE": "Nieuwsbrieven",
+            "frFR": "Lettres d'information",
+            "enGB": "Newsletters"
+        },
+        "newsletterImage": {
+            "nlBE": "Nieuwsbrief afbeelding",
+            "frFR": "Image de la newsletter",
+            "enGB": "Newsletter image"
+        },
+        "openInNewWindow": {
+            "nlBE": "Openen in nieuw venster",
+            "frFR": "Ouvrir dans une nouvelle fenêtre",
+            "enGB": "Open in new window"
+        },
+        "page": {
+            "nlBE": "Pagina",
+            "frFR": "Page",
+            "enGB": "Page"
+        },
+        "pages": {
+            "nlBE": "Pagina's",
+            "frFR": "Pages",
+            "enGB": "Pages"
+        },
+        "pageImage": {
+            "nlBE": "Pagina afbeelding",
+            "frFR": "Image de page",
+            "enGB": "Page image"
+        },
+        "pageSections": {
+            "nlBE": "Pagina onderdelen",
+            "frFR": "Sections de page",
+            "enGB": "Page sections"
+        },
+        "photo": {
+            "nlBE": "Foto",
+            "frFR": "Photo",
+            "enGB": "Photo"
+        },
+        "post": {
+            "nlBE": "Artikel",
+            "frFR": "Article",
+            "enGB": "Post"
+        },
+        "postImage": {
+            "nlBE": "Artikel afbeelding",
+            "frFR": "Image d'article",
+            "enGB": "Post image"
+        },
+        "posts": {
+            "nlBE": "Artikels",
+            "frFR": "Articles",
+            "enGB": "Posts"
+        },
+        "privacyPolicy": {
+            "nlBE": "Privacybeleid",
+            "frFR": "Politique de confidentialité",
+            "enGB": "Privacypolicy"
+        },
+        "promo": {
+            "nlBE": "Promo",
+            "frFR": "Promo",
+            "enGB": "Promo"
+        },
+        "publish": {
+            "nlBE": "Plaatsen",
+            "frFR": "Publier",
+            "enGB": "Publish"
+        },
+        "published": {
+            "nlBE": "Gepubliceerd",
+            "frFR": "Publié",
+            "enGB": "Published"
+        },
+        "publishedDate": {
+            "nlBE": "Publicatie datum",
+            "frFR": "Date de publication",
+            "enGB": "Published Date"
+        },
+        "recipients": {
+            "nlBE": "Ontvangers",
+            "frFR": "Destinataires",
+            "enGB": "Recipients"
+        },
+        "seo": {
+            "nlBE": "Seo",
+            "frFR": "Seo",
+            "enGB": "Seo"
+        },
+        "seoTitle": {
+            "nlBE": "SEO titel",
+            "frFR": "Titre SEO",
+            "enGB": "SEO title"
+        },
+        "sharing": {
+            "nlBE": "Delen",
+            "frFR": "Partagé",
+            "enGB": "Sharing"
+        },
+        "shareButtons": {
+            "nlBE": "Delen knoppen",
+            "frFR": "boutons de partage",
+            "enGB": "share buttons"
+        },
+        "socialMedia": {
+            "nlBE": "Sociale Media",
+            "frFR": "Médias sociaux",
+            "enGB": "Social Media"
+        },
+        "socialMediaPages": {
+            "nlBE": "Sociale Media pagina's",
+            "frFR": "Médias sociaux",
+            "enGB": "Social Media"
+        },
+        "source": {
+            "nlBE": "Bron",
+            "frFR": "Source",
+            "enGB": "Source"
+        },
+        "subscription": {
+            "nlBE": "Inschrijving",
+            "frFR": "Inscription",
+            "enGB": "Subscription"
+        },
+        "subscriptionList": {
+            "nlBE": "Inschrijvingslijst",
+            "frFR": "liste d'abonnement",
+            "enGB": "Subscription list"
+        },
+        "subscriptionLists": {
+            "nlBE": "Inschrijvingslijsten",
+            "frFR": "listes d'abonnement",
+            "enGB": "Subscription lists"
+        },
+        "subscriptions": {
+            "nlBE": "Inschrijvingen",
+            "frFR": "Inscriptions",
+            "enGB": "Subscriptions"
+        },
+        "website": {
+            "nlBE": "Website",
+            "frFR": "Site web",
+            "enGB": "Website"
+        },
+        "websiteData": {
+            "nlBE": "Gegevens",
+            "frFR": "Données",
+            "enGB": "Website data"
+        },
+        "tags": {
+            "nlBE": "Tags",
+            "frFR": "Mots clés",
+            "enGB": "Tags"
+        },
+        "title": {
+            "nlBE": "Titel",
+            "frFR": "Titre",
+            "enGB": "Title"
+        },
+        "translation": {
+            "nlBE": "Vertaling",
+            "frFR": "Traduction",
+            "enGB": "Translation"
+        },
+        "url": {
+            "nlBE": "Url",
+            "frFR": "Url",
+            "enGB": "Url"
+        },
+        "videoPost": {
+            "nlBE": "Video artikel",
+            "frFR": "Article vidéo",
+            "enGB": "Video post"
+        },
+        "webForm": {
+            "formSucces": {
+                "nlBE": "Je formulier is succesvol verzonden!",
+                "frFR": "Votre formulaire a été envoyé!",
+                "enGB": "Your form has been successfully submitted!"
+            },
+            "formSubmitting": {
+                "nlBE": "Je formulier wordt verzonden...",
+                "frFR": "Je formulier is succesvol verzonden!",
+                "enGB": "Form succesfully submitted!"
+            },
+            "missingFields": {
+                "nlBE": "Gelieve de volgende velden in te vullen:",
+                "frFR": "Veuillez remplir les champs suivants:",
+                "enGB": "Please fill in the following fields:"
+            },
+            "fieldAlert": {
+                "nlBE": "*Dit is een verplicht veld",
+                "frFR": "*Dit is een verplicht veld",
+                "enGB": "*Required field"
+            },
+            "makeAppointment": {
+                "nlBE": "Een afspraak<br/> maken?",
+                "frFR": "Fixer un<br/> rendez-vous?",
+                "enGB": "Make an<br/> appointment?"
+            },
+            "stayInformed": {
+                "nlBE": "<strong>Op de hoogte</strong> blijven?",
+                "frFR": "<strong>Op de hoogte</strong> blijven?",
+                "enGB": "To stay <strong>informed</strong>?"
+            },
+            "subScribeForDemo": {
+                "nlBE": "Schrijf in voor een demo",
+                "frFR": "Inscrivez-vous pour une démo",
+                "enGB": "Subscribe for a Demo"
+            },
+            "talkToUs": {
+                "nlBE": "Talk to us",
+                "frFR": "Talk to us",
+                "enGB": "Talk to us"
+            }
+        },
+        "webFormResponder": {
+            "donation": {
+                "thankYou_donationAmount_projectName": {
+                    "nlBE": "Hartelijk dank voor uw gift van $$amount$$ voor $$projectName$$. Hieronder vindt u een samenvatting van uw gift.",
+                    "frFR": "Merci pour votre don de $$amount$$ pour $$projectName$$. Vous trouverez ci-dessous un résumé de votre don.",
+                    "enGB": "Thank you for your donation of $$amount$$ for $$projectName$$. Below is a summary of your gift."
+                }
+            }
+        },
+        "websiteLinkExample": {
+            "nlBE": "https://wwww.website.com",
+            "frFR": "https://wwww.website.com",
+            "enGB": "https://wwww.website.com"
+        },
+        "websitePage": {
+            "nlBE": "Website pagina",
+            "frFR": "Page du site",
+            "enGB": "Website page"
+        },
+        "websitePost": {
+            "nlBE": "Website artikel",
+            "frFR": "Article du site",
+            "enGB": "Website post"
+        },
+        "websites": {
+            "nlBE": "Websites",
+            "frFR": "Sites web",
+            "enGB": "Websites"
+        }
+    },
+    "commerce": {
+        "amount": {
+            "nlBE": "Bedrag",
+            "frFR": "Montant",
+            "enGB": "Amount"
+        },
+        "billingAddress": {
+            "nlBE": "Facturatieadres",
+            "frFR": "Adresse de facturation",
+            "enGB": "Billing address"
+        },
+        "billingEmail": {
+            "nlBE": "Facturatie email",
+            "frFR": "Courriel de facturation",
+            "enGB": "Billing email"
+        },
+        "billingInformation": {
+            "nlBE": "Facturatiegegegvens",
+            "frFR": "Informations de facturation",
+            "enGB": "Billing information"
+        },
+        "buy": {
+            "nlBE": "Koop",
+            "frFR": "Acheter",
+            "enGB": "Buy"
+        },
+        "exclusiveOfVat": {
+            "nlBE": "Exclusief BTW",
+            "frFR": "Hors TVA",
+            "enGB": "Exclusive of VAT"
+        },
+        "fixedCost": {
+            "nlBE": "Vaste kosten",
+            "frFR": "Frais fixes",
+            "enGB": "Fixed cost"
+        },
+        "fixedPriceComponents": {
+            "nlBE": "Onderdelen van vaste kostprijs",
+            "frFR": "Composants à prix fixe",
+            "enGB": "Fixed-price components"
+        },
+        "hourlyRate": {
+            "nlBE": "Uurtarief",
+            "frFR": "Tarif horaire",
+            "enGB": "Hourly rate"
+        },
+        "invoiceDetails": {
+            "nlBE": "Factuurgegevens",
+            "frFR": "Données de facturation",
+            "enGB": "Invoice details"
+        },
+        "invoiceRequired": {
+            "nlBE": "Factuur gewenst",
+            "frFR": "Facture requise",
+            "enGB": "Invoice required"
+        },
+        "latestInvoiceNumber": {
+            "nlBE": "Laatste lidgeld factuur",
+            "frFR": "Dernière facture de cotisation",
+            "enGB": "Last membership fee invoice"
+        },
+        "lease": {
+            "nlBE": "Lease",
+            "frFR": "Lease",
+            "enGB": "Lease"
+        },
+        "leaseFormula": {
+            "nlBE": "Lease formule",
+            "frFR": "Formule de lease",
+            "enGB": "Lease formula"
+        },
+        "message": {
+            "chooseYourDesiredAccessories": {
+                "nlBE": "Kies je gewenste <strong>accessories</strong>",
+                "frFR": "Choisissez vos <strong> accessoires </ strong> souhaités",
+                "enGB": "Choose your desired <strong> accessories </strong>"
+            },
+            "chooseYourPaymentMethod": {
+                "nlBE": "Kies je betaalmiddel",
+                "frFR": "Choisissez votre mode de paiement",
+                "enGB": "Choose your payment method"
+            },
+            "paymentInProgress": {
+                "nlBE": "Je betaling wordt uitgevoerd...",
+                "frFR": "Votre paiement est en cours...",
+                "enGB": "Payment in progress..."
+            },
+            "weWillSendPaymentDetailsLater": {
+                "nlBE": "Bedankt voor je bestelling! Je ontvangt verdere instructies voor je betaling.",
+                "frFR": "Thanks for your order! We will send payment details later.",
+                "enGB": "Thanks for your order! We will send payment details later."
+            },
+            "paymentSuccesfull": {
+                "nlBE": "Je betaling was succesvol!",
+                "frFR": "Votre paiement est réussi!",
+                "enGB": "Payment succesfull!"
+            },
+            "selectYourDesiredProduct": {
+                "nlBE": "Selecteer het gewenste <strong>product</strong>",
+                "frFR": "Sélectionnez votre <strong>produit</strong> désiré",
+                "enGB": "Select your desired <strong>product</strong>"
+            },
+            "selectYourPurchaseFormula": {
+                "nlBE": "Selecteer je <strong>aankoop formule</strong>",
+                "frFR": "Sélectionnez votre <strong>formule d'achat</strong>",
+                "enGB": "Select your purchase formula"
+            },
+            "selectYourDesiredType": {
+                "nlBE": "Selecteer het gewenste <strong>type</strong>",
+                "frFR": "Sélectionnez le <strong>type</strong> désiré",
+                "enGB": "Select your desired <strong>type</strong>"
+            },
+            "billingAddressIsDifferentFromOrganizationAddress": {
+                "nlBE": "Factuuradres is verschillend van organisatie adres",
+                "frFR": "l'Adresse de facturation est différente de l'adresse de l'organisation",
+                "enGB": "Billing address is different from organization address"
+            }
+        },
+        "monthlyCost": {
+            "nlBE": "Maandelijkse kost",
+            "frFR": "Frais mensuel",
+            "enGB": "Monthly cost"
+        },
+        "newQuote": {
+            "nlBE": "Nieuwe Offerte",
+            "frFR": "Nouvel Offre",
+            "enGB": "New Quote"
+        },
+        "order": {
+            "nlBE": "Bestelling",
+            "frFR": "Payé",
+            "enGB": "Order"
+        },
+        "paid": {
+            "nlBE": "Betaald",
+            "frFR": "Commande",
+            "enGB": "Paid"
+        },
+        "pay": {
+            "nlBE": "Betalen",
+            "frFR": "Payer",
+            "enGB": "Pay"
+        },
+        "payment": {
+            "nlBE": "Betaling",
+            "frFR": "Paiement",
+            "enGB": "Payment"
+        },
+        "paymentMethod": {
+            "nlBE": "Betaalmiddel",
+            "frFR": "Mode de paiement",
+            "enGB": "Payment method",
+            "bancontact": {
+                "nlBE": "Bancontact/MisterCash",
+                "frFR": "Bancontact/MisterCash",
+                "enGB": "Bancontact/MisterCash"
+            },
+            "mastercardVisa": {
+                "nlBE": "Mastercard/Visa",
+                "frFR": "Mastercard/Visa",
+                "enGB": "Mastercard/Visa"
+            },
+            "bankTransfer": {
+                "nlBE": "Overschrijving",
+                "frFR": "Virement bancaire",
+                "enGB": "Bank transfer"
+            },
+            "cash": {
+                "nlBE": "Contant",
+                "frFR": "Cash",
+                "enGB": "Cash"
+            }
+        },
+        "price": {
+            "nlBE": "Prijs",
+            "frFR": "Prix",
+            "enGB": "Price"
+        },
+        "priceB2C": {
+            "nlBE": "Prijs B2C",
+            "frFR": "Prix B2C",
+            "enGB": "Price B2C"
+        },
+        "priceB2B": {
+            "nlBE": "Prijs B2B",
+            "frFR": "Prix B2B",
+            "enGB": "Price B2B"
+        },
+        "priceB2T": {
+            "nlBE": "Prijs B2T",
+            "frFR": "Prix B2T",
+            "enGB": "Price B2T"
+        },
+        "priceExclusiveOfVat": {
+            "nlBE": "Prijs excl. BTW",
+            "frFR": "Prix hors TVA",
+            "enGB": "Price exclusive of VAT"
+        },
+        "purchaseFormula": {
+            "nlBE": "Aankoop formule",
+            "frFR": "Formule d'achat",
+            "enGB": "Purchase formula"
+        },
+        "quote": {
+            "nlBE": "Offerte",
+            "frFR": "Offre",
+            "enGB": "Quote"
+        },
+        "quotes": {
+            "nlBE": "Offertes",
+            "frFR": "Offres",
+            "enGB": "Quotes"
+        },
+        "quoteTitle": {
+            "nlBE": "Offerte Titel",
+            "frFR": "Titre de l'Offre",
+            "enGB": "Quote Title"
+        },
+        "quoteNr": {
+            "nlBE": "Offertenummer",
+            "frFR": "Numéro de l'offre",
+            "enGB": "Quote number"
+        },
+        "rent": {
+            "nlBE": "Huur",
+            "frFR": "Location",
+            "enGB": "Rent"
+        },
+        "rentingFormula": {
+            "nlBE": "Huur formule",
+            "frFR": "Formule de location",
+            "enGB": "Renting formula"
+        },
+        "shipmentDetails": {
+            "nlBE": "Leveringsgegevens",
+            "frFR": "Données de livraison",
+            "enGB": "Shipment details"
+        },
+        "variableCost": {
+            "nlBE": "Variabele kosten",
+            "frFR": "Coûts variables",
+            "enGB": "Variable cost"
+        },
+        "variableCostComponents": {
+            "nlBE": "Onderdelen van variabele kost",
+            "frFR": "Composants à coûts variables",
+            "enGB": "Variable cost components"
+        },
+        "vat": {
+            "nlBE": "BTW",
+            "frFR": "TVA",
+            "enGB": "VAT"
+        },
+        "vatNumber": {
+            "nlBE": "BTW nummer",
+            "frFR": "Numéro de TVA",
+            "enGB": "VAT number"
+        },
+        "warranty": {
+            "nlBE": "Waarborg",
+            "frFR": "Garantie",
+            "enGB": "Warranty"
+        }
+    },
+    "crm": {
+        "contact": {
+            "nlBE": "Contact",
+            "frFR": "Contact",
+            "enGB": "Contact"
+        },
+        "contacts": {
+            "nlBE": "Contacten",
+            "frFR": "Contacts",
+            "enGB": "Contacts"
+        },
+        "contactAction": {
+            "nlBE": "Contacteer",
+            "frFR": "Contactez",
+            "enGB": "Contact"
+        },
+        "contactDetails": {
+            "nlBE": "Contactgegevens",
+            "frFR": "Informations de contact",
+            "enGB": "Contact details"
+        },
+        "contract": {
+            "nlBE": "Contract",
+            "frFR": "Contrat",
+            "enGB": "Contract"
+        },
+        "copyFromMember": {
+            "nlBE": "Kopiëer van lid ",
+            "frFR": "Copier du membre",
+            "enGB": "Copy from member"
+        },
+        "experience": {
+            "nlBE": "Ervaring",
+            "frFR": "Expérience",
+            "enGB": "Experience"
+        },
+        "member": {
+            "nlBE": "Lid",
+            "frFR": "Membre",
+            "enGB": "Member"
+        },
+        "members": {
+            "nlBE": "Leden",
+            "frFR": "Membres",
+            "enGB": "Members"
+        },
+        "memberDetails": {
+            "nlBE": "Lidgegevens",
+            "frFR": "Informations de membre",
+            "enGB": "Member details"
+        },
+        "memberPrice": {
+            "nlBE": "Deelnameprijs voor leden",
+            "frFR": "Prix membres",
+            "enGB": "Member price"
+        },
+        "membership": {
+            "nlBE": "Lidmaatschap",
+            "frFR": "Adhésion",
+            "enGB": "Membership"
+        },
+        "membershipFee": {
+            "nlBE": "Lidgeld",
+            "frFR": "Cotisation",
+            "enGB": "Membership fee"
+        },
+        "membershipNumber": {
+            "nlBE": "Lidnummer",
+            "frFR": "Numéro de membre",
+            "enGB": "Membership number"
+        },
+        "membershipType": {
+            "nlBE": "Type lidmaatschap",
+            "frFR": "Type d'adhésion",
+            "enGB": "Membership type"
+        },
+        "message": {
+            "loginForMemberPrice": {
+                "nlBE": "<strong>Login</strong> voor ledenprijs",
+                "frFR": "<strong>Connectez-vous </strong> pour le tarif membre.",
+                "enGB": "<strong>Login </strong> for member price"
+            },
+            "iAmMemberOfAnOrganization": {
+                "nlBE": "Ik ben lid van een organisatie",
+                "frFR": "Je suis membre d'une organisation",
+                "enGB": "I am member of an organization"
+            }
+        },
+        "myMembership": {
+            "nlBE": "Mijn lidmaatschap",
+            "frFR": "Mon adhésion",
+            "enGB": "My membership"
+        },
+        "newMember": {
+            "nlBE": "Nieuw lid",
+            "frFR": "Nouveau membre",
+            "enGB": "New member"
+        },
+        "newCompany": {
+            "nlBE": "Nieuw Bedrijf",
+            "frFR": "Nouveau contact",
+            "enGB": "New contact"
+        },
+        "newOrganisation": {
+            "nlBE": "Nieuwe organisatie",
+            "frFR": "Nouvel organisation",
+            "enGB": "New organisation"
+        },
+        "newContact": {
+            "nlBE": "Nieuwe contactpersoon",
+            "frFR": "Nouveau contact",
+            "enGB": "New contact"
+        },
+        "newInstitution": {
+            "nlBE": "Nieuwe instelling",
+            "frFR": "Nouvel institution",
+            "enGB": "New institution"
+        },
+        "newTeamMember": {
+            "nlBE": "Nieuw teamlid",
+            "frFR": "Nouvel membre de l'équipe",
+            "enGB": "New team member"
+        },
+        "nonMemberPrice": {
+            "nlBE": "Deelnameprijs voor niet leden",
+            "frFR": "Prix non-membres",
+            "enGB": "Non-member price"
+        },
+        "noMember": {
+            "nlBE": "Geen lid",
+            "frFR": "Pas de membre",
+            "enGB": "No member"
+        },
+        "organisationType": {
+            "nlBE": "Organisatie type",
+            "frFR": "Type d'organisation",
+            "enGB": "Organisation type"
+        },
+        "supportedMembership": {
+            "nlBE": "Gesteund lidmaatschap",
+            "frFR": "Adhésion prise en charge",
+            "enGB": "Supported membership"
+        },
+        "team": {
+            "nlBE": "Team",
+            "frFR": "Équipe",
+            "enGB": "Team"
+        },
+        "teamMember": {
+            "nlBE": "Teamlid",
+            "frFR": "Membre de l'équipe",
+            "enGB": "Team member"
+        }
+    },
+    "event": {
+        "accreditation": {
+            "nlBE": "Accreditering",
+            "frFR": "Accréditation",
+            "enGB": "Accreditation"
+        },
+        "activities": {
+            "nlBE": "Activiteiten",
+            "frFR": "Activités",
+            "enGB": "Activities"
+        },
+        "activity": {
+            "nlBE": "Activiteit",
+            "frFR": "Activité",
+            "enGB": "Activity"
+        },
+        "activityDescription": {
+            "nlBE": "Beschrijving activiteit",
+            "frFR": "Description de l'activité",
+            "enGB": "Activity description"
+        },
+        "activitySubscription": {
+            "nlBE": "Activiteit inschrijving",
+            "frFR": "Inscription activité",
+            "enGB": "Activity subscription"
+        },
+        "activitySubscriptions": {
+            "nlBE": "Activiteit inschrijvingen",
+            "frFR": "Inscriptions activités",
+            "enGB": "Activity subscriptions"
+        },
+        "activityType": {
+            "nlBE": "Type Activiteit",
+            "frFR": "Type d'activité",
+            "enGB": "Activitiy type"
+        },
+        "attestation": {
+            "nlBE": "Attestering",
+            "frFR": "Attestation",
+            "enGB": "Attestation"
+        },
+        "classTimes": {
+            "nlBE": "Lestijden",
+            "frFR": "Temps de classe",
+            "enGB": "Class times"
+        },
+        "closedForSubscription": {
+            "nlBE": "Gesloten voor inschrijving",
+            "frFR": "Fermé à abonner",
+            "enGB": "Closed for subscription"
+        },
+        "conference": {
+            "nlBE": "Congres",
+            "frFR": "Conférence",
+            "enGB": "Conference"
+        },
+        "date": {
+            "nlBE": "Datum",
+            "frFR": "Date",
+            "enGB": "Date"
+        },
+        "eventSubscription": {
+            "nlBE": "Evenement inschrijving",
+            "frFR": "Inscription événement",
+            "enGB": "Event subscription"
+        },
+        "eventSubscriptions": {
+            "nlBE": "Evenement inschrijvingen",
+            "frFR": "Inscriptions événements",
+            "enGB": "Event subscriptions"
+        },
+        "dates": {
+            "nlBE": "Datums",
+            "frFR": "Dates",
+            "enGB": "Dates"
+        },
+        "duration": {
+            "nlBE": "Duur",
+            "frFR": "Durée",
+            "enGB": "Duration"
+        },
+        "event": {
+            "nlBE": "Evenement",
+            "frFR": "Evenement",
+            "enGB": "Event"
+        },
+        "endDate": {
+            "nlBE": "Einddatum",
+            "frFR": "Date de fin",
+            "enGB": "End date"
+        },
+        "endTime": {
+            "nlBE": "Eindtijd",
+            "frFR": "Heure de fin",
+            "enGB": "End time"
+        },
+        "expired": {
+            "nlBE": "Voorbij",
+            "frFR": "Expiré",
+            "enGB": "Expired"
+        },
+        "geolocation": {
+            "nlBE": "Geolocatie",
+            "frFR": "Géolocalisation",
+            "enGB": "Geolocation"
+        },
+        "hour": {
+            "nlBE": "Uur",
+            "frFR": "Heure",
+            "enGB": "Hour"
+        },
+        "location": {
+            "nlBE": "Locatie",
+            "frFR": "Lieu",
+            "enGB": "Location"
+        },
+        "maximumParticipants": {
+            "nlBE": "Maximum deelnemers",
+            "frFR": "Nombre maximum de participants",
+            "enGB": "Maximum participants"
+        },
+        "message": {
+            "chooseADate": {
+                "nlBE": "Kies een datum",
+                "frFR": "Sélectionnez une date",
+                "enGB": "Select a date"
+            },
+            "chooseYourDesiredDate": {
+                "nlBE": "Kies je gewenste datum",
+                "frFR": "Choisissez votre date souhaitée",
+                "enGB": "Choose your desired date"
+            },
+            "iWishToRegisterFor": {
+                "nlBE": "Ik wens in te schrijven voor",
+                "frFR": "Je souhaite m'inscrire pour",
+                "enGB": "I wish to register for"
+            },
+            "iWishToRegisterForThisActivity": {
+                "nlBE": "Ik wens in te schrijven voor deze activiteit",
+                "frFR": "Je souhaite m'inscrire à cette activité",
+                "enGB": "I wish to register for this activity"
+            },
+            "iWishToRegisterForThisEvent": {
+                "nlBE": "Ik wens in te schrijven voor dit evenement",
+                "frFR": "Je souhaite m'inscrire à cet événement",
+                "enGB": "I wish to register for this event"
+            },
+            "iWishToRequestADateForThisEvent": {
+                "nlBE": "Ik wens een datum aan te vragen voor dit evenement",
+                "frFR": "Je souhaite demander une date pour cet événement",
+                "enGB": "I wish to request a date for this event"
+            },
+            "iWishToParticipateInTheFollowingWorkshops": {
+                "nlBE": "Ik wens deel te nemen aan volgende workshops",
+                "frFR": "Je souhaite participer aux ateliers suivants",
+                "enGB": "I wish to participate in the following workshops"
+            },
+            "selectEventsForRegistration": {
+                "nlBE": "Selecteer de evenementen waarvoor je wil inschrijven",
+                "frFR": "Sélectionnez les événements pour lesquels vous souhaitez vous inscrire",
+                "enGB": "Select the events for which you want to register"
+            },
+            "selectYourSubscription": {
+                "nlBE": "Kies het gewenste abonnement",
+                "frFR": "Sélectionnez l'abonnement souhaité",
+                "enGB": "Select your subscription"
+            },
+            "whatYouWillLearn": {
+                "nlBE": "Wat je leert",
+                "frFR": "Ce que vous allez apprendre",
+                "enGB": "What you'll learn"
+            }
+        },
+        "minimumParticipants": {
+            "nlBE": "Minimum deelnemers",
+            "frFR": "Nombre minimum de participants",
+            "enGB": "Minimum participants"
+        },
+        "newActivity": {
+            "nlBE": "Nieuwe activiteit",
+            "frFR": "Nouvelle activité",
+            "enGB": "New activity"
+        },
+        "newTeacher": {
+            "nlBE": "Nieuwe docent/lesgever",
+            "frFR": "Nouvel enseignant",
+            "enGB": "New teacher"
+        },
+        "noSubscriptions": {
+            "nlBE": "Geen inschrijvingen",
+            "frFR": "Aucune inscription",
+            "enGB": "No subscription"
+        },
+        "openForSubscription": {
+            "nlBE": "Open voor inschrijving",
+            "frFR": "Ouvert à abonner",
+            "enGB": "Open for subscription"
+        },
+        "participationFee": {
+            "nlBE": "Deelnameprijs",
+            "frFR": "Frais de participation",
+            "enGB": "Participation fee"
+        },
+        "planned": {
+            "nlBE": "Gepland",
+            "frFR": "Prévu",
+            "enGB": "Planned"
+        },
+        "program": {
+            "nlBE": "Programma",
+            "frFR": "Programme",
+            "enGB": "Program"
+        },
+        "programItem": {
+            "nlBE": "Programma onderdeel",
+            "frFR": "Élément du programme",
+            "enGB": "Program item"
+        },
+        "startDate": {
+            "nlBE": "Begindatum",
+            "frFR": "Date de début",
+            "enGB": "Start date"
+        },
+        "startTime": {
+            "nlBE": "Begintijd",
+            "frFR": "Heure de début",
+            "enGB": "Start time"
+        },
+        "subscribe": {
+            "nlBE": "Inschrijven",
+            "frFR": "Inscrire",
+            "enGB": "Subscribe"
+        },
+        "subscription": {
+            "nlBE": "Inschrijving",
+            "frFR": "Inscription",
+            "enGB": "Subscription"
+        },
+        "subscriptions": {
+            "nlBE": "Inschrijvingen",
+            "frFR": "Inscriptions",
+            "enGB": "Subscriptions"
+        },
+        "subscriptionDate": {
+            "nlBE": "Inschrijvingsdatum",
+            "frFR": "Date d'inscription",
+            "enGB": "Subscription date"
+        },
+        "subscriptionEnd": {
+            "nlBE": "Einde inschrijvingen",
+            "frFR": "Fin des inscriptions",
+            "enGB": "Subscription end"
+        },
+        "subscriptionPeriod": {
+            "nlBE": "Inschrijvingsperiode",
+            "frFR": "Periode d'inscription",
+            "enGB": "Subscription period"
+        },
+        "subscriptionStart": {
+            "nlBE": "Start inschrijvingen",
+            "frFR": "début des inscriptions",
+            "enGB": "Subscription start"
+        },
+        "targetAudience": {
+            "nlBE": "Doelgroep",
+            "frFR": "Public cible",
+            "enGB": "Target audience"
+        },
+        "speaker": {
+            "nlBE": "Spreker",
+            "frFR": "Orateur",
+            "enGB": "Speaker"
+        },
+        "speakers": {
+            "nlBE": "Sprekers",
+            "frFR": "Orateurs",
+            "enGB": "Speakers"
+        },
+        "teachers": {
+            "nlBE": "Docenten/Lesgevers",
+            "frFR": "Enseignants",
+            "enGB": "Teachers"
+        },
+        "training": {
+            "nlBE": "Opleiding",
+            "frFR": "Formation",
+            "enGB": "Training"
+        },
+        "venue": {
+            "nlBE": "Plaats",
+            "frFR": "Lieu",
+            "enGB": "Venue"
+        },
+        "venueName": {
+            "nlBE": "Locatie naam",
+            "frFR": "Nom du lieu",
+            "enGB": "Venue name"
+        },
+        "workshopsAndMasterclasses": {
+            "nlBE": "Workshops en masterclasses",
+            "frFR": "Workshops et masterclasses",
+            "enGB": "Workshops and masterclasses"
+        }
+    },
+    "erp": {
+        "activity": {
+            "nlBE": "Activiteit",
+            "frFR": "Activité",
+            "enGB": "Activity"
+        },
+        "appointment": {
+            "nlBE": "Afspraak",
+            "frFR": "Rendez-vous",
+            "enGB": "Appointment"
+        },
+        "appointmentTitle": {
+            "nlBE": "Afspraak Titel",
+            "frFR": "Titre du Rendez-vous",
+            "enGB": "Appointment Title"
+        },
+        "assigned": {
+            "nlBE": "Toegewezen",
+            "frFR": "Assigné",
+            "enGB": "Assigned"
+        },
+        "availability": {
+            "nlBE": "Beschikbaarheid",
+            "frFR": "Disponibilité",
+            "enGB": "Availabilty"
+        },
+        "available": {
+            "nlBE": "Beschikbaar",
+            "frFR": "Disponible",
+            "enGB": "Available"
+        },
+        "availableInTheShortTerm": {
+            "nlBE": "Beschikbaar op korte termijn",
+            "frFR": "Disponible à court terme",
+            "enGB": "Available in the short term"
+        },
+        "blockedDays": {
+            "nlBE": "Geblokkeerde dagen",
+            "frFR": "Jours bloqués",
+            "enGB": "Blocked days"
+        },
+        "date": {
+            "nlBE": "Datum",
+            "frFR": "Date",
+            "enGB": "Date"
+        },
+        "duration": {
+            "nlBE": "Duur",
+            "frFR": "Durée",
+            "enGB": "Duration"
+        },
+        "editAppointment": {
+            "nlBE": "Wijzig Afspraak",
+            "frFR": "Modifier Rendez-vous",
+            "enGB": "Edit Appointment"
+        },
+        "hour": {
+            "nlBE": "uur",
+            "frFR": "heure",
+            "enGB": "hour"
+        },
+        "message": {
+            "isScheduled": {
+                "nlBE": "is gepland",
+                "frFR": "a été planifié",
+                "enGB": "has been scheduled"
+            },
+            "isUpdated": {
+                "nlBE": "is bijgewerkt",
+                "frFR": "a été modifié",
+                "enGB": "has been updated"
+            }
+        },
+        "newAppointment": {
+            "nlBE": "Nieuwe Afspraak",
+            "frFR": "Nouvel Rendez-vous",
+            "enGB": "New Appointment"
+        },
+        "period": {
+            "nlBE": "Periode",
+            "frFR": "Période",
+            "enGB": "Period"
+        },
+        "selectADate": {
+            "nlBE": "Selecteer een datum",
+            "frFR": "Choisissez une date",
+            "enGB": "Select a date"
+        },
+        "skills": {
+            "nlBE": "Vaardigheden",
+            "frFR": "Compétences",
+            "enGB": "Skills"
+        },
+        "task": {
+            "nlBE": "Taak",
+            "frFR": "Tâche",
+            "enGB": "Task"
+        },
+        "time": {
+            "nlBE": "Tijdstip",
+            "frFR": "Temps",
+            "enGB": "Time"
+        },
+        "timeOff": {},
+        "training": {
+            "nlBE": "Training",
+            "frFR": "Formation",
+            "enGB": "Training"
+        },
+        "unavailability": {
+            "nlBE": "Onbeschikbaarheid",
+            "frFR": "Indisponibilité",
+            "enGB": "Unavailability"
+        },
+        "unavailable": {
+            "nlBE": "Onbeschikbaar",
+            "frFR": "Indisponible",
+            "enGB": "Unavailable"
+        },
+        "weAreClosed": {
+            "nlBE": "Wij zijn <strong>gesloten</strong>",
+            "frFR": "Nous sommes <strong>fermés</strong>",
+            "enGB": "We are <strong>closed</strong>"
+        },
+        "weAreOpen": {
+            "nlBE": "Wij zijn <strong>open</strong>",
+            "frFR": "Nous sommes <strong>ouverts</strong>",
+            "enGB": "We are <strong>open</strong>"
+        },
+        "workingDays": {
+            "nlBE": "Werkdagen",
+            "frFR": "Jours de travail",
+            "enGB": "Working days"
+        },
+        "vacation": {
+            "nlBE": "Vakantie",
+            "frFR": "Vacances",
+            "enGB": "Vacation"
+        }
+    },
+    "global": {
+        "active": {
+            "nlBE": "Actief",
+            "frFR": "Active",
+            "enGB": "Active"
+        },
+        "activationCode": {
+            "nlBE": "Activatie code",
+            "frFR": "Code d'activation",
+            "enGB": "Activation code"
+        },
+        "amount": {
+            "nlBE": "Aantal",
+            "frFR": "Nombre",
+            "enGB": "Amount"
+        },
+        "cancel": {
+            "nlBE": "Annuleer",
+            "frFR": "Annuler",
+            "enGB": "Cancel"
+        },
+        "close": {
+            "nlBE": "Sluiten",
+            "frFR": "Fermer",
+            "enGB": "Close"
+        },
+        "code": {
+            "nlBE": "Code",
+            "frFR": "Code",
+            "enGB": "Code"
+        },
+        "configure": {
+            "nlBE": "Configureer",
+            "frFR": "Configurer",
+            "enGB": "Configure"
+        },
+        "calculationMethod": {
+            "nlBE": "Berekenmethode",
+            "frFR": "Méthode de calcul",
+            "enGB": "Calculation method"
+        },
+        "changePassword": {
+            "nlBE": "Wijzig wachtwoord",
+            "frFR": "Changer le mot de passe",
+            "enGB": "Change Password"
+        },
+        "chooseAFile": {
+            "nlBE": "Kies een bestand",
+            "frFR": "Choisissez un fichier",
+            "enGB": "Choose a file"
+        },
+        "chooseAnImage": {
+            "nlBE": "Kies een afbeelding",
+            "frFR": "Choisissez une image",
+            "enGB": "Choose an image"
+        },
+        "confirm": {
+            "nlBE": "Bevestigen",
+            "frFR": "Confirmer",
+            "enGB": "Confirm"
+        },
+        "CONFIRMED": {
+            "nlBE": "Bevestigd",
+            "frFR": "Confirmé",
+            "enGB": "Confirmed"
+        },
+        "createAnAccount": {
+            "nlBE": "Maak een account aan",
+            "frFR": "Créer un compte",
+            "enGB": "Create an account"
+        },
+        "date": {
+            "nlBE": "Datum",
+            "frFR": "Date",
+            "enGB": "Date"
+        },
+        "delete": {
+            "nlBE": "Verwijder",
+            "frFR": "Supprimer",
+            "enGB": "Delete"
+        },
+        "deleteAccount": {
+            "nlBE": "Verwijder account",
+            "frFR": "Supprimer compte",
+            "enGB": "Delete account"
+        },
+        "deleted": {
+            "nlBE": "Verwijderd",
+            "frFR": "Supprimé",
+            "enGB": "Deleted"
+        },
+        "description": {
+            "nlBE": "Omschrijving",
+            "frFR": "Description",
+            "enGB": "Description"
+        },
+        "details": {
+            "nlBE": "Algemene informatie",
+            "frFR": "Détails",
+            "enGB": "Details"
+        },
+        "filter": {
+            "nlBE": "Filter",
+            "frFR": "Filtre",
+            "enGB": "Filter"
+        },
+        "forgotPassword": {
+            "nlBE": "Wachtwoord vergeten?",
+            "frFR": "Oublié mot de passe?",
+            "enGB": "Forgot password"
+        },
+        "from": {
+            "nlBE": "Van",
+            "frFR": "De",
+            "enGB": "From"
+        },
+        "generalInformation": {
+            "nlBE": "Algemene informatie",
+            "frFR": "Informations généraux",
+            "enGB": "General information"
+        },
+        "gdpr": {
+            "nlBE": "GDPR",
+            "frFR": "GDPR",
+            "enGB": "GDPR",
+            "eventSubscriptionLargeText": {
+                "nlBE": "Door me in te schrijven ga ik ermee akkoord dat mijn persoonlijke gegevens worden verwerkt in functie van mijn inschrijving en dat ik in de toekomst informatie ontvang met betrekking tot dit evenement. Mijn persoonlijke gegevens zullen enkel verwerkt worden op wijzen die in overeenstemming zijn met de huidige GDPR-wetgeving en zullen niet doorgegeven worden aan derden.",
+                "frFR": "En m'inscrivant, j'accepte que mes données personnelles soient traitées en fonction de mon inscription et que je recevrai des informations à propos de cet événement à l'avenir. Mes données personnelles ne seront traitées que de manière conforme à la législation en vigueur sur les RGPD et ne seront pas transmises à des tiers.",
+                "enGB": "By registering, I agree that my personal data will be processed in function of my registration and that I will receive information regarding this event in the future. My personal data will only be processed in ways that are in accordance with current GDPR legislation and will not be passed on to third parties."
+            }
+        },
+        "iHaveAnAccount": {
+            "nlBE": "Ik heb een account",
+            "frFR": "J'ai un compte",
+            "enGB": "I have an account"
+        },
+        "images": {
+            "nlBE": "Afbeeldingen",
+            "frFR": "Images",
+            "enGB": "Images"
+        },
+        "imagesVideo": {
+            "nlBE": "Foto's en video",
+            "frFR": "Images et vidéo",
+            "enGB": "Images and video"
+        },
+        "included": {
+            "nlBE": "Inbegrepen",
+            "frFR": "Inclus",
+            "enGB": "Included"
+        },
+        "label": {
+            "nlBE": "Label",
+            "frFR": "Label",
+            "enGB": "Label"
+        },
+        "language": {
+            "nlBE": "Taal",
+            "frFR": "Langue",
+            "enGB": "Language"
+        },
+        "login": {
+            "nlBE": "Inloggen",
+            "frFR": "s'Identifier",
+            "enGB": "Login"
+        },
+        "message": {
+            "confirmDeleteQuestion": {
+                "nlBE": "Weet je zeker dat je dit item wil verwijderen?",
+                "frFR": "Êtes-vous sûr de vouloir supprimer cet élément?",
+                "enGB": "Are you sure you would like to delete this item?"
+            },
+            "confirmDeleteText": {
+                "nlBE": "Deze gegevens worden permanent verwijderd.",
+                "frFR": "Ces données seront définitivement supprimées.",
+                "enGB": "This data wil be permanently removed."
+            },
+            "isCreated": {
+                "nlBE": "is aangemaakt",
+                "frFR": "a été créé",
+                "enGB": "has been created"
+            },
+            "isBeingCreated": {
+                "nlBE": "wordt aangemaakt",
+                "frFR": "est en cours de création",
+                "enGB": "is being created"
+            },
+            "isDeleted": {
+                "nlBE": "is verwijderd",
+                "frFR": "a été supprimé",
+                "enGB": "has been deleted"
+            },
+            "isUpdated": {
+                "nlBE": "is bijgewerkt",
+                "frFR": "a été modifié",
+                "enGB": "has been updated"
+            },
+            "hasFailed": {
+                "nlBE": "is mislukt",
+                "frFR": "est échoué",
+                "enGB": "has failed"
+            },
+            "searchBy": {
+                "nlBE": "Zoek op ",
+                "frFR": "Recherche par ",
+                "enGB": "Search by "
+            },
+            "selectPrintLayout": {
+                "nlBE": "Selecteer een afdruk lay-out",
+                "frFR": "Sélectionnez une mise en page",
+                "enGB": "Select a print layout"
+            },
+            "sendMessage": {
+                "nlBE": "Verzend een bericht...",
+                "frFR": "Envoyez un message...",
+                "enGB": "Send a message..."
+            },
+            "your": {
+                "nlBE": "Uw",
+                "frFR": "Vôtre",
+                "enGB": "Your"
+            }
+        },
+        "more": {
+            "nlBE": "Meer",
+            "frFR": "Plus",
+            "enGB": "More"
+        },
+        "myAccount": {
+            "nlBE": "Mijn account",
+            "frFR": "Mon compte",
+            "enGB": "My account"
+        },
+        "name": {
+            "nlBE": "Naam",
+            "frFR": "Nom",
+            "enGB": "Name"
+        },
+        "next": {
+            "nlBE": "Verdergaan",
+            "frFR": "Continuer",
+            "enGB": "Next"
+        },
+        "no": {
+            "nlBE": "Nee",
+            "frFR": "Non",
+            "enGB": "No"
+        },
+        "noThanks": {
+            "nlBE": "Neen, dank je",
+            "frFR": "Non, merci",
+            "enGB": "No, thanks"
+        },
+        "none": {
+            "nlBE": "Geen",
+            "frFR": "Aucun",
+            "enGB": "None"
+        },
+        "notPresent": {
+            "nlBE": "Niet aanwezig",
+            "frFR": "Pas présent",
+            "enGB": "Not present"
+        },
+        "number": {
+            "nlBE": "Nummer",
+            "frFR": "Nombre",
+            "enGB": "Number"
+        },
+        "other": {
+            "nlBE": "Andere",
+            "frFR": "Autre",
+            "enGB": "Other"
+        },
+        "password": {
+            "nlBE": "Wachtwoord",
+            "frFR": "Mot de passe",
+            "enGB": "Password"
+        },
+        "present": {
+            "nlBE": "Aanwezig",
+            "frFR": "Présent",
+            "enGB": "Present"
+        },
+        "print": {
+            "nlBE": "Print",
+            "frFR": "Imprimer",
+            "enGB": "Print"
+        },
+        "priorityTypes": {
+            "high": {
+                "nlBE": "Hoog",
+                "frFR": "Haute",
+                "enGB": "High"
+            },
+            "low": {
+                "nlBE": "Laag",
+                "frFR": "Basse",
+                "enGB": "Low"
+            },
+            "medium": {
+                "nlBE": "Gemiddeld",
+                "frFR": "Moyenne",
+                "enGB": "Medium"
+            }
+        },
+        "priorityUpdate": {
+            "nlBE": "Prioriteit bijwerken",
+            "frFR": "Mise à jour la priorité",
+            "enGB": "Priority update"
+        },
+        "properties": {
+            "nlBE": "Eigenschappen",
+            "frFR": "Caractéristiques",
+            "enGB": "Properties"
+        },
+        "reason": {
+            "nlBE": "Reden",
+            "frFR": "Raison",
+            "enGB": "Reason"
+        },
+        "remarks": {
+            "nlBE": "Opmerkingen",
+            "frFR": "Remarques",
+            "enGB": "Remarks"
+        },
+        "save": {
+            "name": "Opslaan",
+            "nlBE": "Opslaan",
+            "frFR": "Sauver",
+            "enGB": "Save"
+        },
+        "saveChanges": {
+            "nlBE": "Wijzigingen opslaan",
+            "frFR": "Sauver les modifications",
+            "enGB": "Save changes"
+        },
+        "selectAll": {
+            "nlBE": "Selecteer alles",
+            "frFR": "Tout sélectionner",
+            "enGB": "Select all"
+        },
+        "settings": {
+            "nlBE": "Instellingen",
+            "frFR": "Réglages",
+            "enGB": "Settings"
+        },
+        "specifications": {
+            "nlBE": "Specificaties",
+            "frFR": "Spécifications",
+            "enGB": "Specifications"
+        },
+        "status": {
+            "nlBE": "Status",
+            "frFR": "État",
+            "enGB": "Status"
+        },
+        "statusTypes": {
+            "active": {
+                "nlBE": "Actief",
+                "frFR": "Actif",
+                "enGB": "Active"
+            },
+            "archived": {
+                "nlBE": "Gearchiveerd",
+                "frFR": "Archivé",
+                "enGB": "Archived"
+            },
+            "draft": {
+                "nlBE": "Concept",
+                "frFR": "Brouillon",
+                "enGB": "Draft"
+            },
+            "inactive": {
+                "nlBE": "Inactief",
+                "frFR": "Inactive",
+                "enGB": "inactive"
+            },
+            "open": {
+                "nlBE": "Open",
+                "frFR": "Ouvert",
+                "enGB": "Open"
+            },
+            "pending": {
+                "nlBE": "In behandeling",
+                "frFR": "En attendant",
+                "enGB": "Pending"
+            },
+            "inProgress": {
+                "nlBE": "In behandeling",
+                "frFR": "En cours",
+                "enGB": "In progress"
+            },
+            "closed": {
+                "nlBE": "Afgesloten",
+                "frFR": "Fermé",
+                "enGB": "Closed"
+            }
+        },
+        "statusUpdate": {
+            "nlBE": "Status bijwerken",
+            "frFR": "Mise à jour l'état",
+            "enGB": "Status update"
+        },
+        "type": {
+            "nlBE": "Type",
+            "frFR": "Type",
+            "enGB": "Type"
+        },
+        "uploadImages": {
+            "nlBE": "Afbeeldingen laden...",
+            "frFR": "Importer des images...",
+            "enGB": "Upload images..."
+        },
+        "username": {
+            "nlBE": "Gebruikersnaam",
+            "frFR": "Nom d'utilisateur",
+            "enGB": "Username"
+        },
+        "video": {
+            "nlBE": "Video",
+            "frFR": "Vidéo",
+            "enGB": "Video"
+        },
+        "warning": {
+            "nlBE": "Opgelet",
+            "frFR": "Attention",
+            "enGB": "Warning"
+        },
+        "yes": {
+            "nlBE": "Ja",
+            "frFR": "Oui",
+            "enGB": "Yes"
+        },
+        "yesPlease": {
+            "nlBE": "Ja, graag",
+            "frFR": "Oui, s'il te plait",
+            "enGB": "Yes, please"
+        }
+    },
+    "identity": {
+        "address": {
+            "nlBE": "Adres",
+            "frFR": "Adresse",
+            "enGB": "Address"
+        },
+        "boardRepresentative": {
+            "nlBE": "Contactpersoon directieniveau",
+            "frFR": "Membre du conseil d'administration",
+            "enGB": "Board member"
+        },
+        "city": {
+            "nlBE": "Plaats",
+            "frFR": "Lieu",
+            "enGB": "City"
+        },
+        "company": {
+            "nlBE": "Bedrijf",
+            "frFR": "Entreprise",
+            "enGB": "Company"
+        },
+        "companyName": {
+            "nlBE": "Bedrijfsnaam",
+            "frFR": "Nom de l'Entreprise",
+            "enGB": "Company Name"
+        },
+        "contact": {
+            "nlBE": "Contact",
+            "frFR": "Contact",
+            "enGB": "Contact"
+        },
+        "contactGroup": {
+            "nlBE": "Contactgroep",
+            "frFR": "Groupe de contact",
+            "enGB": "Contact group"
+        },
+        "contacts": {
+            "nlBE": "Contactpersonen",
+            "frFR": "Contacts",
+            "enGB": "Contacts"
+        },
+        "contactDetails": {
+            "nlBE": "Contactgegevens",
+            "frFR": "Informations de contact",
+            "enGB": "Contact details"
+        },
+        "customer": {
+            "nlBE": "Klant",
+            "frFR": "Client",
+            "enGB": "Customer"
+        },
+        "country": {
+            "nlBE": "Land",
+            "frFR": "Pays",
+            "enGB": "Country",
+            "belgium": {
+                "nlBE": "België",
+                "frFR": "Belgique",
+                "enGB": "Belgium"
+            },
+            "netherlands": {
+                "nlBE": "Nederland",
+                "frFR": "les Pays-Bas",
+                "enGB": "The Netherlands"
+            }
+        },
+        "countries": {
+            "nlBE": "Landen",
+            "frFR": "Pays",
+            "enGB": "Countries"
+        },
+        "customers": {
+            "nlBE": "Klanten",
+            "frFR": "Clients",
+            "enGB": "Customers"
+        },
+        "customerData": {
+            "nlBE": "Klant Gegevens",
+            "frFR": "Données du client",
+            "enGB": "Customer data"
+        },
+        "customerName": {
+            "nlBE": "Klantnaam",
+            "frFR": "Nom du client",
+            "enGB": "Customer name"
+        },
+        "email": {
+            "nlBE": "Email",
+            "frFR": "Email",
+            "enGB": "Email"
+        },
+        "firstName": {
+            "nlBE": "Voornaam",
+            "frFR": "Prénom",
+            "enGB": "Firstname"
+        },
+        "function": {
+            "nlBE": "Functie",
+            "frFR": "Fonction",
+            "enGB": "Function"
+        },
+        "institution": {
+            "nlBE": "Instelling",
+            "frFR": "Institution",
+            "enGB": "Institution"
+        },
+        "lastName": {
+            "nlBE": "Naam",
+            "frFR": "Nom",
+            "enGB": "Last name"
+        },
+        "location": {
+            "nlBE": "Plaats",
+            "frFR": "Lieu",
+            "enGB": "Location"
+        },
+        "logo": {
+            "nlBE": "Logo",
+            "frFR": "Logo",
+            "enGB": "Logo"
+        },
+        "managementContact": {
+            "nlBE": "Vertegenwoordiger Algemene Vergadering",
+            "frFR": "Assemblée générale des représentants",
+            "enGB": "Management contact"
+        },
+        "mobilePhone": {
+            "nlBE": "Mobiele Telefoon",
+            "frFR": "Téléphone portable",
+            "enGB": "Mobile phone"
+        },
+        "name": {
+            "nlBE": "Naam",
+            "frFR": "Nom",
+            "enGB": "Name"
+        },
+        "numberOfPersons": {
+            "nlBE": "Aantal personen",
+            "frFR": "Nombre de personnes",
+            "enGB": "Number of persons"
+        },
+        "openingHours": {
+            "nlBE": "Openingsuren",
+            "frFR": "Heures d 'ouverture",
+            "enGB": "Opening hours"
+        },
+        "openingHoursDescription": {
+            "nlBE": "Openingsuren omschrijving",
+            "frFR": "Heures d 'ouverture description",
+            "enGB": "Opening hours description"
+        },
+        "organisation": {
+            "nlBE": "Organisatie",
+            "frFR": "Organisation",
+            "enGB": "Organisation"
+        },
+        "organisationDetails": {
+            "nlBE": "Organisatie gegevens",
+            "frFR": "Données de Organisation",
+            "enGB": "Organisation"
+        },
+        "organisations": {
+            "nlBE": "Organisaties",
+            "frFR": "Organisations",
+            "enGB": "Organisations"
+        },
+        "password": {
+            "nlBE": "Wachtwoord",
+            "frFR": "Mot de passe",
+            "enGB": "Password"
+        },
+        "phone": {
+            "nlBE": "Telefoon",
+            "frFR": "Téléphone",
+            "enGB": "Phone"
+        },
+        "profession": {
+            "nlBE": "Beroep",
+            "frFR": "Profession",
+            "enGB": "Profession",
+            "caregiver": {
+                "nlBE": "Hulpverlener",
+                "frFR": "Sauveteur",
+                "enGB": "Caregiver"
+            },
+            "researcher": {
+                "nlBE": "Onderzoeker",
+                "frFR": "Enquêteur",
+                "enGB": "Researcher"
+            },
+            "student": {
+                "nlBE": "Student",
+                "frFR": "Étudiant",
+                "enGB": "Student"
+            }
+        },
+        "professionFunction": {
+            "nlBE": "Beroep/Functie",
+            "frFR": "Profession/Fonction",
+            "enGB": "Profession/Function"
+        },
+        "referenceContact": {
+            "nlBE": "Referentie contact / contactpersoon supportteam",
+            "frFR": "Contact de référence",
+            "enGB": "Reference contact"
+        },
+        "region": {
+            "nlBE": "Regio",
+            "frFR": "Région",
+            "enGB": "Region"
+        },
+        "repeatPassword": {
+            "nlBE": "Herhaal wachtwoord",
+            "frFR": "Répétez mot de passe",
+            "enGB": "Repeat password"
+        },
+        "riziv": {
+            "nlBE": "riziv",
+            "frFR": "riziv",
+            "enGB": "riziv"
+        },
+        "salutation": {
+            "nlBE": "Aanspreektitel",
+            "frFR": "Salutation",
+            "enGB": "Title",
+            "mr": {
+                "nlBE": "Dhr.",
+                "frFR": "Mr.",
+                "enGB": "Mr."
+            },
+            "mrs": {
+                "nlBE": "Mevr.",
+                "frFR": "Mme.",
+                "enGB": "Mrs."
+            },
+            "miss": {
+                "nlBE": "Mevr.",
+                "frFR": "Mlle.",
+                "enGB": "Miss."
+            },
+            "dr": {
+                "nlBE": "Dr.",
+                "frFR": "Dr.",
+                "enGB": "Dr."
+            }
+        },
+        "searchByClientName": {
+            "nlBE": "Zoek op klantnaam...",
+            "frFR": "Recherche par nom de client...",
+            "enGB": "Search by clientname..."
+        },
+        "studentNumber": {
+            "nlBE": "Studentennummer",
+            "frFR": "Numéro d'étudiant",
+            "enGB": "Student number"
+        },
+        "zipCode": {
+            "nlBE": "Postcode",
+            "frFR": "Code postal",
+            "enGB": "Zipcode"
+        }
+    },
+    "immo": {
+        "bicycleStorage": {
+            "nlBE": "Fietsenstalling",
+            "frFR": "Local à vélos",
+            "enGB": "Bicycle storage"
+        },
+        "centralHeating": {
+            "nlBE": "Verwarming centraal",
+            "frFR": "Chauffage central",
+            "enGB": "Central heating"
+        },
+        "floor": {
+            "nlBE": "Verdieping",
+            "frFR": "Étage",
+            "enGB": "Floor"
+        },
+        "furnished": {
+            "nlBE": "Bemeubeld",
+            "frFR": "Meublé",
+            "enGB": "Furnished"
+        },
+        "internet": {
+            "nlBE": "Internet",
+            "frFR": "Internet",
+            "enGB": "Internet"
+        },
+        "message": {
+            "aboutThisRoom": {
+                "nlBE": "Over deze kamer",
+                "frFR": "À propos de cette chambre",
+                "enGB": "About this room"
+            }
+        },
+        "orientation": {
+            "nlBE": "Oriëntatie",
+            "frFR": "Orientation",
+            "enGB": "Orientation"
+        },
+        "propertyAddress": {
+            "nlBE": "Adres pand",
+            "frFR": "Adresse de la propriété",
+            "enGB": "Property address"
+        },
+        "roomNumber": {
+            "nlBE": "Kamernummer",
+            "frFR": "Numéro de chambre",
+            "enGB": "Room number"
+        },
+        "roomType": {
+            "nlBE": "Kamertype",
+            "frFR": "Type de chambre",
+            "enGB": "Room type"
+        }
+    }
 }

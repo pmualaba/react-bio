@@ -2,7 +2,7 @@ import {css} from 'styled-components'
 
 const cssDefault = css`
     --styled: '/design/web/documents/package.core.ui.Document.js';
-    
+
     box-shadow: var(--default-spacial-open-shadow);
 `
 const cssLogin = css`
