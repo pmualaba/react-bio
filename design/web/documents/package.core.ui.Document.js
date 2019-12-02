@@ -7,7 +7,7 @@ const cssDefault = css`
 `
 const cssLogin = css`
     --styled: '/design/web/documents/package.core.ui.Document.js';
-    box-shadow: rgba(30, 21, 61, 0.86) 0 5px 30px 0;
+    box-shadow: rgba(194, 194, 194, 0.86) 0 5px 30px 0;
     background-size: cover;
 `
 const motionFastFadeIn = {}
@@ -31,12 +31,7 @@ export default {
                         opacity: 0,
                         transition: {duration: 1, ease: [0.48, 0.15, 0.25, 0.96]}
                     }
-                },
-                as: 'div'
-            },
-            SubComponent: {
-                css: {},
-                motion: {}
+                }
             }
         },
         login: {
@@ -45,7 +40,7 @@ export default {
                 variants: {
                     initial: {scale: 0.96, y: 30, opacity: 0},
                     enter: {
-                        scale: 1,
+                        scale: 1.0,
                         y: 0,
                         opacity: 1,
                         transition: {duration: 1, ease: [0.48, 0.15, 0.25, 0.96]}
@@ -56,8 +51,7 @@ export default {
                         opacity: 0,
                         transition: {duration: 1, ease: [0.48, 0.15, 0.25, 0.96]}
                     }
-                },
-                as: 'div'
+                }
             })
         }
     },

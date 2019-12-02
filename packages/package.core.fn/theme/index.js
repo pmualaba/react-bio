@@ -5,9 +5,16 @@ function render(props, ctx) {
     const context = ctx || props.context
     const metaTheme = props.meta['@theme'] || props.meta['@component']
 
-    const variant = props.dna.ui['theme.design.variant'] || 'default'
+    const motionVariant = props.dna.ui['theme.motion.variant'] || 'default'
+    const designVariant = props.dna.ui['theme.design.variant'] || 'default'
     const designPrefix = metaTheme.split('].')
     const designSuffix = designPrefix[1].split('.')
+    console.log('motionVariant', motionVariant)
+
+    /**
+     * context.theme.design[package][platform][kind][component]
+     * Bio Debug Message: Component not registered in RNA registry.design.web
+     */
     const design =
         context.theme.design[designPrefix[0].slice(2, -1)][designSuffix[0]][designSuffix[1]][
             designSuffix[2]
@@ -17,18 +24,18 @@ function render(props, ctx) {
 
     if (design.variants) {
         const motion = {
-            ...((typeof design.variants[variant].motion === 'function' &&
-                design.variants[variant].motion(props)) ||
-                design.variants[variant].motion),
-            ...props.dna.ui['theme.skin.motion']
+            ...((typeof design.variants[motionVariant].motion === 'function' &&
+                design.variants[motionVariant].motion(props)) ||
+                design.variants[motionVariant].motion),
+            ...((typeof props.dna.ui['theme.motion.variant'] === 'object' &&
+                props.dna.ui['theme.motion.variant']) ||
+                undefined)
         }
-        if (motion.as) {
-            motion.as = components.motion[motion.as || 'div']
-        }
+        motion.as = components.motion[motion.as || 'div']
 
         return {
             css: [
-                design.variants[variant].css || '',
+                design.variants[designVariant].css || '',
 
                 screenSize === 'S' && design.context.screenSize.S
                     ? design.context.screenSize.S.css

@@ -14,6 +14,10 @@ function Region(props) {
             style={props.dna.ui && props.dna.ui['theme.style.css']}
         >
             {props[props.blocks ? 'blocks' : 'layouts'].map(component => {
+                !component.meta &&
+                    console.log(
+                        `Bio Debug Message: Missing meta for existing dna entry in Master DNA. Delete both or restore meta.`
+                    )
                 const RegionChildComponent = get(components, component.meta['@component'])
 
                 !component.genes &&

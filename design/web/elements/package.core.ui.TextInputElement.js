@@ -7,7 +7,7 @@ export default {
             motion: {
                 variants: {
                     enter: {x: 0},
-                    exit: {x: 500}
+                    exit: {x: -500}
                 }
             }
         },
@@ -15,7 +15,7 @@ export default {
             css: css``,
             motion: {
                 variants: {
-                    enter: {x: 0},
+                    enter: {x: -100},
                     exit: {x: 100}
                 }
             }

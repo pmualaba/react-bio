@@ -111,10 +111,12 @@
                             "ui": {
                                 "theme.style.css": {
                                 }
+
                             },
                             "set": {
                                 "defaultSkin": "bio",
                                 "defaultSkinVariant": "default",
+                                "backgroundImage": "/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg",
                                 "fonts": {
                                     "google": [
                                         "Roboto:300,700",
@@ -192,15 +194,6 @@
                                                     "class": "LoginForm",
                                                     "kind": "block"
                                                 }
-                                            },
-                                            {
-                                                "meta": {
-                                                    "@dna": "['package.core.ui'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[1:Test]",
-                                                    "@component": "['package.core.ui'].web.blocks.Test",
-                                                    "name": "Test",
-                                                    "class": "Test",
-                                                    "kind": "block"
-                                                }
                                             }
                                         ]
                                     }
@@ -259,6 +252,7 @@
                                     "theme.variant": "default",
                                     "theme.model.variant": "scrollContainer",
                                     "theme.design.variant": "login",
+                                    "theme.motion.variant": "login",
                                     "theme.skin.variant": "themeVariantDefault",
                                     "theme.skin.tone": "dimensionVariantDefault",
                                     "theme.skin.typography": "sans",
@@ -267,8 +261,6 @@
                                     "theme.style.variant": "home",
                                     "theme.style.class": "home",
                                     "theme.style.css": {
-                                        "backgroundColor": "#17141D",
-                                        "backgroundImage": "url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)"
                                     }
                                 }
                             },
@@ -277,6 +269,7 @@
                                     "collapse": false
                                 },
                                 "ui": {
+                                    "theme.design.variant": "login"
                                 }
                             },
                             "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main]": {
@@ -309,23 +302,8 @@
                                     }
                                 },
                                 "set": {
-                                },
-                                "ui": {
-                                }
-                            },
-                            "['package.core.auth'].web.documents.login.layouts[0:DocumentLayout].regions[0:main].blocks[1:Test]": {
-                                "data": {
-                                    "accessors": {
-                                        "logo": "region.domain.hasFeaturedImage",
-                                        "title": "region.domain.title"
-                                    }
-                                },
-                                "set": {
-                                },
-                                "ui": {
                                 }
                             }
-
                         }
                     }
                 }

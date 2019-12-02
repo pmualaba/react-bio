@@ -14,7 +14,6 @@ const TextInputElementStyled = styled('div').attrs(props => ({
 
     > input {
         width: 100%;
-        height: 100%;
     }
 
     ${props => props.css};

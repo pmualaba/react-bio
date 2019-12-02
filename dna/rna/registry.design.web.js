@@ -32,6 +32,9 @@ import LoginForm from '../../design/web/blocks/package.core.auth.LoginForm'
  * Elements
  */
 import ImageElement from '../../design/web/elements/package.core.ui.ImageElement'
+import TextInputElement from '../../design/web/elements/package.core.ui.TextInputElement'
+import BackgroundElement from '../../design/web/elements/package.core.ui.BackgroundElement'
+import StripeBancontactElement from '../../design/web/elements/package.core.commerce.StripeBancontactElement'
 
 // TODO : Build Theme Inheritance Tree
 
@@ -70,7 +73,9 @@ const design = {
                 PageHeader
             },
             elements: {
-                ImageElement
+                ImageElement,
+                TextInputElement,
+                BackgroundElement
             }
         }
     },
@@ -79,6 +84,11 @@ const design = {
             documents: {
                 Document: DocumentCms
             }
+        }
+    },
+    'package.core.commerce': {
+        web: {
+            StripeBancontactElement
         }
     }
 }

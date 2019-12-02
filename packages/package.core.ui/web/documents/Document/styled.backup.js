@@ -16,20 +16,6 @@ const DocumentStyled = styled('div').attrs(props => ({
     overflow-x: hidden;
     background-color: ${props => props.dna.set.backgroundColor};
     z-index: -2;
-    ::before {
-        content: '';
-        position: absolute;
-        width: 100vh;
-        height: 100%;
-        top: 80px;
-        z-index: -1;
-        filter: blur(23px);
-        background: ${props => props.dna.set.backgroundImage} 0 0 no-repeat;
-        background-size: contain;
-        transform: rotate(270deg);
-        margin: -110px;
-        margin-bottom: -80px;
-    }
 
     ${props => props.css};
 `

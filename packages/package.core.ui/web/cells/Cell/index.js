@@ -88,7 +88,9 @@ function Cell(props) {
             key: child.props.meta['@dna'],
             meta: {
                 ...child.props.meta,
-                '@flag.controlled': true
+                '@flag.controlled': true,
+                '@flag.valid': true,
+                '@flag.required': false
             },
             data: {
                 init: {...child.props.data.init},

@@ -5,28 +5,18 @@ export default {
         default: {
             css: css``,
             motion: {
-                initial: 'exit',
-                animate: 'enter',
-                onAnimationComplete: e =>
-                    (document.querySelector('.Region.main').style.overflowX = 'hidden'),
-                exit: 'exit',
                 variants: {
+                    exit: {
+                        y: 350,
+                        opacity: 0,
+                        transition: {duration: 1.5, ease: [0.175, 0.85, 0.42, 0.96]}
+                    },
                     enter: {
-                        y: -100,
+                        y: 0,
                         opacity: 1,
                         transition: {
-                            duration: 5,
-                            ease: [0.175, 0.85, 0.42, 0.96],
-                            staggerChildren: 0.5
-                        }
-                    },
-                    exit: {
-                        y: 150,
-                        opacity: 0,
-                        transition: {
-                            duration: 5,
-                            ease: [0.175, 0.85, 0.42, 0.96],
-                            staggerChildren: 0.5
+                            duration: 0.5,
+                            ease: [0.175, 0.85, 0.42, 0.96]
                         }
                     }
                 }

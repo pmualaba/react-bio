@@ -32,6 +32,8 @@ function PaymentMethodElement(props) {
      */
 
     // prettier-ignore
+    if (!props.dna.ui) { props.dna.ui = {} }
+    // prettier-ignore
     if (!props.fn.onValueUpdate) { props.fn.onValueUpdate = () => {} }
     // prettier-ignore
     if (!props.fn.onKeyUp) { props.fn.onKeyUp = () => {} }
@@ -39,11 +41,12 @@ function PaymentMethodElement(props) {
     /**
      * Data
      */
-
-    const [data, selectors] = hooks.elements.useDataSelectors(props, ['paymentMethod'])
-    const [state, dispatch] = useReducer(reducer, data || {value: ''})
-    const value = props.meta['@flag.controlled'] ? data.value : state.value
     const dispatchStore = useDispatch()
+    const [data, selectors, dispatch] = hooks.elements.useDataSelectors(
+        props,
+        ['paymentMethod', 'paymentMeta'],
+        reducer
+    )
 
     console.log('data', data)
     /**
@@ -62,8 +65,7 @@ function PaymentMethodElement(props) {
             set: {
                 icon: 'fa-home',
                 'ui.button.label': props.dna.set['ui.button.label']
-            },
-            ui: {}
+            }
         },
         data: {
             init: {
@@ -89,20 +91,24 @@ function PaymentMethodElement(props) {
         dna: {
             set: {
                 icon: 'fa-home',
-                'ui.button.label': props.dna.set['ui.button.label']
-            },
-            ui: {}
+                'ui.button.label': props.dna.set['ui.button.label'],
+                autocomplete: 'off'
+            }
         },
         data: {
             init: {
-                paymentMethod: ''
+                name: data.paymentMeta.name,
+                email: data.paymentMeta.email,
+                meta: data.paymentMeta
             }
         },
         context: props.context,
         fn: {
             onClick(payload) {
-                props.fn.onClick(payload)
                 dispatchStore(FSA(SEND_PAYMENT_STRIPE, false, payload, props.meta))
+            },
+            onKeyUp(payload) {
+                console.log('onKeyUp')
             }
         }
     }
@@ -111,7 +117,7 @@ function PaymentMethodElement(props) {
      * Render
      */
 
-    console.log(`RENDER ELEMENT: PaymentStripeElement ${props.meta['@dna']}`, props, state)
+    console.log(`RENDER ELEMENT: PaymentStripeElement ${props.meta['@dna']}`, props)
     return (
         <PaymentMethodElementStyled
             meta={props.meta}

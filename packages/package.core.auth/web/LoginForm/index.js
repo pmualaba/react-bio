@@ -28,6 +28,13 @@ function reducer(state, [type, payload]) {
 
 export default function LoginForm(props) {
     /**
+     * Bio Default Props
+     */
+    if (!props.dna.ui) {
+        props.dna.ui = {}
+    }
+
+    /**
      * Data
      */
 
@@ -41,7 +48,6 @@ export default function LoginForm(props) {
 
     const refBlock = useRef()
     hooks.blocks.useResponsiveBlock(refBlock, 30)
-
     /**
      * Cell__login
      */
@@ -105,6 +111,7 @@ export default function LoginForm(props) {
             class: 'ImageElement',
             kind: 'element'
         },
+        dna: {},
         data: {
             init: {
                 ...props.data.init.logo,
@@ -127,10 +134,18 @@ export default function LoginForm(props) {
             class: 'TextInputElement',
             kind: 'element'
         },
+        dna: {
+            set: {
+                autocomplete: 'off',
+                name: 'user',
+                label: props.context.i18n.identity.username
+            },
+            data: {
+                validator: 'string|*|-|-'
+            }
+        },
         data: {
             init: {
-                name: 'user',
-                autocomplete: 'new-password',
                 value: ''
             }
         },
@@ -149,10 +164,15 @@ export default function LoginForm(props) {
             class: 'TextInputElement',
             kind: 'element'
         },
+        dna: {
+            set: {
+                autocomplete: 'off',
+                name: 'password',
+                label: props.context.i18n.identity.password
+            }
+        },
         data: {
             init: {
-                name: 'password',
-                autocomplete: 'autoComplete',
                 value: ''
             }
         },
@@ -170,6 +190,12 @@ export default function LoginForm(props) {
             name: 'TextInputElement__passwordConfirm',
             class: 'TextInputElement',
             kind: 'element'
+        },
+        dna: {
+            set: {
+                autocomplete: 'off',
+                name: 'password'
+            }
         },
         data: {
             init: {
@@ -220,9 +246,9 @@ export default function LoginForm(props) {
     }
 
     /**
-     * PaymentStripeElement__pay
+     * PaymentMethodElement__pay
      */
-    console.log('state.value', state.value)
+
     bio.PaymentMethodElement__pay = {
         meta: {
             '@dna': `${props.meta['@dna']}.elements[2:PaymentMethodElement__pay]`,
@@ -234,14 +260,19 @@ export default function LoginForm(props) {
         dna: {
             set: {
                 icon: 'fa-home',
-                publishableKey: 'pk_test_rZKTp2SyMW4IR5TrH4Ybzk0X00rPQzyC4H',
-                paymentMethod: 'paypal'
-            },
-            ui: {}
+                publishableKey: 'pk_test_rZKTp2SyMW4IR5TrH4Ybzk0X00rPQzyC4H'
+            }
         },
         data: {
             init: {
-                paymentMethod: state.value
+                paymentMethod: state.value,
+                paymentMeta: {
+                    name: '',
+                    email: '',
+                    locale: 'nlBE',
+                    orderId: '',
+                    engagementId: ''
+                }
             }
         },
         context: props.context,
@@ -254,10 +285,38 @@ export default function LoginForm(props) {
     }
 
     /**
+     * TextInputElement__name
+     */
+
+    bio.TextInputElement__name = {
+        meta: {
+            '@dna': `${props.meta['@dna']}.elements[0:TextInputElement__name]`,
+            '@component': "['package.core.ui'].web.elements.TextInputElement",
+            name: 'TextInputElement__name',
+            class: 'TextInputElement',
+            kind: 'element'
+        },
+        data: {
+            init: {
+                value: ''
+            }
+        },
+        context: props.context,
+        fn: {
+            onKeyUp(payload) {
+                payload.data.selector = `ui['package.core.cms'].web.selector`
+                dispatchStore(FSA(ON_KEY_UP, false, payload, props.meta))
+            }
+        }
+    }
+
+    /**
      * Render
      */
-    console.log('RENDER BLOCK: LoginForm')
     const {css, motion} = props.context.theme.render(props)
+
+    console.log('RENDER BLOCK: LoginForm', motion)
+
     return (
         <LoginFormStyled
             ref={refBlock}
@@ -283,8 +342,3 @@ export default function LoginForm(props) {
         </LoginFormStyled>
     )
 }
-
-/**
- <PaymentStripeElement {...bio.PaymentStripeElement__pay} />
-
- */

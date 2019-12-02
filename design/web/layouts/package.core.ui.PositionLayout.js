@@ -15,6 +15,23 @@ export default {
                     height: 50vw;
                 }
             `
+        },
+        login: {
+            css: css`
+                > .main {
+                    --styled: '/design/web/layouts/package.core.ui.PositionLayout.js';
+                    // background-image: linear-gradient(#c1f5f3, #fff);
+                    //  border-bottom: 15px solid transparent;
+                    box-shadow: 10px 10px 103px 0px rgb(255, 255, 255);
+                    overflow: hidden;
+                    // filter: blur(3px);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    height: 50vw;
+                }
+            `
         }
     },
     context: {

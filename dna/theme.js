@@ -588,7 +588,7 @@
                         },
                         "open": {
                             "shadow": "0px 5px 30px 0 rgba(252, 146, 146, 0.86)",
-                            "padding-document": "0px",
+                            "padding-document": "40px",
                             "padding-block": "40px",
                             "margin": ""
                         }

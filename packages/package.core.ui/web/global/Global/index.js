@@ -14,6 +14,8 @@ import {CSSvariables, getGoogleFonts} from '../../../../package.core.fn/theme'
 import {storeEquality} from '../../../../package.core.fn/data'
 import CSSreset from '../../../../../design/web/css-reset'
 
+import components from '../../../../../dna/rna/registry.components.web'
+import BackgroundElement from '../../elements/BackgroundElement'
 import GlobalStyled from './styled'
 
 /**
@@ -165,9 +167,40 @@ export default function Global(props) {
     const domain = props.context.environment.domain
     const l = props.context.environment.locale
     const {css, motion} = context.theme.render(props, context)
+    console.log('motion', motion)
+
+    /**
+     * BackgroundElement__global
+     */
+    const bio = {}
+    bio.BackgroundElement__global = {
+        meta: {
+            '@dna': `${props.meta['@dna']}.elements[0:BackgroundElement__global]`,
+            '@component': "['package.core.ui'].web.elements.BackgroundElement",
+            name: 'BackgroundElement__global',
+            class: 'BackgroundElement',
+            kind: 'element'
+        },
+        data: {
+            init: {
+                backgrounds: [{url: '/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg'}]
+            }
+        },
+        dna: {
+            set: {
+                rotate: 180
+            },
+            ui: {
+                'theme.motion.variant': 'login',
+                'theme.style.css': {
+                    transform: 'rotate(180deg)'
+                }
+            }
+        },
+        context
+    }
 
     console.log('RENDER GLOBAL')
-
     return (
         <GlobalContext.Provider value={context}>
             <Head>
@@ -214,8 +247,22 @@ export default function Global(props) {
                 {...motion}
                 style={props.dna.ui['theme.style.css']}
             >
+                <BackgroundElement {...bio.BackgroundElement__global} />
                 {props.children}
             </GlobalStyled>
         </GlobalContext.Provider>
     )
 }
+
+/**
+ * <div
+ style={{
+                    filter: 'blur(30px)',
+                    position: 'absolute',
+                    height: '100vh',
+                    width: '100vw',
+                    backgroundImage:
+                        'url(/domains/my-react-bio-app.org/package.core.cms/img/bio.jpg)'
+                }}
+ ></div>
+ */

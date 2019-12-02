@@ -6,17 +6,21 @@ export default {
             css: css``,
             motion: {
                 variants: {
-                    enter: {x: 0},
-                    exit: {x: 500}
+                    enter: {x: 200},
+                    exit: {x: -500}
                 }
             }
         },
         login: {
             css: css``,
             motion: {
-                variants: {
-                    enter: {x: 0},
-                    exit: {x: 100}
+                as: 'div',
+                animate: {
+                    filter: ['blur(23px)', 'blur(0px)', 'blur(5px)']
+                },
+                transition: {
+                    duration: 3,
+                    ease: 'easeInOut'
                 }
             }
         }

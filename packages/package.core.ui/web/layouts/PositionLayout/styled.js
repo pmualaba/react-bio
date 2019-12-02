@@ -19,6 +19,7 @@ const PositionLayoutStyled = styled('main').attrs(props => ({
 
     > .main {
         --styled: '/packages/package.core.ui/web/layouts/PositionLayout/styled.js';
+        overflow: auto;
     }
 
     ${props => props.css};

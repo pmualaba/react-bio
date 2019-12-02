@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react'
+import React from 'react'
 import TextInputElementStyled from './styled'
 import {hooks} from '../../../../package.core.fn'
 
@@ -18,10 +18,19 @@ function reducer(state, [type, payload]) {
 }
 
 export default function TextInputElement(props) {
+    const dna = props.dna
+
     /**
-     * Default Props
+     * Bio Default Props
      */
 
+    !dna &&
+        console.log(
+            `Bio Debug Message: Missing bio.dna property for TextInputElement: ${props.meta['@dna']}`
+        )
+
+    // prettier-ignore
+    if (!dna.ui) { dna.ui = {} }
     // prettier-ignore
     if (!props.fn.onValueUpdate) { props.fn.onValueUpdate = () => {} }
     // prettier-ignore
@@ -31,31 +40,32 @@ export default function TextInputElement(props) {
      * Data
      */
 
-    const [data, selectors] = hooks.elements.useDataSelectors(props, [
-        'value',
-        'name',
-        'autocomplete'
-    ])
-    const [state, dispatch] = useReducer(reducer, data || {value: ''})
-    const value = props.meta['@flag.controlled'] ? data.value : state.value
+    const [data, selectors, dispatch] = hooks.elements.useDataSelectors(
+        props,
+        ['placeholder', 'value'],
+        reducer
+    )
+
     /**
      * Render
      */
-
-    console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`, props, state)
+    const {css, motion} = props.context.theme.render(props)
+    console.log(`RENDER ELEMENT: TextInputElement ${props.meta['@dna']}`, props)
     return (
         <TextInputElementStyled
             meta={props.meta}
-            dna={props.dna}
+            dna={dna}
             context={props.context}
-            style={props.dna.ui['theme.style.css']}
+            css={css}
+            {...motion}
+            style={dna.ui['theme.style.css']}
         >
             <input
                 type="text"
-                id={data.name}
-                autoComplete={data.autocomplete}
+                id={dna.set.name}
+                autoComplete={dna.set.autocomplete}
                 placeholder={data.placeholder}
-                value={value}
+                value={data.value}
                 onChange={e => {
                     dispatch(['on_change', e.target.value])
                     props.fn.onKeyUp({
@@ -75,22 +85,18 @@ export default function TextInputElement(props) {
                         }
                     })
                 }
+                required={props.meta['@flag.required']}
             />
-            <label htmlFor={data.name}>
-                <span>{data.label || 'Label: '}</span>
+            <label htmlFor={dna.set.name}>
+                <span>{dna.set.label}</span>
             </label>
         </TextInputElementStyled>
     )
 }
 
 TextInputElement.defaultProps = {
-    dna: {
-        set: {},
-        ui: {},
-        actions: {}
-    },
     fn: {
-        onKeyUp: () => {},
-        onValueUpdate: () => {}
+        onKeyUp() {},
+        onValueUpdate() {}
     }
 }

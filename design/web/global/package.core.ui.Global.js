@@ -4,7 +4,8 @@ export default {
     variants: {
         default: {
             css: css`
-                padding: 40px;
+                --styled: '/design/web/global/package.core.ui.Global.js';
+                padding: 0px;
             `,
             motion: props => ({
                 initial: 'exit',

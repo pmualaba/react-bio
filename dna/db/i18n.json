@@ -156,42 +156,40 @@
             "frFR": "Mécanicien",
             "enGB": "Mechanic"
         },
-        "message": {
-            "interestedInThisVehicle": {
-                "nlBE": "Interesse in dit voertuig?",
-                "frFR": "Intéressé par ce véhicule?",
-                "enGB": "Interested in this vehicle?"
-            },
-            "noVehiclesFound": {
-                "nlBE": "Sorry, geen voertuigen gevonden...",
-                "frFR": "Désolé, aucun véhicule trouvé...",
-                "enGB": "Sorry, no vehicles found..."
-            },
-            "selectMake": {
-                "nlBE": "Kies eerst een merk voor dit voertuig",
-                "frFR": "Choisissez d'abord une marque pour ce véhicule",
-                "enGB": "Select a make for this vehicle"
-            },
-            "selectModel": {
-                "nlBE": "Kies eerst een model voor dit voertuig",
-                "frFR": "Choisissez d'abord un modèle pour ce véhicule",
-                "enGB": "Select a model for this vehicle"
-            },
-            "selectSubModel": {
-                "nlBE": "Kies eerst een uitvoering voor dit voertuig",
-                "frFR": "Choisissez d'abord une variante du modèle pour ce véhicule",
-                "enGB": "Select a version for this vehicle"
-            },
-            "selectYear": {
-                "nlBE": "Kies eerst een bouwjaar voor dit voertuig",
-                "frFR": "Choisissez d'abord une année de construction pour ce véhicule",
-                "enGB": "Select a year of construction for this vehicle"
-            },
-            "vehiclesAreBeingLoaded": {
-                "nlBE": "Voertuigen worden geladen...",
-                "frFR": "Véhicules en cours de chargement...",
-                "enGB": "Vehicles are being loaded..."
-            }
+        "message.interestedInThisVehicle": {
+            "nlBE": "Interesse in dit voertuig?",
+            "frFR": "Intéressé par ce véhicule?",
+            "enGB": "Interested in this vehicle?"
+        },
+        "message.noVehiclesFound": {
+            "nlBE": "Sorry, geen voertuigen gevonden...",
+            "frFR": "Désolé, aucun véhicule trouvé...",
+            "enGB": "Sorry, no vehicles found..."
+        },
+        "message.selectMake": {
+            "nlBE": "Kies eerst een merk voor dit voertuig",
+            "frFR": "Choisissez d'abord une marque pour ce véhicule",
+            "enGB": "Select a make for this vehicle"
+        },
+        "message.selectModel": {
+            "nlBE": "Kies eerst een model voor dit voertuig",
+            "frFR": "Choisissez d'abord un modèle pour ce véhicule",
+            "enGB": "Select a model for this vehicle"
+        },
+        "message.selectSubModel": {
+            "nlBE": "Kies eerst een uitvoering voor dit voertuig",
+            "frFR": "Choisissez d'abord une variante du modèle pour ce véhicule",
+            "enGB": "Select a version for this vehicle"
+        },
+        "message.selectYear": {
+            "nlBE": "Kies eerst een bouwjaar voor dit voertuig",
+            "frFR": "Choisissez d'abord une année de construction pour ce véhicule",
+            "enGB": "Select a year of construction for this vehicle"
+        },
+        "message.vehiclesAreBeingLoaded": {
+            "nlBE": "Voertuigen worden geladen...",
+            "frFR": "Véhicules en cours de chargement...",
+            "enGB": "Vehicles are being loaded..."
         },
         "metallic": {
             "nlBE": "Metallic",
@@ -412,281 +410,275 @@
             "frFR": "Contenu",
             "enGB": "Body"
         },
-        "buttonLabel": {
-            "allowCookies": {
-                "nlBE": "Cookies toestaan",
-                "frFR": "Autoriser les cookies",
-                "enGB": "Allow cookies"
-            },
-            "applyForThisJob": {
-                "nlBE": "Solliciteer voor deze job",
-                "frFR": "Postuler à cet emploi",
-                "enGB": "Apply for this job"
-            },
-            "apply": {
-                "nlBE": "Solliciteer",
-                "frFR": "Postuler",
-                "enGB": "Apply"
-            },
-            "backToTop": {
-                "nlBE": "Naar Boven",
-                "frFR": "Back To Top",
-                "enGB": "Back To Top"
-            },
-            "backToOverview": {
-                "nlBE": "Terug naar overzicht",
-                "frFR": "Retour à l'aperçu",
-                "enGB": "Back to overview"
-            },
-            "bookSpeaker": {
-                "nlBE": "<strong>Boek</strong> spreker",
-                "frFR": "<strong>Réserver</strong> orateur",
-                "enGB": "<strong>Book</strong> speaker"
-            },
-            "bookTraining": {
-                "nlBE": "<strong>Boek</strong> training",
-                "frFR": "<strong>Réserver</strong> formation",
-                "enGB": "<strong>Book</strong> training"
-            },
-            "chooseAFile": {
-                "nlBE": "Kies een bestand",
-                "frFR": "Choisissez un fichier",
-                "enGB": "Choose a file"
-            },
-            "contactUs": {
-                "nlBE": "Contacteer ons",
-                "frFR": "Contactez-nous",
-                "enGB": "Contact us"
-            },
-            "contentId": {
-                "nlBE": "Inhouds-ID",
-                "frFR": "Identifiant de contenu",
-                "enGB": "Content ID"
-            },
-            "contentIdOrUrl": {
-                "nlBE": "Inhouds-ID of URL",
-                "frFR": "Identifiant de contenu ou URL",
-                "enGB": "Content ID or URL"
-            },
-            "contentLabels": {
-                "nlBE": "Labels",
-                "frFR": "Labels",
-                "enGB": "Labels"
-            },
-            "contentType": {
-                "nlBE": "Inhoudstype",
-                "frFR": "Type de contenu",
-                "enGB": "Content type"
-            },
-            "confirmMyRegistration": {
-                "nlBE": "<strong>Bevestig</strong> mijn regsitratie",
-                "frFR": "<strong>Confirmer</strong> mon inscription",
-                "enGB": "<strong>Confirm</strong> my registration"
-            },
-            "createAnAccount": {
-                "nlBE": "Maak een account aan",
-                "frFR": "Créer un compte",
-                "enGB": "Create an account"
-            },
-            "discover": {
-                "nlBE": "Ontdekken",
-                "frFR": "Découvrir",
-                "enGB": "Discover"
-            },
-            "donateThisAmount": {
-                "nlBE": "<strong>Schenk</strong> dit bedrag",
-                "frFR": "<strong>Donner</strong> ce montant",
-                "enGB": "<strong>Donate</strong> this amount"
-            },
-            "download": {
-                "nlBE": "Downloaden",
-                "frFR": "Télécharger",
-                "enGB": "Download"
-            },
-            "followUsOnSocialMedia": {
-                "nlBE": "Volg ons op <strong>sociale media</strong>",
-                "frFR": "Suivez-nous sur les <strong> médias sociaux </ strong>.",
-                "enGB": "Follow us on <strong>social media</strong>"
-            },
-            "letUsKnowYourInterest": {
-                "nlBE": "Laat ons uw interesse weten",
-                "frFR": "Faites-nous savoir votre intérêt",
-                "enGB": "Let us know your interest"
-            },
-            "makeAppointment": {
-                "nlBE": "Afspraak maken?",
-                "frFR": "Fixer un</br> rendez-vous?",
-                "enGB": "Make an appointment?"
-            },
-            "makeAnAppointment": {
-                "nlBE": "Maak een <strong>afspraak</strong>",
-                "frFR": "Fixer un <strong>rendez-vous</strong>",
-                "enGB": "Make an <strong>appointment</strong>"
-            },
-            "more": {
-                "nlBE": "Meer",
-                "frFR": "Plus",
-                "enGB": "More"
-            },
-            "moreInfo": {
-                "nlBE": "Meer info",
-                "frFR": "Plus d'infos",
-                "enGB": "More info"
-            },
-            "moreInfoAboutThisTheme": {
-                "nlBE": "Meer info over dit thema",
-                "frFR": "Plus d'infos sur ce thème",
-                "enGB": "More info about this theme"
-            },
-            "moreAboutThis": {
-                "nlBE": "Meer hierover",
-                "frFR": "Plus sur ce sujet",
-                "enGB": "More about this"
-            },
-            "next": {
-                "nlBE": "Volgende",
-                "frFR": "Suivant",
-                "enGB": "Next"
-            },
-            "pay": {
-                "nlBE": "Betalen",
-                "frFR": "Payer",
-                "enGB": "Pay"
-            },
-            "payment": {
-                "nlBE": "Betaling",
-                "frFR": "Paiement",
-                "enGB": "Payment"
-            },
-            "previous": {
-                "nlBE": "Vorige",
-                "frFR": "Précédent",
-                "enGB": "Previous"
-            },
-            "print": {
-                "nlBE": "Afdrukken",
-                "frFR": "Imprimer",
-                "enGB": "Print"
-            },
-            "readMore": {
-                "nlBE": "Meer weten",
-                "frFR": "En savoir plus",
-                "enGB": "Read more"
-            },
-            "reserveNow": {
-                "nlBE": "Reserveer nu",
-                "frFR": "Réservez maintenant",
-                "enGB": "Reserve now"
-            },
-            "scaleImage": {
-                "nlBE": "Afbeelding vergroten",
-                "frFR": "Agrandir l'image",
-                "enGB": "Scale image"
-            },
-            "shareThisArticle": {
-                "nlBE": "<strong>Deel</strong> dit artikel",
-                "frFR": "<strong> Partager </ strong> cet article",
-                "enGB": "<strong> Share </strong> this post"
-            },
-            "submit": {
-                "nlBE": "Verzenden",
-                "frFR": "Envoyer",
-                "enGB": "Submit"
-            },
-            "subscribe": {
-                "nlBE": "Inschrijven",
-                "frFR": "s'Inscrire",
-                "enGB": "Subscribe"
-            },
-            "requestFreeQuote": {
-                "nlBE": "Vrijblijvend offerte aanvragen",
-                "frFR": "Demander un devis gratuit",
-                "enGB": "Request a free quote?"
-            },
-            "requestQuote": {
-                "nlBE": "<strong>Offerte</strong> aanvragen",
-                "frFR": "Demander un <strong>devis</strong>",
-                "enGB": "Request <strong>quote</strong>"
-            },
-            "requestTrial": {
-                "nlBE": "Vraag je proefperiode aan",
-                "frFR": "Demandez votre essai",
-                "enGB": "Request your trial"
-            },
-            "uploadImage": {
-                "nlBE": "Afbeelding uploaden",
-                "frFR": "Télécharger une image",
-                "enGB": "Upload image"
-            },
-            "visitUs": {
-                "nlBE": "<strong>Bezoek</strong> ons",
-                "frFR": "<strong>Visitez</strong>-nous",
-                "enGB": "<strong>Visit</strong> us"
-            },
-            "view": {
-                "nlBE": "Bekijk",
-                "frFR": "Voir",
-                "enGB": "View"
-            },
-            "visitWebsite": {
-                "nlBE": "<strong>Bezoek</strong> website",
-                "frFR": "<strong>Visitez</strong> le site",
-                "enGB": "<strong>Visit</strong> website"
-            },
-            "watch": {
-                "nlBE": "Kijk",
-                "frFR": "Regarder",
-                "enGB": "Watch"
-            }
+        "buttonLabel.allowCookies": {
+            "nlBE": "Cookies toestaan",
+            "frFR": "Autoriser les cookies",
+            "enGB": "Allow cookies"
         },
-        "contentLabel": {
-            "popular": {
-                "nlBE": "Populair",
-                "frFR": "Populaire",
-                "enGB": "Popular"
-            },
-            "new": {
-                "nlBE": "Nieuw",
-                "frFR": "Nouveau",
-                "enGB": "New"
-            },
-            "full": {
-                "nlBE": "Volzet",
-                "frFR": "Plein",
-                "enGB": "Full"
-            },
-            "promo": {
-                "nlBE": "Promo",
-                "frFR": "Promotion",
-                "enGB": "Promo"
-            },
-            "spotlight": {
-                "nlBE": "In de kijker",
-                "frFR": "Promotion",
-                "enGB": "In the spotlight"
-            }
+        "buttonLabel.applyForThisJob": {
+            "nlBE": "Solliciteer voor deze job",
+            "frFR": "Postuler à cet emploi",
+            "enGB": "Apply for this job"
         },
-        "cases": {
-            "situation": {
-                "nlBE": "Situation",
-                "frFR": "Situation",
-                "enGB": "Situation"
-            },
-            "need": {
-                "nlBE": "The need",
-                "frFR": "The need",
-                "enGB": "The need"
-            },
-            "action": {
-                "nlBE": "What we did",
-                "frFR": "What we did",
-                "enGB": "What we did"
-            },
-            "impact": {
-                "nlBE": "The impact",
-                "frFR": "The impact",
-                "enGB": "The impact"
-            }
+        "buttonLabel.apply": {
+            "nlBE": "Solliciteer",
+            "frFR": "Postuler",
+            "enGB": "Apply"
+        },
+        "buttonLabel.backToTop": {
+            "nlBE": "Naar Boven",
+            "frFR": "Back To Top",
+            "enGB": "Back To Top"
+        },
+        "buttonLabel.backToOverview": {
+            "nlBE": "Terug naar overzicht",
+            "frFR": "Retour à l'aperçu",
+            "enGB": "Back to overview"
+        },
+        "buttonLabel.bookSpeaker": {
+            "nlBE": "<strong>Boek</strong> spreker",
+            "frFR": "<strong>Réserver</strong> orateur",
+            "enGB": "<strong>Book</strong> speaker"
+        },
+        "buttonLabel.bookTraining": {
+            "nlBE": "<strong>Boek</strong> training",
+            "frFR": "<strong>Réserver</strong> formation",
+            "enGB": "<strong>Book</strong> training"
+        },
+        "buttonLabel.chooseAFile": {
+            "nlBE": "Kies een bestand",
+            "frFR": "Choisissez un fichier",
+            "enGB": "Choose a file"
+        },
+        "buttonLabel.contactUs": {
+            "nlBE": "Contacteer ons",
+            "frFR": "Contactez-nous",
+            "enGB": "Contact us"
+        },
+        "buttonLabel.contentId": {
+            "nlBE": "Inhouds-ID",
+            "frFR": "Identifiant de contenu",
+            "enGB": "Content ID"
+        },
+        "buttonLabel.contentIdOrUrl": {
+            "nlBE": "Inhouds-ID of URL",
+            "frFR": "Identifiant de contenu ou URL",
+            "enGB": "Content ID or URL"
+        },
+        "buttonLabel.contentLabels": {
+            "nlBE": "Labels",
+            "frFR": "Labels",
+            "enGB": "Labels"
+        },
+        "buttonLabel.contentType": {
+            "nlBE": "Inhoudstype",
+            "frFR": "Type de contenu",
+            "enGB": "Content type"
+        },
+        "buttonLabel.confirmMyRegistration": {
+            "nlBE": "<strong>Bevestig</strong> mijn regsitratie",
+            "frFR": "<strong>Confirmer</strong> mon inscription",
+            "enGB": "<strong>Confirm</strong> my registration"
+        },
+        "buttonLabel.createAnAccount": {
+            "nlBE": "Maak een account aan",
+            "frFR": "Créer un compte",
+            "enGB": "Create an account"
+        },
+        "buttonLabel.discover": {
+            "nlBE": "Ontdekken",
+            "frFR": "Découvrir",
+            "enGB": "Discover"
+        },
+        "buttonLabel.donateThisAmount": {
+            "nlBE": "<strong>Schenk</strong> dit bedrag",
+            "frFR": "<strong>Donner</strong> ce montant",
+            "enGB": "<strong>Donate</strong> this amount"
+        },
+        "buttonLabel.download": {
+            "nlBE": "Downloaden",
+            "frFR": "Télécharger",
+            "enGB": "Download"
+        },
+        "buttonLabel.followUsOnSocialMedia": {
+            "nlBE": "Volg ons op <strong>sociale media</strong>",
+            "frFR": "Suivez-nous sur les <strong> médias sociaux </ strong>.",
+            "enGB": "Follow us on <strong>social media</strong>"
+        },
+        "buttonLabel.letUsKnowYourInterest": {
+            "nlBE": "Laat ons uw interesse weten",
+            "frFR": "Faites-nous savoir votre intérêt",
+            "enGB": "Let us know your interest"
+        },
+        "buttonLabel.makeAppointment": {
+            "nlBE": "Afspraak maken?",
+            "frFR": "Fixer un</br> rendez-vous?",
+            "enGB": "Make an appointment?"
+        },
+        "buttonLabel.makeAnAppointment": {
+            "nlBE": "Maak een <strong>afspraak</strong>",
+            "frFR": "Fixer un <strong>rendez-vous</strong>",
+            "enGB": "Make an <strong>appointment</strong>"
+        },
+        "buttonLabel.more": {
+            "nlBE": "Meer",
+            "frFR": "Plus",
+            "enGB": "More"
+        },
+        "buttonLabel.moreInfo": {
+            "nlBE": "Meer info",
+            "frFR": "Plus d'infos",
+            "enGB": "More info"
+        },
+        "buttonLabel.moreInfoAboutThisTheme": {
+            "nlBE": "Meer info over dit thema",
+            "frFR": "Plus d'infos sur ce thème",
+            "enGB": "More info about this theme"
+        },
+        "buttonLabel.moreAboutThis": {
+            "nlBE": "Meer hierover",
+            "frFR": "Plus sur ce sujet",
+            "enGB": "More about this"
+        },
+        "buttonLabel.next": {
+            "nlBE": "Volgende",
+            "frFR": "Suivant",
+            "enGB": "Next"
+        },
+        "buttonLabel.pay": {
+            "nlBE": "Betalen",
+            "frFR": "Payer",
+            "enGB": "Pay"
+        },
+        "buttonLabel.payment": {
+            "nlBE": "Betaling",
+            "frFR": "Paiement",
+            "enGB": "Payment"
+        },
+        "buttonLabel.previous": {
+            "nlBE": "Vorige",
+            "frFR": "Précédent",
+            "enGB": "Previous"
+        },
+        "buttonLabel.print": {
+            "nlBE": "Afdrukken",
+            "frFR": "Imprimer",
+            "enGB": "Print"
+        },
+        "buttonLabel.readMore": {
+            "nlBE": "Meer weten",
+            "frFR": "En savoir plus",
+            "enGB": "Read more"
+        },
+        "buttonLabel.reserveNow": {
+            "nlBE": "Reserveer nu",
+            "frFR": "Réservez maintenant",
+            "enGB": "Reserve now"
+        },
+        "buttonLabel.scaleImage": {
+            "nlBE": "Afbeelding vergroten",
+            "frFR": "Agrandir l'image",
+            "enGB": "Scale image"
+        },
+        "buttonLabel.shareThisArticle": {
+            "nlBE": "<strong>Deel</strong> dit artikel",
+            "frFR": "<strong> Partager </ strong> cet article",
+            "enGB": "<strong> Share </strong> this post"
+        },
+        "buttonLabel.submit": {
+            "nlBE": "Verzenden",
+            "frFR": "Envoyer",
+            "enGB": "Submit"
+        },
+        "buttonLabel.subscribe": {
+            "nlBE": "Inschrijven",
+            "frFR": "s'Inscrire",
+            "enGB": "Subscribe"
+        },
+        "buttonLabel.requestFreeQuote": {
+            "nlBE": "Vrijblijvend offerte aanvragen",
+            "frFR": "Demander un devis gratuit",
+            "enGB": "Request a free quote?"
+        },
+        "buttonLabel.requestQuote": {
+            "nlBE": "<strong>Offerte</strong> aanvragen",
+            "frFR": "Demander un <strong>devis</strong>",
+            "enGB": "Request <strong>quote</strong>"
+        },
+        "buttonLabel.requestTrial": {
+            "nlBE": "Vraag je proefperiode aan",
+            "frFR": "Demandez votre essai",
+            "enGB": "Request your trial"
+        },
+        "buttonLabel.uploadImage": {
+            "nlBE": "Afbeelding uploaden",
+            "frFR": "Télécharger une image",
+            "enGB": "Upload image"
+        },
+        "buttonLabel.visitUs": {
+            "nlBE": "<strong>Bezoek</strong> ons",
+            "frFR": "<strong>Visitez</strong>-nous",
+            "enGB": "<strong>Visit</strong> us"
+        },
+        "buttonLabel.view": {
+            "nlBE": "Bekijk",
+            "frFR": "Voir",
+            "enGB": "View"
+        },
+        "buttonLabel.visitWebsite": {
+            "nlBE": "<strong>Bezoek</strong> website",
+            "frFR": "<strong>Visitez</strong> le site",
+            "enGB": "<strong>Visit</strong> website"
+        },
+        "buttonLabel.watch": {
+            "nlBE": "Kijk",
+            "frFR": "Regarder",
+            "enGB": "Watch"
+        },
+        "contentLabel.popular": {
+            "nlBE": "Populair",
+            "frFR": "Populaire",
+            "enGB": "Popular"
+        },
+        "contentLabel.new": {
+            "nlBE": "Nieuw",
+            "frFR": "Nouveau",
+            "enGB": "New"
+        },
+        "contentLabel.full": {
+            "nlBE": "Volzet",
+            "frFR": "Plein",
+            "enGB": "Full"
+        },
+        "contentLabel.promo": {
+            "nlBE": "Promo",
+            "frFR": "Promotion",
+            "enGB": "Promo"
+        },
+        "contentLabel.spotlight": {
+            "nlBE": "In de kijker",
+            "frFR": "Promotion",
+            "enGB": "In the spotlight"
+        },
+        "cases.situation": {
+            "nlBE": "Situation",
+            "frFR": "Situation",
+            "enGB": "Situation"
+        },
+        "cases.need": {
+            "nlBE": "The need",
+            "frFR": "The need",
+            "enGB": "The need"
+        },
+        "cases.action": {
+            "nlBE": "What we did",
+            "frFR": "What we did",
+            "enGB": "What we did"
+        },
+        "cases.impact": {
+            "nlBE": "The impact",
+            "frFR": "The impact",
+            "enGB": "The impact"
         },
         "category": {
             "nlBE": "Categorie",
@@ -743,37 +735,35 @@
             "frFR": "Bouton de téléchargement",
             "enGB": "Download button"
         },
-        "element": {
-            "button": {
-                "nlBE": "Knop",
-                "frFR": "Bouton",
-                "enGB": "Button"
-            },
-            "icon": {
-                "nlBE": "Pictogram",
-                "frFR": "Icône",
-                "enGB": "Icon"
-            },
-            "image": {
-                "nlBE": "Afbeelding",
-                "frFR": "Image",
-                "enGB": "Image"
-            },
-            "subTitle": {
-                "nlBE": "Subtitel",
-                "frFR": "Sous-titre",
-                "enGB": "Subtitle"
-            },
-            "text": {
-                "nlBE": "Tekst",
-                "frFR": "Texte",
-                "enGB": "Text"
-            },
-            "title": {
-                "nlBE": "Titel",
-                "frFR": "Titre",
-                "enGB": "Title"
-            }
+        "element.button": {
+            "nlBE": "Knop",
+            "frFR": "Bouton",
+            "enGB": "Button"
+        },
+        "element.icon": {
+            "nlBE": "Pictogram",
+            "frFR": "Icône",
+            "enGB": "Icon"
+        },
+        "element.image": {
+            "nlBE": "Afbeelding",
+            "frFR": "Image",
+            "enGB": "Image"
+        },
+        "element.subTitle": {
+            "nlBE": "Subtitel",
+            "frFR": "Sous-titre",
+            "enGB": "Subtitle"
+        },
+        "element.text": {
+            "nlBE": "Tekst",
+            "frFR": "Texte",
+            "enGB": "Text"
+        },
+        "element.title": {
+            "nlBE": "Titel",
+            "frFR": "Titre",
+            "enGB": "Title"
         },
         "emailCampaign": {
             "nlBE": "Email campagne",
@@ -845,12 +835,10 @@
             "frFR": "Description de recherche Google",
             "enGB": "Google Search description"
         },
-        "greeting": {
-            "dear": {
-                "nlBE": "Beste",
-                "frFR": "Cher",
-                "enGB": "Dear"
-            }
+        "greeting.dear": {
+            "nlBE": "Beste",
+            "frFR": "Cher",
+            "enGB": "Dear"
         },
         "images": {
             "nlBE": "Afbeeldingen",
@@ -872,267 +860,265 @@
             "frFR": "Marketing",
             "enGB": "Marketing"
         },
-        "message": {
-            "allRightsReserved": {
-                "nlBE": "Alle rechten voorbehouden",
-                "frFR": "Tous droits réservés",
-                "enGB": "All rights reserved"
-            },
-            "choosePageCategory": {
-                "nlBE": "Kies een categorie voor je pagina",
-                "frFR": "Sélectionnez une catégorie pour votre page",
-                "enGB": "Select a page category"
-            },
-            "chooseEmailCampaign": {
-                "nlBE": "Kies een email campagne voor je nieuwsbrief",
-                "frFR": "Sélectionnez une campagne email pour vôtre newsletter",
-                "enGB": "Select an email campaign for your newsletter"
-            },
-            "chooseNewsletterName": {
-                "nlBE": "Kies een naam voor je nieuwsbrief",
-                "frFR": "Choisissez un nom pour vôtre newsletter",
-                "enGB": "Choose a name for your newsletter"
-            },
-            "choosePageFromYourWebsite": {
-                "nlBE": "Kies een pagina uit je website",
-                "frFR": "Choisissez une page de votre site web",
-                "enGB": "Choose a page from your website"
-            },
-            "choosePageLayout": {
-                "nlBE": "Kies een layout voor je pagina",
-                "frFR": "Choisissez une mise en page pour votre page",
-                "enGB": "Select a layout for your page"
-            },
-            "choosePageName": {
-                "nlBE": "Kies een naam voor je pagina",
-                "frFR": "Choisissez un nom pour vôtre page",
-                "enGB": "Choose a name for your page"
-            },
-            "choosePagePosition": {
-                "nlBE": "Kies een positie in het hoofdmenu voor je pagina",
-                "frFR": "Choisissez une position dans le menu principal pour vôtre page",
-                "enGB": "Choose your page position in the main menu"
-            },
-            "choosePostCategory": {
-                "nlBE": "Kies een categorie voor je artikel",
-                "frFR": "Sélectionnez une catégorie pour votre article",
-                "enGB": "Select a post category"
-            },
-            "choosePostFromYourWebsite": {
-                "nlBE": "Kies een artikel uit je website",
-                "frFR": "Choisissez un article de votre site web",
-                "enGB": "Choose a post from your website"
-            },
-            "chooseNewsletterLayout": {
-                "nlBE": "Kies een layout voor je nieuwsbrief",
-                "frFR": "Choisissez une mise en page pour votre newsletter",
-                "enGB": "Select a layout for your newsletter"
-            },
-            "choosePostLayout": {
-                "nlBE": "Kies een layout voor je artikel",
-                "frFR": "Choisissez une mise en page pour votre article",
-                "enGB": "Select a layout for your post"
-            },
-            "choosePostName": {
-                "nlBE": "Kies een naam voor je artikel",
-                "frFR": "Choisissez un nom pour vôtre article",
-                "enGB": "Choose a name for your post"
-            },
-            "chooseProfileImage": {
-                "nlBE": "Kies je profielfoto...",
-                "frFR": "Choisissez votre photo de profil...",
-                "enGB": "Choose your profile photo..."
-            },
-            "chooseRecipients": {
-                "nlBE": "Kies de ontvangers voor je nieuwsbrief",
-                "frFR": "Choisissez les destinataires de votre newsletter",
-                "enGB": "Choose the recipients for your newsletter"
-            },
-            "clickNextToSelectPage": {
-                "nlBE": "Klik \"VERDERGAAN\" om een pagina aan te maken met deze layout",
-                "frFR": "Cliquez sur \"CONTINUER\" pour créer une page avec cette mise en page",
-                "enGB": "Click \"NEXT\" to create a page with this layout"
-            },
-            "clickNextToSelectPost": {
-                "nlBE": "Klik \"VERDERGAAN\" om een artikel aan te maken met deze layout",
-                "frFR": "Cliquez sur \"CONTINUER\" pour créer un article avec cette mise en page",
-                "enGB": "Click \"NEXT\" to create a post with this layout"
-            },
-            "contactUs": {
-                "nlBE": "Contacteer ons",
-                "frFR": "Contactez-nous",
-                "enGB": "Contact us"
-            },
-            "createLink": {
-                "nlBE": "Voer een URL in en druk op Enter",
-                "frFR": "Entrez une URL et appuyez sur Entrée",
-                "enGB": "Enter a URL and press Enter"
-            },
-            "createNewNewsletter": {
-                "nlBE": "Maak een nieuwe nieuwsbrief",
-                "frFR": "Créer une nouvelle newsletter",
-                "enGB": "Create a new newsletter"
-            },
-            "createNewPage": {
-                "nlBE": "Maak een nieuwe pagina",
-                "frFR": "Créer une nouvelle page",
-                "enGB": "Create a new page"
-            },
-            "createNewPost": {
-                "nlBE": "Maak een nieuw artikel",
-                "frFR": "Créer un nouvel article",
-                "enGB": "Create a new post"
-            },
-            "describeYourProject": {
-                "nlBE": "Omschrijf uw project",
-                "frFR": "Décrivez votre projet",
-                "enGB": "Describe your project"
-            },
-            "dropImagesToUpload": {
-                "nlBE": "Zet afbeeldingen neer om te uploaden",
-                "frFR": "Déposer les images à télécharger",
-                "enGB": "Drop images to upload"
-            },
-            "enterTitle": {
-                "nlBE": "Voer je titel in",
-                "frFR": "Entrez votre titre",
-                "enGB": "Enter your title"
-            },
-            "enterEventDetails": {
-                "nlBE": "Voer je evenement details in",
-                "frFR": "Entrez les détails de votre événement",
-                "enGB": "Enter your event details"
-            },
-            "enterEventLocation": {
-                "nlBE": "Voer je evenement locatie in",
-                "frFR": "Entrez le lieu de votre événement",
-                "enGB": "Enter your event location"
-            },
-            "enterEventTitle": {
-                "nlBE": "Voer je evenement titel in",
-                "frFR": "Entrez le titre de votre événement",
-                "enGB": "Enter your event title"
-            },
-            "enterText": {
-                "nlBE": "Voer je tekst in",
-                "frFR": "Entrez votre texte",
-                "enGB": "Enter your text"
-            },
-            "enterTextLine": {
-                "nlBE": "Dit is een regel tekst. Klik hier om de tekst te bewerken.",
-                "frFR": "Ceci est une ligne de texte. Cliquez ici pour éditer le texte.",
-                "enGB": "This is a line of text. Click here to edit the text."
-            },
-            "enterTextParagraph": {
-                "nlBE": "Dit is een tekst paragraaf. Klik hier om de tekst te bewerken en een eigen tekst toe te voegen. Indien je wenst kan je deze tekst ook later nog wijzigen.",
-                "frFR": "Ceci est un paragraphe de texte. Cliquez dans le texte pour ajouter votre propre texte. Si vous le souhaitez, vous pouvez toujours modifier ce texte plus tard.",
-                "enGB": "This is a text paragraph. Click here to edit this text and add your own. This text can still be edited later."
-            },
-            "enterTextFull": {
-                "nlBE": "<p>Dit is een tekstblok. Klik hier om de tekst te bewerken en een eigen tekst toe te voegen. Indien je wenst kan je deze tekst ook later nog wijzigen.</p><p>Probeer je tekst zo bondig en eenvoudig mogelijk te houden. Lange teksten worden minder gemakkelijk gelezen op een scherm.</p><p>Maak eventueel gebruik van een lijst. Je kan hiermee de inhoud op een overzichtelijke manier weergeven. Hieronder zie je een voorbeeld:</p><ul><li>Formuleer hier je eerste punt.</li><li>Hier kan je een tweede punt toeveogen.</li><li>Sluit ten slotte af met een derde punt</li></ul><p>Je kan de <strong>leesbaarheid van je tekst</strong> verbeteren door je tekst op te delen in <strong>verschillende paragrafen</strong> en eventueel delen in het vet te plaatsen.</p>",
-                "frFR": "<p>Ceci est un paragraphe de texte. Cliquez dans le texte pour ajouter votre propre texte. Si vous le souhaitez, vous pouvez toujours modifier ce texte plus tard.</p><p>Essayez de garder votre texte aussi concis et simple que possible. Des textes longs sont moins faciles à lire sur un écran.</p><p>Utilisez une liste si possible. Cela vous permet d'afficher le contenu de manière bien organisée. Voici un exemple: </p> <ul><li>Formulez votre premier point ici.</li><li>Ici, vous pouvez ajouter un deuxième point.</li><li>Enfin, terminez avec un troisième point.</li></ul><p>Vous pouvez améliorer la <strong> lisibilité de votre texte </strong> en divisant votre texte en <strong> différents paragraphes </strong> et en mettant éventuellement des parties en gras.</p>",
-                "enGB": "<p>This is a textblock. Click here to edit this text and add your own. This text can still be edited later.</p><p>Try to keep your text as concise and simple as possible. Long texts are harder to read on a screen.</p><p> Use a list if possible. This allows you to display the content in a well-organized way. Below is an example: </p> <ul><li>Formulate your first point here.</li><li>Here you can add a second point.</li><li>Finally, finish with a third point.</li></ul><p>You can also improve the <strong>readability of your text</strong> by dividing your text into <strong>multiple paragraphs</strong> and by putting parts of your sentences in the bold.</p>"
-            },
-            "facebookPostsAreBeingLoaded": {
-                "nlBE": "Facebook artikels worden geladen...",
-                "frFR": "Articles de Facebook en cours de chargement...",
-                "enGB": "Facebook posts are being loaded..."
-            },
-            "followUsOnSocialMedia": {
-                "nlBE": "Volg ons op <strong>Social Media</strong>",
-                "frFR": "Suivez-nous sur les <strong>Réseaux Sociaux</strong>",
-                "enGB": "Follow us on <strong>Social Media</strong>"
-            },
-            "howCanWeHelpYou": {
-                "nlBE": "Waarmee kunnen wij u <strong>helpen</strong>?",
-                "frFR": "Comment pouvons-nous vous <strong>aider</strong>?",
-                "enGB": "How can we <strong>help</strong> you?"
-            },
-            "iAgreeWithThePrivacyPolicy": {
-                "nlBE": "Ik ga akkoord met het privacybeleid",
-                "frFR": "Je suis d'accord avec la politique de confidentialité",
-                "enGB": "I agree with the privacy policy"
-            },
-            "imagesAreBeingLoaded": {
-                "nlBE": "Afbeeldingen worden geladen...",
-                "frFR": "Images en cours de chargement...",
-                "enGB": "Images are being loaded..."
-            },
-            "iWantToSubscribeToTheNewsletter": {
-                "nlBE": "Ik wil mij inschrijven op de nieuwsbrief",
-                "frFR": "Je veux m'inscrire à la newsletter",
-                "enGB": "I want to subscribe to the newsletter"
-            },
-            "iWantAQuoteFor": {
-                "nlBE": "Ik wil een offerte voor:",
-                "frFR": "Je veux un devis pour:",
-                "enGB": "I want a quote for:"
-            },
-            "iWantToApplyFor": {
-                "nlBE": "Ik wil solliciteren voor:",
-                "frFR": "Je veux postuler pour:",
-                "enGB": "I want to apply for:"
-            },
-            "noImagesFound": {
-                "nlBE": "Sorry, geen afbeeldingen gevonden...",
-                "frFR": "Désolé, aucun image trouvé...",
-                "enGB": "Sorry, no images found..."
-            },
-            "noPostsFound": {
-                "nlBE": "Sorry, geen artikels gevonden...",
-                "frFR": "Désolé, aucun article trouvé...",
-                "enGB": "Sorry, no posts found..."
-            },
-            "noFacebookPostsFound": {
-                "nlBE": "Sorry, geen Facebook artikels gevonden...",
-                "frFR": "Désolé, aucun article facebook trouvé...",
-                "enGB": "Sorry, no facebook posts found..."
-            },
-            "postsAreBeingLoaded": {
-                "nlBE": "Artikels worden geladen...",
-                "frFR": "Articles en cours de chargement...",
-                "enGB": "Posts are being loaded..."
-            },
-            "readThePrivacyPolicyHere": {
-                "nlBE": "Lees hier het privacybeleid",
-                "frFR": "Lisez la politique de confidentialité ici",
-                "enGB": "Read the privacy policy here"
-            },
-            "thankYouForYourInterest": {
-                "nlBE": "Bedankt voor je interesse. Wij hebben je aanvraag ontvangen en nemen zo spoedig mogelijk contact op.",
-                "frFR": "Merci de votre intérêt. Nous avons bien reçu votre demande et nous vous contacterons dès que possible.",
-                "enGB": "Thank you for your interest. We have received your request and will contact you as soon as possible."
-            },
-            "userRegistrationConfirmation": {
-                "nlBE": "Je bent bijna geregistreerd als gebruiker! Gelieve je registratie te bevestigen via onderstaande knop.",
-                "frFR": "Vous êtes presque enregistré en tant qu'utilisateur! Veuillez confirmer votre inscription via le bouton ci-dessous.",
-                "enGB": "You are almost registered as a user! Please confirm your registration via the button below."
-            },
-            "vistWebsite": {
-                "nlBE": "Bezoek website",
-                "frFR": "Visitez le site web",
-                "enGB": "Vistit website"
-            },
-            "whatDoYouWantToBookUsFor": {
-                "nlBE": "Waarvoor wil je ons boeken?",
-                "frFR": "Pourquoi voulez-vous nous réserver?",
-                "enGB": "What do you want to book us for?"
-            },
-            "whatTypeOfServiceIsRequired": {
-                "nlBE": "Welk <strong>soort dienst</strong> is vereist?",
-                "frFR": "Quel <strong>type de service</strong> est requis?",
-                "enGB": "What <strong>type of service</strong> is required?"
-            },
-            "youHaveSuccessfullyBeenRegistered": {
-                "nlBE": "Je bent succesvol geregistreerd!",
-                "frFR": "Vous avez été enregistré avec succès!",
-                "enGB": "You have successfully been registered!"
-            },
-            "youHaveSuccessfullyBeenSubscribedToOurNewsletter": {
-                "nlBE": "Je bent succesvol ingeschreven op onze nieuwsbrief!",
-                "frFR": "Vous avez été abonné à notre newsletter avec succès!",
-                "enGB": "You have successfully been subscribed to our newsletter!"
-            }
+        "message.allRightsReserved": {
+            "nlBE": "Alle rechten voorbehouden",
+            "frFR": "Tous droits réservés",
+            "enGB": "All rights reserved"
+        },
+        "message.choosePageCategory": {
+            "nlBE": "Kies een categorie voor je pagina",
+            "frFR": "Sélectionnez une catégorie pour votre page",
+            "enGB": "Select a page category"
+        },
+        "message.chooseEmailCampaign": {
+            "nlBE": "Kies een email campagne voor je nieuwsbrief",
+            "frFR": "Sélectionnez une campagne email pour vôtre newsletter",
+            "enGB": "Select an email campaign for your newsletter"
+        },
+        "message.chooseNewsletterName": {
+            "nlBE": "Kies een naam voor je nieuwsbrief",
+            "frFR": "Choisissez un nom pour vôtre newsletter",
+            "enGB": "Choose a name for your newsletter"
+        },
+        "message.choosePageFromYourWebsite": {
+            "nlBE": "Kies een pagina uit je website",
+            "frFR": "Choisissez une page de votre site web",
+            "enGB": "Choose a page from your website"
+        },
+        "message.choosePageLayout": {
+            "nlBE": "Kies een layout voor je pagina",
+            "frFR": "Choisissez une mise en page pour votre page",
+            "enGB": "Select a layout for your page"
+        },
+        "message.choosePageName": {
+            "nlBE": "Kies een naam voor je pagina",
+            "frFR": "Choisissez un nom pour vôtre page",
+            "enGB": "Choose a name for your page"
+        },
+        "message.choosePagePosition": {
+            "nlBE": "Kies een positie in het hoofdmenu voor je pagina",
+            "frFR": "Choisissez une position dans le menu principal pour vôtre page",
+            "enGB": "Choose your page position in the main menu"
+        },
+        "message.choosePostCategory": {
+            "nlBE": "Kies een categorie voor je artikel",
+            "frFR": "Sélectionnez une catégorie pour votre article",
+            "enGB": "Select a post category"
+        },
+        "message.choosePostFromYourWebsite": {
+            "nlBE": "Kies een artikel uit je website",
+            "frFR": "Choisissez un article de votre site web",
+            "enGB": "Choose a post from your website"
+        },
+        "message.chooseNewsletterLayout": {
+            "nlBE": "Kies een layout voor je nieuwsbrief",
+            "frFR": "Choisissez une mise en page pour votre newsletter",
+            "enGB": "Select a layout for your newsletter"
+        },
+        "message.choosePostLayout": {
+            "nlBE": "Kies een layout voor je artikel",
+            "frFR": "Choisissez une mise en page pour votre article",
+            "enGB": "Select a layout for your post"
+        },
+        "message.choosePostName": {
+            "nlBE": "Kies een naam voor je artikel",
+            "frFR": "Choisissez un nom pour vôtre article",
+            "enGB": "Choose a name for your post"
+        },
+        "message.chooseProfileImage": {
+            "nlBE": "Kies je profielfoto...",
+            "frFR": "Choisissez votre photo de profil...",
+            "enGB": "Choose your profile photo..."
+        },
+        "message.chooseRecipients": {
+            "nlBE": "Kies de ontvangers voor je nieuwsbrief",
+            "frFR": "Choisissez les destinataires de votre newsletter",
+            "enGB": "Choose the recipients for your newsletter"
+        },
+        "message.clickNextToSelectPage": {
+            "nlBE": "Klik \"VERDERGAAN\" om een pagina aan te maken met deze layout",
+            "frFR": "Cliquez sur \"CONTINUER\" pour créer une page avec cette mise en page",
+            "enGB": "Click \"NEXT\" to create a page with this layout"
+        },
+        "message.clickNextToSelectPost": {
+            "nlBE": "Klik \"VERDERGAAN\" om een artikel aan te maken met deze layout",
+            "frFR": "Cliquez sur \"CONTINUER\" pour créer un article avec cette mise en page",
+            "enGB": "Click \"NEXT\" to create a post with this layout"
+        },
+        "message.contactUs": {
+            "nlBE": "Contacteer ons",
+            "frFR": "Contactez-nous",
+            "enGB": "Contact us"
+        },
+        "message.createLink": {
+            "nlBE": "Voer een URL in en druk op Enter",
+            "frFR": "Entrez une URL et appuyez sur Entrée",
+            "enGB": "Enter a URL and press Enter"
+        },
+        "message.createNewNewsletter": {
+            "nlBE": "Maak een nieuwe nieuwsbrief",
+            "frFR": "Créer une nouvelle newsletter",
+            "enGB": "Create a new newsletter"
+        },
+        "message.createNewPage": {
+            "nlBE": "Maak een nieuwe pagina",
+            "frFR": "Créer une nouvelle page",
+            "enGB": "Create a new page"
+        },
+        "message.createNewPost": {
+            "nlBE": "Maak een nieuw artikel",
+            "frFR": "Créer un nouvel article",
+            "enGB": "Create a new post"
+        },
+        "message.describeYourProject": {
+            "nlBE": "Omschrijf uw project",
+            "frFR": "Décrivez votre projet",
+            "enGB": "Describe your project"
+        },
+        "message.dropImagesToUpload": {
+            "nlBE": "Zet afbeeldingen neer om te uploaden",
+            "frFR": "Déposer les images à télécharger",
+            "enGB": "Drop images to upload"
+        },
+        "message.enterTitle": {
+            "nlBE": "Voer je titel in",
+            "frFR": "Entrez votre titre",
+            "enGB": "Enter your title"
+        },
+        "message.enterEventDetails": {
+            "nlBE": "Voer je evenement details in",
+            "frFR": "Entrez les détails de votre événement",
+            "enGB": "Enter your event details"
+        },
+        "message.enterEventLocation": {
+            "nlBE": "Voer je evenement locatie in",
+            "frFR": "Entrez le lieu de votre événement",
+            "enGB": "Enter your event location"
+        },
+        "message.enterEventTitle": {
+            "nlBE": "Voer je evenement titel in",
+            "frFR": "Entrez le titre de votre événement",
+            "enGB": "Enter your event title"
+        },
+        "message.enterText": {
+            "nlBE": "Voer je tekst in",
+            "frFR": "Entrez votre texte",
+            "enGB": "Enter your text"
+        },
+        "message.enterTextLine": {
+            "nlBE": "Dit is een regel tekst. Klik hier om de tekst te bewerken.",
+            "frFR": "Ceci est une ligne de texte. Cliquez ici pour éditer le texte.",
+            "enGB": "This is a line of text. Click here to edit the text."
+        },
+        "message.enterTextParagraph": {
+            "nlBE": "Dit is een tekst paragraaf. Klik hier om de tekst te bewerken en een eigen tekst toe te voegen. Indien je wenst kan je deze tekst ook later nog wijzigen.",
+            "frFR": "Ceci est un paragraphe de texte. Cliquez dans le texte pour ajouter votre propre texte. Si vous le souhaitez, vous pouvez toujours modifier ce texte plus tard.",
+            "enGB": "This is a text paragraph. Click here to edit this text and add your own. This text can still be edited later."
+        },
+        "message.enterTextFull": {
+            "nlBE": "<p>Dit is een tekstblok. Klik hier om de tekst te bewerken en een eigen tekst toe te voegen. Indien je wenst kan je deze tekst ook later nog wijzigen.</p><p>Probeer je tekst zo bondig en eenvoudig mogelijk te houden. Lange teksten worden minder gemakkelijk gelezen op een scherm.</p><p>Maak eventueel gebruik van een lijst. Je kan hiermee de inhoud op een overzichtelijke manier weergeven. Hieronder zie je een voorbeeld:</p><ul><li>Formuleer hier je eerste punt.</li><li>Hier kan je een tweede punt toeveogen.</li><li>Sluit ten slotte af met een derde punt</li></ul><p>Je kan de <strong>leesbaarheid van je tekst</strong> verbeteren door je tekst op te delen in <strong>verschillende paragrafen</strong> en eventueel delen in het vet te plaatsen.</p>",
+            "frFR": "<p>Ceci est un paragraphe de texte. Cliquez dans le texte pour ajouter votre propre texte. Si vous le souhaitez, vous pouvez toujours modifier ce texte plus tard.</p><p>Essayez de garder votre texte aussi concis et simple que possible. Des textes longs sont moins faciles à lire sur un écran.</p><p>Utilisez une liste si possible. Cela vous permet d'afficher le contenu de manière bien organisée. Voici un exemple: </p> <ul><li>Formulez votre premier point ici.</li><li>Ici, vous pouvez ajouter un deuxième point.</li><li>Enfin, terminez avec un troisième point.</li></ul><p>Vous pouvez améliorer la <strong> lisibilité de votre texte </strong> en divisant votre texte en <strong> différents paragraphes </strong> et en mettant éventuellement des parties en gras.</p>",
+            "enGB": "<p>This is a textblock. Click here to edit this text and add your own. This text can still be edited later.</p><p>Try to keep your text as concise and simple as possible. Long texts are harder to read on a screen.</p><p> Use a list if possible. This allows you to display the content in a well-organized way. Below is an example: </p> <ul><li>Formulate your first point here.</li><li>Here you can add a second point.</li><li>Finally, finish with a third point.</li></ul><p>You can also improve the <strong>readability of your text</strong> by dividing your text into <strong>multiple paragraphs</strong> and by putting parts of your sentences in the bold.</p>"
+        },
+        "message.facebookPostsAreBeingLoaded": {
+            "nlBE": "Facebook artikels worden geladen...",
+            "frFR": "Articles de Facebook en cours de chargement...",
+            "enGB": "Facebook posts are being loaded..."
+        },
+        "message.followUsOnSocialMedia": {
+            "nlBE": "Volg ons op <strong>Social Media</strong>",
+            "frFR": "Suivez-nous sur les <strong>Réseaux Sociaux</strong>",
+            "enGB": "Follow us on <strong>Social Media</strong>"
+        },
+        "message.howCanWeHelpYou": {
+            "nlBE": "Waarmee kunnen wij u <strong>helpen</strong>?",
+            "frFR": "Comment pouvons-nous vous <strong>aider</strong>?",
+            "enGB": "How can we <strong>help</strong> you?"
+        },
+        "message.iAgreeWithThePrivacyPolicy": {
+            "nlBE": "Ik ga akkoord met het privacybeleid",
+            "frFR": "Je suis d'accord avec la politique de confidentialité",
+            "enGB": "I agree with the privacy policy"
+        },
+        "message.imagesAreBeingLoaded": {
+            "nlBE": "Afbeeldingen worden geladen...",
+            "frFR": "Images en cours de chargement...",
+            "enGB": "Images are being loaded..."
+        },
+        "message.iWantToSubscribeToTheNewsletter": {
+            "nlBE": "Ik wil mij inschrijven op de nieuwsbrief",
+            "frFR": "Je veux m'inscrire à la newsletter",
+            "enGB": "I want to subscribe to the newsletter"
+        },
+        "message.iWantAQuoteFor": {
+            "nlBE": "Ik wil een offerte voor:",
+            "frFR": "Je veux un devis pour:",
+            "enGB": "I want a quote for:"
+        },
+        "message.iWantToApplyFor": {
+            "nlBE": "Ik wil solliciteren voor:",
+            "frFR": "Je veux postuler pour:",
+            "enGB": "I want to apply for:"
+        },
+        "message.noImagesFound": {
+            "nlBE": "Sorry, geen afbeeldingen gevonden...",
+            "frFR": "Désolé, aucun image trouvé...",
+            "enGB": "Sorry, no images found..."
+        },
+        "message.noPostsFound": {
+            "nlBE": "Sorry, geen artikels gevonden...",
+            "frFR": "Désolé, aucun article trouvé...",
+            "enGB": "Sorry, no posts found..."
+        },
+        "message.noFacebookPostsFound": {
+            "nlBE": "Sorry, geen Facebook artikels gevonden...",
+            "frFR": "Désolé, aucun article facebook trouvé...",
+            "enGB": "Sorry, no facebook posts found..."
+        },
+        "message.postsAreBeingLoaded": {
+            "nlBE": "Artikels worden geladen...",
+            "frFR": "Articles en cours de chargement...",
+            "enGB": "Posts are being loaded..."
+        },
+        "message.readThePrivacyPolicyHere": {
+            "nlBE": "Lees hier het privacybeleid",
+            "frFR": "Lisez la politique de confidentialité ici",
+            "enGB": "Read the privacy policy here"
+        },
+        "message.thankYouForYourInterest": {
+            "nlBE": "Bedankt voor je interesse. Wij hebben je aanvraag ontvangen en nemen zo spoedig mogelijk contact op.",
+            "frFR": "Merci de votre intérêt. Nous avons bien reçu votre demande et nous vous contacterons dès que possible.",
+            "enGB": "Thank you for your interest. We have received your request and will contact you as soon as possible."
+        },
+        "message.userRegistrationConfirmation": {
+            "nlBE": "Je bent bijna geregistreerd als gebruiker! Gelieve je registratie te bevestigen via onderstaande knop.",
+            "frFR": "Vous êtes presque enregistré en tant qu'utilisateur! Veuillez confirmer votre inscription via le bouton ci-dessous.",
+            "enGB": "You are almost registered as a user! Please confirm your registration via the button below."
+        },
+        "message.vistWebsite": {
+            "nlBE": "Bezoek website",
+            "frFR": "Visitez le site web",
+            "enGB": "Vistit website"
+        },
+        "message.whatDoYouWantToBookUsFor": {
+            "nlBE": "Waarvoor wil je ons boeken?",
+            "frFR": "Pourquoi voulez-vous nous réserver?",
+            "enGB": "What do you want to book us for?"
+        },
+        "message.whatTypeOfServiceIsRequired": {
+            "nlBE": "Welk <strong>soort dienst</strong> is vereist?",
+            "frFR": "Quel <strong>type de service</strong> est requis?",
+            "enGB": "What <strong>type of service</strong> is required?"
+        },
+        "message.youHaveSuccessfullyBeenRegistered": {
+            "nlBE": "Je bent succesvol geregistreerd!",
+            "frFR": "Vous avez été enregistré avec succès!",
+            "enGB": "You have successfully been registered!"
+        },
+        "message.youHaveSuccessfullyBeenSubscribedToOurNewsletter": {
+            "nlBE": "Je bent succesvol ingeschreven op onze nieuwsbrief!",
+            "frFR": "Vous avez été abonné à notre newsletter avec succès!",
+            "enGB": "You have successfully been subscribed to our newsletter!"
         },
         "metaDescription": {
             "nlBE": "Meta description",
@@ -1344,56 +1330,50 @@
             "frFR": "Article vidéo",
             "enGB": "Video post"
         },
-        "webForm": {
-            "formSucces": {
-                "nlBE": "Je formulier is succesvol verzonden!",
-                "frFR": "Votre formulaire a été envoyé!",
-                "enGB": "Your form has been successfully submitted!"
-            },
-            "formSubmitting": {
-                "nlBE": "Je formulier wordt verzonden...",
-                "frFR": "Je formulier is succesvol verzonden!",
-                "enGB": "Form succesfully submitted!"
-            },
-            "missingFields": {
-                "nlBE": "Gelieve de volgende velden in te vullen:",
-                "frFR": "Veuillez remplir les champs suivants:",
-                "enGB": "Please fill in the following fields:"
-            },
-            "fieldAlert": {
-                "nlBE": "*Dit is een verplicht veld",
-                "frFR": "*Dit is een verplicht veld",
-                "enGB": "*Required field"
-            },
-            "makeAppointment": {
-                "nlBE": "Een afspraak<br/> maken?",
-                "frFR": "Fixer un<br/> rendez-vous?",
-                "enGB": "Make an<br/> appointment?"
-            },
-            "stayInformed": {
-                "nlBE": "<strong>Op de hoogte</strong> blijven?",
-                "frFR": "<strong>Op de hoogte</strong> blijven?",
-                "enGB": "To stay <strong>informed</strong>?"
-            },
-            "subScribeForDemo": {
-                "nlBE": "Schrijf in voor een demo",
-                "frFR": "Inscrivez-vous pour une démo",
-                "enGB": "Subscribe for a Demo"
-            },
-            "talkToUs": {
-                "nlBE": "Talk to us",
-                "frFR": "Talk to us",
-                "enGB": "Talk to us"
-            }
+        "webForm.formSucces": {
+            "nlBE": "Je formulier is succesvol verzonden!",
+            "frFR": "Votre formulaire a été envoyé!",
+            "enGB": "Your form has been successfully submitted!"
         },
-        "webFormResponder": {
-            "donation": {
-                "thankYou_donationAmount_projectName": {
-                    "nlBE": "Hartelijk dank voor uw gift van $$amount$$ voor $$projectName$$. Hieronder vindt u een samenvatting van uw gift.",
-                    "frFR": "Merci pour votre don de $$amount$$ pour $$projectName$$. Vous trouverez ci-dessous un résumé de votre don.",
-                    "enGB": "Thank you for your donation of $$amount$$ for $$projectName$$. Below is a summary of your gift."
-                }
-            }
+        "webForm.formSubmitting": {
+            "nlBE": "Je formulier wordt verzonden...",
+            "frFR": "Je formulier is succesvol verzonden!",
+            "enGB": "Form succesfully submitted!"
+        },
+        "webForm.missingFields": {
+            "nlBE": "Gelieve de volgende velden in te vullen:",
+            "frFR": "Veuillez remplir les champs suivants:",
+            "enGB": "Please fill in the following fields:"
+        },
+        "webForm.fieldAlert": {
+            "nlBE": "*Dit is een verplicht veld",
+            "frFR": "*Dit is een verplicht veld",
+            "enGB": "*Required field"
+        },
+        "webForm.makeAppointment": {
+            "nlBE": "Een afspraak<br/> maken?",
+            "frFR": "Fixer un<br/> rendez-vous?",
+            "enGB": "Make an<br/> appointment?"
+        },
+        "webForm.stayInformed": {
+            "nlBE": "<strong>Op de hoogte</strong> blijven?",
+            "frFR": "<strong>Op de hoogte</strong> blijven?",
+            "enGB": "To stay <strong>informed</strong>?"
+        },
+        "webForm.subScribeForDemo": {
+            "nlBE": "Schrijf in voor een demo",
+            "frFR": "Inscrivez-vous pour une démo",
+            "enGB": "Subscribe for a Demo"
+        },
+        "webForm.talkToUs": {
+            "nlBE": "Talk to us",
+            "frFR": "Talk to us",
+            "enGB": "Talk to us"
+        },
+        "webFormResponder.donation.thankYou_donationAmount_projectName": {
+            "nlBE": "Hartelijk dank voor uw gift van $$amount$$ voor $$projectName$$. Hieronder vindt u een samenvatting van uw gift.",
+            "frFR": "Merci pour votre don de $$amount$$ pour $$projectName$$. Vous trouverez ci-dessous un résumé de votre don.",
+            "enGB": "Thank you for your donation of $$amount$$ for $$projectName$$. Below is a summary of your gift."
         },
         "websiteLinkExample": {
             "nlBE": "https://wwww.website.com",
@@ -1487,52 +1467,50 @@
             "frFR": "Formule de lease",
             "enGB": "Lease formula"
         },
-        "message": {
-            "chooseYourDesiredAccessories": {
-                "nlBE": "Kies je gewenste <strong>accessories</strong>",
-                "frFR": "Choisissez vos <strong> accessoires </ strong> souhaités",
-                "enGB": "Choose your desired <strong> accessories </strong>"
-            },
-            "chooseYourPaymentMethod": {
-                "nlBE": "Kies je betaalmiddel",
-                "frFR": "Choisissez votre mode de paiement",
-                "enGB": "Choose your payment method"
-            },
-            "paymentInProgress": {
-                "nlBE": "Je betaling wordt uitgevoerd...",
-                "frFR": "Votre paiement est en cours...",
-                "enGB": "Payment in progress..."
-            },
-            "weWillSendPaymentDetailsLater": {
-                "nlBE": "Bedankt voor je bestelling! Je ontvangt verdere instructies voor je betaling.",
-                "frFR": "Thanks for your order! We will send payment details later.",
-                "enGB": "Thanks for your order! We will send payment details later."
-            },
-            "paymentSuccesfull": {
-                "nlBE": "Je betaling was succesvol!",
-                "frFR": "Votre paiement est réussi!",
-                "enGB": "Payment succesfull!"
-            },
-            "selectYourDesiredProduct": {
-                "nlBE": "Selecteer het gewenste <strong>product</strong>",
-                "frFR": "Sélectionnez votre <strong>produit</strong> désiré",
-                "enGB": "Select your desired <strong>product</strong>"
-            },
-            "selectYourPurchaseFormula": {
-                "nlBE": "Selecteer je <strong>aankoop formule</strong>",
-                "frFR": "Sélectionnez votre <strong>formule d'achat</strong>",
-                "enGB": "Select your purchase formula"
-            },
-            "selectYourDesiredType": {
-                "nlBE": "Selecteer het gewenste <strong>type</strong>",
-                "frFR": "Sélectionnez le <strong>type</strong> désiré",
-                "enGB": "Select your desired <strong>type</strong>"
-            },
-            "billingAddressIsDifferentFromOrganizationAddress": {
-                "nlBE": "Factuuradres is verschillend van organisatie adres",
-                "frFR": "l'Adresse de facturation est différente de l'adresse de l'organisation",
-                "enGB": "Billing address is different from organization address"
-            }
+        "message.chooseYourDesiredAccessories": {
+            "nlBE": "Kies je gewenste <strong>accessories</strong>",
+            "frFR": "Choisissez vos <strong> accessoires </ strong> souhaités",
+            "enGB": "Choose your desired <strong> accessories </strong>"
+        },
+        "message.chooseYourPaymentMethod": {
+            "nlBE": "Kies je betaalmiddel",
+            "frFR": "Choisissez votre mode de paiement",
+            "enGB": "Choose your payment method"
+        },
+        "message.paymentInProgress": {
+            "nlBE": "Je betaling wordt uitgevoerd...",
+            "frFR": "Votre paiement est en cours...",
+            "enGB": "Payment in progress..."
+        },
+        "message.weWillSendPaymentDetailsLater": {
+            "nlBE": "Bedankt voor je bestelling! Je ontvangt verdere instructies voor je betaling.",
+            "frFR": "Thanks for your order! We will send payment details later.",
+            "enGB": "Thanks for your order! We will send payment details later."
+        },
+        "message.paymentSuccesfull": {
+            "nlBE": "Je betaling was succesvol!",
+            "frFR": "Votre paiement est réussi!",
+            "enGB": "Payment succesfull!"
+        },
+        "message.selectYourDesiredProduct": {
+            "nlBE": "Selecteer het gewenste <strong>product</strong>",
+            "frFR": "Sélectionnez votre <strong>produit</strong> désiré",
+            "enGB": "Select your desired <strong>product</strong>"
+        },
+        "message.selectYourPurchaseFormula": {
+            "nlBE": "Selecteer je <strong>aankoop formule</strong>",
+            "frFR": "Sélectionnez votre <strong>formule d'achat</strong>",
+            "enGB": "Select your purchase formula"
+        },
+        "message.selectYourDesiredType": {
+            "nlBE": "Selecteer het gewenste <strong>type</strong>",
+            "frFR": "Sélectionnez le <strong>type</strong> désiré",
+            "enGB": "Select your desired <strong>type</strong>"
+        },
+        "message.billingAddressIsDifferentFromOrganizationAddress": {
+            "nlBE": "Factuuradres is verschillend van organisatie adres",
+            "frFR": "l'Adresse de facturation est différente de l'adresse de l'organisation",
+            "enGB": "Billing address is different from organization address"
         },
         "monthlyCost": {
             "nlBE": "Maandelijkse kost",
@@ -1567,27 +1545,27 @@
         "paymentMethod": {
             "nlBE": "Betaalmiddel",
             "frFR": "Mode de paiement",
-            "enGB": "Payment method",
-            "bancontact": {
-                "nlBE": "Bancontact/MisterCash",
-                "frFR": "Bancontact/MisterCash",
-                "enGB": "Bancontact/MisterCash"
-            },
-            "mastercardVisa": {
-                "nlBE": "Mastercard/Visa",
-                "frFR": "Mastercard/Visa",
-                "enGB": "Mastercard/Visa"
-            },
-            "bankTransfer": {
-                "nlBE": "Overschrijving",
-                "frFR": "Virement bancaire",
-                "enGB": "Bank transfer"
-            },
-            "cash": {
-                "nlBE": "Contant",
-                "frFR": "Cash",
-                "enGB": "Cash"
-            }
+            "enGB": "Payment method"
+        },
+        "paymentMethod.bancontact": {
+            "nlBE": "Bancontact/MisterCash",
+            "frFR": "Bancontact/MisterCash",
+            "enGB": "Bancontact/MisterCash"
+        },
+        "paymentMethod.mastercardVisa": {
+            "nlBE": "Mastercard/Visa",
+            "frFR": "Mastercard/Visa",
+            "enGB": "Mastercard/Visa"
+        },
+        "paymentMethod.bankTransfer": {
+            "nlBE": "Overschrijving",
+            "frFR": "Virement bancaire",
+            "enGB": "Bank transfer"
+        },
+        "paymentMethod.cash": {
+            "nlBE": "Contant",
+            "frFR": "Cash",
+            "enGB": "Cash"
         },
         "price": {
             "nlBE": "Prijs",
@@ -1756,17 +1734,15 @@
             "frFR": "Type d'adhésion",
             "enGB": "Membership type"
         },
-        "message": {
-            "loginForMemberPrice": {
-                "nlBE": "<strong>Login</strong> voor ledenprijs",
-                "frFR": "<strong>Connectez-vous </strong> pour le tarif membre.",
-                "enGB": "<strong>Login </strong> for member price"
-            },
-            "iAmMemberOfAnOrganization": {
-                "nlBE": "Ik ben lid van een organisatie",
-                "frFR": "Je suis membre d'une organisation",
-                "enGB": "I am member of an organization"
-            }
+        "message.loginForMemberPrice": {
+            "nlBE": "<strong>Login</strong> voor ledenprijs",
+            "frFR": "<strong>Connectez-vous </strong> pour le tarif membre.",
+            "enGB": "<strong>Login </strong> for member price"
+        },
+        "message.iAmMemberOfAnOrganization": {
+            "nlBE": "Ik ben lid van een organisatie",
+            "frFR": "Je suis membre d'une organisation",
+            "enGB": "I am member of an organization"
         },
         "myMembership": {
             "nlBE": "Mijn lidmaatschap",
@@ -1955,57 +1931,55 @@
             "frFR": "Nombre maximum de participants",
             "enGB": "Maximum participants"
         },
-        "message": {
-            "chooseADate": {
-                "nlBE": "Kies een datum",
-                "frFR": "Sélectionnez une date",
-                "enGB": "Select a date"
-            },
-            "chooseYourDesiredDate": {
-                "nlBE": "Kies je gewenste datum",
-                "frFR": "Choisissez votre date souhaitée",
-                "enGB": "Choose your desired date"
-            },
-            "iWishToRegisterFor": {
-                "nlBE": "Ik wens in te schrijven voor",
-                "frFR": "Je souhaite m'inscrire pour",
-                "enGB": "I wish to register for"
-            },
-            "iWishToRegisterForThisActivity": {
-                "nlBE": "Ik wens in te schrijven voor deze activiteit",
-                "frFR": "Je souhaite m'inscrire à cette activité",
-                "enGB": "I wish to register for this activity"
-            },
-            "iWishToRegisterForThisEvent": {
-                "nlBE": "Ik wens in te schrijven voor dit evenement",
-                "frFR": "Je souhaite m'inscrire à cet événement",
-                "enGB": "I wish to register for this event"
-            },
-            "iWishToRequestADateForThisEvent": {
-                "nlBE": "Ik wens een datum aan te vragen voor dit evenement",
-                "frFR": "Je souhaite demander une date pour cet événement",
-                "enGB": "I wish to request a date for this event"
-            },
-            "iWishToParticipateInTheFollowingWorkshops": {
-                "nlBE": "Ik wens deel te nemen aan volgende workshops",
-                "frFR": "Je souhaite participer aux ateliers suivants",
-                "enGB": "I wish to participate in the following workshops"
-            },
-            "selectEventsForRegistration": {
-                "nlBE": "Selecteer de evenementen waarvoor je wil inschrijven",
-                "frFR": "Sélectionnez les événements pour lesquels vous souhaitez vous inscrire",
-                "enGB": "Select the events for which you want to register"
-            },
-            "selectYourSubscription": {
-                "nlBE": "Kies het gewenste abonnement",
-                "frFR": "Sélectionnez l'abonnement souhaité",
-                "enGB": "Select your subscription"
-            },
-            "whatYouWillLearn": {
-                "nlBE": "Wat je leert",
-                "frFR": "Ce que vous allez apprendre",
-                "enGB": "What you'll learn"
-            }
+        "message.chooseADate": {
+            "nlBE": "Kies een datum",
+            "frFR": "Sélectionnez une date",
+            "enGB": "Select a date"
+        },
+        "message.chooseYourDesiredDate": {
+            "nlBE": "Kies je gewenste datum",
+            "frFR": "Choisissez votre date souhaitée",
+            "enGB": "Choose your desired date"
+        },
+        "message.iWishToRegisterFor": {
+            "nlBE": "Ik wens in te schrijven voor",
+            "frFR": "Je souhaite m'inscrire pour",
+            "enGB": "I wish to register for"
+        },
+        "message.iWishToRegisterForThisActivity": {
+            "nlBE": "Ik wens in te schrijven voor deze activiteit",
+            "frFR": "Je souhaite m'inscrire à cette activité",
+            "enGB": "I wish to register for this activity"
+        },
+        "message.iWishToRegisterForThisEvent": {
+            "nlBE": "Ik wens in te schrijven voor dit evenement",
+            "frFR": "Je souhaite m'inscrire à cet événement",
+            "enGB": "I wish to register for this event"
+        },
+        "message.iWishToRequestADateForThisEvent": {
+            "nlBE": "Ik wens een datum aan te vragen voor dit evenement",
+            "frFR": "Je souhaite demander une date pour cet événement",
+            "enGB": "I wish to request a date for this event"
+        },
+        "message.iWishToParticipateInTheFollowingWorkshops": {
+            "nlBE": "Ik wens deel te nemen aan volgende workshops",
+            "frFR": "Je souhaite participer aux ateliers suivants",
+            "enGB": "I wish to participate in the following workshops"
+        },
+        "message.selectEventsForRegistration": {
+            "nlBE": "Selecteer de evenementen waarvoor je wil inschrijven",
+            "frFR": "Sélectionnez les événements pour lesquels vous souhaitez vous inscrire",
+            "enGB": "Select the events for which you want to register"
+        },
+        "message.selectYourSubscription": {
+            "nlBE": "Kies het gewenste abonnement",
+            "frFR": "Sélectionnez l'abonnement souhaité",
+            "enGB": "Select your subscription"
+        },
+        "message.whatYouWillLearn": {
+            "nlBE": "Wat je leert",
+            "frFR": "Ce que vous allez apprendre",
+            "enGB": "What you'll learn"
         },
         "minimumParticipants": {
             "nlBE": "Minimum deelnemers",
@@ -2199,17 +2173,15 @@
             "frFR": "heure",
             "enGB": "hour"
         },
-        "message": {
-            "isScheduled": {
-                "nlBE": "is gepland",
-                "frFR": "a été planifié",
-                "enGB": "has been scheduled"
-            },
-            "isUpdated": {
-                "nlBE": "is bijgewerkt",
-                "frFR": "a été modifié",
-                "enGB": "has been updated"
-            }
+        "message.isScheduled": {
+            "nlBE": "is gepland",
+            "frFR": "a été planifié",
+            "enGB": "has been scheduled"
+        },
+        "message.isUpdated": {
+            "nlBE": "is bijgewerkt",
+            "frFR": "a été modifié",
+            "enGB": "has been updated"
         },
         "newAppointment": {
             "nlBE": "Nieuwe Afspraak",
@@ -2402,12 +2374,12 @@
         "gdpr": {
             "nlBE": "GDPR",
             "frFR": "GDPR",
-            "enGB": "GDPR",
-            "eventSubscriptionLargeText": {
-                "nlBE": "Door me in te schrijven ga ik ermee akkoord dat mijn persoonlijke gegevens worden verwerkt in functie van mijn inschrijving en dat ik in de toekomst informatie ontvang met betrekking tot dit evenement. Mijn persoonlijke gegevens zullen enkel verwerkt worden op wijzen die in overeenstemming zijn met de huidige GDPR-wetgeving en zullen niet doorgegeven worden aan derden.",
-                "frFR": "En m'inscrivant, j'accepte que mes données personnelles soient traitées en fonction de mon inscription et que je recevrai des informations à propos de cet événement à l'avenir. Mes données personnelles ne seront traitées que de manière conforme à la législation en vigueur sur les RGPD et ne seront pas transmises à des tiers.",
-                "enGB": "By registering, I agree that my personal data will be processed in function of my registration and that I will receive information regarding this event in the future. My personal data will only be processed in ways that are in accordance with current GDPR legislation and will not be passed on to third parties."
-            }
+            "enGB": "GDPR"
+        },
+        "gdpr.eventSubscriptionLargeText": {
+            "nlBE": "Door me in te schrijven ga ik ermee akkoord dat mijn persoonlijke gegevens worden verwerkt in functie van mijn inschrijving en dat ik in de toekomst informatie ontvang met betrekking tot dit evenement. Mijn persoonlijke gegevens zullen enkel verwerkt worden op wijzen die in overeenstemming zijn met de huidige GDPR-wetgeving en zullen niet doorgegeven worden aan derden.",
+            "frFR": "En m'inscrivant, j'accepte que mes données personnelles soient traitées en fonction de mon inscription et que je recevrai des informations à propos de cet événement à l'avenir. Mes données personnelles ne seront traitées que de manière conforme à la législation en vigueur sur les RGPD et ne seront pas transmises à des tiers.",
+            "enGB": "By registering, I agree that my personal data will be processed in function of my registration and that I will receive information regarding this event in the future. My personal data will only be processed in ways that are in accordance with current GDPR legislation and will not be passed on to third parties."
         },
         "iHaveAnAccount": {
             "nlBE": "Ik heb een account",
@@ -2444,62 +2416,60 @@
             "frFR": "s'Identifier",
             "enGB": "Login"
         },
-        "message": {
-            "confirmDeleteQuestion": {
-                "nlBE": "Weet je zeker dat je dit item wil verwijderen?",
-                "frFR": "Êtes-vous sûr de vouloir supprimer cet élément?",
-                "enGB": "Are you sure you would like to delete this item?"
-            },
-            "confirmDeleteText": {
-                "nlBE": "Deze gegevens worden permanent verwijderd.",
-                "frFR": "Ces données seront définitivement supprimées.",
-                "enGB": "This data wil be permanently removed."
-            },
-            "isCreated": {
-                "nlBE": "is aangemaakt",
-                "frFR": "a été créé",
-                "enGB": "has been created"
-            },
-            "isBeingCreated": {
-                "nlBE": "wordt aangemaakt",
-                "frFR": "est en cours de création",
-                "enGB": "is being created"
-            },
-            "isDeleted": {
-                "nlBE": "is verwijderd",
-                "frFR": "a été supprimé",
-                "enGB": "has been deleted"
-            },
-            "isUpdated": {
-                "nlBE": "is bijgewerkt",
-                "frFR": "a été modifié",
-                "enGB": "has been updated"
-            },
-            "hasFailed": {
-                "nlBE": "is mislukt",
-                "frFR": "est échoué",
-                "enGB": "has failed"
-            },
-            "searchBy": {
-                "nlBE": "Zoek op ",
-                "frFR": "Recherche par ",
-                "enGB": "Search by "
-            },
-            "selectPrintLayout": {
-                "nlBE": "Selecteer een afdruk lay-out",
-                "frFR": "Sélectionnez une mise en page",
-                "enGB": "Select a print layout"
-            },
-            "sendMessage": {
-                "nlBE": "Verzend een bericht...",
-                "frFR": "Envoyez un message...",
-                "enGB": "Send a message..."
-            },
-            "your": {
-                "nlBE": "Uw",
-                "frFR": "Vôtre",
-                "enGB": "Your"
-            }
+        "message.confirmDeleteQuestion": {
+            "nlBE": "Weet je zeker dat je dit item wil verwijderen?",
+            "frFR": "Êtes-vous sûr de vouloir supprimer cet élément?",
+            "enGB": "Are you sure you would like to delete this item?"
+        },
+        "message.confirmDeleteText": {
+            "nlBE": "Deze gegevens worden permanent verwijderd.",
+            "frFR": "Ces données seront définitivement supprimées.",
+            "enGB": "This data wil be permanently removed."
+        },
+        "message.isCreated": {
+            "nlBE": "is aangemaakt",
+            "frFR": "a été créé",
+            "enGB": "has been created"
+        },
+        "message.isBeingCreated": {
+            "nlBE": "wordt aangemaakt",
+            "frFR": "est en cours de création",
+            "enGB": "is being created"
+        },
+        "message.isDeleted": {
+            "nlBE": "is verwijderd",
+            "frFR": "a été supprimé",
+            "enGB": "has been deleted"
+        },
+        "message.isUpdated": {
+            "nlBE": "is bijgewerkt",
+            "frFR": "a été modifié",
+            "enGB": "has been updated"
+        },
+        "message.hasFailed": {
+            "nlBE": "is mislukt",
+            "frFR": "est échoué",
+            "enGB": "has failed"
+        },
+        "message.searchBy": {
+            "nlBE": "Zoek op ",
+            "frFR": "Recherche par ",
+            "enGB": "Search by "
+        },
+        "message.selectPrintLayout": {
+            "nlBE": "Selecteer een afdruk lay-out",
+            "frFR": "Sélectionnez une mise en page",
+            "enGB": "Select a print layout"
+        },
+        "message.sendMessage": {
+            "nlBE": "Verzend een bericht...",
+            "frFR": "Envoyez un message...",
+            "enGB": "Send a message..."
+        },
+        "message.your": {
+            "nlBE": "Uw",
+            "frFR": "Vôtre",
+            "enGB": "Your"
         },
         "more": {
             "nlBE": "Meer",
@@ -2551,11 +2521,6 @@
             "frFR": "Autre",
             "enGB": "Other"
         },
-        "password": {
-            "nlBE": "Wachtwoord",
-            "frFR": "Mot de passe",
-            "enGB": "Password"
-        },
         "present": {
             "nlBE": "Aanwezig",
             "frFR": "Présent",
@@ -2566,22 +2531,20 @@
             "frFR": "Imprimer",
             "enGB": "Print"
         },
-        "priorityTypes": {
-            "high": {
-                "nlBE": "Hoog",
-                "frFR": "Haute",
-                "enGB": "High"
-            },
-            "low": {
-                "nlBE": "Laag",
-                "frFR": "Basse",
-                "enGB": "Low"
-            },
-            "medium": {
-                "nlBE": "Gemiddeld",
-                "frFR": "Moyenne",
-                "enGB": "Medium"
-            }
+        "priorityTypes.high": {
+            "nlBE": "Hoog",
+            "frFR": "Haute",
+            "enGB": "High"
+        },
+        "priorityTypes.low": {
+            "nlBE": "Laag",
+            "frFR": "Basse",
+            "enGB": "Low"
+        },
+        "priorityTypes.medium": {
+            "nlBE": "Gemiddeld",
+            "frFR": "Moyenne",
+            "enGB": "Medium"
         },
         "priorityUpdate": {
             "nlBE": "Prioriteit bijwerken",
@@ -2634,47 +2597,45 @@
             "frFR": "État",
             "enGB": "Status"
         },
-        "statusTypes": {
-            "active": {
-                "nlBE": "Actief",
-                "frFR": "Actif",
-                "enGB": "Active"
-            },
-            "archived": {
-                "nlBE": "Gearchiveerd",
-                "frFR": "Archivé",
-                "enGB": "Archived"
-            },
-            "draft": {
-                "nlBE": "Concept",
-                "frFR": "Brouillon",
-                "enGB": "Draft"
-            },
-            "inactive": {
-                "nlBE": "Inactief",
-                "frFR": "Inactive",
-                "enGB": "inactive"
-            },
-            "open": {
-                "nlBE": "Open",
-                "frFR": "Ouvert",
-                "enGB": "Open"
-            },
-            "pending": {
-                "nlBE": "In behandeling",
-                "frFR": "En attendant",
-                "enGB": "Pending"
-            },
-            "inProgress": {
-                "nlBE": "In behandeling",
-                "frFR": "En cours",
-                "enGB": "In progress"
-            },
-            "closed": {
-                "nlBE": "Afgesloten",
-                "frFR": "Fermé",
-                "enGB": "Closed"
-            }
+        "statusTypes.active": {
+            "nlBE": "Actief",
+            "frFR": "Actif",
+            "enGB": "Active"
+        },
+        "statusTypes.archived": {
+            "nlBE": "Gearchiveerd",
+            "frFR": "Archivé",
+            "enGB": "Archived"
+        },
+        "statusTypes.draft": {
+            "nlBE": "Concept",
+            "frFR": "Brouillon",
+            "enGB": "Draft"
+        },
+        "statusTypes.inactive": {
+            "nlBE": "Inactief",
+            "frFR": "Inactive",
+            "enGB": "inactive"
+        },
+        "statusTypes.open": {
+            "nlBE": "Open",
+            "frFR": "Ouvert",
+            "enGB": "Open"
+        },
+        "statusTypes.pending": {
+            "nlBE": "In behandeling",
+            "frFR": "En attendant",
+            "enGB": "Pending"
+        },
+        "statusTypes.inProgress": {
+            "nlBE": "In behandeling",
+            "frFR": "En cours",
+            "enGB": "In progress"
+        },
+        "statusTypes.closed": {
+            "nlBE": "Afgesloten",
+            "frFR": "Fermé",
+            "enGB": "Closed"
         },
         "statusUpdate": {
             "nlBE": "Status bijwerken",
@@ -2690,11 +2651,6 @@
             "nlBE": "Afbeeldingen laden...",
             "frFR": "Importer des images...",
             "enGB": "Upload images..."
-        },
-        "username": {
-            "nlBE": "Gebruikersnaam",
-            "frFR": "Nom d'utilisateur",
-            "enGB": "Username"
         },
         "video": {
             "nlBE": "Video",
@@ -2771,17 +2727,17 @@
         "country": {
             "nlBE": "Land",
             "frFR": "Pays",
-            "enGB": "Country",
-            "belgium": {
-                "nlBE": "België",
-                "frFR": "Belgique",
-                "enGB": "Belgium"
-            },
-            "netherlands": {
-                "nlBE": "Nederland",
-                "frFR": "les Pays-Bas",
-                "enGB": "The Netherlands"
-            }
+            "enGB": "Country"
+        },
+        "country.belgium": {
+            "nlBE": "België",
+            "frFR": "Belgique",
+            "enGB": "Belgium"
+        },
+        "country.netherlands": {
+            "nlBE": "Nederland",
+            "frFR": "les Pays-Bas",
+            "enGB": "The Netherlands"
         },
         "countries": {
             "nlBE": "Landen",
@@ -2896,22 +2852,22 @@
         "profession": {
             "nlBE": "Beroep",
             "frFR": "Profession",
-            "enGB": "Profession",
-            "caregiver": {
-                "nlBE": "Hulpverlener",
-                "frFR": "Sauveteur",
-                "enGB": "Caregiver"
-            },
-            "researcher": {
-                "nlBE": "Onderzoeker",
-                "frFR": "Enquêteur",
-                "enGB": "Researcher"
-            },
-            "student": {
-                "nlBE": "Student",
-                "frFR": "Étudiant",
-                "enGB": "Student"
-            }
+            "enGB": "Profession"
+        },
+        "profession.caregiver": {
+            "nlBE": "Hulpverlener",
+            "frFR": "Sauveteur",
+            "enGB": "Caregiver"
+        },
+        "profession.researcher": {
+            "nlBE": "Onderzoeker",
+            "frFR": "Enquêteur",
+            "enGB": "Researcher"
+        },
+        "profession.student": {
+            "nlBE": "Student",
+            "frFR": "Étudiant",
+            "enGB": "Student"
         },
         "professionFunction": {
             "nlBE": "Beroep/Functie",
@@ -2941,27 +2897,27 @@
         "salutation": {
             "nlBE": "Aanspreektitel",
             "frFR": "Salutation",
-            "enGB": "Title",
-            "mr": {
-                "nlBE": "Dhr.",
-                "frFR": "Mr.",
-                "enGB": "Mr."
-            },
-            "mrs": {
-                "nlBE": "Mevr.",
-                "frFR": "Mme.",
-                "enGB": "Mrs."
-            },
-            "miss": {
-                "nlBE": "Mevr.",
-                "frFR": "Mlle.",
-                "enGB": "Miss."
-            },
-            "dr": {
-                "nlBE": "Dr.",
-                "frFR": "Dr.",
-                "enGB": "Dr."
-            }
+            "enGB": "Title"
+        },
+        "salutation.mr": {
+            "nlBE": "Dhr.",
+            "frFR": "Mr.",
+            "enGB": "Mr."
+        },
+        "salutation.mrs": {
+            "nlBE": "Mevr.",
+            "frFR": "Mme.",
+            "enGB": "Mrs."
+        },
+        "salutation.miss": {
+            "nlBE": "Mevr.",
+            "frFR": "Mlle.",
+            "enGB": "Miss."
+        },
+        "salutation.dr": {
+            "nlBE": "Dr.",
+            "frFR": "Dr.",
+            "enGB": "Dr."
         },
         "searchByClientName": {
             "nlBE": "Zoek op klantnaam...",
@@ -2972,6 +2928,11 @@
             "nlBE": "Studentennummer",
             "frFR": "Numéro d'étudiant",
             "enGB": "Student number"
+        },
+        "username": {
+            "nlBE": "Gebruikersnaam",
+            "frFR": "Nom d'utilisateur",
+            "enGB": "Username"
         },
         "zipCode": {
             "nlBE": "Postcode",
@@ -3005,12 +2966,10 @@
             "frFR": "Internet",
             "enGB": "Internet"
         },
-        "message": {
-            "aboutThisRoom": {
-                "nlBE": "Over deze kamer",
-                "frFR": "À propos de cette chambre",
-                "enGB": "About this room"
-            }
+        "message.aboutThisRoom": {
+            "nlBE": "Over deze kamer",
+            "frFR": "À propos de cette chambre",
+            "enGB": "About this room"
         },
         "orientation": {
             "nlBE": "Oriëntatie",
