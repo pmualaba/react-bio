@@ -440,8 +440,8 @@
                             "theme-secondary-contrast": "#FFE4B5",
                             "text": "#FFF",
                             "text-contrast": "#000",
-                            "link": "#FFF",
-                            "link-contrast": "#000",
+                            "link": "#000",
+                            "link-contrast": "#FFF",
                             "black": "#000",
                             "white": "#FFF",
                             "grey-dark": "#333",
@@ -587,7 +587,7 @@
                             "margin": ""
                         },
                         "open": {
-                            "shadow": "0px 5px 30px 0 rgba(252, 146, 146, 0.86)",
+                            "shadow": "10px 10px 70px 19px #EAF9F8",
                             "padding-document": "0px",
                             "padding-block": "40px",
                             "margin": ""
