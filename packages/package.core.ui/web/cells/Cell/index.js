@@ -104,7 +104,7 @@ function Cell(props) {
         })
     )
 
-    console.log('RENDER CELL', store, props)
+    console.log('RENDER CELL')
     return children
 }
 

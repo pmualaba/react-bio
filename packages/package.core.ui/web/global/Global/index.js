@@ -167,7 +167,6 @@ export default function Global(props) {
     const domain = props.context.environment.domain
     const l = props.context.environment.locale
     const {css, motion} = context.theme.render(props, context)
-    console.log('motion', motion)
 
     /**
      * BackgroundElement__global

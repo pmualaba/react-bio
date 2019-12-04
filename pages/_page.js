@@ -60,7 +60,6 @@ export function getInitialProps(ctx, Page) {
     const Package = Page.DNA.split('"]')[0].substring(2)
     const Platform = Page.DNA.indexOf('web') !== -1 ? 'web' : 'app'
     const lang = ctx.asPath.split('/')[1]
-    console.log('locales2', locales)
     const locale = lang.length === 2 ? locales[lang] : ctx.query.locale || locales.default
 
     async function prepareInitialProps() {

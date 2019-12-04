@@ -4,7 +4,7 @@ import BackgroundElementStyled from './styled'
 export default function BackgroundElement(props) {
     const {dna, meta, context} = props
     /**
-     * Default Props
+     * Bio Default Props
      */
 
     /**
@@ -14,11 +14,10 @@ export default function BackgroundElement(props) {
     /**
      * Render
      */
-    console.log('BackgroundElement props.context', props.context)
 
     const {css, motion} = props.context.theme.render(props)
 
-    console.log(`RENDER ELEMENT: BackgroundElement ${meta['@dna']}`, props)
+    console.log(`RENDER ELEMENT: BackgroundElement ${meta['@dna']}`)
     return (
         <BackgroundElementStyled
             meta={meta}

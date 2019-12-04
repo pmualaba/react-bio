@@ -15,6 +15,7 @@ const PositionLayoutStyled = styled('main').attrs(props => ({
     > .Region {
         --styled: '/packages/package.core.ui/web/layouts/PositionLayout/styled.js ';
         display: flex;
+        flex-direction: column;
     }
 
     > .main {

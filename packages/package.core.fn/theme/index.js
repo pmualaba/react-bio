@@ -5,11 +5,11 @@ function render(props, ctx) {
     const context = ctx || props.context
     const metaTheme = props.meta['@theme'] || props.meta['@component']
 
+    let designVariant = props.dna.ui['theme.design.variant'] || 'default'
     const motionVariant = props.dna.ui['theme.motion.variant'] || 'default'
-    const designVariant = props.dna.ui['theme.design.variant'] || 'default'
+    const contextVariant = context.current && context.current['theme.context.variant']
     const designPrefix = metaTheme.split('].')
     const designSuffix = designPrefix[1].split('.')
-    console.log('motionVariant', motionVariant)
 
     /**
      * context.theme.design[package][platform][kind][component]
@@ -32,6 +32,10 @@ function render(props, ctx) {
                 undefined)
         }
         motion.as = components.motion[motion.as || 'div']
+
+        if (design.variants[contextVariant]) {
+            designVariant = contextVariant
+        }
 
         return {
             css: [

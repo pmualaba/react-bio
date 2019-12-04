@@ -10,7 +10,6 @@ const TextInputElementStyled = styled('div').attrs(props => ({
     --styled: '/packages/package.core.ui/web/elements/InputTextElement/styled.js';
 
     position: relative;
-    height: 50px;
 
     > input {
         width: 100%;

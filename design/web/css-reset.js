@@ -9,14 +9,14 @@ const scrollBar = {
 
 const CSSreset = props => css`
     :root {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         font-size: 62.5%; /* 62.5% of 16px Browser default font-size => Result: 1rem == 10px */
         height: auto;
         width: 100%;
     }
     
     body {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         font-size: ${props.context.device.fontSize};
         color: var(--default-tone-default-text);
         font-family: var(--default-typography-default-font-primary);
@@ -27,7 +27,7 @@ const CSSreset = props => css`
     }
 
     #__next {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         height: inherit;
         width: 100%;
     }
@@ -35,14 +35,14 @@ const CSSreset = props => css`
     *,
     *::before,
     *::after {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
     a {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         text-decoration: none;
         
     }
@@ -55,13 +55,13 @@ const CSSreset = props => css`
     }
 
     li {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         list-style: none;
     }
 
     input,
     textarea {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         
     }
     input:focus, textarea:focus {
@@ -69,22 +69,22 @@ const CSSreset = props => css`
     }
     
     h1 {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         font-weight: var(--default-typography-default-font-weight-h1);
     }
 
     h2 {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         font-weight: var(--default-typography-default-font-weight-h2);
     }
 
     h3 {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
         font-weight: var(--default-typography-default-font-weight-h3);
     }
     
     .block {
-        --styled: '/design/web/css-global-reset.js';
+        --styled: '/design/web/css-reset.js';
 
     }
     

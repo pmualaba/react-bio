@@ -41,7 +41,6 @@
         "react-paypal-button-v2": "^2.6.0",
         "react-redux": "^7.1.3",
         "react-stripe-elements": "^6.0.1",
-        "react-transition-group": "^2.4.0",
         "redux": "^4.0.4",
         "redux-logic": "^2.1.1",
         "rxjs": "^6.3.2",
@@ -88,15 +87,15 @@
         "express": false,
         "grpc": false,
         "joi": false,
-        "njwt": false,
         "lowdb": false,
-        "universal-cookie-express": false,
+        "njwt": false,
+        "next": false,
         "sc-framework-health-check": false,
         "sc-errors": false,
         "sc-hot-reboot": false,
         "scc-broker-client": false,
         "socketcluster": false,
-        "next": false
+        "universal-cookie-express": false
     },
     "babel": {
         "env": {

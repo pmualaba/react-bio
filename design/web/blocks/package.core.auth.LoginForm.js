@@ -7,24 +7,22 @@ export default {
             motion: {
                 initial: 'exit',
                 animate: 'enter',
-                onAnimationComplete: e =>
-                    (document.querySelector('.Region.main').style.overflowX = 'hidden'),
                 exit: 'exit',
                 variants: {
                     enter: {
-                        y: -100,
+                        y: 50,
                         opacity: 1,
                         transition: {
-                            duration: 5,
+                            duration: 4,
                             ease: [0.175, 0.85, 0.42, 0.96],
                             staggerChildren: 0.5
                         }
                     },
                     exit: {
-                        y: 150,
+                        y: 500,
                         opacity: 0,
                         transition: {
-                            duration: 5,
+                            duration: 4,
                             ease: [0.175, 0.85, 0.42, 0.96],
                             staggerChildren: 0.5
                         }

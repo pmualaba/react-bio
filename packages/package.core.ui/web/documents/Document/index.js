@@ -27,9 +27,9 @@ export default function Document(props) {
         return <></>
     }
 
-    console.log('RENDER DOCUMENT', props.dna.set['enable.stripe'])
     const {css, motion} = context.theme.render(props, context)
 
+    console.log('RENDER DOCUMENT')
     return (
         <DocumentStyled
             meta={props.meta}

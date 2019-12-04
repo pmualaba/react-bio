@@ -302,6 +302,9 @@
                                     }
                                 },
                                 "set": {
+                                },
+                                "ui": {
+                                    "theme.context.variant": "material"
                                 }
                             }
                         }
@@ -499,6 +502,7 @@
                                     "theme.variant": "default",
                                     "theme.model.variant": "scrollContainer",
                                     "theme.design.variant": "default",
+                                    "theme.motion.variant": "default",
                                     "theme.skin.variant": "themeVariantDefault",
                                     "theme.skin.tone": "dimensionVariantDefault",
                                     "theme.skin.typography": "sans",

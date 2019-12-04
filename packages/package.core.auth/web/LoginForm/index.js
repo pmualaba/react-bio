@@ -39,8 +39,15 @@ export default function LoginForm(props) {
      */
 
     const [state, dispatch] = useReducer(reducer, {user: '', password: '', value: 'bancontact'})
-
     const dispatchStore = useDispatch()
+
+    /**
+     * Context
+     */
+
+    props.context.current = {
+        'theme.context.variant': props.dna.ui['theme.context.variant']
+    }
 
     /**
      * Hooks
@@ -48,6 +55,7 @@ export default function LoginForm(props) {
 
     const refBlock = useRef()
     hooks.blocks.useResponsiveBlock(refBlock, 30)
+
     /**
      * Cell__login
      */
@@ -194,7 +202,8 @@ export default function LoginForm(props) {
         dna: {
             set: {
                 autocomplete: 'off',
-                name: 'password'
+                name: 'password',
+                label: props.context.i18n.identity.password
             }
         },
         data: {
@@ -285,38 +294,10 @@ export default function LoginForm(props) {
     }
 
     /**
-     * TextInputElement__name
-     */
-
-    bio.TextInputElement__name = {
-        meta: {
-            '@dna': `${props.meta['@dna']}.elements[0:TextInputElement__name]`,
-            '@component': "['package.core.ui'].web.elements.TextInputElement",
-            name: 'TextInputElement__name',
-            class: 'TextInputElement',
-            kind: 'element'
-        },
-        data: {
-            init: {
-                value: ''
-            }
-        },
-        context: props.context,
-        fn: {
-            onKeyUp(payload) {
-                payload.data.selector = `ui['package.core.cms'].web.selector`
-                dispatchStore(FSA(ON_KEY_UP, false, payload, props.meta))
-            }
-        }
-    }
-
-    /**
      * Render
      */
     const {css, motion} = props.context.theme.render(props)
-
-    console.log('RENDER BLOCK: LoginForm', motion)
-
+    console.log('RENDER BLOCK: LoginForm')
     return (
         <LoginFormStyled
             ref={refBlock}

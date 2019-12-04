@@ -61,10 +61,11 @@ export default function TextInputElement(props) {
             style={dna.ui['theme.style.css']}
         >
             <input
+                className="TextInputElement__input"
                 type="text"
                 id={dna.set.name}
                 autoComplete={dna.set.autocomplete}
-                placeholder={data.placeholder}
+                placeholder={data.placeholder || ' '}
                 value={data.value}
                 onChange={e => {
                     dispatch(['on_change', e.target.value])
@@ -87,8 +88,8 @@ export default function TextInputElement(props) {
                 }
                 required={props.meta['@flag.required']}
             />
-            <label htmlFor={dna.set.name}>
-                <span>{dna.set.label}</span>
+            <label className="TextInputElement__label" htmlFor={dna.set.name}>
+                <span className="TextInputElement__labelText">{dna.set.label}</span>
             </label>
         </TextInputElementStyled>
     )
