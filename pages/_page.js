@@ -123,9 +123,11 @@ export function getInitialProps(ctx, Page) {
                 locale,
                 domain,
                 node: process.env.NODE_ENV,
-                IE: ctx.req.headers['user-agent'].includes('Trident/7'),
-                IE10: ctx.req.headers['user-agent'].includes('rv:10'),
-                IE11: ctx.req.headers['user-agent'].includes('rv:11')
+                browser: {
+                    IE: ctx.req.headers['user-agent'].includes('Trident/7'),
+                    IE10: ctx.req.headers['user-agent'].includes('rv:10'),
+                    IE11: ctx.req.headers['user-agent'].includes('rv:11')
+                }
             },
             dna: {
                 global: globalDna,
@@ -207,9 +209,13 @@ export function getInitialProps(ctx, Page) {
                 locale,
                 domain,
                 node: 'production',
-                IE: window.navigator.userAgent.includes('Trident/7'),
-                IE10: window.navigator.userAgent.includes('rv:10'),
-                IE11: window.navigator.userAgent.includes('rv:10')
+                browser: {
+                    IE: window.navigator.userAgent.includes('Trident/7'),
+                    IE10: window.navigator.userAgent.includes('rv:10'),
+                    IE11: window.navigator.userAgent.includes('rv:10'),
+                    Safari: /constructor/i.test(window.HTMLElement),
+                    Firefox: !!navigator.userAgent.match(/firefox/i)
+                }
             },
             dna: {
                 global: getPageDnaResponse.data.payload.globalDna,

@@ -1,4 +1,5 @@
 import {createLogic} from 'redux-logic'
+import Joi from 'joi-browser'
 import * as ErrorTypes from '../../../package.core.fn/errors'
 
 /**
@@ -18,7 +19,7 @@ const env = require('../../../../env.client')()
 const validationLogic = createLogic({
     type: AUTHENTICATE_USER,
 
-    validate({Joi, getState, action}, allow, reject) {
+    validate({getState, action}, allow, reject) {
         const userCredentials = action.payload
 
         const schema = Joi.object().keys({
@@ -52,7 +53,7 @@ const validationLogic = createLogic({
                     false,
                     'package.core.authentication'
                 )
-                reject(FSA(UI_INPUTVALIDATION_ERROR, true, validationErrors))
+                reject(FSA('VALIDATION_ERROR', true, validationErrors))
             }
         })
     }

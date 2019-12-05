@@ -50,7 +50,7 @@ export default {
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    border-bottom: 2px solid #59c595;
+                    border-bottom: 2px solid #59d1c7;
                     transform: translateX(-100%);
                     transition: transform 0.3s ease;
                 }

@@ -221,14 +221,14 @@ export default function LoginForm(props) {
     }
 
     /**
-     * ButtonElement__submit
+     * ButtonElement__login
      */
 
-    bio.ButtonElement__submit = {
+    bio.ButtonElement__login = {
         meta: {
-            '@dna': `${props.meta['@dna']}.elements[1:ButtonElement__submit]`,
+            '@dna': `${props.meta['@dna']}.elements[1:ButtonElement__login]`,
             '@component': "['package.core.ui'].web.elements.ButtonElement",
-            name: 'ButtonElement__submit',
+            name: 'ButtonElement__login',
             class: 'ButtonElement',
             kind: 'element'
         },
@@ -248,7 +248,7 @@ export default function LoginForm(props) {
         context: props.context,
         fn: {
             onClick(payload) {
-                payload.data.selector = `ui['package.core.auth'].web.LoginForm.db.user.secret`
+                // payload.data.selector = `ui['package.core.auth'].web.LoginForm.db.user.secret`
                 dispatchStore(FSA(AUTHENTICATE_USER, false, payload, props.meta))
             }
         }
@@ -318,7 +318,7 @@ export default function LoginForm(props) {
                 <TextInputElement {...bio.TextInputElement__passwordConfirm} />
             </Cell>
             <TextInputElement {...bio.TextInputElement__passwordConfirm} />
-            <ButtonElement {...bio.ButtonElement__submit} />
+            <ButtonElement {...bio.ButtonElement__login} />
             <PaymentMethodElement {...bio.PaymentMethodElement__pay} />
         </LoginFormStyled>
     )

@@ -6,6 +6,7 @@ import StripeBancontactElementStyled from './styled'
 import {FSA, SEND_PAYMENT_STRIPE} from '../reducer'
 import {AUTHENTICATE_USER} from '../../../../package.core.auth/web/LoginForm/reducer'
 import LoginFormStyled from '../../../../package.core.auth/web/LoginForm/styled'
+import ButtonElement from '../../../../package.core.ui/web/elements/ButtonElement'
 
 /**
  * Reducer
@@ -153,6 +154,7 @@ function StripeBancontactElement(props) {
         dna: {
             set: {
                 icon: 'bancontact',
+                label: props.context.i18n.commerce['paymentMethod.bancontact'],
                 buttonType: 'button'
             }
         },
@@ -164,7 +166,7 @@ function StripeBancontactElement(props) {
         context: props.context,
         fn: {
             onClick(payload) {
-                payload.data.selector = `ui['package.core.auth'].web.LoginForm.db.user.secret`
+                console.log('payload', payload)
             }
         }
     }
@@ -184,9 +186,7 @@ function StripeBancontactElement(props) {
             {!data.name ? <TextInputElement {...bio.TextInputElement__name} /> : null}
             {!data.email ? <TextInputElement {...bio.TextInputElement__email} /> : null}
 
-            <button type="button" onClick={onClick}>
-                {props.context.i18n.commerce['paymentMethod.bancontact']}
-            </button>
+            <ButtonElement {...bio.ButtonElement__bancontact} />
         </StripeBancontactElementStyled>
     )
 }

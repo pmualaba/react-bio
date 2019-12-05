@@ -80,7 +80,7 @@ export default function Global(props) {
     useEffect(() => {
         getGoogleFonts({families: props.dna.set.fonts.google})
 
-        props.context.environment.IE &&
+        props.context.environment.browser.IE &&
             typeof window !== 'undefined' &&
             window.cssVars({
                 include: 'style',
@@ -224,14 +224,14 @@ export default function Global(props) {
                     <link rel="stylesheet" href={props.dna.set.fonts.link} />
                 )}
 
-                {props.context.environment.IE && (
+                {props.context.environment.browser.IE && (
                     <script
                         crossOrigin="anonymous"
                         src="https://polyfill.io/v3/polyfill.min.js?features=WeakSet%2CString.prototype.startsWith%2CObject.assign%2CArray.prototype.find"
                     />
                 )}
 
-                {props.context.environment.IE && (
+                {props.context.environment.browser.IE && (
                     <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2.1.2/dist/css-vars-ponyfill.min.js" />
                 )}
                 <style>{CSSreset(props)}</style>
