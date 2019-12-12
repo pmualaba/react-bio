@@ -7,6 +7,8 @@ import {
     injectStripe
 } from 'react-stripe-elements'
 import StripeCreditCardElementStyled from './styled'
+import ButtonElement from '../../../../package.core.ui/web/elements/ButtonElement'
+import StripeBancontactElementStyled from '../StripeBancontactElement/styled'
 
 function StripeCreditCardElement(props) {
     function handleBlur() {
@@ -25,7 +27,7 @@ function StripeCreditCardElement(props) {
         console.log('[ready]')
     }
 
-    function handleClick(e) {
+    function onClick(e) {
         if (props.stripe) {
             props.stripe.createToken().then(payload => console.log('[token]', payload))
         } else {
@@ -47,7 +49,37 @@ function StripeCreditCardElement(props) {
         }
     }
 
-    if (props.inline) {
+    /**
+     * ButtonElement__creditcard
+     */
+    const bio = {}
+    bio.ButtonElement__creditcard = {
+        meta: {
+            '@dna': `${props.meta['@dna']}.elements[2:ButtonElement__creditcard]`,
+            '@component': "['package.core.ui'].web.elements.ButtonElement",
+            name: 'ButtonElement__creditcard',
+            class: 'ButtonElement',
+            kind: 'element'
+        },
+        dna: {
+            set: {
+                icon: 'creditcard',
+                label: props.context.i18n.commerce['paymentMethod.mastercardVisa'],
+                buttonType: 'button'
+            }
+        },
+        data: {
+            init: {
+                value: ''
+            }
+        },
+        context: props.context,
+        fn: {
+            onClick
+        }
+    }
+
+    if (props.dna.set['ui.variant'] === 'inline') {
         return (
             <StripeCreditCardElementStyled>
                 <label>
@@ -98,9 +130,7 @@ function StripeCreditCardElement(props) {
                     style={style}
                 />
             </label>
-            <button type="button" onClick={handleClick}>
-                Pay
-            </button>
+            <ButtonElement {...bio.ButtonElement__creditcard} />
         </StripeCreditCardElementStyled>
     )
 }

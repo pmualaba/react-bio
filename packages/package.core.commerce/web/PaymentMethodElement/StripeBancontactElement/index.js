@@ -62,8 +62,7 @@ function StripeBancontactElement(props) {
                     metadata: data.meta,
 
                     redirect: {
-                        return_url:
-                            'https://www.palliatief.com/nl/diensten/workshops/ins-outs-van-instagram?orderStatus=PAID&client_secret=src_client_secret_BXQKrQOFLFQljSwvK2p8VwJy&livemode=true&source=src_1BALTmCP974cY7SJGcyj2D8L'
+                        return_url: props.dna.set.returnUrl
                     }
                 })
                 .then(payload => console.log('[source]', payload))
@@ -140,7 +139,7 @@ function StripeBancontactElement(props) {
     }
 
     /**
-     * ButtonElement__submit
+     * ButtonElement__bancontact
      */
 
     bio.ButtonElement__bancontact = {
@@ -165,9 +164,7 @@ function StripeBancontactElement(props) {
         },
         context: props.context,
         fn: {
-            onClick(payload) {
-                console.log('payload', payload)
-            }
+            onClick
         }
     }
 
@@ -183,8 +180,8 @@ function StripeBancontactElement(props) {
             css={css}
             {...motion}
         >
-            {!data.name ? <TextInputElement {...bio.TextInputElement__name} /> : null}
-            {!data.email ? <TextInputElement {...bio.TextInputElement__email} /> : null}
+            <TextInputElement {...bio.TextInputElement__name} />
+            <TextInputElement {...bio.TextInputElement__email} />
 
             <ButtonElement {...bio.ButtonElement__bancontact} />
         </StripeBancontactElementStyled>

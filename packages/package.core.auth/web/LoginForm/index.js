@@ -38,7 +38,7 @@ export default function LoginForm(props) {
      * Data
      */
 
-    const [state, dispatch] = useReducer(reducer, {user: '', password: '', value: 'bancontact'})
+    const [state, dispatch] = useReducer(reducer, {user: '', password: '', value: 'creditcard'})
     const dispatchStore = useDispatch()
 
     /**
@@ -269,7 +269,13 @@ export default function LoginForm(props) {
         dna: {
             set: {
                 icon: 'fa-home',
-                publishableKey: 'pk_test_rZKTp2SyMW4IR5TrH4Ybzk0X00rPQzyC4H'
+                stripePublishableKey: 'pk_test_rZKTp2SyMW4IR5TrH4Ybzk0X00rPQzyC4H',
+                bancontact: {
+                    returnUrl: 'http://localhost:3000/commerce/checkout?orderStatus=PAID'
+                },
+                creditcard: {
+                    'ui.variant': 'block' // inline
+                }
             }
         },
         data: {
@@ -279,8 +285,8 @@ export default function LoginForm(props) {
                     name: '',
                     email: '',
                     locale: 'nlBE',
-                    orderId: '',
-                    engagementId: ''
+                    orderId: '123456',
+                    engagementId: '456789'
                 }
             }
         },

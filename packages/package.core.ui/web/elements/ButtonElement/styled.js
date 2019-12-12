@@ -23,17 +23,17 @@ const ButtonElementStyled = styled('button').attrs(props => ({
     box-shadow: rgb(167, 171, 190) 6px 5px 0.5rem -3px;
     margin: 20px;
     position: relative;
-    transition: all 1s;
+    transition: background-position 1s;
     &:hover {
         background-color: #fff;
         background-position: 0 0;
-        transition: all 1s;
+        transition: background-position 1s, background-color 1s, box-shadow 1s, transform 1s;
     }
     &:active {
         background-color: #a6d3cf;
         box-shadow: rgb(167, 171, 190) 0 0 0.5rem -3px;
         transform: translateX(2px);
-        transition: all 0.2s;
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 
     ${props => props.css};

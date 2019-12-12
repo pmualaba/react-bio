@@ -64,7 +64,8 @@ function PaymentMethodElement(props) {
         dna: {
             set: {
                 icon: 'fa-home',
-                'ui.button.label': props.dna.set['ui.button.label']
+                'ui.button.label': props.dna.set.creditcard['ui.button.label'],
+                'ui.variant': props.dna.set.creditcard['ui.variant']
             }
         },
         data: {
@@ -92,7 +93,8 @@ function PaymentMethodElement(props) {
             set: {
                 icon: 'fa-home',
                 'ui.button.label': props.dna.set['ui.button.label'],
-                autocomplete: 'off'
+                autocomplete: 'off',
+                returnUrl: props.dna.set.bancontact.returnUrl
             }
         },
         data: {
@@ -125,13 +127,15 @@ function PaymentMethodElement(props) {
             context={props.context}
             style={props.dna.ui['theme.style.css']}
         >
-            <StripeProvider apiKey="pk_test_rZKTp2SyMW4IR5TrH4Ybzk0X00rPQzyC4H">
+            <StripeProvider apiKey={props.dna.set.stripePublishableKey}>
                 <div className="Checkout">
-                    <h1>Payment Methods</h1>
-                    <h2>Creditcard</h2>
                     <Elements>
                         {{
-                            creditcard: <StripeCreditCardElement />,
+                            creditcard: (
+                                <StripeCreditCardElement
+                                    {...bio.StripeCreditCardElement__creditcard}
+                                />
+                            ),
                             bancontact: (
                                 <StripeBancontactElement {...bio.StripeBancontactElement__pay} />
                             ),

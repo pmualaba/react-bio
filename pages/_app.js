@@ -70,7 +70,7 @@ export default withRedux(
                 device.isMobile = false
                 device.formFactor = 'desktopXXL'
                 device.screenSize = 'XXL'
-                device.fontSize = '3.0rem'
+                device.fontSize = '2.4rem'
             } else if (Modernizr.mq('(min-width: 1300px)')) {
                 device.isMobile = false
                 device.formFactor = 'desktopXL'
