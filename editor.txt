@@ -1,0 +1,2 @@
+Ctrl+W = select from cursor
+Ctrl+Alt(Cmd)+Shift+J = multiple cursors
