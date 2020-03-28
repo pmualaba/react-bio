@@ -29,7 +29,7 @@ export default withRedux(
     (initialState = {}) => {
         const composedEnhancer = composeWithDevTools({trace: false, traceLimit: 25})
         return createStore(
-            rootReducer,
+            rootReducer,``
             initialState,
             composedEnhancer(applyMiddleware(createLogicMiddleware(rootLogic, deps)))
         )
